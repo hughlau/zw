@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../../../resources/scripts/bootMobile.js" type="text/javascript"></script>
+    <script src="../../scripts/page.js" type="text/javascript"></script>
+    <script src="dailyMaintenanceList.htm.js" type="text/javascript"></script>
+    <style>
+        .float_div {
+            position: absolute;
+            width: auto;
+            height: auto;
+            /*border:1px solid red;*/
+            right: 17px;
+            bottom: 10px;
+            z-index: 1000;
+        }
+
+        #GPS {
+            height: 16px;
+            padding: 0;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="divPage" data-role="page" style="position: relative;">
+        <div id="divHeader" data-role="header" data-position="fixed" data-theme="a">
+            <h1>运维表单
+            </h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div id="divForm">
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>外观情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isEnclosureNormal" style="width: 200px">
+                            围栏花砖是否完好:</label>
+                        <select name="isEnclosureNormal" id="isEnclosureNormal" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isManholecoverNormal" style="width: 200px">
+                            人孔盖是否正常:</label>
+                        <select name="isManholecoverNormal" id="isManholecoverNormal"
+                            data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isElectricBoxNormal" style="width: 200px">
+                            电控箱天线是否完好:</label>
+                        <select name="isElectricBoxNormal" id="isElectricBoxNormal"
+                            data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isPowerSupplyBoxNormal" style="width: 200px">
+                            配电箱是否完好:</label>
+                        <select name="isPowerSupplyBoxNormal" id="isPowerSupplyBoxNormal" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>供电情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLeakageProtectorNormal" style="width: 200px">
+                            断路器是否跳闸:</label>
+                        <select name="isLeakageProtectorNormal" id="isLeakageProtectorNormal" data-role="slider"
+                            disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLeakageProtectorSwitchNormal" style="width: 200px">
+                            电控部分是否正常:</label>
+                        <select name="isLeakageProtectorSwitchNormal" id="isLeakageProtectorSwitchNormal"
+                            data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isPowerSupplyLineNormal" style="width: 200px">
+                            供电线路是否正常:</label>
+                        <select name="isPowerSupplyLineNormal" id="isPowerSupplyLineNormal" data-role="slider"
+                            disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true" class="air">
+                    <li data-role="list-divider">
+                        <h1>净化槽运行情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isDeviceFlowBackward" style="width: 200px">
+                            设备是否倒灌:</label>
+                        <select name="isDeviceFlowBackward" id="isDeviceFlowBackward" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isCarrierOverflow" style="width: 200px">
+                            载体是否溢出:</label>
+                        <select name="isCarrierOverflow" id="isCarrierOverflow" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isTapDefect " style="width: 200px">
+                            门阀是否缺失:</label>
+                        <select name="isTapDefect " id="isTapDefect " data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isAerationNormal" style="width: 200px">
+                            曝气是否正常:</label>
+                        <select name="isAerationNormal" id="isAerationNormal" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLiftDeviceNormal" style="width: 200px">
+                            提升设备是否正常（如有）:</label>
+                        <select name="isLiftDeviceNormal" id="isLiftDeviceNormal" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isWaterLineNormal" style="width: 200px">
+                            各槽体水位是否正常</label>
+                        <select name="isWaterLineNormal" id="isWaterLineNormal" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>监控模块运行情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isMonitorNormal" style="width: 200px">
+                            监测模块运行是否正常:</label>
+                        <select name="isMonitorNormal" id="isMonitorNormal" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>浮渣厚度/cm</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="inclusionRemoval_F">
+                            夹杂物去除槽:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="inclusionRemoval_F" id="inclusionRemoval_F" disabled="disabled"></textarea>
+                        </div>
+
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="anaerobicFilter_F">
+                            厌氧虑槽:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="anaerobicFilter_F" id="anaerobicFilter_F"
+                                disabled="disabled"></textarea>
+                        </div>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="settlingChamber_F">
+                            沉淀槽:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="settlingChamber_F" id="settlingChamber_F"
+                                disabled="disabled"></textarea>
+                        </div>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>污泥厚度/cm</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="inclusionRemoval_D">
+                            夹杂物去除槽:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="inclusionRemoval_D" id="inclusionRemoval_D" disabled="disabled"></textarea>
+                        </div>
+
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="anaerobicFilter_D">
+                            厌氧虑槽:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="anaerobicFilter_D" id="anaerobicFilter_D"
+                                disabled="disabled"></textarea>
+                        </div>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="settlingChamber_D">
+                            沉淀槽:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="settlingChamber_D" id="settlingChamber_D"
+                                disabled="disabled"></textarea>
+                        </div>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>备注
+                        </h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="maintainers">
+                            巡检人员:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="maintainers" id="maintainers" disabled="disabled"></textarea>
+                        </div>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="recorder">
+                            记录人员:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="recorder" id="recorder" disabled="disabled"></textarea>
+                        </div>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="meterNum">
+                            电表读数:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="meterNum" id="meterNum" disabled="disabled"></textarea>
+                        </div>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="remark">
+                            说明:</label>
+                        <div>
+                            <textarea cols="40" rows="20" name="remark" id="remark"
+                                disabled="disabled"></textarea>
+                        </div>
+                    </li>
+                </ul>
+            <ul data-role="listview" data-inset="true">
+                <li class="ui-field-contain">
+                    <label for="GPS" style="width: 200px">
+                        当前位置:</label>
+                    <div>
+                        <textarea cols="40" rows="20" name="GPS" id="GPS" disabled="disabled" class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-state-disabled ui-textinput-autogrow"></textarea>
+                    </div>
+
+                </li>
+            </ul>
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">
+                    <h1>巡检情况</h1>
+                </li>
+                <li class="ui-field-contain">
+                    <label for="taskStatusName">
+                        巡检结果:</label>
+                    <div>
+                        <textarea cols="40" rows="20" name="taskStatusName" id="taskStatusName" disabled="disabled"></textarea>
+                    </div>
+                </li>
+                <li class="ui-field-contain">
+                    <label for="responsibleParty">
+                        责任方:</label>
+                    <div>
+                        <textarea cols="40" rows="20" name="responsibleParty" id="responsibleParty" disabled="disabled"></textarea>
+                    </div>
+                </li>
+                <li class="ui-field-contain">
+                    <label for="damagedContent">
+                        损坏内容:</label>
+                    <div>
+                        <textarea cols="40" rows="20" name="damagedContent" id="damagedContent" disabled="disabled"></textarea>
+                    </div>
+                </li>
+                <li class="ui-field-contain">
+                    <label for="recoveryPeople">
+                        恢复人:</label>
+                    <div>
+                        <textarea cols="40" rows="20" name="recoveryPeople" id="recoveryPeople"
+                                disabled="disabled"></textarea>
+                    </div>
+                </li>
+                <li class="ui-field-contain">
+                    <label for="isRecovery" style="width: 200px">
+                        是否恢复:</label>
+                    <select name="isRecovery" id="isRecovery" data-role="slider" disabled="disabled">
+                        <option value="0">否</option>
+                        <option value="1" selected>是</option>
+                    </select>
+                </li>
+                <li class="ui-field-contain">
+                    <label for="recoveryTime">
+                        恢复时间:</label>
+                    <div>
+                        <textarea cols="40" rows="20" name="recoveryTime" id="recoveryTime"
+                                disabled="disabled"></textarea>
+                    </div>
+                </li>
+            </ul>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-c">
+                        <a id="aSave" data-ajax="false" class="ui-shadow ui-btn ui-corner-all" style="display: none;">保存</a>
+                    </div>
+                </div>
+            </div>
+            <div id="divImage" onmouseout='mouseOut()' class='float_div'></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

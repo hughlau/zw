@@ -1,0 +1,94 @@
+﻿body div.divArcGISLocateControl
+{
+	position:absolute;
+	left: 271px;
+	top: 163px;
+	width:250px;
+	height:110px;
+	z-index:2;
+	background-color: #FFFFFF;
+	border: 1px solid #1477C1;
+	display: none;
+	opacity:0.9
+}
+
+body div.divArcGISLocateControl div.jQE_Container_Absolute
+{
+    width: 100%;
+    height: 100%;
+}
+
+body div.divArcGISLocateControl div.jQE_Container_Absolute .title 
+{
+   
+    z-index: 1;
+	height: 30px;
+	background2:url(images/divModuleNameBackground.png) repeat scroll center center transparent;
+	background:#5797d6;
+}
+body div.divArcGISLocateControl div.jQE_Container_Absolute .title_tit {
+	float: left;
+	height: 30px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	line-height: 30px;
+	color: #FFFFFF;
+	padding-left: 12px;
+}
+body div.divArcGISLocateControl div.jQE_Container_Absolute .title_close {
+	background-image: url(Images/close.png);
+	height: 30px;
+	width: 30px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	float: right;
+	margin-right: 4px;
+	cursor:pointer;
+}
+
+body div.divArcGISLocateControl div.jQE_Container_Absolute .serbtn {
+	background-color: #e6effa;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #b1d4f6;
+	padding: 8px;
+	height: 32px;
+}
+body div.divArcGISLocateControl div.jQE_Container_Absolute .serbtn ul {
+	margin: 0px;
+	padding: 0px;
+}
+body div.divArcGISLocateControl div.jQE_Container_Absolute .serbtn li {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	float: left;
+}
+body div.divArcGISLocateControl div.jQE_Container_Absolute .serbtn li a {
+	height: 30px;
+	width: 30px;
+	border: 1px solid #b1d4f6;
+	display: block;
+	background-image: url(Images/serbtnbg.png);
+	background-repeat: repeat-x;
+	margin-right: 4px;
+}
+body div.divArcGISLocateControl div.jQE_Container_Absolute .serbtn li a:hover {
+	height: 30px;
+	width: 30px;
+	border: 1px solid #b1d4f6;
+	display: block;
+	background-image: url(Images/serbtnbg_h.png);
+	background-repeat: repeat-x;
+	margin-right: 4px;
+}
+body div.divArcGISLocateControl div.jQE_Container_Absolute .jieguo 
+{
+  
+	padding: 8px;
+	line-height: 15px;
+	
+}
+
+
+	

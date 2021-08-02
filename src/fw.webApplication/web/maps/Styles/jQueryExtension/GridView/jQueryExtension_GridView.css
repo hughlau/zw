@@ -1,0 +1,571 @@
+﻿.classGridViewNumber {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+.classGridViewNoWrap {
+    white-space: nowrap;
+}
+body Div.jQueryExtension_UI_GridView
+{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    -webkit-text-size-adjust:none;
+    text-align: left;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead
+{
+    position: relative;
+    width: 100%;
+    min-height:28px;
+    border: 1px solid #80a8d0;
+    border-left: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    background: url(Images/Standard__jQueryExtension_UI_GridView_Head.png) repeat-x scroll 0px 0px transparent;
+    overflow: hidden;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead.ArrowLeftBorder
+{
+    border-left: 1px solid #80a8d0;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead.ArrowRightBorder
+{
+    border-left: 1px solid #d5d5d5;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer
+{
+    float: left;
+    white-space: nowrap;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead
+{
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView_Head.png) repeat-x scroll 0px 0px transparent;
+    height: 28px;
+    line-height: 28px;
+    text-align: left;
+    vertical-align: middle;    
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead
+{
+    color: #555555;
+    white-space: nowrap;
+    border-right: 1px solid #d5d5d5;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThTableColumnSet
+{
+    white-space: nowrap;
+    border-right: 1px solid #80a8d0;
+    text-align: center;
+    width: 20px;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivColumnSet
+{
+    clear:both;
+    width: 20px; 
+    height: 28px;    
+    margin-top:-28px;
+    float:right; 
+    cursor:pointer;    
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivColumnResize
+{
+    clear:both;
+    width: 5px; 
+    height: 28px;    
+    margin-top:-28px;
+    float:right; 
+    cursor:w-resize;    
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivColumnSetHover
+{
+    border-left: 1px solid #80a8d0;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivColumnSet_ColumnSet
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll 1px 5px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivColumnSet_ColumnSet:hover
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll 1px -20px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivColumnSet_SortType_Asc
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -119px -41px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivColumnSet_SortType_Desc
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -144px -41px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivColumnSet_SortType_Inherit
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -169px -41px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivHead
+{
+    border-width: 0px;
+    white-space: nowrap;
+    text-indent:5px;
+    overflow: hidden;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThTableColumnSet Div.jQueryExtension_UI_GridView_TrHead_ThTableColumnSet_divTableColumnSet
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll 1px 0px transparent;
+    width: 20px;
+    height: 17px;
+    margin: 0px 0px;
+    white-space: nowrap;
+    cursor:pointer;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThTableColumnSet Div.jQueryExtension_UI_GridView_TrHead_ThTableColumnSet_divTableColumnSet:hover
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll 1px -25px transparent;
+}
+
+
+
+
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot
+{
+    position: relative;
+    width: 100%;
+    min-height:30px;
+    border: 1px solid #80a8d0;
+    background: url(Images/Standard__jQueryExtension_UI_GridView_Foot.png) repeat-x scroll 0px 0px transparent;
+    overflow: hidden;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot
+{
+    width: 100%;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView_Foot.png) repeat-x scroll 0px -125px transparent;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    vertical-align: middle;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootLeft
+{
+    white-space: nowrap;
+    text-align: left;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootLeft span
+{
+    white-space: nowrap;
+    margin: 0px 5px;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootLeft span.jQueryExtension_UI_GridView_trFoot_tdFootLeft_spanFootRefresh
+{
+    white-space: nowrap;
+    cursor:pointer;
+    margin:0px 0px 0px 5px;
+    padding:2px 5px;
+    background: url(Images/arrow_refresh.png) no-repeat scroll 0px 0px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootLeft input.jQueryExtension_UI_GridView_trFoot_tdFootLeft_inputFootPageSize
+{
+    text-align:right;
+    width:6px;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootLeft input.jQueryExtension_UI_GridView_trFoot_tdFootLeft_inputFootPageNow
+{
+    text-align:right;
+    width:6px;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootCenter
+{
+    white-space: nowrap;
+    text-align: center;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootCenter Div.jQueryExtension_UI_GridView_trFoot_tdFootCenter_DivFootLoading
+{
+    background-image: url(Images/Standard__jQueryExtension_UI_GridView_FootLoading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 16px;
+    height: 16px;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootRight
+{
+    white-space: nowrap;
+    text-align: right;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootRight a
+{
+    white-space: nowrap;
+    margin: 0px 5px;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivFoot Table.jQueryExtension_UI_GridView_TableFoot tfoot.jQueryExtension_UI_GridView_TfootFoot tr.jQueryExtension_UI_GridView_trFoot td.jQueryExtension_UI_GridView_trFoot_tdFootRight a.jQueryExtension_UI_GridView_trFoot_tdFootRight_aPageChange
+{
+    cursor: pointer;
+    color: Blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody
+{
+    width: 100%;
+    position: relative;
+    border: 1px solid #80a8d0;
+    border-top: 1px solid #d5d5d5;
+    border-left: 1px solid #e7f5fb;
+    margin: -1px 0px;
+    overflow: auto;
+    background-color: #f0f5ff;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody.ArrowLeftBorder
+{
+    border-left: 1px solid #80a8d0;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody.ArrowRightBorder
+{
+    border-left: 1px solid #d5d5d5;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody
+{
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow
+{
+    height: 28px;
+    line-height: 28px;
+    text-align: left;
+    cursor: pointer;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRowOdd
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView_TbodyBody_RowOdd.png) repeat scroll 0px 0px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRowAlternating
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView_TbodyBody_RowAlternating.png) repeat scroll 0px 0px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRowSelected,body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRowHover
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView_TbodyBody_RowSelected.png) repeat scroll 0px 0px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow td.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow
+{
+    border-right: 1px solid #e7f5fb;
+    border-bottom: 1px solid #e7f5fb;
+    white-space: nowrap;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow td.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRowSelected
+{
+    background: url();
+    background-color:Red;
+    color:White;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow td.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow Div.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow_DivRowArrowhead
+{
+    width: 20px;
+    text-align: center;
+    margin: 0px 0px;
+    white-space: nowrap;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow td.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow Div.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow_DivRowArrowheadSelected
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll 7px -41px transparent;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow td.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow Div.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow_DivRow
+{
+    text-indent:5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivHead table tr td,
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow td.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow Div.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow_DivRow table tr td
+{
+    text-indent:5px;
+    border-right: 1px solid #e7f5fb;
+    border-bottom: 1px solid #e7f5fb;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivHead table tr td.Right,
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow td.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow Div.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow_DivRow table tr td.Right
+{
+    border-right: 0px solid #e7f5fb;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHead Div.jQueryExtension_UI_GridView_DivHeadContainer Table.jQueryExtension_UI_GridView_TableHead thead.jQueryExtension_UI_GridView_TheadHead tr.jQueryExtension_UI_GridView_TrHead th.jQueryExtension_UI_GridView_TrHead_ThHead Div.jQueryExtension_UI_GridView_TrHead_ThHead_DivHead table tr td.Bottom,
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBody Table.jQueryExtension_UI_GridView_TableBody tbody.jQueryExtension_UI_GridView_TbodyBody tr.jQueryExtension_UI_GridView_TbodyBody_TrRow td.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow Div.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow_DivRow table tr td.Bottom
+{
+    border-bottom: 0px solid #e7f5fb;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivBodyLoading
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(Images/Standard__jQueryExtension_UI_GridView_BodyLoading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 0px;
+    display: none;
+}
+
+
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHeadAndBodyContainer
+{
+    position:absolute;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHeadAndBody Div.jQueryExtension_UI_GridView_DivColumnResizeRange
+{
+    position:absolute;
+    display:none;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHeadAndBody Div.jQueryExtension_UI_GridView_DivColumnResize_Left
+{
+    position:absolute;
+    display:none;
+    width:1px;
+    margin-left:-1px;
+    background-color:Black;
+}
+body Div.jQueryExtension_UI_GridView Div.jQueryExtension_UI_GridView_DivHeadAndBody Div.jQueryExtension_UI_GridView_DivColumnResize_Right
+{
+    position:absolute;
+    display:none;
+    width:1px;
+    margin-right:-1px;
+    background-color:Black;
+}
+
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet
+{
+    position: absolute;
+    border: 1px solid #80a8d0;
+    background-color:White;
+    width:150px;
+    display: none;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet
+{    
+    height: 25px;
+    border-bottom: 1px solid #80a8d0;    
+    background: url(Images/Standard__jQueryExtension_UI_GridView_RepeatX.png) repeat-x scroll 0px -192px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Left
+{
+    line-height:25px;
+    float:left;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Left li
+{
+    list-style:none;
+    float:left;
+     width:20px;
+     height:25px;
+     cursor:pointer;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Left li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Lock
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -22px 4px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Left li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Unlock
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -47px 4px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right
+{
+    line-height:23px;
+    float:right;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li
+{
+    list-style:none;
+     float:left;
+     margin-left:10px;
+     width:20px;
+     height:25px;
+     cursor:pointer;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_Asc
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -121px 6px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_Asc:hover,body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_AscSelected
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -121px -19px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_Desc
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -146px 6px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_Desc:hover,body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_Desc.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_DescSelected
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -146px -19px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_Inherit
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -171px 6px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_Inherit:hover,body Div.jQueryExtension_UI_GridView_DivTableColumnSet div.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet ul.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_Right li.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_Inherit.jQueryExtension_UI_GridView_DivTableColumnSet_SingleColumnSet_SortType_InheritSelected
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -171px -19px transparent;
+}
+
+
+
+
+
+
+
+
+
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet table
+{
+    clear:both;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet table tbody tr
+{    
+    line-height:24px;
+    cursor:pointer;
+    background: url(Images/Standard__jQueryExtension_UI_GridView_RepeatX.png) repeat-x scroll 0px -256px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet table tbody tr:hover,body Div.jQueryExtension_UI_GridView_DivTableColumnSet table tbody tr.jQueryExtension_UI_GridView_DivTableColumnSet_TrSelected
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView_RepeatX.png) repeat-x scroll 0px -288px transparent;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet table tbody tr td
+{
+    border-bottom: 1px solid #c9e1ed;
+}
+body Div.jQueryExtension_UI_GridView_DivTableColumnSet table tbody tr td div
+{
+    width:100%;
+    white-space: nowrap;
+    overflow:hidden;
+}
+
+
+
+body Div.jQueryExtension_UI_GridView_ColumnDrag
+{
+    border: 1px solid #eea430;
+    white-space: nowrap;
+    padding:0px 5px 0px 25px;
+    overflow: hidden;
+    height:25px;
+    line-height:25px;
+    text-align:left;
+    background-color:#fff4ca;
+}
+body Div.jQueryExtension_UI_GridView_ColumnDrag.jQueryExtension_UI_GridView_ColumnDrag_Lock
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -195px 4px #fff4ca;
+}
+body Div.jQueryExtension_UI_GridView_ColumnDrag.jQueryExtension_UI_GridView_ColumnDrag_Unlock
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -195px -21px #fff4ca;
+}
+body Div.GridView_DragHintTop
+{
+    width:11px;
+    height:12px;
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -150px -25px transparent;
+}
+body Div.GridView_DragHintBottom
+{
+    width:11px;
+    height:12px;
+    background: url(Images/Standard__jQueryExtension_UI_GridView.png) no-repeat scroll -125px -25px transparent;
+}
+div.tableHeaderContainer
+{
+    background:transparent url("Images/Standard__jQueryExtension_UI_GridView_Head.png") repeat-x scroll 0 bottom;
+    border-bottom:1px solid #d5d5d5; 
+    width:99%;
+    margin-left:auto;
+    margin-right:auto;
+    border-left:1px solid #97b4d1;
+    border-right:1px solid #97b4d1;
+    border-top:1px solid #97b4d1;
+}
+div.tableBodyContainer
+{
+    width:99%;
+    margin-left:auto;
+    margin-right:auto;
+    border-left:1px solid #97b4d1;
+    border-right:1px solid #97b4d1;
+    border-bottom:1px solid #97b4d1;
+    background-color:rgb(240, 245, 255);
+}
+table.tableDefault 
+{
+    border-collapse:collapse;
+}
+table.tableDefault thead tr
+{
+    background:transparent url("Images/Standard__jQueryExtension_UI_GridView_Head.png") repeat-x scroll 0 bottom; 
+}
+table.tableDefault thead tr.noBackground
+{
+    background-color:transparent;
+    background-image:none; 
+}
+table.tableDefault thead th.bottomline
+{
+    border-bottom:1px solid #d5d5d5;
+}
+table.tableDefault thead th div
+{
+    white-space:nowrap; 
+}
+table.tableDefault thead th
+{
+    border-right:1px solid #d5d5d5;
+    color:#555555;
+    white-space:nowrap;  
+    line-height:28px;
+    height:28px;
+    text-align:center;
+}
+table.tableDefault tbody tr.odd
+{
+    background:transparent url("Images/Standard__jQueryExtension_UI_GridView_TbodyBody_RowOdd.png") repeat-x scroll 0 bottom;
+}
+table.tableDefault tbody tr.even
+{
+    background:transparent url("Images/Standard__jQueryExtension_UI_GridView_TbodyBody_RowAlternating.png") repeat-x scroll 0 bottom;
+}
+table.tableDefault tbody tr.hover
+{
+    background: url(Images/Standard__jQueryExtension_UI_GridView_TbodyBody_RowSelected.png) repeat scroll 0px 0px transparent;
+}
+table.tableDefault tbody td
+{
+    border-right:1px solid #e7f5fb;
+    border-bottom:1px solid #e7f5fb;
+    white-space:nowrap;
+    line-height:28px;
+    height:28px;
+    text-align:center;
+}
+table.tableDefault tbody td div
+{
+    overflow:hidden;
+    white-space:nowrap;
+    color:#0000ff;
+    width:90%;
+}
+table.tableDefault tbody td.noBottomline
+{
+    border-bottom-style:none;
+}

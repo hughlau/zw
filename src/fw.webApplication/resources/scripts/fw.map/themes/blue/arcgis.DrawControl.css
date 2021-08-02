@@ -1,0 +1,180 @@
+﻿body div.divArcGISDrawControl
+{
+    position:absolute;
+    left: 280px;
+    top: 163px;
+    width:240px;
+    height:240px;
+    z-index:2;
+    background-color: #FFFFFF;
+    border: 1px solid #5797D5;
+    display: none;
+}
+
+body div.divArcGISDrawControl div.jQE_Container_Absolute
+{
+    width: 100%;
+    height: 100%;
+}
+
+body div.divArcGISDrawControl div.jQE_Container_Absolute .title 
+{
+   
+    z-index: 1;
+	height: 30px;
+	background:url(images/divModuleNameBackground.png) repeat scroll center center transparent;
+}
+body div.divArcGISDrawControl div.jQE_Container_Absolute .title_tit {
+	float: left;
+	height: 30px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	line-height: 30px;
+	color: #FFFFFF;
+	padding-left: 12px;
+}
+body div.divArcGISDrawControl div.jQE_Container_Absolute .title_close {
+	background-image: url(images/close.png);
+	height: 30px;
+	width: 30px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	float: right;
+	margin-right: 4px;
+	cursor:pointer;
+}
+
+body div.divArcGISDrawControl div.jQE_Container_Absolute .serbtn {
+	background-color: #e6effa;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #b1d4f6;
+	padding: 8px;
+	height: 32px;
+}
+body div.divArcGISDrawControl div.jQE_Container_Absolute .serbtn1 {
+	background-color: #e6effa;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #b1d4f6;
+	padding: 8px;
+	height: 80px;
+}
+body div.divArcGISDrawControl div.jQE_Container_Absolute .serbtn ul {
+	margin: 0px;
+	padding: 0px;
+}
+body div.divArcGISDrawControl div.jQE_Container_Absolute .serbtn li {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	float: left;
+}
+body div.divArcGISDrawControl div.jQE_Container_Absolute .serbtn li a {
+	height: 30px;
+	width: 30px;
+	border: 1px solid #b1d4f6;
+	display: block;
+	background-image: url(images/serbtnbg.png);
+	background-repeat: repeat-x;
+	margin-right: 4px;
+}
+body div.divArcGISDrawControl div.jQE_Container_Absolute .serbtn li a:hover {
+	height: 30px;
+	width: 30px;
+	border: 1px solid #b1d4f6;
+	display: block;
+	background-image: url(images/serbtnbg_h.png);
+	background-repeat: repeat-x;
+	margin-right: 4px;
+}
+body div.divArcGISDrawControl div.jQE_Container_Absolute .jieguo 
+{
+  
+	padding: 8px;
+	line-height: 15px;
+	
+}
+body .fullExtent
+{
+    position: absolute;
+    top: 5px;
+    left: 101px;
+    background:url(images/home_page_icon.png);
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 2;
+}
+body .fullExtent:hover
+{
+     background:url(images/home_page_icon_hover.png);  
+}
+
+/*搜索框*/
+     
+body #divSearchAllPoints .divSearchLogo
+{
+    position:absolute;
+    top: -189px;
+    left: 124px;
+    width: 36px;
+    height:36px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color:#5797D6;
+    border-radius:3px;
+    border-top-left-radius2:3px;
+    z-index: 1;
+    background: url(Images/magnifier.png) no-repeat scroll center center transparent;
+}
+body #divSearchAllPoints .divSearchLogo:hover
+{
+     background:url(images/magnifier_hover.png);    
+}
+body #divSearchAllPoints .divSearchLogo .divSearchImage
+{
+    width: 36px;
+    height: 36px;
+    background: url(Images/magnifier.png) no-repeat scroll center center transparent;
+}
+body #divSearchAllPoints .divSearchLogo .divSearchImage:hover
+{
+    background: url(Images/magnifier_hover.png) no-repeat scroll center center transparent;  
+}
+// 放大缩小
+#divArcGISMap_zoom_slider
+{
+    border-width: 0px ;
+}
+body .esriSimpleSlider div
+{
+    width: 36px;
+    height: 36px;
+    position: absolute; 
+}
+body #divArcGISMap_zoom_slider .esriSimpleSliderIncrementButton
+{
+    background:  url(images/home_plus_icon.png) ;
+    position:absolute;
+    top: -4px;
+    left: -3px;
+    border-bottom-width: 0px ;
+}
+body #divArcGISMap_zoom_slider .esriSimpleSliderIncrementButton:hover
+{
+      background:  url(images/home_plus_icon_hover.png);
+}
+body #divArcGISMap_zoom_slider .esriSimpleSliderDecrementButton
+{
+    background:  url(images/home_minus_icon.png) ;
+     position:absolute;
+    top: -4px;
+    left: 41px;
+    border-bottom-width: 0px ;
+}
+body #divArcGISMap_zoom_slider .esriSimpleSliderDecrementButton:hover
+{
+      background:  url(images/home_minus_icon_hover.png);
+}

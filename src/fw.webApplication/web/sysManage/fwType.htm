@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwType.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="form" style="padding-top: 10px;">
+        <fieldset id="fieldsetType" style="width: 90%; margin: 10px auto; border: solid 1px #aaa;">
+            <legend style="margin-left: 32px;"><span><a>类型基本信息</a></span></legend>
+            <div style="width: 90%; margin: 0px auto; padding: 10px 10px;">
+                <input class="mini-hidden" name="objectID" />
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            类型：
+                        </td>
+                        <td>
+                            <input id="mObjType" name="mObjType" class="mini-combobox" valuefield="code" textfield="name"
+                                value="O" required="true" onvaluechanged="mObjType_onvaluechanged" />
+                        </td>
+                        <td>
+                            <input id="schemaL" class="mini-textbox asLabel" value="架构：" readonly="true" style="width: auto;
+                                display: none;" />
+                        </td>
+                        <td>
+                            <input id="schema" name="schemaName" class="mini-textbox" style="width: 90%; display: none;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">
+                            类型名：
+                        </td>
+                        <td style="width: 35%;">
+                            <input name="mName" class="mini-textbox" style="width: 90%;" required="true" />
+                        </td>
+                        <td style="width: 15%;">
+                            类型中文名：
+                        </td>
+                        <td style="width: 35%;">
+                            <input name="mChineseName" class="mini-textbox" style="width: 90%;" required="true" />
+                        </td>
+                    </tr>
+                    <tr class="dbPropertys" style="display: none;">
+                        <td>
+                            实体类型：
+                        </td>
+                        <td>
+                            <input name="mEntityType" class="mini-combobox" valuefield="mMetadataToken" textfield="mName"
+                                selectonfocus="true" maxlength="128" style="width: 90%;" allowinput="true" valuefromselect="true"
+                                ondrawcell="mPropertyType_ondrawcell" onkeyup="mPropertyType_onkeyup" />
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            备注：
+                        </td>
+                        <td colspan="3">
+                            <input name="mRem" class="mini-textarea" style="width: 96%;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divButton" style="text-align: right; padding: 10px;">
+                <a id="insertOrUpdate" class="mini-button" iconcls="icon-save" style="width: 60px;
+                    margin-right: 20px;" onclick="insertOrUpdate">保存</a> <a id="cancel" class="mini-button"
+                        iconcls="icon-cancel" style="width: 60px; margin-right: 20px;" onclick="onCancel()">
+                        取消</a>
+            </div>
+        </fieldset>
+        <fieldset id="fieldsetProperty" style="width: 90%; margin: 10px auto; border: solid 1px #aaa;">
+            <legend style="margin-left: 32px;"><span><a>属性列表</a></span></legend>
+            <div style="width: 90%; margin: 0px auto; padding: 10px 10px;">
+                <div id="conditionFormMFWPropertyInfo" class="mini-toolbar form" style="width: 100%;
+                    border-width: 0px 0px 0px 0px; background-image: url(); background-color: White;">
+                    <table>
+                        <tr>
+                            <td id="functionListMFWPropertyInfo" style="width: 100%; white-space: nowrap; text-align: left;">
+                                <a class="mini-button" iconcls="icon-add" onclick="insertRowMFWPropertyInfo();" data-options="{minSelectedCount:-1}">
+                                    增加</a> <a id="del" class="mini-button" iconcls="icon-remove" onclick="delMFWPropertyInfo();"
+                                        data-options="{minSelectedCount:1}">删除</a> <a id="moveItemUp" class="mini-button"
+                                            iconcls="icon-upload" onclick="moveItemMFWPropertyInfo('up');" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                                            向上</a> <a id="moveItemDown" class="mini-button" iconcls="icon-download" onclick="moveItemMFWPropertyInfo('down');"
+                                                data-options="{minSelectedCount:1,maxSelectedCount:1}">向下</a> <span class="separator">
+                                                </span><a id="insertOrUpdateMFWPropertyInfo" class="mini-button" iconcls="icon-edit"
+                                                    onclick="insertOrUpdateMFWPropertyInfo();">保存</a>
+                            </td>
+                            <td style="white-space: nowrap; text-align: right;">
+                                <input id="keywordMFWPropertyInfo" name="keyword" class="mini-textbox" selectonfocus="true"
+                                    emptytext="请输入卡片类型名称" style="width: 160px; display: none;" onenter="onSearchMFWPropertyInfo();" />
+                                <a class="mini-button" iconcls="icon-reload" onenter="onSearchMFWPropertyInfo();"
+                                    onclick="onSearchMFWPropertyInfo();">刷新</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="datagridMFWPropertyInfo" class="mini-datagrid" style="width: 100%; height: 256px;
+                    margin: 0px auto;" idfield="metadataToken" multiselect="true" showcolumnsmenu="true"
+                    frozenstartcolumn="0" frozenendcolumn="1" showpager="false" allowcelledit="true"
+                    allowcellselect="true" onselectionchanged="datagridMFWPropertyInfo_SelectionChanged">
+                    <div property="columns">
+                        <div type="indexcolumn" width="40">
+                        </div>
+                        <div type="checkcolumn" width="40">
+                        </div>
+                        <div name="mName" field="mName" width="150" headeralign="center" align="left" vtype="required">
+                            字段名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="256"
+                                style="width: 100%;" /></div>
+                        <div name="mMapName" field="mMapName" width="120" headeralign="center">
+                            映射名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="256"
+                                style="width: 100%;" /></div>
+                        <div field="mChineseName" width="120" headeralign="center" vtype="required">
+                            字段中文名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="128"
+                                style="width: 100%;" /></div>
+                        <div field="mPropertyType" displayfield="mPropertyTypeName" width="200" headeralign="center"
+                            vtype="required" renderer="datagridMFWPropertyInfo_renderer">
+                            数据类型
+                            <input property="editor" class="mini-combobox" valuefield="mMetadataToken" textfield="mName"
+                                selectonfocus="true" maxlength="128" style="width: 100%;" popupwidth="400" allowinput="true"
+                                valuefromselect="true" ondrawcell="mPropertyType_ondrawcell" onkeyup="mPropertyType_onkeyup" />
+                        </div>
+                        <div field="mPropertyTypeName" width="60" headeralign="center" align="center" renderer="datagridMFWPropertyInfo_renderer">
+                            查看类型</div>
+                        <div name="mDataLen" field="mDataLen" width="60" headeralign="center">
+                            长度
+                            <input property="editor" class="mini-spinner" selectonfocus="true" minvalue="0" maxvalue="2147483647"
+                                style="width: 100%;" /></div>
+                        <div name="mIsPK" field="mIsPK" type="checkboxcolumn" truevalue="1" falsevalue="0"
+                            width="60" headeralign="center">
+                            是否主键</div>
+                        <div field="mIsNull" type="checkboxcolumn" truevalue="1" falsevalue="0" width="60"
+                            headeralign="center">
+                            是否为空</div>
+                        <div field="mDefaultValue" displayfield1="mDefaultText1" width="100" headeralign="center"
+                            renderer1="datagridMFWPropertyInfo_renderer">
+                            默认值
+                            <input property="editor" class="mini-combobox" valuefield="code" textfield="name"
+                                selectonfocus="true" maxlength="128" style="width: 100%;" allowinput="true" data="fw.fwDataTable.FWDataTableHelper.toEntityList($.page.getDataSource($.page.dataSourceSettingsDictionary.mObjType111).data)" />
+                        </div>
+                        <div name="mIsUpdateResetDefaultValue" field="mIsUpdateResetDefaultValue" type="checkboxcolumn"
+                            truevalue="1" falsevalue="0" width="60" headeralign="center">
+                            是否更新重置</div>
+                        <div name="mTestValue" field="mTestValue" displayfield="mTestText" width="100" headeralign="center">
+                            测试值
+                            <input property="editor" class="mini-combobox" valuefield="code" textfield="name"
+                                selectonfocus="true" maxlength="128" style="width: 100%;" allowinput="true" data="fw.fwDataTable.FWDataTableHelper.toEntityList($.page.getDataSource($.page.dataSourceSettingsDictionary.mObjType111).data)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset id="fieldsetMethod" style="width: 90%; margin: 10px auto; border: solid 1px #aaa;">
+            <legend style="margin-left: 32px;"><span><a>方法列表</a></span></legend>
+            <div style="width: 90%; margin: 0px auto; padding: 10px 10px;">
+                <div id="conditionFormMFWMethodInfo" class="mini-toolbar form" style="width: 100%;
+                    border-width: 0px 0px 0px 0px; background-image: url(); background-color: White;">
+                    <table>
+                        <tr>
+                            <td id="functionListMFWMethodInfo" style="width: 100%; white-space: nowrap; text-align: left;">
+                                <a class="mini-button" iconcls="icon-add" onclick="insertRowMFWMethodInfo();" data-options="{minSelectedCount:-1}">
+                                    增加</a> <a id="A1" class="mini-button" iconcls="icon-remove" onclick="delMFWMethodInfo();"
+                                        data-options="{minSelectedCount:1}">删除</a> <a id="A2" class="mini-button" iconcls="icon-upload"
+                                            onclick="moveItemMFWMethodInfo('up');" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                                            向上</a> <a id="A3" class="mini-button" iconcls="icon-download" onclick="moveItemMFWMethodInfo('down');"
+                                                data-options="{minSelectedCount:1,maxSelectedCount:1}">向下</a> <span class="separator">
+                                                </span><a id="insertOrUpdateMFWMethodInfo" class="mini-button" iconcls="icon-edit"
+                                                    onclick="insertOrUpdateMFWMethodInfo();">保存</a>
+                            </td>
+                            <td style="white-space: nowrap; text-align: right;">
+                                <input id="keywordMFWMethodInfo" name="keyword" class="mini-textbox" selectonfocus="true"
+                                    emptytext="请输入卡片类型名称" style="width: 160px; display: none;" onenter="onSearchMFWMethodInfo();" />
+                                <a class="mini-button" iconcls="icon-reload" onenter="onSearchMFWMethodInfo();" onclick="onSearchMFWMethodInfo();">
+                                    刷新</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="datagridMFWMethodInfo" class="mini-datagrid" style="width: 100%; height: 256px;
+                    margin: 0px auto;" idfield="metadataToken" multiselect="true" showcolumnsmenu="true"
+                    frozenstartcolumn="0" frozenendcolumn="1" showpager="false" allowcelledit="true"
+                    allowcellselect="true" onselectionchanged="datagridMFWMethodInfo_SelectionChanged">
+                    <div property="columns">
+                        <div type="indexcolumn" width="40">
+                        </div>
+                        <div type="checkcolumn" width="40">
+                        </div>
+                        <div name="mName" field="mName" width="150" headeralign="center" align="left" vtype="required">
+                            方法名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="256"
+                                style="width: 100%;" /></div>
+                        <div name="mMapName" field="mMapName" width="120" headeralign="center">
+                            方法映射名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="256"
+                                style="width: 100%;" /></div>
+                        <div field="mChineseName" width="120" headeralign="center" vtype="required">
+                            方法中文名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="128"
+                                style="width: 100%;" /></div>
+                        <div field="mReturnType" displayfield="mReturnTypeName" width="200" headeralign="center"
+                            vtype="required" renderer="datagridMFWMethodInfo_renderer">
+                            数据类型
+                            <input property="editor" class="mini-combobox" valuefield="mMetadataToken" textfield="mName"
+                                selectonfocus="true" maxlength="128" style="width: 100%;" popupwidth="400" allowinput="true"
+                                valuefromselect="true" ondrawcell="mReturnType_ondrawcell" onkeyup="mReturnType_onkeyup" />
+                        </div>
+                        <div field="mReturnTypeName" width="60" headeralign="center" align="center" renderer="datagridMFWMethodInfo_renderer">
+                            查看类型</div>
+                        <div field="mFWParameterInfoList" width="100" headeralign="center" align="center"
+                            renderer="datagridMFWMethodInfo_renderer">
+                            参数</div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>

@@ -1,0 +1,497 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="Expires" content="0" />
+    <title></title>
+    <script src="../style/camera/jquery-1.7.1.min.js"></script>
+    <script src="../style/camera/webVideoCtrl.js"></script>
+    <link href="../style/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        #Yuntai .table {
+            border-spacing: 0 0.5rem;
+        }
+
+        #Yuntai .table td {
+            border: none !important;
+        }
+
+        #Yuntai .table .t1 {
+            width: 88px;
+        }
+
+        #Yuntai .table .t2 {
+            width: 150px;
+        }
+
+        div {
+            overflow-y: hidden;
+        }
+
+        #leftButton {
+            width: 30px;
+            height: 50px;
+            background: url(../../resources/scripts/fw.map/themes/blue/images/tdCantonStatisticsToggleBackground2.png) no-repeat scroll center center transparent;
+            margin-top: 5%;
+            border-radius: 5px;
+        }
+
+        #Yuntai {
+            margin-left: 9%;
+            display: none;
+        }
+
+        .divYuntai {
+            margin-top: 3%;
+            margin-left: 1%;
+        }
+
+        #rightButton {
+            width: 25px;
+            height: 35px;
+            background: url(../../resources/scripts/fw.map/themes/blue/images/tdCantonStatisticsToggleBackground1.png) no-repeat scroll center center transparent;
+            margin-left: 1%;
+            margin-top: 2%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pull-left" style="width: 80%;">
+            <div id="divPlugin" class="plugin"></div>
+            <div class="pull-left" id="leftButton"></div>
+            <div id="Yuntai">
+                <div class="pull-left table-responsive divYuntai">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <input type="button" class="btn btn-info" value="左上" onmousedown="mouseDownPTZControl(5);" onmouseup="mouseUpPTZControl();"/>
+                                <input type="button" class="btn btn-info" value="正上" onmousedown="mouseDownPTZControl(1);" onmouseup="mouseUpPTZControl();"/>
+                                <input type="button" class="btn btn-info" value="右上" onmousedown="mouseDownPTZControl(7);" onmouseup="mouseUpPTZControl();"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" class="btn btn-info" value="正左" onmousedown="mouseDownPTZControl(3);" onmouseup="mouseUpPTZControl();"/>
+                                <input type="button" class="btn btn-info" value="自动" onclick="mouseDownPTZControl(9);"/>
+                                <input type="button" class="btn btn-info" value="正右" onmousedown="mouseDownPTZControl(4);" onmouseup="mouseUpPTZControl();"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" class="btn btn-info" value="左下" onmousedown="mouseDownPTZControl(6);" onmouseup="mouseUpPTZControl();"/>
+                                <input type="button" class="btn btn-info" value="正下" onmousedown="mouseDownPTZControl(2);" onmouseup="mouseUpPTZControl();"/>
+                                <input type="button" class="btn btn-info" value="右下" onmousedown="mouseDownPTZControl(8);" onmouseup="mouseUpPTZControl();"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="pull-left table-responsive divYuntai">
+                    <table class="table">
+                        <tr>
+                            <td class="t1">云台速度:</td>
+                            <td class="t2">
+                                <select id="Select1" class="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t1">预置点号:</td>
+                            <td class="t2">
+                                <input id="Text1" type="text" class="form-control" value="1"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <input type="button" class="btn btn-default" value="设置" onclick="clickSetPreset();"/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="button" class="btn btn-default" value="调用" onclick="clickGoPreset();"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="pull-left table-responsive divYuntai">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <input type="button" class="btn btn-info" value="调焦+" onmousedown="PTZZoomIn()" onmouseup="PTZZoomStop()"></td>
+                            <td>
+                                <input type="button" class="btn btn-info" value="调焦-" onmousedown="PTZZoomout()" onmouseup="PTZZoomStop()"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" class="btn btn-info" value="聚焦+" onmousedown="PTZFocusIn()" onmouseup="PTZFoucusStop()"></td>
+                            <td>
+                                <input type="button" class="btn btn-info" value="聚焦-" onmousedown="PTZFoucusOut()" onmouseup="PTZFoucusStop()"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" class="btn btn-info" value="光圈+" onmousedown="PTZIrisIn()" onmouseup="PTZIrisStop()"></td>
+                            <td>
+                                <input type="button" class="btn btn-info" value="光圈-" onmousedown="PTZIrisOut()" onmouseup="PTZIrisStop()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="pull-left" id="rightButton">  
+                </div>
+            </div>
+        </div>
+
+        <div class="pull-right" style="margin-right: 4%;">
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickStartRealPlay();">开始预览</button>
+            </div>
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickStopRealPlay()">停止预览</button>
+            </div>
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickStartPlayback()">回放摄像</button>
+            </div>
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickPause()">暂停摄像</button>
+            </div>
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickResume()">恢复摄像</button>
+            </div>
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickPlaySlow()">减速播放</button>
+            </div>
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickPlayFast()">快速播放</button>
+            </div>
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickFullScreen()">全屏播放</button>
+            </div>
+            <br />
+            <div>
+                <button type="button" class="btn btn-lg btn-info" onclick="clickCapturePic()">抓取截图</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    
+    //云台控制的折叠，展出
+    $("#rightButton").click(function () {
+        $('#Yuntai').toggle(750);
+        $('#leftButton').toggle(1000);
+    });
+
+    $("#leftButton").click(function () {
+        $('#leftButton').toggle(750);
+        $('#Yuntai').toggle(1000);
+    });
+
+
+
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") !== -1) {
+            var str = url.substr(1);
+            var strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    var play = -1;//预览为0，回放为1
+    var oLiveView = {
+        iProtocol: 1,			// protocol 1：http, 2:https
+        szIP: GetRequest()["IPAddress"],	// protocol ip
+        szPort: "80",			// protocol port
+        szUsername: "admin",	// device username
+        szPassword: "crrc1234",	// device password
+        iStreamType: 1,			// stream 1：main stream  2：sub-stream  3：third stream  4：transcode stream
+        iChannelID: 1,			// channel no
+        bZeroChannel: false		// zero channel
+    };
+    var w = $(".container").width();
+    var h = $(".container").height();
+    $(function () {
+        // 检查插件是否已经安装过
+        var iRet = WebVideoCtrl.I_CheckPluginInstall();
+        if (-2 == iRet) {
+            var he = h * 0.8 + "px";
+            var wi = w * 0.8 + "px";
+            $("#divPlugin").css("height", he);
+            $("#divPlugin").css("width", wi);
+            $("#divPlugin").css("background-color", "#333");
+            alert("您的浏览器版本过高，不支持NPAPI插件！请用IE浏览器或者低版本Chrome浏览器！");
+            return;
+        } else if (-1 == iRet) {
+            alert("您还未安装过插件，双击开发包目录里的WebComponentsKit.exe安装！");
+            return;
+        }
+
+        var oPlugin = {
+            iWidth: w * 0.8,			// plugin width
+            iHeight: h * 0.8		// plugin height
+        };
+
+        // 全局保存当前选中窗口
+        var g_iWndIndex = 0;
+
+        // 初始化插件参数及插入插件
+        WebVideoCtrl.I_InitPlugin(oPlugin.iWidth, oPlugin.iHeight, {
+            bWndFull: true,//是否支持单窗口双击全屏，默认支持 true:支持 false:不支持
+            iWndowType: 1,
+            cbSelWnd: function (xmlDoc) {
+                g_iWndIndex = $(xmlDoc).find("SelectWnd").eq(0).text();
+            }
+        });
+        WebVideoCtrl.I_InsertOBJECTPlugin("divPlugin");
+
+        // 检查插件是否最新
+        if (-1 == WebVideoCtrl.I_CheckPluginVersion()) {
+            alert("检测到新的插件版本，双击开发包目录里的WebComponentsKit.exe升级！");
+            return;
+        }
+
+        // 登录设备
+        WebVideoCtrl.I_Login(oLiveView.szIP, oLiveView.iProtocol, oLiveView.szPort, oLiveView.szUsername, oLiveView.szPassword, {
+            success: function (xmlDoc) {
+                // 开始预览
+                WebVideoCtrl.I_StartRealPlay(oLiveView.szIP, {
+                    iStreamType: oLiveView.iStreamType,
+                    iChannelID: oLiveView.iChannelID,
+                    bZeroChannel: oLiveView.bZeroChannel
+                });
+                play = 0;
+            }
+        });
+
+        // 关闭浏览器
+        $(window).unload(function () {
+            WebVideoCtrl.I_Stop();
+        });
+    });
+
+    // 开始预览
+    function clickStartRealPlay() {
+        WebVideoCtrl.I_Stop();
+        WebVideoCtrl.I_StartRealPlay(oLiveView.szIP, {
+            iStreamType: oLiveView.iStreamType,
+            iChannelID: oLiveView.iChannelID,
+            bZeroChannel: oLiveView.bZeroChannel
+        });
+        play = 0;
+    }
+
+    //停止预览
+    function clickStopRealPlay() {
+        WebVideoCtrl.I_Stop();
+        play = -1;
+    }
+
+    // 暂停摄像
+    function clickPause() {
+        WebVideoCtrl.I_Pause();
+    }
+
+    // 恢复摄像
+    function clickResume() {
+        WebVideoCtrl.I_Resume();
+    }
+
+    //回放摄像
+    function clickStartPlayback() {
+        WebVideoCtrl.I_Stop();
+        WebVideoCtrl.I_StartPlayback(oLiveView.szIP, {
+            iChannelID: oLiveView.iChannelID
+        });
+        play = 1;
+    }
+
+    // 减速播放
+    function clickPlaySlow() {
+        WebVideoCtrl.I_PlaySlow();
+    }
+
+    // 快速播放
+    function clickPlayFast() {
+        WebVideoCtrl.I_PlayFast();
+    }
+
+    // 全屏播放
+    function clickFullScreen() {
+        WebVideoCtrl.I_FullScreen(true);
+    }
+
+    // 打开选择框 0：文件夹  1：文件
+    function clickOpenFileDlg(id, iType) {
+        var szDirPath = WebVideoCtrl.I_OpenFileDlg(iType);
+
+        if (szDirPath != -1 && szDirPath != "" && szDirPath != null) {
+            $("#" + id).val(szDirPath);
+        }
+    }
+
+    //抓图
+    function clickCapturePic() {
+        var xmlDoc = WebVideoCtrl.I_GetLocalCfg();
+        var CapturePath = $(xmlDoc).find("CapturePath").eq(0).text();
+        var PlaybackPicPath = $(xmlDoc).find("PlaybackPicPath").eq(0).text()
+        var szPicName = oLiveView.szIP + "_" + oLiveView.iChannelID + "_" + new Date().getTime();
+        var iRet = WebVideoCtrl.I_CapturePic(szPicName);
+        if (0 == iRet) {
+            if (play == 0) {
+                alert("抓图成功!,预览抓图在" + CapturePath + "中");
+            }
+            if (play == 1) {
+                alert("抓图成功!,回放抓图文件在" + PlaybackPicPath + "中");
+            }
+        } else {
+            alert("抓图失败！");
+        }
+    }
+
+    // PTZ控制 9为自动，1,2,3,4,5,6,7,8为方向PTZ
+    var g_bPTZAuto = false;
+    function mouseDownPTZControl(iPTZIndex) {
+        var iPTZSpeed = $("#ptzspeed").val();
+        if (9 == iPTZIndex && g_bPTZAuto) {
+            iPTZSpeed = 0;// 自动开启后，速度置为0可以关闭自动
+        } else {
+            g_bPTZAuto = false;// 点击其他方向，自动肯定会被关闭
+        }
+        WebVideoCtrl.I_PTZControl(iPTZIndex, false, {
+            iPTZSpeed: iPTZSpeed,
+            success: function (xmlDoc) {
+                if (9 == iPTZIndex) {
+                    g_bPTZAuto = !g_bPTZAuto;
+                }
+            },
+            error: function () {
+                alert("开启云台失败！");
+            }
+        });
+
+    }
+
+    // 方向PTZ停止
+    function mouseUpPTZControl() {
+        WebVideoCtrl.I_PTZControl(1, true, {
+            success: function (xmlDoc) {
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+    // 设置预置点
+    function clickSetPreset() {
+        var iPresetID = parseInt($("#preset").val(), 10);
+        WebVideoCtrl.I_SetPreset(iPresetID, {
+            success: function (xmlDoc) {
+            },
+            error: function () {
+                alert("设置预置点失败！");
+            }
+        });
+
+    }
+
+    // 调用预置点
+    function clickGoPreset() {
+        var iPresetID = parseInt($("#preset").val(), 10);
+        WebVideoCtrl.I_GoPreset(iPresetID, {
+            success: function (xmlDoc) {
+            },
+            error: function () {
+                alert("调用预置点失败！");
+            }
+        });
+    }
+
+    //调焦+
+    function PTZZoomIn() {
+        WebVideoCtrl.I_PTZControl(10, false, {
+            error: function () {
+                alert("调焦+失败！");
+            }
+        });
+    }
+
+    //调焦-
+    function PTZZoomout() {
+        WebVideoCtrl.I_PTZControl(11, false, {
+            error: function () {
+                alert("调焦-失败！");
+            }
+        });
+    }
+
+    //调焦停止
+    function PTZZoomStop() {
+        WebVideoCtrl.I_PTZControl(11, true);
+    }
+
+    //聚焦+
+    function PTZFocusIn() {
+        WebVideoCtrl.I_PTZControl(12, false, {
+            error: function () {
+                alert("聚焦+失败！");
+            }
+        });
+    }
+
+    //聚焦-
+    function PTZFoucusOut() {
+        WebVideoCtrl.I_PTZControl(13, false, {
+            error: function () {
+                alert("聚焦-失败！");
+            }
+        });
+    }
+
+    //聚焦停止
+    function PTZFoucusStop() {
+        WebVideoCtrl.I_PTZControl(12, true);
+    }
+
+    //光圈+
+    function PTZIrisIn() {
+        WebVideoCtrl.I_PTZControl(14, false, {
+            error: function () {
+                alert("光圈+失败！");
+            }
+        });
+    }
+
+    //光圈-
+    function PTZIrisOut() {
+        WebVideoCtrl.I_PTZControl(15, false, {
+            error: function () {
+                alert("光圈-失败！");
+            }
+        });
+    }
+
+    //光圈停止
+    function PTZIrisStop() {
+        WebVideoCtrl.I_PTZControl(14, true);
+    }
+
+</script>
+</body>
+</html>

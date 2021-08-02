@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>文件上传</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <link href="fileUpload.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="plupload/js/plupload.full.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var fileContentListJq = null;
+        var btnFileUploadJq = null;
+        var fileUploadSettings = {
+            uploadCount: 5//上传文件的个数
+            , extensions: "*"//允许上传文件的格式gif,jpg,jpeg
+            , maxLength: 1024 * 1024 * 5 //用来限定上传文件的大小，如果文件体积超过了该值，则不能被选取。值可以为一个数字，单位为b
+            , multiSelect: false//是否允许多选
+            , filterTitle: ""//过滤器的名称
+        };
+        $.page.pageInit = function () {
+            //获取设置值
+            $.page.appSettings = {
+                "uploadFolderPath": null
+            };
+        };
+        $.page.pageLoad = function () {
+            fileContentListJq = $.page.idJQ.fileContentList;
+            btnFileUploadJq = $.page.idJQ.btnFileUpload;
+            fileUploadSettings = {
+                uploadCount: parseInt(fw.fwObject.FWObjectHelper.hasValue($.page.params.uploadCount) ? $.page.params.uploadCount : fileUploadSettings.uploadCount, 10),
+                extensions: fw.fwObject.FWObjectHelper.hasValue($.page.params.extensions) ? $.page.params.extensions : fileUploadSettings.extensions,
+                maxLength: parseFloat(fw.fwObject.FWObjectHelper.hasValue($.page.params.maxLength) ? $.page.params.maxLength : fileUploadSettings.maxLength),
+                multiSelect: fw.fwObject.FWObjectHelper.hasValue($.page.params.multiSelect) ? $.page.params.multiSelect : (fileUploadSettings.uploadCount > 1 ? true : false),
+                filterTitle: fw.fwObject.FWObjectHelper.hasValue($.page.params.filterTitle) ? $.page.params.filterTitle : (fw.fwObject.FWObjectHelper.hasValue($.page.params.extensions) ? $.page.params.extensions : fileUploadSettings.extensions)
+            };
+            $.page.idJQ.fileExtensionsMsg.text("仅支持 " + fileUploadSettings.extensions.toUpperCase() + "格式文件上传.");
+            var upLoadFileLength = null;
+            if (fileUploadSettings.maxLength > (1024 * 1024)) {
+                upLoadFileLength = Number(fileUploadSettings.maxLength / (1024 * 1024)).toFixed(2) + " M"; //文件大小
+            } else {
+                upLoadFileLength = Number(fileUploadSettings.maxLength / 1024).toFixed(2) + " KB"; //文件大小
+            };
+            $.page.idJQ.fileSize.text("注：单个上传文件大小不能大于" + upLoadFileLength + ".");
+            //判断浏览器是否支持HTML5
+            if (window.applicationCache) {
+                $.page.idJQ.htmlMove.text("（您的浏览器支持此功能）");
+            } else {
+                $.page.idJQ.htmlMove.text("（您的浏览器暂不支持此功能）");
+            };
+            //实例化一个plupload上传对象
+            var uploader = new plupload.Uploader({
+                browse_button: 'btnFileUpload', //触发文件选择对话框的按钮，为那个元素id
+                url: "fileUpload.ashx", //服务器端的上传页面地址
+                runtimes: 'html5,flash,silverlight,html4',
+                unique_names: true, //生成唯一文件名
+                multi_selection: fileUploadSettings.multiSelect,
+                file_data_name: "FileData",
+                container: document.getElementById('file'), // ... or DOM Element itself
+                drop_element: 'fileContentList',
+                flash_swf_url: $.page.webSiteRootUrl + 'web/fileUpload/plupload/js/Moxie.swf', //swf文件，当需要使用swf方式进行上传时需要配置该参数
+                silverlight_xap_url: $.page.webSiteRootUrl + 'web/fileUpload/plupload/js/Moxie.xap', //silverlight文件，当需要使用 
+                filters: {
+                    max_file_size: fileUploadSettings.maxLength,
+                    mime_types: [
+                        { title: fileUploadSettings.filterTitle, extensions: fileUploadSettings.extensions }
+                    ],
+                    prevent_duplicates: true //不允许选取重复文件
+                },
+                init: {
+                    FilesAdded: function (ploader, files) {
+                        if (ploader.files.length > fileUploadSettings.uploadCount) {
+                            mini.alert("上传的文件数量不能大于" + fileUploadSettings.uploadCount + "");
+                            if ($(".lazyPrint_ShowBox_Content_Center_List").length > 0) {
+                                ploader.splice(fileUploadSettings.uploadCount, files.length);
+                                return false;
+                            } else {
+                                ploader.splice(0, files.length);
+                                return false;
+                            };
+
+                        };
+                        if (fw.fwObject.FWObjectHelper.hasValue($("#prompt"))) {
+                            $("#prompt").hide();
+                        };
+                        for (var i = 0, len = files.length; i < len; i++) {
+                            var fileName = files[i].name; //文件名
+                            var fileLength = null;
+                            if (files[i].origSize > (1024 * 1024)) {
+                                fileLength = Number(files[i].origSize / (1024 * 1024)).toFixed(2) + " M"; //文件大小
+                            } else {
+                                fileLength = Number(files[i].origSize / 1024).toFixed(2) + " KB"; //文件大小
+                            };
+                            //构造html来更新UI
+                            var divJq = $("<div id=" + files[i].id + " class='lazyPrint_ShowBox_Content_Center_List'></div>").data("Entity", files[i]).appendTo(fileContentListJq);
+                            var spanTitle = $("<span class='spanTitle' title='" + fileName + "'>" + fileName + "</span>").appendTo(divJq);
+                            var spanProgress = $("<span class='spanLength'>" + fileLength + "</span>").appendTo(divJq);
+                            var spanStatus = $("<span id='" + files[i].id + "Progress'  class='spanProgress'>文件分析中...</span>").appendTo(divJq);
+                            var spanDelete = $("<span class='spanDelete' title='删除'></span>").data("Entity", files[i]).bind("click", function () {
+                                var fileCacheData = $(this).data("Entity");
+                                $('#' + fileCacheData.id).remove();
+                                //将删除的对象移出队列
+                                ploader.removeFile(fileCacheData);
+                                if (ploader.files.length == 0) {
+                                    if (fw.fwObject.FWObjectHelper.hasValue($("#prompt"))) {
+                                        $("#prompt").show();
+                                    };
+                                };
+                            }).appendTo(divJq);
+                            uploader.start();
+                        };
+                    },
+                    UploadProgress: function (ploader, file) {
+                        $('#' + file.id + 'Progress').text(file.percent + '%'); //控制进度条(单个文件)
+                        var width = $(".lazyPrint").width();
+                        $("#progress").width(ploader.total.percent * (width / 100)); //控制进度条(所有文件)
+                    },
+                    UploadComplete: function (ploader, file, responseObject) {
+                        $("#progress").css("width", "0px");
+                        //选择选中项(提供给父页面调用)
+                        $.page.idJQ.btnComplete.unbind("click").bind("click", function () {
+                            enter();
+                        });
+                    },
+                    Error: function (up, err) {
+                        switch (err.code) {
+                            case -600:
+                                var fileLength = null;
+                                if (fileUploadSettings.maxLength > (1024 * 1024)) {
+                                    fileLength = Number(fileUploadSettings.maxLength / (1024 * 1024)).toFixed(2) + " M"; //文件大小
+                                } else {
+                                    fileLength = Number(fileUploadSettings.maxLength / 1024).toFixed(2) + " KB"; //文件大小
+                                };
+                                parent.layer.alert("" + err.file.name + "过大（不能大于" + fileLength + "），请尝试压缩后重新上传！", { icon: 7 });
+                                break;
+                            case -601:
+                                parent.layer.alert("仅支持 " + fileUploadSettings.extensions.toUpperCase() + "格式文件上传！", { icon: 7 });
+                                break;
+                            case -602:
+                                parent.layer.alert("不允许上传重复的文件！", { icon: 7 });
+                                break;
+                            case -200:
+                                parent.layer.alert("网络错误！", { icon: 2 });
+                                break;
+                            default:
+                                parent.layer.alert("服务器繁忙,请稍后重试.", { icon: 7 });
+                                break;
+                        }
+                    }
+                }
+            });
+            //在实例对象上调用init()方法进行初始化
+            uploader.init();
+
+        };
+        function enter() {
+            //判断选择类型以及选择回调方法有值
+            if (fw.fwObject.FWObjectHelper.hasValue($.page.params.enterCallback)) {
+                //判断是单选
+                if (fileUploadSettings.uploadCount == 1) {
+                    //获取选中项对象集合
+                    var dataList = [];
+                    var entity = null;
+                    $(".lazyPrint_ShowBox_Content_Center_List").each(function (e, object) {
+                        $(object).data("Entity").path = $.page.appSettings.uploadFolderPath + $(object).data("Entity").target_name;
+                        $(object).data("Entity").extension = "." + $(object).data("Entity").target_name.split('.')[$(object).data("Entity").target_name.split('.').length - 1];
+                        dataList.push($(object).data("Entity"));
+                    });
+                    if (fw.fwObject.FWObjectHelper.hasValue(dataList)) {
+                        var data = dataList[0];
+                        if (data.percent == 100) {
+                            entity = {
+                                filePath: data.path,
+                                name: data.name,
+                                extension: data.extension,
+                                size: data.size
+                            };
+                        };
+                    };
+                    //判断选中项对象有值
+                    if (fw.fwObject.FWObjectHelper.hasValue(entity)) {
+                        //调用回调方法
+                        fw.callFunction(fw.openWindow(), $.page.params.enterCallback, [entity]);
+                        //关闭窗口
+                        fw.closeWindow();
+                    };
+                } else if (fileUploadSettings.uploadCount > 1) {
+                    //获取选中项对象集合
+                    var dataList = [];
+                    var entityList = [];
+                    $(".lazyPrint_ShowBox_Content_Center_List").each(function (e, object) {
+                        $(object).data("Entity").path = $.page.appSettings.uploadFolderPath + $(object).data("Entity").target_name;
+                        $(object).data("Entity").extension = $(object).data("Entity").target_name.split('.')[$(object).data("Entity").target_name.split('.').length - 1];
+                        dataList.push($(object).data("Entity"));
+                    });
+                    if (fw.fwObject.FWObjectHelper.hasValue(dataList)) {
+                        var len = dataList.length > fileUploadSettings.uploadCount ? fileUploadSettings.uploadCount : dataList.length;
+                        var data;
+                        for (var i = 0; i < len; i++) {
+                            data = dataList[i];
+                            if (data.percent == 100) {
+                                if ($.pageCustomer.getCharLength(data.name) > 50) {
+                                    parent.layer.alert("上传文件名过长！", { icon: 7 });
+                                    return false;
+                                }
+                                entityList.push({
+                                    filePath: data.path,
+                                    name: data.name,
+                                    extension: data.extension,
+                                    size: data.size
+                                });
+                            };
+                        };
+                    };
+                    //判断选中项对象集合有值
+                    if (fw.fwObject.FWObjectHelper.hasValue(entityList)) {
+                        //调用回调方法
+                        fw.callFunction(fw.openWindow(), $.page.params.enterCallback, [entityList]);
+                        //关闭窗口
+                        fw.closeWindow();
+
+                    };
+                };
+            };
+        };
+    </script>
+</head>
+<body>
+    <div class="lazyPrint">
+        <div style="border-bottom: 2px solid #1E90FF; width: 0px; position: absolute; top: 0px;"
+            id="progress">
+        </div>
+        <div class="lazyPrint_ShowBox_Content">
+            <div class="lazyPrint_ShowBox_Content_Top">
+                <div style="float: left;" id="file">
+                    <input id="btnFileUpload" type="button" class="lazyPrintBtnSmall" value="添加文件" />
+                </div>
+                <div class="lazyPrint_ShowBox_Content_Bottom_Left" style="margin-left: 10px;" id="fileSize">
+                </div>
+            </div>
+            <div class="lazyPrint_ShowBox_Content_Center" id="fileContentList">
+                <div id="prompt">
+                    <div class="lazyPrint_ShowBox_Content_CenterMsg">
+                        试试将电脑里的文件拖拽到此上传</div>
+                    <div class="lazyPrint_ShowBox_Content_CenterBrower" id="htmlMove">
+                    </div>
+                </div>
+            </div>
+            <div class="lazyPrint_ShowBox_Content_Bottom">
+                <div class="lazyPrint_ShowBox_Content_Bottom_Left" id="fileExtensionsMsg">
+                </div>
+                <div class="lazyPrint_ShowBox_Content_Bottom_Right">
+                    <input id="btnComplete" type="button" class="lazyPrintBtnSmall" value="完成" style="width: 60px;" />
+                    <input type="button" class="lazyPrintBtnSmall" value="取消" style="width: 60px;" onclick="$.pageCustomer.onCancel();" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

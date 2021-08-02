@@ -1,0 +1,147 @@
+﻿div {
+     border:0px solid ;
+}
+.infocls
+{
+    cursor:pointer;
+    }
+#workingCondition div.divfactors
+{
+    width:100%;
+    height:20px;
+    }
+
+#workingCondition 
+{
+    margin: 0 auto;
+    width: 790px;
+    height: 380px;
+    background:url(images/bg.png) no-repeat -30px 32px; 
+    border:1px solid ;
+} 
+
+#workingCondition div {
+    float: left;
+    height: 100%;
+}
+
+
+#alarm {
+    background:url(images/alarm.gif) no-repeat 0% 0%; 
+}
+#divPump 
+{  
+    background:url(images/sb_1.gif) no-repeat 0% 0%; 
+}  
+#divPressureIns 
+{ 
+    background:url(images/yb_0.gif) no-repeat top center; 
+} 
+#divFertilizingMachine 
+{ 
+    background:url(images/divFertilizingMachine.gif) no-repeat top center; 
+} 
+
+#sfgList span.sfgCls 
+{
+    text-align: center;
+    width: 27px;
+    height: 52px;
+    background:url(images/sfg.gif) no-repeat top center;
+    display: inline-block;
+    padding-top: 20px;
+}
+#sfjList span.sfjCls 
+{ 
+    margin: 0 0;
+    width: 27px;
+    height: 52px;
+    background:url(images/sfj.gif) no-repeat top center; 
+    display: inline-block;
+}  
+ 
+ #divFJ {
+    background:url(images/fj_1.gif) no-repeat top center;  
+ }
+  
+ #divFJValue {
+      background:url(images/yb_0.gif) no-repeat top center;  
+ }
+ 
+ 
+ /*******状态列表*********/
+ ul.ulStatusStatisticsList li { 
+    height: 40px;
+    width: 50px; 
+    float:left;
+    margin-right:2px;
+    list-style:none;
+    display:block; 
+    white-space: nowrap; 
+}
+ 
+div#divStatusStatistics 
+{
+    height: 40px;
+       width: 910px;
+    margin: 5px auto;
+    background-color: #E2EEDA;
+}
+
+#deviceInfoList 
+{
+    margin: 0 auto;
+    width: 920px;
+    font-size: 12px;
+     
+}
+
+.deviceInfo {
+    width: 290px;
+    height: 80px;
+    border:1px solid ;
+    margin-right: 12px;
+    margin-top: 5px;
+    float: left;
+}
+
+.deviceInfo  .deviceRealStatus {
+    width: 15px; 
+    height: 100%;
+    border-right:1px solid ; 
+    float: left; 
+}
+
+ 
+
+.divCursor {
+    cursor: pointer;
+}
+
+.deviceInfo  .deviceDeatilInfo  
+{
+    width: 270px;
+    height: 100%;
+    font-size: 12px;
+    font-family: arial;
+    float: left; 
+    line-height: 20px;
+}
+.deviceDeatilInfo  .colContent 
+{
+    width: 100%;
+    float: left;
+    padding-left: 6px;
+}
+.deviceDeatilInfo  .col2Content 
+{
+    width: 46%;
+    float: left;
+    padding-left: 6px;
+}
+.deviceDeatilInfo  .monitorData 
+{
+    color: #09469B;
+}
+
+ 

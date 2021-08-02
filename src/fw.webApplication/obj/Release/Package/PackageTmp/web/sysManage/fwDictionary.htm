@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>日志信息</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwDictionary.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="form" style="padding-top: 10px;">
+        <table class="tableForm" style="width: 90%; margin: 0px auto;">
+            <tr>
+                <td style="width: 30%;">
+                    编码：
+                </td>
+                <td style="width: 70%;">
+                    <input name="mCode" class="mini-textbox" selectonfocus="true" required="true"
+                        maxlength="18" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    名称：
+                </td>
+                <td>
+                    <input name="mName" class="mini-textbox" selectonfocus="true" required="true"
+                        maxlength="18" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    顺序：
+                </td>
+                <td>
+                    <input name="mIx" class="mini-spinner" selectonfocus="true" minvalue="1" maxvalue="2147483647"
+                        required="true" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    是否停用：
+                </td>
+                <td>
+                    <input name="mIsDis" class="mini-checkbox" selectonfocus="true" text="" value="0"
+                        truevalue="1" falsevalue="0" required="true" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="text-align: right; padding: 10px;">
+        <a id="insertOrUpdate" class="mini-button" style="margin-right: 20px;" iconcls="icon-save"
+            onclick="insertOrUpdate">保存</a> <a id="cancel" class="mini-button" style="margin-right: 20px;"
+                iconcls="icon-cancel" onclick="onCancel">取消</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维频率设置</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <script src="OperationMaintenancePage.js" type="text/javascript"></script>
+    <script src="MaintenanceFrequency.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="padding: 2px; border-bottom: 0;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%; padding-top: 3px;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap;">
+                        <a id="bttonSetting" class="mini-button" iconcls="icon-edit">设置频率</a>
+                    </td>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        <input id="keyword" name="keyword" class="mini-textbox" emptytext="关键字..." />
+                        <a class="mini-button" iconcls="icon-search" id="buttonSearch">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="divList" class="form" style="width: 100%; height: 80%">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%; margin: 8px 0px 0px 0px;"
+            showpager="false" allowmovecolumn="false" allowresizecolumn="false" fitcolumns="false"
+            multiselect="true" onbeforeload="datagrid1_BeforeLoad">
+            <div property="columns">
+                <div type="indexcolumn" width="60px">
+                </div>
+                <div field="cantonName" width="120px" headeralign="center">
+                    行政区</div>
+                <div field="monitorSiteName" width="180px" headeralign="center">
+                    设施点位</div>
+                <div field="projectName" width="180px" headeralign="center" align="center">
+                    运维项目</div>
+                <div field="monthInspectsCount" width="80px" headeralign="center" align="center">
+                    月核定巡检次数</div>
+                <div field="frequencyTypeName" width="120px" headeralign="center" align="center">
+                    频率类型</div>
+                <div field="frequencyCount" width="80px" headeralign="center" align="center">
+                    频率次数</div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>

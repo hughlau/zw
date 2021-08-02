@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9429D5D4-7D9F-41AF-8C13-CA4C5C96C77E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>fw.m.sysBasicManage.data</RootNamespace>
+    <AssemblyName>fw.m.sysBasicManage.data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\fw.m.sysBasicManage.data.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fw, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\fw.dll\fw.dll</HintPath>
+    </Reference>
+    <Reference Include="fw.m.sysManage.data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\fw.dll\fw.m.sysManage.data.dll</HintPath>
+    </Reference>
+    <Reference Include="fw.m.userLogin.data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\fw.dll\fw.m.userLogin.data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contact.cs" />
+    <Compile Include="ISysBasicManageService.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="model\JPublishObject.cs" />
+    <Compile Include="model\MApp.cs" />
+    <Compile Include="model\MBaseEnterprsie.cs" />
+    <Compile Include="model\MCanton.cs" />
+    <Compile Include="model\MCantonTreeData.cs" />
+    <Compile Include="model\MEnterprise.cs" />
+    <Compile Include="model\MEnterpriseRegisterInfo.cs" />
+    <Compile Include="model\MEntUserInfo.cs" />
+    <Compile Include="model\MFWCantonData.cs" />
+    <Compile Include="model\MFWSendEMail.cs" />
+    <Compile Include="model\MFWSendSMS.cs" />
+    <Compile Include="model\MFWSystemLogEx.cs" />
+    <Compile Include="model\MFWUserInfo.cs" />
+    <Compile Include="model\MFWUserLogin_New.cs" />
+    <Compile Include="model\MFWUserMappingDictionary.cs" />
+    <Compile Include="model\MMenuEx.cs" />
+    <Compile Include="model\MMenuKeyword.cs" />
+    <Compile Include="model\MMessage.cs" />
+    <Compile Include="model\MMessageTemplet.cs" />
+    <Compile Include="model\MBLLOperationMaintenanceUnitPerson.cs" />
+    <Compile Include="model\MMobileInfo.cs" />
+    <Compile Include="model\MOperations.cs" />
+    <Compile Include="model\MProblem.cs" />
+    <Compile Include="model\MProblemReply.cs" />
+    <Compile Include="model\MProblemStatistics.cs" />
+    <Compile Include="model\MSystemUserInfo.cs" />
+    <Compile Include="model\MUserLogin.cs" />
+    <Compile Include="model\MVerifyResult.cs" />
+    <Compile Include="model\SearchData__TreeData_Canton.cs" />
+    <Compile Include="model\TreeData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryBasicManageParams.cs" />
+    <Compile Include="QueryCantonParams.cs" />
+    <Compile Include="QueryListMFWUserMappingDictionaryParams.cs" />
+    <Compile Include="QueryMMenuExParams.cs" />
+    <Compile Include="QueryPageMFWUserInfoParams.cs" />
+    <Compile Include="SysBasicManageUserInfo.cs" />
+    <Compile Include="PageUserInfo.cs" />
+    <Compile Include="MobileUserInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

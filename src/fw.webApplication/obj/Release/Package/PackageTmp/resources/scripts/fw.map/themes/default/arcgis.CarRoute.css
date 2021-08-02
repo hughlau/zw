@@ -1,0 +1,259 @@
+﻿body div.divArcGISCarRoute
+{
+    position: absolute;
+    left: 10px;
+    top: 360px;
+    width: 240px;
+    height: 140px;
+    z-index: 2;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    display: none;
+}
+
+
+body div.divArcGISCarRoute div.jQE_Container_Absolute
+{
+    width: 100%;
+    height: 100px;
+}
+
+body div.divArcGISCarRoute div.jQE_Container_Absolute .title
+{
+    z-index: 1;
+    height: 30px;
+    background: url(images/divModuleNameBackground.png) repeat scroll center center transparent;
+}
+body div.divArcGISCarRoute div.jQE_Container_Absolute .title_tit
+{
+    float: left;
+    height: 30px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    line-height: 30px;
+    color: #FFFFFF;
+    padding-left: 12px;
+}
+body div.divArcGISCarRoute div.jQE_Container_Absolute .title_close
+{
+    background-image: url(images/close.png);
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: right;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+body div.divArcGISCarRoute div.jQE_Container_Absolute .windowimg
+{
+    /* border-bottom-width: 0px;     border-right-width: 0px;     border-left-width: 0px;     border-bottom-style: solid;     border-right-style: solid;     border-left-style: solid;     border-bottom-color: #4e9ad4;     border-right-color: #4e9ad4;     border-left-color: #4e9ad4;*/
+    border-width: 0px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+
+
+body div.divArcGISCarRouteResult
+{
+    position: absolute;
+    left: 80px;
+    top: 420px;
+    width: 320px;
+    height: auto;
+    height: 241px;
+    z-index: 2001;
+    border: 1px solid #000000;
+    background-color: #e6effa;
+    display: none;
+}
+
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute
+{
+    width: 100%;
+    height: 100%;
+    height: 60px;
+}
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .title
+{
+    z-index: 1;
+    height: 30px;
+    background: url(../../../Styles/Home/images/divModuleNameBackground.png) repeat scroll center center transparent;
+}
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .title_tit
+{
+    float: left;
+    height: 30px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    line-height: 30px;
+    color: #FFFFFF;
+    padding-left: 12px;
+}
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .title_close
+{
+    background-image: url(images/close.png);
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: right;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .div_bg
+{
+    background-color: #e8e8e8;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #9aa5a9;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #9aa5a9;
+    width: 100%;
+    height: 34px;
+}
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .div_bg_left
+{
+    background-color: #e8e8e8;
+    background-image: url(images/left.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    float: left;
+    width: auto;
+    line-height: 34px;
+    color: #424242;
+    text-indent: 15px;
+    font-size: 14;
+    font-weight: bold;
+}
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .div_bg_right
+{
+    background-color: #e8e8e8;
+    width: auto;
+    height: 34px;
+    float: right;
+}
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .div_bg_right ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .div_bg_right li
+{
+    float: right;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-top: 4px;
+    display: block;
+    list-style-type: none;
+}
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .li_right_on
+{
+    background-image: url(images/btn_right_h.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    background-position: left;
+    margin-right: 5px;
+    list-style-type: none;
+    width: 64px;
+    height: 26px;
+    line-height: 25px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    font-weight: bold;
+    color: #646464;
+    text-align: center;
+}
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .li_right
+{
+    background-image: url(images/btn_right.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    background-position: left;
+    margin-right: 5px;
+    list-style-type: none;
+    width: 64px;
+    height: 26px;
+    line-height: 25px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    font-weight: bold;
+    color: #646464;
+    text-align: center;
+}
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .li_right_on a
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .li_right a
+{
+    color: #646464;
+    text-decoration: none;
+}
+
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .li_left_on
+{
+    background-image: url(images/btn_left_h.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    background-position: right;
+    margin-left: 5px;
+    list-style-type: none;
+    width: 64px;
+    height: 26px;
+    line-height: 25px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .li_left
+{
+    background-image: url(images/btn_left.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    background-position: right;
+    margin-left: 5px;
+    list-style-type: none;
+    width: 64px;
+    height: 26px;
+    line-height: 25px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    font-weight: bold;
+    color: #646464;
+    text-align: center;
+}
+body div.divArcGISCarRouteResult div.jQE_Container_Absolute .li_left a
+{
+    color: #646464;
+    text-decoration: none;
+}
+
+body .windowimg-btn
+{
+    margin-top: 5px;
+    background-color: #63ad88;
+    cursor: pointer;
+}
+
+body .windowimg-btnHavor
+{
+}

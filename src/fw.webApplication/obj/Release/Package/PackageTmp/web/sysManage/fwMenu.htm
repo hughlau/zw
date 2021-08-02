@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>日志信息</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwMenu.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="form" style="padding-top: 10px;">
+        <table class="tableForm" style="width: 90%; margin: 0px auto;">
+            <tr>
+                <td>
+                    菜单名称：
+                </td>
+                <td colspan="3">
+                    <input name="mMenuName" class="mini-textbox" selectonfocus="true" required="true"
+                        maxlength="36" style="width: 96%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    图标地址：
+                </td>
+                <td colspan="3">
+                    <div style="width: 96%;">
+                        <div id="mIconUploadInfo" style="width: 26px; height: 26px; border: solid 1px #aaa;
+                            float: left;">
+                        </div>
+                        <div style="display: none; float: left;">
+                            <input id="mIconFileFingerprint" name="mIconFileFingerprint" class="mini-hidden" />
+                            <input id="mIconRelativePath" name="mIconRelativePath" class="mini-hidden" />
+                            <input id="mIconAction" name="mIconAction" class="mini-hidden" />
+                        </div>
+                        <iframe name="mIconUploadIframe" frameborder="0" scrolling="no" style="margin-left: 48px;
+                            width: 48%; height: 29px; border: 0px solid #909aa6; overflow: hidden; float: left;">
+                        </iframe>
+                    </div>
+                    <!--<input id="mIconUrl" name="mIconUrl" class="mini-buttonedit" selectonfocus="true" maxlength="200"
+                        style="width: 96%;" onbuttonclick="mIconUrl_onbuttonclick" />-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    菜单标题：
+                </td>
+                <td colspan="3">
+                    <input name="mTitle" class="mini-textbox" selectonfocus="true" maxlength="36" style="width: 96%;" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 17%;">
+                    是否HTML页面：
+                </td>
+                <td style="width: 33%;">
+                    <input name="mIsHtmlPage" class="mini-checkbox" selectonfocus="true" title="" value="0"
+                        truevalue="1" falsevalue="0" />
+                </td>
+                <td style="width: 17%;">
+                </td>
+                <td style="width: 33%;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    地址：
+                </td>
+                <td colspan="3">
+                    <input name="mUrl" class="mini-textarea" selectonfocus="true" maxlength="100" style="width: 96%;
+                        height: 64px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    参数：
+                </td>
+                <td colspan="3">
+                    <input name="mUrlParamsJson" class="mini-textarea" selectonfocus="true" maxlength="200"
+                        style="width: 96%; height: 64px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    打开类型：
+                </td>
+                <td>
+                    <input id="mOpenTypeCode" name="mOpenTypeCode" class="mini-combobox" selectonfocus="true"
+                        valuefield="code" textfield="name" emptytext="打开类型..." style="width: 90%;" />
+                </td>
+                <td>
+                    窗口名称：
+                </td>
+                <td>
+                    <input name="mWindowName" class="mini-textbox" selectonfocus="true" maxlength="36"
+                        style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    水平对齐方式：
+                </td>
+                <td>
+                    <input id="mLayoutHorizontalAlignment" name="mLayoutHorizontalAlignment" class="mini-combobox"
+                        selectonfocus="true" valuefield="code" textfield="name" emptytext="水平对齐方式..."
+                        style="width: 90%;" />
+                </td>
+                <td>
+                    垂直对齐方式：
+                </td>
+                <td>
+                    <input id="mLayoutVerticalAlignment" name="mLayoutVerticalAlignment" class="mini-combobox"
+                        selectonfocus="true" valuefield="code" textfield="name" emptytext="垂直对齐方式..."
+                        style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    距离左边距离：
+                </td>
+                <td>
+                    <input name="mLayoutLeft" class="mini-spinner" selectonfocus="true" minvalue="0"
+                        maxvalue="2147483647" allownull="true" value="null" style="width: 90%;" />
+                </td>
+                <td>
+                    距离上边距离：
+                </td>
+                <td>
+                    <input name="mLayoutTop" class="mini-spinner" selectonfocus="true" minvalue="0" maxvalue="2147483647"
+                        allownull="true" value="null" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    距离右边距离：
+                </td>
+                <td>
+                    <input name="mLayoutRight" class="mini-spinner" selectonfocus="true" minvalue="0"
+                        maxvalue="2147483647" allownull="true" value="null" style="width: 90%;" />
+                </td>
+                <td>
+                    距离下边距离：
+                </td>
+                <td>
+                    <input name="mLayoutBottom" class="mini-spinner" selectonfocus="true" minvalue="0"
+                        maxvalue="2147483647" allownull="true" value="null" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    窗口宽度：
+                </td>
+                <td>
+                    <input name="mLayoutWidth" class="mini-spinner" selectonfocus="true" minvalue="0"
+                        maxvalue="2147483647" allownull="true" value="null" style="width: 90%;" />
+                </td>
+                <td>
+                    窗口高度：
+                </td>
+                <td>
+                    <input name="mLayoutHeight" class="mini-spinner" selectonfocus="true" minvalue="0"
+                        maxvalue="2147483647" allownull="true" value="null" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    进菜单脚本：
+                </td>
+                <td colspan="3">
+                    <input name="mOnFocusInScriptCode" class="mini-textarea" maxlength="1000" selectonfocus="true"
+                        style="width: 96%; height: 96px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    出菜单脚本：
+                </td>
+                <td colspan="3">
+                    <input name="mOnFocusOutScriptCode" class="mini-textarea" maxlength="1000" selectonfocus="true"
+                        style="width: 96%; height: 96px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    顺序：
+                </td>
+                <td>
+                    <input name="mIx" class="mini-spinner" selectonfocus="true" minvalue="1" maxvalue="2147483647"
+                        required="true" style="width: 90%;" />
+                </td>
+                <td>
+                    是否停用：
+                </td>
+                <td>
+                    <input name="mIsDis" class="mini-checkbox" selectonfocus="true" text="" value="0"
+                        truevalue="1" falsevalue="0" required="true" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="text-align: right; padding: 10px;">
+        <a id="insertOrUpdate" class="mini-button" style="margin-right: 20px;" iconcls="icon-save"
+            onclick="onInsertOrUpdate">保存</a> <a id="cancel" class="mini-button" style="margin-right: 20px;"
+                iconcls="icon-cancel" onclick="onCancel">取消</a>
+    </div>
+</body>
+</html>

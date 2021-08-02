@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维项目</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="operationsContractList.htm.js" type="text/javascript"></script>
+</head>
+<body isloaduserinfo="1">
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap;" id="functionList">
+                        <a id="buttonAdd" class="mini-button" iconcls="icon-add">增加</a> <a id="buttonEdit"
+                            class="mini-button" iconcls="icon-edit">修改</a> <a id="buttonDelete" class="mini-button"
+                                iconcls="icon-remove">删除</a>
+                    </td>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        <input class="mini-treeselect " selectonfocus="true" style="width: 140px;" id="cantonCode"
+                            name="cantonCode" textfield="name" valuefield="code" parentfield="pCode" expandonload="0"
+                            onvaluechanged="" />
+                        <input id="keyword" name="keyword" class="mini-textbox" style="width: 200px;" emptytext="请输入项目名称或编号"
+                            onenter="onSearch();" />
+                        <a class="mini-button" id="buttonSearch" iconcls="icon-search" plain="true">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--撑满页面-->
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" borderstyle="border-width: 0px;" style="width: 100%;
+            height: 100%;" fitcolumns="false" sizelist="[5,10,20,50]" pagesize="10" multiselect="true"
+            onbeforeload="datagrid1_BeforeLoad">
+            <div property="columns">
+                <div type="checkcolumn" width="40">
+                </div>
+                <div type="indexcolumn" width="60">
+                    序号
+                </div>
+                <div field="contractNo" width="200" headeralign="center" align="left" renderer="datagrid1_Renderer">
+                    运维项目编号</div>
+                <div field="operationMaintenanceContractName" width="200" headeralign="center" align="left">
+                    运维项目名称</div>
+                <div field="cantonName" width="120" headeralign="center" align="left">
+                    行政区名称</div>
+                <div field="effectiveTime" width="140" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    生效时间</div>
+                <div field="failTime" width="140" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    失效时间</div>
+                <div field="operationMaintenanceUnitName" width="220" headeralign="center" align="left">
+                    运维单位</div>
+                <div field="op" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    关联设施</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

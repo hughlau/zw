@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>数据库表对象</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fWImportModelList.htm.js" type="text/javascript"></script>
+</head>
+<body isneedlogin="1">
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList">
+                        <a class="mini-button" iconcls="icon-add" onclick=" openInfo('insert'); ">增加</a>
+                        <a id="del" class="mini-button" iconcls="icon-remove" onclick=" del(); " data-options="{minSelectedCount:1}">
+                            删除</a><a id="A1" class="mini-button" iconcls="icon-edit" onclick=" update(); " data-options="{minSelectedCount:1}">保存</a>
+                        <span class="separator"></span><a class="mini-button" iconcls="icon-edit" onclick="onEditMemberInfo();"
+                            data-options="{minSelectedCount:1,maxSelectedCount:1}">成员信息</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入表名或中文描述"
+                            style="width: 160px;" onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" onclick=" onSearch() ">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="dgTableObjectList" class="mini-datagrid" style="width: 100%; height: 100%;"
+        borderstyle="border-width: 0px;" idfield="mDataID" multiselect="true" showcolumnsmenu="true"
+        frozenstartcolumn="0" editnextonenterkey="true" editnextrowcell="true" frozenendcolumn="1"
+        onbeforeload="dgTableObjectList_BeforeLoad" onselectionchanged="dgTableObjectList_SelectionChanged"
+        sortfield="tableName" sortorder="asc" pagesize="20" allowcelledit="true" allowcellselect="true">
+        <div property="columns">
+            <div type="indexcolumn" width="40">
+            </div>
+            <div type="checkcolumn" width="40">
+            </div>
+            <div field="mDataID" width="150" headeralign="center" align="center" visible="false">
+                数据ID
+            </div>
+            <div field="mTableName" width="100" headeralign="center" align="center" vtype="required">
+                数据库表名称
+            </div>
+            <div name="mTableDesc" field="mTableDesc" width="100" headeralign="center" align="center"
+                visible="true" vtype="required">
+                表业务中文描述
+                <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="18"
+                    style="width: 100%;" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

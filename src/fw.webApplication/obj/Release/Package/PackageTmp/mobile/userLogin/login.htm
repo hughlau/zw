@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../../resources/scripts/js.RSA.js" type="text/javascript"></script>
+    <script src="../../resources/scripts/bootMobile.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="login.htm.js" type="text/javascript"></script>
+    <style type="text/css">
+        .ulUserLogin li a, .ulUserLogin li.ui-li-static
+        {
+            padding: 0px 0px;
+        }
+        .ulUserLogin li a div, .ulUserLogin li.ui-li-static div
+        {
+            margin: 0px 0px;
+            border-width: 0px;
+        }
+        .ulUserLogin li input
+        {
+            height: 43px;
+            line-height: 43px;
+        }
+    </style>
+</head>
+<body isneedlogin="0">
+    <div id="divPage" data-role="page" style="display: none;">
+        <div role="main" class="ui-content">
+            <div id="divUserLoginForm">
+                <form action="#" method="get">
+                <h2>
+                    用户登录</h2>
+                <ul data-role="listview" data-inset="true" class="ulUserLogin" id="ulUserName">
+                    <li><a>
+                        <input type="text" name="textUserName" id="textUserName" value="" placeholder="用户名"
+                            onfocus="select()" /></a><a href1="#divLoginUser" data-icon="carat-d" data-rel="popup"
+                                data-transition="slideup" id="aPopupLoginUser" style="border-left-width: 0px;
+                                display1: none;"></a></li>
+                </ul>
+                <ul data-role="listview" data-inset="true" class="ulUserLogin">
+                    <li>
+                        <input type="password" name="textPassword" id="textPassword" value="" placeholder="密码"
+                            onfocus="select()" /></li>
+                </ul>
+                <fieldset data-role="controlgroup" style="margin-bottom: 16px;">
+                    <div class="ui-controlgroup-controls" id="divThirdLogin">
+                    </div>
+                </fieldset>
+                <a id="aLogin" class="ui-btn">登 录 </a>
+                <div data-role="popup" id="divLoginUser">
+                    <ul data-role="listview" data-inset="true" id="ulLoginUser" style="min-width: 256px;">
+                        <!--<li><a id="a5">照片</a><a href="#purchase" data-icon="delete"></a></li>-->
+                    </ul>
+                </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>

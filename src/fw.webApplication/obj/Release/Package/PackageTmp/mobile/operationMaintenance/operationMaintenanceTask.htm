@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../../resources/scripts/bootMobile.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="operationMaintenanceTask.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="divPage" data-role="page">
+        <div id="divHeader" data-role="header" data-position="fixed" data-theme="a" class="statusBar">
+            <h1>
+                运维任务
+            </h1>
+            <a id="aBack" data-ajax="false" data-icon="back" data-iconpos="notext"></a><a id="aHome"
+                data-ajax="false" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div role="main" class="ui-content">
+            <div id="divForm">
+                <ul data-role="listview" data-inset="true">
+                    <!--<li>任务信息 </li>-->
+                    <li>
+                        <h3>
+                            任务名称:</h3>
+                        <p name="operationMaintenanceTaskName">
+                            &nbsp;
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            故障类型:</h3>
+                        <p name="faultTypeName">
+                            &nbsp;
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            故障时间:</h3>
+                        <p name="faultTime">
+                            &nbsp;
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            规定修复时间:</h3>
+                        <p name="prescribeRepairTime">
+                            &nbsp;
+                        </p>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li><a id="aMonitorSiteInfo" data-ajax="false">
+                        <h3>
+                            设施名称:</h3>
+                        <p name="monitorSiteName">
+                            &nbsp;
+                        </p>
+                    </a></li>
+                    <li>
+                        <h3>
+                            行政区:</h3>
+                        <p name="cantonName">
+                            &nbsp;
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            安装地点:</h3>
+                        <p name="address">
+                            &nbsp;
+                        </p>
+                    </li>
+                </ul>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <a id="aReturn" data-ajax="false" class="ui-shadow ui-btn ui-corner-all" style="display: none; ">
+                            退回</a></div>
+                    <div class="ui-block-b">
+                        <a id="aReceive" data-ajax="false" class="ui-shadow ui-btn ui-corner-all" style="display: none;">
+                            接收</a></div>
+                    <div class="ui-block-c">
+                        <a id="aOperationMaintenance" data-ajax="false" class="ui-shadow ui-btn ui-corner-all"
+                            style="display: none;">运维</a> <a id="aOperationMaintenanceFormView" data-ajax="false"
+                                class="ui-shadow ui-btn ui-corner-all" style="display: none;">查看运维表单</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

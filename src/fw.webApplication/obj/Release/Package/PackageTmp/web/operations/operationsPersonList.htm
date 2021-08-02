@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维人员列表</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="operationsPersonList.htm.js" type="text/javascript"></script>
+</head>
+<body   isloaduserinfo="1">
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a class="mini-button" iconcls="icon-add" onclick="openInfo('add');">增加</a> <a class="mini-button"
+                            iconcls="icon-edit" onclick="openInfo('edit');" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                            修改</a> <a id="disable" class="mini-button" iconcls="icon-remove" onclick="able(1);"
+                                data-options="{minSelectedCount:1}">删除</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <input id="operationMaintenanceUnitCode" class="mini-buttonedit" onclick="onButtonChooseOPUnit"
+                            style="width: 200px;" name="operationMaintenanceUnitCode" emptytext="运维单位" />
+                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入运维人员姓名或工号"
+                            style="width: 200px;" onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" plain="true" onclick=" onSearch() ">查询</a>
+                        <a id="select" class="mini-button" style="display: none;" iconcls="icon-add" onclick=" select(); ">
+                            选择</a> <a id="selectClear" class="mini-button" style="display: none;" iconcls="icon-add"
+                                onclick=" selectClear(); ">清除</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid_Person" class="mini-datagrid" style="width: 100%; height: 100%;"
+            borderstyle="border-width: 0px;" idfield="operationMaintenancePersonCode" multiselect="true"
+            showcolumnsmenu="true" onbeforeload="datagrid_Person_BeforeLoad" sortfield=""
+            onselectionchanged="datagrid_Person_SelectionChanged" sortorder="asc" pagesize="10"
+            onselectionchanged="onSelectionChanged">
+            <div property="columns">
+                <div type="checkcolumn" width="20">
+                </div>
+                <div type="indexcolumn" width="20" headeralign="center">
+                    序号
+                </div>
+                <div field="operationMaintenancePersonName" width="80" headeralign="center" align="left"
+                    renderer="datagrid_Person_Renderer">
+                    姓名</div>
+                <div field="staffNo" width="80" headeralign="center" align="left" allowsort="false">
+                    工号</div>
+                <div field="mobilePhone" width="80" headeralign="center" align="center">
+                    手机</div>
+                <div field="eMail" width="80" headeralign="center" align="left" allowsort="false">
+                    邮件</div>
+                <div field="operationMaintenanceUnitName" width="80" headeralign="center" align="left"
+                    allowsort="false">
+                    运维单位</div>
+                <div field="op" width="80" headeralign="center" align="center" renderer="datagrid_Person_Renderer">
+                    负责设施</div>
+                <div field="ix" width="40" headeralign="center" align="center" allowsort="true">
+                    顺序</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

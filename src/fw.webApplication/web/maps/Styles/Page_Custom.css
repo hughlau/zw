@@ -1,0 +1,1255 @@
+﻿html
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+body
+{
+    width: 100%;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    font-size: 14px;
+    font-family: 微软雅黑;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+}
+body *
+{
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+a:link
+{
+    text-decoration: none;
+    color: #0066CC;
+}
+a:link:visited
+{
+    text-decoration: none;
+    color: #666666;
+}
+a:link:hover
+{
+    text-decoration: underline;
+    color: #FF3300;
+}
+a:link:active
+{
+    text-decoration: none;
+    color: #0066CC;
+}
+
+.classLink
+{
+    text-decoration: none;
+    color: #0066CC;
+    cursor: pointer;
+}
+.classDefaultHidden
+{
+    display: none;
+}
+.classNumber
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.classGridViewNumber
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+.highlight
+{
+    color: red;
+}
+.highlightSelected
+{
+    background-color: #a5f236;
+}
+
+.classExcessive
+{
+    color: red;
+}
+body a.jQueryExtension_UI_Button
+{
+    float: left;
+    display: block;
+    color: #3873ae;
+    padding-left: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid #63ad88;
+    background: url(Images/buttonbg1.png) no-repeat scroll 0px 0px #63ad88;
+}
+body a.jQueryExtension_UI_Button span
+{
+    float: left;
+    display: block;
+    height: 100%;
+    padding-right: 16px;
+    background: url(Images/buttonbg1.png) no-repeat scroll 100% -48px #63ad88;
+}
+body a.jQueryExtension_UI_Button span span
+{
+    float: left;
+    display: block;
+    height: 100%;
+    padding-right: 0px;
+    padding-left: 12px;
+    color: White;
+    background: url(Images/divButtonLeftTitle1.gif) no-repeat scroll 0px 0px transparent;
+}
+body a.jQueryExtension_UI_Button:hover
+{
+    color: #ed6b00;
+    background-position: 0px -24px;
+}
+body a.jQueryExtension_UI_Button:hover span
+{
+    background-position: 100% -72px;
+}
+
+
+body ul.jQueryExtension_UI_ButtonRadioGroup
+{
+    line-height: 30px;
+    list-style: none;
+    text-align: left;
+    vertical-align: middle;
+    color: #454545;
+}
+body ul.jQueryExtension_UI_ButtonRadioGroup.Horizontal
+{
+    float: left;
+}
+body ul.jQueryExtension_UI_ButtonRadioGroup li
+{
+}
+body ul.jQueryExtension_UI_ButtonRadioGroup.Horizontal li
+{
+    float: left;
+    height: 40px;
+    margin: auto 4px;
+    padding: 4px 0px;
+    text-align: center;
+}
+body ul.jQueryExtension_UI_ButtonRadioGroup li a.jQueryExtension_UI_ButtonRadio
+{
+    float: left;
+    display: block;
+    padding-left: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid #dadada;
+    background: url(Images/Standard__jQE_UI_ButtonRadioBackground.png) repeat-x scroll 0px 0px transparent;
+}
+body ul.jQueryExtension_UI_ButtonRadioGroup li a.jQueryExtension_UI_ButtonRadio span
+{
+    float: left;
+    display: block;
+    height: 100%;
+    padding-right: 8px;
+}
+body ul.jQueryExtension_UI_ButtonRadioGroup li a.jQueryExtension_UI_ButtonRadio span span
+{
+    display: block;
+    float: left;
+    height: 100%;
+    padding-right: 0px;
+}
+body ul.jQueryExtension_UI_ButtonRadioGroup li a.jQueryExtension_UI_ButtonRadio span span span.jQueryExtension_UI_ButtonRadioIcon
+{
+    display: block;
+    float: left;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    margin: 8px 4px auto 4px;
+    background-color: White;
+    border: 1px solid #c8c8c8;
+}
+body ul.jQueryExtension_UI_ButtonRadioGroup li a.jQueryExtension_UI_ButtonRadio.jQueryExtension_UI_ButtonRadioChecked span span span.jQueryExtension_UI_ButtonRadioIcon
+{
+    background: url(Images/Standard__jQE_UI_ButtonRadioChecked.png) no-repeat scroll 0px 0px #5599cc;
+    border: 1px solid #5599cc;
+}
+
+
+body ul.jQueryExtension_UI_ButtonCheckboxGroup
+{
+    line-height: 30px;
+    list-style: none;
+    text-align: left;
+    vertical-align: middle;
+    color: #454545;
+}
+body ul.jQueryExtension_UI_ButtonCheckboxGroup.Horizontal
+{
+    float: left;
+}
+body ul.jQueryExtension_UI_ButtonCheckboxGroup li
+{
+}
+body ul.jQueryExtension_UI_ButtonCheckboxGroup.Horizontal li
+{
+    float: left;
+    height: 40px;
+    margin: auto 4px;
+    padding: 4px 0px;
+    white-space: nowrap;
+    text-align: center;
+}
+body ul.jQueryExtension_UI_ButtonCheckboxGroup li a.jQueryExtension_UI_ButtonCheckbox
+{
+    display: block;
+    float: left;
+    padding-left: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid #dadada;
+    background: url(Images/Standard__jQE_UI_ButtonCheckboxBackground.png) repeat-x scroll 0px 0px transparent;
+}
+body ul.jQueryExtension_UI_ButtonCheckboxGroup li a.jQueryExtension_UI_ButtonCheckbox span
+{
+    display: block;
+    float: left;
+    height: 100%;
+    padding-right: 8px;
+}
+body ul.jQueryExtension_UI_ButtonCheckboxGroup li a.jQueryExtension_UI_ButtonCheckbox span span
+{
+    display: block;
+    float: left;
+    height: 100%;
+    padding-right: 0px;
+}
+body ul.jQueryExtension_UI_ButtonCheckboxGroup li a.jQueryExtension_UI_ButtonCheckbox span span span.jQueryExtension_UI_ButtonCheckboxIcon
+{
+    display: block;
+    float: left;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    margin: 8px 4px auto 4px;
+    background-color: White;
+    border: 1px solid #c8c8c8;
+}
+body ul.jQueryExtension_UI_ButtonCheckboxGroup li a.jQueryExtension_UI_ButtonCheckbox.jQueryExtension_UI_ButtonCheckboxChecked span span span.jQueryExtension_UI_ButtonCheckboxIcon
+{
+    background: url(Images/Standard__jQE_UI_ButtonCheckboxChecked.png) no-repeat scroll 0px 0px #5599cc;
+    border: 1px solid #5599cc;
+}
+
+
+body a.jQueryExtension_UI_Button_Function
+{
+    display: block;
+    float: left;
+    color: #3873ae;
+    padding-left: 5px;
+    height: 23px;
+    cursor: pointer;
+    white-space: nowrap;
+    background: url(Images/Standard__jQueryExtension_UI_Page.png) no-repeat scroll 0px 0px transparent;
+}
+body a.jQueryExtension_UI_Button_Function span
+{
+    display: block;
+    float: left;
+    height: 100%;
+    padding-right: 5px;
+    background: url(Images/Standard__jQueryExtension_UI_Page.png) no-repeat scroll 100% -50px transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span
+{
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 22px;
+    padding-right: 0px;
+    padding-left: 0px;
+    background: url(Images/divButtonLeftTitle1.gif) no-repeat scroll 0px 0px transparent;
+}
+body a.jQueryExtension_UI_Button_Function:hover
+{
+    color: #ed6b00;
+    background-position: 0px -25px;
+}
+body a.jQueryExtension_UI_Button_Function:hover span
+{
+    background-position: 100% -75px;
+}
+body div.jQueryExtension_UI_Layout_Function
+{
+    clear: both;
+    width: 100%;
+    height: 32px;
+    margin: 0px auto 5px auto;
+    overflow: hidden;
+    background: url(Images/Standard__jQueryExtension_UI_Page_RepeatX.png) repeat-x scroll 0px 0px transparent;
+}
+body div.jQueryExtension_UI_Layout_Function ul.jQueryExtension_UI_Layout_FunctionLeft
+{
+    float: left;
+}
+body div.jQueryExtension_UI_Layout_Function ul.jQueryExtension_UI_Layout_FunctionLeft li
+{
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin: auto 5px;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+body div.jQueryExtension_UI_Layout_Function ul.jQueryExtension_UI_Layout_FunctionRight
+{
+    float: right;
+}
+body div.jQueryExtension_UI_Layout_Function ul.jQueryExtension_UI_Layout_FunctionRight li
+{
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin: auto 5px;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+body div.jQueryExtension_UI_Layout_Function ul li a.jQueryExtension_UI_Button_Function, body div.jQueryExtension_UI_Layout_Function ul li a.jQueryExtension_UI_Button
+{
+    margin-top: 4px;
+}
+
+
+body div.divMainIframe_Title
+{
+    clear: both;
+    width: 100%;
+    height: 48px;
+    margin: 0px auto;
+    overflow: hidden;
+    background: url(Images/divMainIframe_TitleBackground.png) repeat scroll 0px 0px transparent;
+    border-bottom: 0px dashed #d8e3e8;
+}
+body div.divMainIframe_Title ul.divMainIframe_TitleLeft
+{
+    float: left;
+}
+body div.divMainIframe_Title ul.divMainIframe_TitleLeft li
+{
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    margin: auto 5px;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+body div.divMainIframe_Title ul.divMainIframe_TitleRight
+{
+    float: right;
+}
+body div.divMainIframe_Title ul.divMainIframe_TitleRight li
+{
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    margin: auto 5px;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+body div.divMainIframe_Title ul li div.divPageTitle
+{
+    text-indent: 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    color: White;
+    background: url(Images/divTitle.png) no-repeat scroll 0px center transparent;
+}
+body div.divMainIframe_Title ul li.liButton
+{
+    cursor: pointer;
+}
+body div.divMainIframe_Title ul li.liButton div.divButton_Close
+{
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    background: url(Images/divButton_Close.png) no-repeat scroll center center transparent;
+}
+body div.divMainIframe_Title ul li.liButton:hover
+{
+    background: url(Images/divButton_Close_Hover.png) no-repeat scroll center center transparent;
+}
+
+body div.divMainIframe_Menu
+{
+    clear: both;
+    width: 100%;
+    height: 36px;
+    margin: 0px auto;
+    background: url(Images/divMainIframe_MenuBackground.png) repeat-x scroll 0px 0px transparent;
+}
+body div.divMainIframe_Menu ul
+{
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    list-style: none;
+}
+body div.divMainIframe_Menu ul li
+{
+    float: left;
+    cursor: pointer;
+    padding: 0px 8px;
+    min-width: 60px;
+    border-right: 0px solid #f4cc6f;
+    color:#e7e7e7;
+}
+body div.divMainIframe_Menu ul li.liSelect, body div.divMainIframe_Menu ul li:hover
+{
+    background: url(Images/divMainIframe_MenuSelectBackground.png) repeat-x scroll 0px 0px transparent;
+}
+
+body div.jQueryExtension_UI_Layout_Content div.jQueryExtension_UI_Layout_Search
+{
+    clear: both;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #97B4D1;
+    margin: 0px auto;
+    background: url(Images/Standard__jQueryExtension_UI_Layout_Search.png) repeat-x scroll 0px 0px transparent;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Layout_Search
+{
+    clear: both;
+    width: 99%;
+    height: 40px;
+    border: 1px solid #97B4D1;
+    margin: 1px auto -2px auto;
+    background: url(Images/Standard__jQueryExtension_UI_Layout_Search.png) repeat-x scroll 0px 0px transparent;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Layout_Search.TopSearch
+{
+    width: 100%;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    margin: 0px auto;
+}
+body div.jQueryExtension_UI_Layout_Search ul li.liText
+{
+    font-size: 28px;
+    color: black;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft
+{
+    float: left;
+    line-height: 32px;
+    list-style: none;
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #2E71CB;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li
+{
+    float: left;
+    height: 40px;
+    margin: auto 4px;
+    padding: 4px 0px;
+    text-align: center;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight
+{
+    float: right;
+    line-height: 32px;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #2E71CB;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li
+{
+    float: left;
+    height: 40px;
+    margin: auto 4px;
+    padding: 4px 0px;
+    text-align: center;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li span.spanBorder, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li span.spanBorder
+{    
+    display: inline-block;
+    background-color: White;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #95B6D9;
+    overflow:hidden;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li span.spanBorder span.spanContainer, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li span.spanBorder span.spanContainer
+{
+    overflow: hidden;
+    display: inline-block;
+    *height:22px;
+    line-height: normal;
+    margin-top: 6px;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liSelect span.spanBorder, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liSelect span.spanBorder
+{
+    padding: 0px 4px;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liSelect span.spanBorder span.spanContainer select, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liSelect span.spanBorder span.spanContainer select
+{
+    font-size:16px;
+    margin: -1px -1px;
+    border: 1px solid transparent;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liSelect.Year select, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liSelect.Year select, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liSelect.Year.Month select, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liSelect.Year.Month select
+{
+    width: 80px;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liSelect.Month select, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liSelect.Month select
+{
+    width: 64px;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liText input, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liText input
+{
+    height: 32px;
+    line-height: 32px;
+    font-size: 28px;
+    font-family: 微软雅黑;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liInput input, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liInput input
+{
+    width: 120px;
+    height: 32px;
+    line-height: 30px;
+    border-width:0px;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liInput.Keyword
+{
+    margin-right:-5px;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liInput input, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liInput input
+{
+    margin: -1px -1px;
+    border: 2px solid transparent;
+    width: 160px;
+}
+body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchLeft li.liInput.DateTimeSelect input, body div.jQueryExtension_UI_Layout_Search ul.jQueryExtension_UI_Layout_SearchRight li.liInput.DateTimeSelect input
+{
+    margin: -1px -1px;
+    border: 2px solid transparent;
+    width: 118px;
+}
+.SearchWindowTitleImage
+{
+    padding-left: 20px;
+    background: url(Images/5.png) no-repeat scroll 0px 3px transparent;
+}
+
+
+
+
+body div.jQueryExtension_UI_Layout_Content div.jQueryExtension_UI_Layout_SearchCondition
+{
+    clear: both;
+    width: 100%;
+    border: 1px solid #97B4D1;
+    margin: 1px auto;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Layout_SearchCondition
+{
+    clear: both;
+    width: 99%;
+    border: 1px solid #97B4D1;
+    margin: 1px auto;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Layout_SearchCondition table.jQueryExtension_UI_Layout_TableSearchCondition
+{
+    border-collapse: collapse;
+    width: 100%;
+    margin: -1px auto auto -1px;
+    height: 24px;
+    line-height: 24px;
+}
+body div.jQueryExtension_UI_Layout_SearchCondition table.jQueryExtension_UI_Layout_TableSearchCondition tbody tr th
+{
+    border-left: 1px solid #97B4D1;
+    border-right: 0px solid #97B4D1;
+    border-top: 1px solid #97B4D1;
+    border-bottom: 0px solid #97B4D1;
+    font-family: "宋体";
+    font-size1: 12px;
+    color: #2E71CB;
+    white-space: nowrap;
+    padding-right: 2px;
+    font-weight: normal;
+    text-align: right;
+    background-color: #FFFFFF;
+}
+body div.jQueryExtension_UI_Layout_SearchCondition table.jQueryExtension_UI_Layout_TableSearchCondition tbody tr td
+{
+    border-left: 1px solid #97B4D1;
+    border-right: 0px solid #97B4D1;
+    border-top: 1px solid #97B4D1;
+    border-bottom: 0px solid #97B4D1;
+    text-align: left;
+    font-family: "宋体";
+    font-size1: 12px;
+    color: #0000FF;
+    white-space: nowrap;
+    padding-left: 5px;
+    background-color: #FFFFFF;
+}
+
+
+
+body div.jQueryExtension_UI_Layout_Content div.jQueryExtension_UI_Layout_Results
+{
+    clear: both;
+    width: 100%;
+    margin: 1px auto;
+}
+body div.jQueryExtension_UI_Layout_Results
+{
+    clear: both;
+    width: 99%;
+    margin: 1px auto;
+    padding-right: 2px !important;
+    padding-right: 1px;
+}
+body div.jQueryExtension_UI_Layout_Results div.ResultsData
+{
+}
+body div.jQueryExtension_UI_Layout_Results div.ResultsMiddle
+{
+    clear: both;
+    height: 56px;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Layout_Results div.ResultsChart
+{
+    overflow: hidden;
+    border: 0px solid #80a8d0;
+    padding: 1px 2px;
+}
+
+
+
+
+
+body div.jQueryExtension_UI_DivForm
+{
+    width: 99%;
+    max-width: 946px;
+    margin: 2px auto;
+}
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm
+{
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #97B4D1;
+    padding: 2;
+    margin-bottom: 3px;
+}
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm.Noborder
+{
+    border: 0px solid #97B4D1;
+}
+body div.jQueryExtension_UI_DivForm div.jQueryExtension_UI_DivForm_Function
+{
+    border-collapse: collapse;
+    width: 100%;
+    border: 0px solid #97B4D1;
+    position: absolute;
+    top: 4px;
+}
+body div.jQueryExtension_UI_DivForm ul.jQueryExtension_UI_Layout_FunctionRight
+{
+    margin-top: 0px;
+    float: right;
+}
+body div.jQueryExtension_UI_DivForm ul.jQueryExtension_UI_Layout_FunctionRight li
+{
+    float: left;
+    height: 23px;
+    line-height: 23px;
+    margin-right: 10px;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+body div.jQueryExtension_UI_DivForm div.jQueryExtension_UI_DivForm_DivAddForm
+{
+    cursor: pointer;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    position: absolute;
+    top: 0px;
+    border: 1px solid #97B4D1;
+    background: url(Images/xinzeng.png) no-repeat scroll center center white;
+    display: block;
+}
+body div.jQueryExtension_UI_DivForm div.jQueryExtension_UI_DivForm_DivAddForm:hover
+{
+    background: url(Images/xinzeng-h.png) no-repeat scroll center center white;
+}
+
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm .EditControl
+{
+    display: none;
+}
+
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm .ViewControl
+{
+    display: inline-block;
+}
+
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm .MustFilled
+{
+    color: Red;
+}
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm .VerticalAlignment_Top
+{
+    vertical-align: top;
+}
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm thead tr th.thTitle
+{
+    color: #488A06;
+    font-size1: 14px;
+    color: #488A06;
+    text-align: left;
+    line-height: 24px;
+    padding: 3px 2px 3px 28px;
+    border-bottom: 0px solid #97B4D1;
+    background: url(Images/0040.png) no-repeat scroll 0px 2px #E2F4FF;
+    font-weight: bold;
+}
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm tbody tr th
+{
+    border: 1px solid #d5d5d5;
+    font-family: "宋体";
+    font-size1: 14px;
+    color: #454545;
+    line-height: 24px;
+    padding: 2px 2px 2px 2px;
+    font-weight: bolder;
+    text-align: right;
+    background-color: #FFFFFF;
+}
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm tbody tr td
+{
+    border-left: 1px solid #d5d5d5;
+    border-right: 1px solid #d5d5d5;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    text-align: left;
+    font-family: "宋体";
+    font-size1: 14px;
+    color: #454545;
+    height: 20px;
+    line-height: 24px;
+    padding: 2px 2px 2px 5px;
+    background-color: #FFFFFF;
+}
+body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm tbody tr td div, body div.jQueryExtension_UI_DivForm table.jQueryExtension_UI_DivForm_TableForm tbody tr td span
+{
+    font-size1: 14px;
+}
+
+body div.jQueryExtension_UI_Layout_FormFunction
+{
+    clear: both;
+    width: 100%;
+    height: 32px;
+    margin: 0px auto 5px auto;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Layout_FormFunction ul.jQueryExtension_UI_Layout_FormFunctionLeft
+{
+    float: left;
+}
+body div.jQueryExtension_UI_Layout_FormFunction ul.jQueryExtension_UI_Layout_FormFunctionLeft li
+{
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin: auto 40px auto auto;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+body div.jQueryExtension_UI_Layout_FormFunction ul.jQueryExtension_UI_Layout_FormFunctionRight
+{
+    float: right;
+}
+body div.jQueryExtension_UI_Layout_FormFunction ul.jQueryExtension_UI_Layout_FormFunctionRight li
+{
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin: auto 40px auto auto;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+body div.jQueryExtension_UI_Layout_FormFunction ul li a.jQueryExtension_UI_Button
+{
+    margin-top: 0px;
+}
+
+
+
+
+body .textBase
+{
+    width: 140px;
+    height: 18px;
+    line-height: 18px;
+    font-size1: 12px;
+    padding: 0px 3px;
+    background-image: url('../Images/textBase.gif');
+    background-repeat: repeat-x;
+    border: 1px solid #95B6D9;
+}
+body .spanBase
+{
+    width: 140px;
+    height: 18px;
+    line-height: 18px;
+    font-size1: 12px;
+    padding: 0px 4px;
+}
+body .divTextBase
+{
+    width: 90%; /*height: 18px;*/
+    line-height: 18px;
+    font-size1: 12px;
+    padding: 0px 4px;
+}
+body .divTextAreaBase
+{
+    width: 90%; /*height: 18px;*/
+    line-height: 18px;
+    font-size1: 12px;
+    padding: 0px 4px;
+    border-width: 0px;
+    overflow: visible;
+    color: #454545;
+}
+body .textBase.Keyword
+{
+    margin-right: -16px;
+    height: 22px;
+    line-height: 22px;
+}
+body .textBaseDateTime
+{
+    width: 120px;
+    height: 18px;
+    line-height: 18px;
+    font-size1: 12px;
+    padding: 0px 3px;
+    background-image: url('../Images/textBaseDateTime.gif');
+    background-repeat: repeat-x;
+    border: 1px solid #95B6D9;
+}
+body .divTextBaseDateTime
+{
+    width: 140px;
+    height: 18px;
+    line-height: 18px;
+    font-size1: 12px;
+    padding: 0px 4px;
+}
+body .textTitle
+{
+    width: 100px;
+    height: 18px;
+    line-height: 18px;
+    font-size1: 12px;
+    padding: 0px 3px;
+    border: 1px solid #95B6D9;
+}
+body .textareaBase
+{
+    width: 200px;
+    height: 100px;
+    line-height: 18px;
+    font-size1: 12px;
+    background-image: url('../Images/textareaBase.gif');
+    background-repeat: repeat-x;
+    border: 1px solid #95B6D9;
+    overflow: auto;
+    scrollbar-base-color: #ffffff;
+    scrollbar-face-color: #E4F1FC;
+    scrollbar-track-color: #ffffff;
+    scrollbar-arrow-color: #5899ff;
+    scrollbar-3dlight-color: #ffffff;
+    scrollbar-darkshadow-color: #ffffff;
+    scrollbar-highlight-color: #79B6E9;
+    scrollbar-shadow-color: #79B6E9;
+}
+body .divTextAreaBase
+{
+    width: 200px;
+    height1: 102px;
+    line-height: 18px;
+    font-size1: 12px;
+    background-image: url('../Images/textareaBase.gif');
+    background-repeat: repeat-x;
+    border: 0px solid #95B6D9;
+    overflow: auto;
+    word-break: break-all;
+    scrollbar-base-color: #ffffff;
+    scrollbar-face-color: #E4F1FC;
+    scrollbar-track-color: #ffffff;
+    scrollbar-arrow-color: #5899ff;
+    scrollbar-3dlight-color: #ffffff;
+    scrollbar-darkshadow-color: #ffffff;
+    scrollbar-highlight-color: #79B6E9;
+    scrollbar-shadow-color: #79B6E9;
+}
+body .imageBase
+{
+}
+body .imageInfoBase
+{
+    width: 300px;
+}
+body .selectBase
+{
+    width: 145px;
+    font-size1: 12px;
+    background-image: url('../Images/textBase.gif');
+    background-repeat: repeat-x;
+    border: 1px solid #95B6D9;
+}
+body .divSelectBase
+{
+    width: 140px;
+    height: 18px;
+    line-height: 18px;
+    font-size1: 12px;
+    padding: 0px 4px;
+}
+body .selectBase .optgroupBase
+{
+}
+body .selectBase .optionBase
+{
+}
+body .selectBase .optionAddBase
+{
+}
+
+
+body div.jQueryExtension_UI_Keyword
+{
+    background-color: White;
+}
+body div.jQueryExtension_UI_Keyword table
+{
+    width: 100%;
+    border: 1px solid #80a8d0;
+    text-align: left;
+}
+body div.jQueryExtension_UI_Keyword table tbody
+{
+}
+body div.jQueryExtension_UI_Keyword table tbody tr
+{
+    text-indent: 5px;
+    cursor: pointer;
+    line-height: 22px;
+}
+body div.jQueryExtension_UI_Keyword table tbody tr.jQueryExtension_UI_Keyword_TrRowSelected
+{
+    background-color: #c1d8f2;
+}
+body div.jQueryExtension_UI_Keyword table tbody tr td
+{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Add
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_Add.png) no-repeat scroll 1px center transparent;
+}
+
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Edit
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_Edit.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Delete
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_Delete.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_DatabaseCopy
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_DatabaseCopy.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_DatabaseConnect
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_DatabaseConnect.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Search
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_Search.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Save
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_Save.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Cancel
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_Cancel.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Synchronize
+{
+    padding-left: 18px;
+    background: url(Images/jQueryExtension_UI_Button_Synchronize.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Verify
+{
+    padding-left: 18px;
+    background: url(Images/审核.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_VerifyOpinion
+{
+    padding-left: 18px;
+    background: url(Images/审核意见.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Invalid
+{
+    padding-left: 18px;
+    background: url(Images/作废.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Disabled
+{
+    padding-left: 18px;
+    background: url(Images/停用.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_PasswordInit
+{
+    padding-left: 18px;
+    background: url(Images/密码初始化.png) no-repeat scroll 1px center transparent;
+}
+body a.jQueryExtension_UI_Button_Function span span.jQueryExtension_UI_Button_Function_Upload
+{
+    padding-left: 18px;
+    background: url(Images/上传.png) no-repeat scroll 1px center transparent;
+}
+.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow table.tableDoubleHead td
+{
+    border-bottom-style: none !important;
+}
+table.tableDoubleHead
+{
+}
+table.tableDoubleHead td.noRightline
+{
+    border-right-style: none !important;
+}
+table.tableDoubleHead td.leftline
+{
+    border-left: 1.5px solid #D5D5D5;
+}
+table.tableDoubleHead td.bottomline
+{
+    border-bottom: 1.5px solid #D5D5D5;
+}
+table.tableDoubleHead td Div.jQueryExtension_UI_GridView_TbodyBody_TrRow_TdRow_DivRow
+{
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+
+div.divReportContent
+{
+    width: 896px;
+    margin: 0px auto;
+}
+div.divReportContent div.divBlock
+{
+    clear: both;
+    margin-top: 20px;
+    font-size:16px;
+}
+div.divReportContent div.divBlock.divBoth
+{
+    border: 1px solid #dadada;
+}
+div.divReportContent div.divBlock.Search
+{
+    height: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+div.divReportContent div.divBlock.Search .jQueryExtension_UI_Layout_Search
+{
+    padding-top: 12px;
+    height: 50px;
+    width: 896px;
+    position: fixed;
+    border: 0px;
+    background: #FFFFFF;
+    z-index: 99999;
+}
+div.divReportContent div.divBlock div.divFloatLeft
+{
+    float: left;
+    width: 49%;
+    border: 1px solid #dadada;
+}
+div.divReportContent div.divBlock div.divFloatRight
+{
+    float: right;
+    width: 49%;
+    border: 1px solid #dadada;
+}
+
+div.divReportContent div.divBlock div.divDescription
+{
+    min-height: 40px;
+    text-indent: 2em;
+    padding: 10px 10px;
+    margin-top: 10px;
+    border-top: 1px solid #dadada;
+    background-color: #f2f2f2;
+}
+div.divReportContent div.divBlock div.divContent
+{
+}
+
+body .selectBase.selectCanton
+{
+    width:128px;
+}
+body .selectBase.selectValley
+{
+    width:96px;
+}
+body .selectBase.selectIndustry
+{
+    width:128px;
+}
+
+.divPdf
+{
+    text-align: left;
+    text-indent: 26px;
+    background: url(Images/pdf.PNG) no-repeat scroll 0px center transparent;
+}
+.divDoc
+{
+    text-align: left;
+    text-indent: 26px;
+    background: url(Images/word.PNG) no-repeat scroll 0px center transparent;
+}
+.divXls
+{
+    text-align: left;
+    text-indent: 26px;
+    background: url(Images/exl.PNG) no-repeat scroll 0px center transparent;
+}
+.divTxt
+{
+    text-align: left;
+    text-indent: 26px;
+    background: url(Images/txt.PNG) no-repeat scroll 0px center transparent;
+}
+
+.divMeasurementUnit
+{
+    float: left; line-height: 40px; color: #454545
+}
+.divHeadToolsClose
+{
+    float: right;  
+    width: 20px;
+    height: 23px;
+    background: url(jQueryExtension/Images/Standard__jQueryExtension_UI_Window.png) no-repeat scroll -100px -25px transparent;
+    cursor: pointer;
+    line-height: 23px;
+    text-align: center;
+}
+.divHeadToolsToggle
+{
+    float: right;  
+    width: 24px;
+    height: 24px;
+    background: url(Home/Images/divEnterpriseList1.png) ;
+    cursor: pointer;
+    line-height: 23px;
+    text-align: center;
+}
+.divHeadToolsHide
+{
+    float: right;  
+    width: 24px;
+    height: 24px;
+    background: url(Home/Images/divEnterpriseList2.png) ;
+    cursor: pointer;
+    line-height: 23px;
+    text-align: center;
+}
+
+
+
+ 

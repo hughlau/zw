@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>在线监测数据查询</title>
+    <link href="../scripts/themes/default/autoMonitor/autoMonitor.css" rel="stylesheet"
+        type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../../resources/scripts/moment/moment.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="monitorSiteLatestData.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                 <td style="width: 60%; white-space: nowrap; text-align: left;">
+                        <div class="divChooseStatic" id="btnColorMenu">
+                        </div>
+                    </td>
+                    </table>
+                    <table style="width: 100%;">
+                <tr>
+                    <td style="width: 40%; white-space: nowrap; text-align: right;">
+                        <input class="mini-treeselect " id="cantonCode" selectonfocus="true" style="width: 150px;"
+                            name="cantonCode" textfield="name" valuefield="code" parentfield="pCode" popupwidth="180px;"
+                            expandonload="0" />
+                        <input id="equipmentKeyword" name="equipmentKeyword" class="mini-textbox" emptytext="请输入净化槽、设备编码或镇、村名称" style="width: 250px;" onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" id="btnSearch">查询</a>
+                        <a class="mini-button" iconcls="icon-download" id="export" onclick="dataExport();">导出</a>
+                    </td>
+                </tr>
+              
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%; margin: 0px auto;" pagesize="100" sizelist="[100,200,500,1000]" frozenstartcolumn="0" frozenendcolumn="2" showPager="true"
+  border-width="0" onbeforeload="datagrid1_BeforeLoad">
+        </div>
+    </div>
+</body>
+</html>

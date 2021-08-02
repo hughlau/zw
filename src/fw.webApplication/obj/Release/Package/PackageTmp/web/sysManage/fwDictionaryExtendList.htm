@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>字典管理</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwDictionaryExtendList.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a class="mini-button" iconcls="icon-add" onclick="openInfo('insert','-fw-');">增加根节点</a>
+                        <a class="mini-button" iconcls="icon-add" onclick="openInfo('insert');" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                            增加子节点</a>
+                        <!--<a class="mini-button" iconcls="icon-edit" onclick="openInfo('query');">查看</a>-->
+                        <a class="mini-button" iconcls="icon-edit" id="buttonEdit" onclick="openInfo('query');"
+                            data-options="{minSelectedCount:1,maxSelectedCount:1}">修改</a> <a id="moveNodeOut"
+                                class="mini-button" iconcls="icon-goto" onclick="moveNode('out');" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                                移动节点</a> <a id="moveNodeUp" class="mini-button" iconcls="icon-upload" onclick="moveNode('up');"
+                                    data-options="{minSelectedCount:1,maxSelectedCount:1}">向上</a> <a id="moveNodeDown"
+                                        class="mini-button" iconcls="icon-download" onclick="moveNode('down');" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                                        向下</a> <a id="enable" class="mini-button" iconcls="icon-unlock" onclick="able(0);"
+                                            data-options="{minSelectedCount:1}">启用</a> <a id="disable" class="mini-button" iconcls="icon-lock"
+                                                onclick="able(1);" data-options="{minSelectedCount:1}">停用</a>
+                        <a id="del" data-options="{minSelectedCount:1}" class="mini-button" iconcls="icon-remove"
+                            onclick="del();">删除</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <span id="mDictionaryTypeCodeLabel">字典类型：</span>
+                        <input id="mDictionaryTypeCode" name="mDictionaryTypeCode" class="mini-combobox"
+                            selectonfocus="true" valuefield="mDictionaryTypeCode" textfield="mDictionaryTypeName"
+                            style="width: 120px;" onvaluechanged="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" plain="true" style="display: none;"
+                            onclick="onSearch();">查询</a> <a id="select" class="mini-button" style="display: none;"
+                                iconcls="icon-add" onclick="select();">选择</a> <a id="selectRootNode" class="mini-button"
+                                    style="display: none;" iconcls="icon-add" onclick="selectRootNode();">选择根节点</a>
+                        <a id="selectClear" class="mini-button" style="display: none;" iconcls="icon-add"
+                            onclick="selectClear();">清除</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="treegrid1" class="mini-treegrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            multiselect="true" showcolumnsmenu="true" frozenstartcolumn="0" frozenendcolumn="1"
+            ondrawcell="treegrid1_DrawCell" onbeforeselect="treegrid1_BeforeSelect" showtreeicon="true"
+            treecolumn="mName" idfield="mCode" parentfield="mPCode" resultastree="true" expandonload="true"
+            onselectionchanged="datagrid1_SelectionChanged">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                </div>
+                <div type="checkcolumn" width="40">
+                </div>
+                <div field="mDataID" width="150" headeralign="center" align="left" visible="false">
+                    数据ID</div>
+                <div field="mDictionaryTypeCode" width="150" headeralign="center" align="left" visible="false">
+                    字典类型编码</div>
+                <div field="mDictionaryTypeName" width="100" headeralign="center" align="left">
+                    字典类型名称</div>
+                <div field="mPCode" width="150" headeralign="center" align="left" visible="false">
+                    父级编码</div>
+                <div field="mCode" width="100" headeralign="center" align="left">
+                    编码</div>
+                <div name="mName" field="mName" width="150" headeralign="center" align="left" renderer="treegrid1_Renderer">
+                    名称</div>
+                <div field="mIx" width="60" headeralign="center" align="center">
+                    顺序</div>
+                <div field="mIsDis" width="60" headeralign="center" align="center" renderer="treegrid1_Renderer">
+                    停用状态</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

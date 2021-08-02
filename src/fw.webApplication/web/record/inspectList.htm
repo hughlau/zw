@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>日常运维列表</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <!-- <script src="../scripts/page1.js" type="text/javascript"></script> -->
+    <script src="../operationMaintenance/OperationMaintenancePage.js" type="text/javascript"></script>
+    <script src="inspectList.htm.js" type="text/javascript"></script>
+    <style>
+        .float_div {
+            position: absolute;
+            width: auto;
+            height: auto;
+            /*border:1px solid red;*/
+            left: 30%;
+            top: 10%;
+            z-index: 1000;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr style="display:none">
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a id="buttonAdd" class="mini-button" iconcls="icon-add">增加</a> <a id="buttonEdit"
+                                                                                           class="mini-button" iconcls="icon-edit">修改</a> <a id="buttonDelete" class="mini-button"
+                                                                                                                                             iconcls="icon-remove">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100%; white-space: nowrap; text-align: left;">
+                        <input class="mini-treeselect " selectonfocus="true" style="width: 160px;" id="cantonCode"
+                               name="cantonCode" textfield="name" valuefield="code" parentfield="pCode" expandonload="0" />
+                        <input name="dStart" id="mCallTimeFrom" class="mini-datepicker" selectonfocus="true"
+                               nullvalue="null" format="yyyy-MM-dd" showtime="false" showokbutton="true" showclearbutton="false"
+                               emptytext="开始时间..." ondrawdate="onDrawStartDate" style="width: 120px;" onvaluechanged="onSearch();" />
+                        <span>至</span>
+                        <input name="dEnd" id="mCallTimeTo" class="mini-datepicker" selectonfocus="true"
+                               nullvalue="null" format="yyyy-MM-dd" showtime="false" showokbutton="true" showclearbutton="false"
+                               emptytext="结束时间..." ondrawdate="onDrawEndDate" style="width: 120px;" onvaluechanged="onSearch();" />
+                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入净化槽、设备编码或镇、村名称"
+                               style="width: 250px;" onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" id="btnSearch">查询</a>
+                        <a class="mini-button" iconcls="icon-add" id="btnExSearch">高级查询</a>
+                        <a class="mini-button" iconcls="icon-download" id="export" onclick="dataExport();">导出</a>
+                        <a class="mini-button" iconcls="icon-download" id="print" onclick="dataPrint();">打印</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <span>档案类型：</span>
+                        <input id="IrrAreaState" name="IrrAreaState" class="mini-combobox" style="width: 100px;
+                            " onvaluechanged="onTypeChange" textfield="name" valuefield="code" value="inspectList"
+                               shownullitem="false" data="[{code:'inspectList',name:'巡检'},{code:'repairList',name:'维修任务'},{code:'alarmList',name:'报警任务'},{code:'cleanList',name:'清掏任务'},{code:'inoculationList',name:'接种任务'}]" />
+                    </td>
+                </tr>
+                <tr class="exSearch">
+                    <td style="width: 100%; white-space: nowrap; text-align: left;" colspan="2">
+                        高级查询：
+                    </td>
+                </tr>
+                <tr class="exSearch">
+                    <td style="width: 100%; white-space: nowrap; text-align: left;" colspan="2">
+                        <input id="cmbresponsiblePartyId" class="mini-combobox" style="width: 120px;" textfield="name"
+                               name="responsiblePartyId" valuefield="code" shownullitem="true" nullitemtext="责任方" emptytext="责任方"
+                               onvaluechanged="" />
+                        <input id="cmbdamagedContentId" class="mini-combobox" style="width: 120px;" textfield="name"
+                               name="damagedContentId" valuefield="code" shownullitem="true" nullitemtext="损坏内容" emptytext="损坏内容"
+                               onvaluechanged="" />
+                        <input id="cmbrecoveryPeopleId" class="mini-combobox" style="width: 120px;" textfield="name"
+                               name="recoveryPeopleId" valuefield="code" shownullitem="true" nullitemtext="恢复人" emptytext="恢复人"
+                               onvaluechanged="" />
+                        <input id="cmInspectionStatus" class="mini-combobox" style="width: 120px;" textfield="name"
+                               name="inspectionStatus" valuefield="code" shownullitem="true" nullitemtext="巡检状态" emptytext="巡检状态"
+                               onvaluechanged="" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" fitcolumns='true' style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+             pagesize="10" sizelist="[10,50,100]" fitcolumns="false" multiselect="true" onbeforeload="datagrid1_BeforeLoad"
+             onselectionchanged="datagrid1_SelectionChanged">
+            <div property="columns">
+                <div type="checkcolumn" width="40">
+                </div>
+                <div type="indexcolumn" width="60px" headeralign="center">
+                    序号
+                </div>
+                <div field="imgName" width="200px" headeralign="center" align="center" renderer="dataGrid_Renderer">
+                    现场照片
+                </div>
+                <div field="jianzhizhen" width="80px" headeralign="center" allowsort="true" align="center">
+                    建制镇
+                </div>
+                <div field="xingzhengcun" width="80px" headeralign="center" allowsort="true" align="center">
+                    行政村
+                </div>
+                <div field="zirancun" width="100px" headeralign="center" allowsort="true" align="center">
+                    自然村
+                </div>
+                <div field="monitorSiteName" width="120px" headeralign="center">
+                    设备编号
+                </div>
+                <div field="maintainers" width="110px" headeralign="center" align="center">
+                    巡检人员
+                </div>
+                <div field="createTime" width="100px" headeralign="center" align="center">
+                    巡检日期
+                </div>
+                <div field="operationContent" width="400px" headeralign="center" align="left">
+                    现场描述
+                </div>
+                <div field="taskStatusName" width="100px" headeralign="center" align="center">
+                    巡检状态
+                </div>
+                <div field="responsibleParty" width="100px" headeralign="center" align="center">
+                    责任方
+                </div>
+                <div field="damagedItemDetails" width="100px" headeralign="center" align="center">
+                    上报问题项
+                </div>
+                <div field="damagedContent" width="100px" headeralign="center" align="center">
+                    损坏内容
+                </div>
+                <div field="recoveryPeople" width="100px" headeralign="center" align="center">
+                    恢复人
+                </div>
+                <div field="remark" width="400px" headeralign="center" align="left">
+                    问题描述
+                </div>
+                <div name="meterNum" field="meterNum" width="100px" headeralign="center" align="center">
+                    电表读数
+                </div>
+                <div name="lastMeterNum" field="lastMeterNum" width="100px" headeralign="center" align="center">
+                    上次电表读数
+                </div>
+                <div field="GPS" width="180px" headeralign="center" align="center">
+                    运维地址
+                </div>
+                <div field="detail" width="100px" headeralign="center" align="center" renderer="dataGrid_Renderer">
+                    运维表单
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divImage" onmouseout='$.OperationMaintenancePage.mouseOut()' class='float_div'></div>
+</body>
+</html>

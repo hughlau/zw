@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>系统管理</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+</head>
+<body isneedlogin="1" style="width: 100%; background-color: white;">
+    <div class="mini-layout" style="width: 100%; height: 100%;">
+        <div title="center" region="center" style="border: 0;">
+            <div id="mainTabs" class="mini-tabs" activeindex="0" style="width: 100%; height: 100%;
+                margin-left: 10px;" plain="false">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $.page.pageLoad = function () {
+        addTab();
+    };
+    function addTab() {
+        var tabs = mini.get("mainTabs");
+        var tab = "";
+        var param = { ticket: $.page.ticket };
+        var reportRegister = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysBasicManage/main.htm", param);
+        var reportRegisterEnStatus = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/main.htm", param);
+        tab = [
+            { title: "系统管理", refreshOnClick: "true", url: reportRegisterEnStatus },
+            { title: "平台管理", refreshOnClick: "true", url: reportRegister }
+        ];
+        for (var i = 0; i < tab.length; i++) {
+            tabs.addTab(tab[i]);
+            tabs.activeTab(tab[0]);
+        }
+    };
+</script>
+</html>

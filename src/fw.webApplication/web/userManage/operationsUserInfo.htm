@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户信息</title>
+    <link href="../style/global.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script> 
+    <script src="operationsUserInfo.htm.js" type="text/javascript"></script>
+    <style>
+        table.tableEnt tr td.tdRight a.select
+        {
+            display: inline-block;
+            white-space: nowrap;
+            height: 24px;
+            padding: 0 10px;
+            text-decoration: none;
+            color: #FFF;
+            border-radius: 2px;
+            background-color: #f60;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body isloaduserinfo="1">
+    <div id="editform" class="form" style="padding-top: 10px;">
+        <h2 class="headline-1">
+            <a class="anchor-1" name="1"></a><i class="fa fa-bank"></i><span class="headline-content">
+                运维人员基本信息</span><span style="font-size: 14px; height: 100%; line-height: 100%;"></span>
+        </h2>
+        <div class="partbottom">
+            <table class="tableEnt form" style="margin-bottom: 10px;">
+                <tr>
+                    <td class="tdleft">
+                        <span class="spanBase MustFilled">*</span>姓名
+                    </td>
+                    <td class="tdRight">
+                        <input name="mUserName" class="mini-textbox" selectonfocus="true" required="true"
+                            maxlength="50" style="width: 90%;" />
+                    </td>
+                    <td class="tdleft">
+                        <span class="spanBase MustFilled"></span>中文名
+                    </td>
+                    <td class="tdRight">
+                        <input name="mChineseName" class="mini-textbox" selectonfocus="true" maxlength="18"
+                            style="width: 90%;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdleft">
+                        手机
+                    </td>
+                    <td class="tdRight">
+                        <input name="mMobilePhone" class="mini-textbox" selectonfocus="true" maxlength="18"
+                            style="width: 90%;" />
+                    </td>
+                    <td class="tdleft">
+                        邮箱
+                    </td>
+                    <td class="tdRight">
+                        <input name="mEMail" class="mini-textbox" selectonfocus="true" vtype="email" maxlength="18" style="width: 90%;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdleft">
+                        所属行政区
+                    </td>
+                    <td class="tdRight" colspan="3">
+                        <input class="mini-treeselect" selectonfocus="true" style="width: 90%;" id="cantonCode"
+                            name="cantonCode" textfield="name" valuefield="code" parentfield="pCode" expandonload="0"
+                            onvaluechanged="cantonChanged" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdleft">
+                        <a class="mini-button" iconcls="icon-add" onclick=" openSetCanton(); ">管辖行政区</a>
+                    </td>
+                    <td class="tdRight" colspan="3">
+                        <div id="cantonSelectedList">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="text-align: right; padding: 10px;">
+        <a id="insertOrUpdate" class="mini-button" style="margin-right: 20px;" iconcls="icon-save"
+            onclick="onInsertOrUpdate">保存</a> <a id="cancel" class="mini-button" style="margin-right: 20px;"
+                iconcls="icon-cancel" onclick="onCancel">取消</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+﻿var dataSourceList = [];
+
+var buttonAddJQ = null;
+var buttonEditJQ = null;
+var buttonDeleteJQ = null;
+var action = null;
+var buttonSearchJQ = null;
+var buttonAddInfoJQ = null;
+var callBackHanlder = undefined; //map回调函数
+window.top['_projectCache'] = "init";  //标识系统登录后，尚未选择项目
+$.page.pageInit = function () {
+    $.page.dataSourceSettingsDictionary = {
+        "cmbCanton": {
+            dataSourceName: "sysBasicManage.getCantonDicData"
+            , dataSourceParams: {  }
+        }
+    };
+};
+$.page.pageLoad = function () {
+    buttonDeleteJQ = $("#buttonDelete");
+
+    buttonDeleteJQ.bind("click", function () {
+        deleteInfo();
+    });
+    onSearch();
+};
+
+
+function onSearch() {
+    datagrid1_Load(0);
+};
+
+function datagrid1_BeforeLoad(e) {
+    //取消datagrid的miniui自动加载
+    e.cancel = true;
+    //miniui的页数与实际相差1页
+    var pageIndex = e.data.pageIndex + 1;
+    var pageSize = e.data.pageSize;
+    //datagrid加载数据
+    datagrid1_Load(pageIndex, pageSize);
+};
+
+function datagrid1_Renderer(e) {
+    var html = "";
+    switch (e.field) {
+        case "createTime":
+            html = (fw.fwObject.FWObjectHelper.hasValue(e.value)) ? fw.fwObject.FWObjectHelper.toString(fw.fwObject.FWObjectHelper.toDateTime(e.value), $.pageCustomer.dateDay) : "--";
+            break;
+        default:
+            break;
+    };
+    return html;
+};
+
+function datagrid1_Load(pageIndex, pageSize) {
+    //如果没传入页数
+    if (!$.pageCustomer.hasValue(pageIndex)) {
+        //将页数设置为datagrid的页数
+        pageIndex = $.page.idM.datagrid1.pageIndex;
+    };
+    //如果没传入分页大小
+    if (!$.pageCustomer.hasValue(pageSize)) {
+        //将分页大小设置为datagrid的分页大小
+        pageSize = $.page.idM.datagrid1.pageSize;
+    };
+    //排序字段
+    var sortFieldList = null;
+    //如果datagrid设置有排序字段
+    if (fw.fwObject.FWObjectHelper.hasValue($.page.idM.datagrid1.sortField)) {
+        //将排序字段设置为datagrid的排序字段
+        sortFieldList = [{
+            fieldName: $.page.idM.datagrid1.getSortField()
+            , sortType: fw.fwData.FWSortType[$.page.idM.datagrid1.getSortOrder()]
+        }];
+    };
+    //开启datagrid数据加载锁屏
+    $.page.idM.datagrid1.loading();
+
+    //加载数据
+    $.page.ajax($.page.getAjaxSettings({
+        serviceType: "crossDomainCall"
+        , serviceName: "basicInfo"
+        , methodName: "queryPageFeedback"
+        , data: {
+            ticket: $.page.ticket
+            , pageParams: {
+                pageSize: pageSize
+                , pageIndex: pageIndex
+                //, sortFieldList: sortFieldList
+            }
+          //  , queryParams: conditionData
+        }
+        , success: function (resultData) {
+            //判断加载数据成功
+            if (resultData.status == fw.fwData.FWResultStatus.Success && resultData.data != null) {
+                //设置datagrid数据
+                $.page.idM.datagrid1.set({
+                    pageIndex: resultData.data.pageIndex - 1
+                    , pageSize: resultData.data.pageSize
+                    , totalCount: resultData.data.recordCount
+                    , data: resultData.data.entityList
+                });
+            } else {
+                var erroInfo = resultData.infoList.join("<br>");
+                $.page.showTips({ content: "查询失败!<br>", state: "danger" });
+            };
+
+        }
+    }));
+
+};
+
+function deleteInfo() {
+    var entity = getSelectedEntitys();
+    for (var i = 0; i < entity.length; i++) {
+        entity[i].isDel = 1;
+    }
+    mini.confirm("确定删除记录？", "确定？", function (action) {
+        if (action == "ok") {
+            $.page.ajax($.page.getAjaxSettings({
+                serviceType: "crossDomainCall"
+                , serviceName: "basicInfo"
+                , methodName: "deleteFeedback"
+                , data: { ticket: $.page.ticket
+                , mEntity: entity
+                }
+                , success: function (resultData) {
+                    //判断加载数据成功
+                    if (resultData.status == fw.fwData.FWResultStatus.Success && resultData.data != null) {
+                        mini.alert("删除成功", "提示", function () {
+                            onSearch();
+                        });
+                    }
+                    else {
+                        var erroInfo = resultData.infoList.join("<br>");
+                        $.page.showTips({ content: "操作失败!<br>" + erroInfo, state: "danger" });
+                    };
+                }
+            }));
+        };
+    });
+};
+
+function getSelectedEntitys() {
+    //获取选中项对象
+    var entity = $.page.idM.datagrid1.getSelecteds();
+    //判断对象没有值
+    if (!$.pageCustomer.hasValue(entity)) {
+        mini.alert("请选择一项！");
+        entity = undefined;
+    };
+    return entity;
+};
+

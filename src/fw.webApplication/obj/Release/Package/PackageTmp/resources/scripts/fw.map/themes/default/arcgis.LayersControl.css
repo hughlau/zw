@@ -1,0 +1,114 @@
+﻿body div.divArcGISLayersControl
+{
+    position: absolute;
+    width: 78px;
+    height: 32px;
+    color: #e7e7e7;
+    left:230px;
+    top:100px;
+}
+body div.divArcGISLayersControl div.jQE_Container_Absolute
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+body div.divArcGISLayersControl div.divLayers
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+body div.divArcGISLayersControl div.divLayers div.divLayersImage
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: url(images/Standard__jQueryExtension_UI_ArcGIS_LayersControl.png) no-repeat scroll 0px 0px transparent;
+}
+body div.divArcGISLayersControl div.divLayers div.divLayersImage:hover
+{
+    background: url(images/Standard__jQueryExtension_UI_ArcGIS_LayersControl.png) no-repeat scroll 0px -32px transparent;
+}
+body div.divArcGISLayersControl div.divLayersMenu
+{
+    position: absolute;
+    top: 105%;
+    display: none;
+}
+body div.divArcGISLayersControl div.divLayersMenu table.tableLayersMenu
+{
+    border-collapse: collapse;
+    background: url(images/LayersControlBackground.png) repeat scroll center center transparent;
+}
+body div.divArcGISLayersControl div.divLayersMenu table.tableLayersMenu td
+{
+    border: 1px solid #666666;
+}
+body div.divArcGISLayersControl div.divLayersMenu table.tableLayersMenu td.tdCenter
+{
+    width: 2px;
+    background-color: #666666;
+}
+body div.divArcGISLayersControl div.divLayersMenu table.tableLayersMenu td div.divLayersType ul.ulLayersType
+{
+    list-style: none;
+    cursor: pointer;
+    padding: 0px 0px;
+    margin: 2px -2px 2px 2px;
+}
+body div.divArcGISLayersControl div.divLayersMenu table.tableLayersMenu td div.divLayersType ul.ulLayersType li
+{
+    writing-mode1: tb-rl;
+    border: 1px solid #666666;
+    padding: 2px 2px 2px 2px;
+    margin-top: 2px;
+    font-size: 14px;
+    clear: both;
+}
+body div.divArcGISLayersControl div.divLayersMenu table.tableLayersMenu td div.divLayersType ul.ulLayersType li.Selected
+{
+    color: White;
+    background-color: #666666;
+}
+body div.divArcGISLayersControl div.divLayersMenu table.tableLayersMenu td div.divLayersContent ul.ulLayersContent
+{
+    list-style: none;
+    display: none;
+    padding: 0px 4px 4px 0px;
+    margin: 0px 0px;
+    width: 136px;
+    max-height: 384px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+body div.divArcGISLayersControl div.divLayersMenu table.tableLayersMenu td div.divLayersContent ul.ulLayersContent label.labelCheckbox
+{
+}
+
+
+body div.divArcGISPollutionSrcParam
+{
+    position: absolute;
+    right: 2px;
+    bottom: 40px;
+    width: 200px;
+    height: 210px;
+    z-index: 4;
+    border: 1px solid #414849;
+    background-color: #e6effa;
+    display: none;
+}

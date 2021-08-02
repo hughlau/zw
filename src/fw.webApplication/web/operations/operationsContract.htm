@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维合同</title>
+    <link href="../style/global.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="operationsContract.htm.js" type="text/javascript"></script>
+</head>
+<body isloaduserinfo="1">
+    <div id="divForm" class="form">
+        <div style="width: 80%; margin: 0 auto; padding-top: 20px;">
+            <!--净化槽-->
+            <h2 class="headline-1">
+                <a class="anchor-1" name="1"></a><i class="fa fa-bank"></i><span class="headline-content">
+                    运维项目基本信息</span><span style="font-size: 14px; height: 100%; line-height: 100%;"></span>
+            </h2>
+            <div class="partbottom">
+                <table class="tableEnt " style="margin-bottom: 10px;">
+                    <tr>
+                        <td class="tdleft">
+                            <span class=" MustFilled">*</span>项目编号
+                        </td>
+                        <td class="tdRight">
+                            <input style="width: 90%;" name="contractNo" required="true" vtype="rangeLength:1,20"
+                                class="mini-textbox " selectonfocus="true" />
+                        </td>
+                        <td class="tdleft">
+                            <span class=" MustFilled">*</span>项目名称
+                        </td>
+                        <td class="tdRight">
+                            <input style="width: 90%;" name="operationMaintenanceContractName" required="true"
+                                vtype="rangeLength:1,20" class="mini-textbox " selectonfocus="true" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            <span class="  MustFilled">*</span> 开始时间
+                        </td>
+                        <td class="tdRight"  >
+                            <input id="txtEffectiveStart" class="mini-datepicker "  style="width: 90%;"   selectonfocus="true" name="effectiveTime"
+                                nullvalue="null" format="yyyy-MM-dd" emptytext="开始时间..." ondrawdate="onDrawDateBegin"
+                                showclearbutton="true" />
+                        </td>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span> 结束时间
+                        </td>
+                        <td class="tdRight"  >
+                            <input id="txtEffectiveEnd" class="mini-datepicker "  style="width: 90%;"  selectonfocus="true" name="failTime"
+                                nullvalue="null" format="yyyy-MM-dd" emptytext="结束时间..." ondrawdate="onDrawDateEnd"
+                                showclearbutton="true" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>行政区：
+                        </td>
+                        <td class="tdRight">
+                            <input class="mini-treeselect " selectonfocus="true" style="width: 90%;" id="cantonCode"
+                                required="true" name="cantonCode" textfield="name" valuefield="code" parentfield="pCode"
+                                expandonload="0" />
+                        </td>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span> 运维单位
+                        </td>
+                        <td class="tdRight" >
+                             <input  class="mini-combobox" style="width: 90%;" id="operationMaintenanceUnitCode" textfield="operationMaintenanceUnitName"
+                            name="operationMaintenanceUnitCode" valuefield="operationMaintenanceUnitCode" shownullitem="true" nullitemtext="运维企业" emptytext="运维企业"
+                            onvaluechanged=""  required="true" /> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            备注：
+                        </td>
+                        <td class="tdRight" colspan="3">
+                            <input style="width: 99%; height: 60px;" class="mini-textarea" name="rem" vtype="rangeLength:1,120"
+                                selectonfocus="true" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+            <a id="buttonSave" class="mini-button " style="width: 60px; margin-right: 20px;">保存</a>
+            <a id="buttonConcel" class="mini-button" style="width: 60px; margin-right: 20px;">取消</a>
+        </div>
+    </div>
+</body>
+</html>

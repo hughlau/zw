@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户信息列表</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwTabUserMappingUserList.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" 
+            idfield="objID" multiselect="true" showcolumnsmenu="true" onbeforeload="datagrid1_BeforeLoad"
+            pagesize="10">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                </div>
+                <div field="mUserName" width="100" headeralign="center" align="left" renderer="datagrid1_Renderer">
+                    用户</div>
+                <div field="mUserTypeName" width="60" headeralign="center" align="left">
+                    用户类型</div>
+                <div field="mCanBindDeviceCount" width="80" headeralign="center" align="center">
+                    可绑定用户数</div>
+                <div field="mBindDeviceCount" width="80" headeralign="center" align="center">
+                    已绑定用户数</div>
+                <div field="mIsDistribute" width="60" headeralign="center" align="left" renderer="datagrid1_Renderer">
+                    是否允许下发</div>
+                <div field="mIsDis" width="60" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    停用状态</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

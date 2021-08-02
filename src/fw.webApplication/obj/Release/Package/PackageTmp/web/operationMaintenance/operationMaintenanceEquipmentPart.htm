@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>零部件更换统计</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <!--fullcalendar css-->
+    <link href="../style/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="OperationMaintenancePage.js" type="text/javascript"></script>
+    <script src="operationMaintenanceEquipmentPart.htm.js" type="text/javascript"></script>
+    <!--fullcalendar js-->
+    <script src="../scripts/fullcalendar/moment.min.js" type="text/javascript"></script>
+    <script src="../scripts/fullcalendar/fullcalendar.js" type="text/javascript"></script>
+    <script src="../scripts/fullcalendar/fullcalendar.lunar.js" type="text/javascript"></script>
+    <script src="../scripts/fullcalendar/lang-all.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        <input id="txtName" name="keyword" class="mini-TextBox" style="width: 200px;" emptytext="请输入部件名称..." />
+                        <a class="mini-button" iconcls="icon-search" id="btnSearch">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%; border: 0;"
+            borderstyle="border-width: 0px;" fitcolumns="false" sizelist="[5,10,20,50]" pagesize="10"
+            multiselect="true" onbeforeload="datagrid1_BeforeLoad" sortfield="createTime">
+            <div property="columns">
+                <div type="indexcolumn" width="60px">
+                </div>
+                <div field="partName" width="160px" headeralign="center" align="center">
+                    部件名</div>
+                <div field="changeNum" width="100px" headeralign="center" align="center">
+                    更换数量</div>
+                <div field="operationMaintenanceTaskName" width="180px" headeralign="center"
+                    align="center" allowsort="true">
+                    任务名</div>
+                <div field="operationMaintenancePersonName" width="120px" headeralign="center" align="center"
+                    allowsort="true">
+                    更换人员</div>
+                <div field="createTime" width="160px" headeralign="center" allowsort="true" align="center">
+                    更换时间</div>
+            </div>
+        </div>
+        <div id='calendar' style="width: 80%; margin: 0 auto; display: none;">
+        </div>
+    </div>
+</body>
+</html>

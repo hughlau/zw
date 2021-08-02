@@ -1,0 +1,63 @@
+﻿body Div.jQueryExtension_UI_DivList
+{
+    position: relative;
+}
+body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Head
+{
+    clear: both;
+    position: relative;
+    width: 99%;
+    margin: 0px auto;
+    overflow: hidden;
+}
+body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Head > ul
+{
+    height: 48px;
+    line-height: 48px;
+    white-space: nowrap;
+    list-style: none;
+}
+body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Head > ul > li
+{
+    float: left;
+    padding: 0px 12px;
+    cursor: pointer;
+    background-color: Red;
+}
+body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Head > ul > li.jQueryExtension_UI_DivList_Head_LiSelected, body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Head > ul > li:hover
+{
+    background-color: Blue;
+}
+
+body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Body
+{
+    clear: both;
+    position: relative;
+    overflow: hidden;
+}
+body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Body > ul
+{
+    white-space: nowrap;
+    list-style: none;
+}
+body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Body > ul > li
+{
+    float: left;
+}
+body Div.jQueryExtension_UI_DivList > div.jQueryExtension_UI_DivList_Body > ul > li > div
+{
+    width: 99%;
+    margin: 0px auto;
+}
+
+body Div.jQueryExtension_UI_DivList Div.jQueryExtension_UI_DivList_DivLoading
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(Images/Standard__jQueryExtension_UI_DivList_DivLoading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 0px;
+    display: none;
+}

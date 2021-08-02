@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户分配</title>
+    <link href="../style/global.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="operationsUserAllocation.htm.js" type="text/javascript"></script>
+</head>
+<body isloaduserinfo="1">
+    <div id="editform" class="form" style="padding-top: 10px;">
+        <h2 class="headline-1">
+            <a class="anchor-1" name="1"></a><i class="fa fa-bank"></i><span class="headline-content">
+                运维人员账号分配</span><span style="font-size: 14px; height: 100%; line-height: 100%;"></span>
+        </h2>
+        <div class="partbottom">
+            <table class="tableEnt form" style="margin-bottom: 10px;">
+                <tr>
+                    <td class="tdleft">
+                        用户名
+                    </td>
+                    <td class="tdRight">
+                        <input name="mUserName" class="mini-textbox asLabel" selectonfocus="true"  readonly="readonly"
+                            maxlength="50" style="width: 90%;" />
+                    </td>
+                    <td class="tdleft">
+                        <span class="spanBase MustFilled"></span>运维人员
+                    </td>
+                    <td class="tdRight">
+                        <input id="operationMaintenancePersonCode" name="TaskOMPersonCode" class="mini-buttonedit " required="true"
+                            onclick="onButtonChoosePerson" style="width: 90%;" emptytext="运维人员..." />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="text-align: right; padding: 10px;">
+        <a id="insertOrUpdate" class="mini-button" style="margin-right: 20px;" iconcls="icon-save"
+            onclick="onInsertOrUpdate">保存</a> <a id="cancel" class="mini-button" style="margin-right: 20px;"
+                iconcls="icon-cancel" onclick="onCancel">取消</a>
+    </div>
+</body>
+</html>

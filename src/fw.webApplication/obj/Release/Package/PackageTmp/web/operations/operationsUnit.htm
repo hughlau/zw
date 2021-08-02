@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维单位编辑</title>
+    <link href="../style/global.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="operationsUnit.htm.js" type="text/javascript"></script>
+</head>
+<body isneedlogin="1" isloaduserinfo="1">
+    <div id="editform" class="form" style="margin: 0  auto;">
+        <div style="width: 80%; margin: 0 auto; padding-top: 20px;">
+            <!--净化槽-->
+            <h2 class="headline-1">
+                <a class="anchor-1" name="1"></a><i class="fa fa-bank"></i><span class="headline-content">
+                    运维单位基本信息</span><span style="font-size: 14px; height: 100%; line-height: 100%;"></span>
+            </h2>
+            <div class="partbottom">
+                <table class="tableEnt form" style="margin-bottom: 10px;">
+                    <tr>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>运维单位名称：
+                        </td>
+                        <td class="tdRight" colspan="3">
+                            <input id="operationMaintenanceUnitName" name="operationMaintenanceUnitName" class="mini-textbox"
+                                vtype="maxLength:36" required="true" style="width: 96%;" selectonfocus="true" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>法人代码：
+                        </td>
+                        <td class="tdRight">
+                            <input id="organizationCode" name="organizationCode" class="mini-textbox" required="true"
+                                vtype="maxLength:36" style="width: 96%;" selectonfocus="true" onvaluechanged="" />
+                        </td>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>法人：
+                        </td>
+                        <td class="tdRight">
+                            <input name="legalPerson" id="legalPerson" class="mini-textbox" selectonfocus="true"
+                                vtype="maxLength:50" required="true" maxlength="100" style="width: 96%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>行政区：
+                        </td>
+                        <td class="tdRight">
+                            <input class="mini-treeselect " selectonfocus="true" style="width: 90%;" id="cantonCode"
+                                required="true" name="cantonCode" textfield="name" valuefield="code" parentfield="pCode"
+                                expandonload="0" />
+                        </td>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>联系人
+                        </td>
+                        <td class="tdRight">
+                            <input name="contactPerson" id="contactPerson" class="mini-textbox" selectonfocus="true"
+                                vtype="maxLength:36" required="true" style="width: 96%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>手机：
+                        </td>
+                        <td class="tdRight">
+                            <input name="mobilePhone" id="mobilePhone" class="mini-textbox" selectonfocus="true"
+                                vtype="maxLength:36" onvalidation="onMobilePhoneValidation" required="true" style="width: 96%;" />
+                        </td>
+                        <td class="tdleft">
+                            传真：
+                        </td>
+                        <td class="tdRight">
+                            <input name="fax" id="fax" class="mini-textbox" selectonfocus="true" required="false"
+                                vtype="maxLength:36" style="width: 96%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>邮箱：
+                        </td>
+                        <td class="tdRight">
+                            <input name="eMail" id="eMail" class="mini-textbox" selectonfocus="true" required="true"
+                                vtype="maxLength:36" vtype="email" style="width: 96%;" />
+                        </td>
+                        <td class="tdleft">
+                            邮政编码：
+                        </td>
+                        <td class="tdRight">
+                            <input name="zipCode" id="zipCode" class="mini-textbox" selectonfocus="true" required="false"
+                                vtype="maxLength:36" onvalidation="onPostCodeValidation" style="width: 96%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            地址：
+                        </td>
+                        <td class="tdRight" colspan="3">
+                            <input name="address" id="address" class="mini-textbox" selectonfocus="true" required="false"
+                                vtype="maxLength:100" style="width: 96%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            备注：
+                        </td>
+                        <td class="tdRight" colspan="3">
+                            <input name="rem" id="rem" class="mini-textarea" selectonfocus="true" maxlength="200"
+                                vtype="maxLength:200" style="width: 96%; height: 100px;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+            <a id="insertOrUpdate" class="mini-button" style="margin-right: 20px;" onclick="insertOrUpdate"
+                iconcls="icon-save">保存</a> <a id="cancel" class="mini-button" style="margin-right: 20px;"
+                    onclick="onCancel" iconcls="icon-cancel">取消</a>
+        </div>
+    </div>
+</body>
+</html>

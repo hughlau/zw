@@ -1,0 +1,83 @@
+﻿body div.jQueryExtension_UI_ImageMap
+{
+    font-size: 12px;
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_Map
+{
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray
+{
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point
+{
+    float: left;
+    position: relative;
+    width: 0px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+    background-color: Black;
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container
+{
+    float: left;
+    position: relative;
+    width: 0px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+    background-color: red;
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Image
+{
+    position: relative;
+    width: 11px;
+    height: 11px;
+    text-indent:12px;    
+    background: url(Images/Point_Image.png) no-repeat scroll center center transparent;
+    margin-left: -6px;
+    margin-top: -6px;
+    cursor:pointer;    
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip td.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip_Content
+{
+    border: 1px solid #727171;
+    line-height: 24px;
+    padding: 3px 6px;
+    background: url(Images/Tip_Background.png) repeat scroll center center transparent;
+    white-space: nowrap;
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip_Arrow
+{
+    position: relative;
+    width: 23px;
+    height: 12px;
+    background: url(Images/Tip_Arrow_BottomCenter.png) no-repeat scroll center center transparent;
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip_Arrow.Top
+{
+    margin: auto auto -1px auto;
+    background-image: url(Images/Tip_Arrow_TopCenter.png);
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip_Arrow.Top.Left
+{
+    background-image: url(Images/Tip_Arrow_TopLeft.png);
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip_Arrow.Top.Right
+{
+    background-image: url(Images/Tip_Arrow_TopRight.png);
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip_Arrow.Bottom
+{
+    margin: -1px auto auto auto;
+    background-image: url(Images/Tip_Arrow_BottomCenter.png);
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip_Arrow.Bottom.Left
+{
+    background-image: url(Images/Tip_Arrow_BottomLeft.png);
+}
+body div.jQueryExtension_UI_ImageMap div.jQueryExtension_UI_ImageMap_PointArray div.jQueryExtension_UI_ImageMap_PointArray_Point div.jQueryExtension_UI_ImageMap_PointArray_Point_Container div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip div.jQueryExtension_UI_ImageMap_PointArray_Point_Container_Tip_Arrow.Bottom.Right
+{
+    background-image: url(Images/Tip_Arrow_BottomRight.png);
+}
+

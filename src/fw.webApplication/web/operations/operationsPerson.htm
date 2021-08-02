@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维人员</title>
+    <link href="../style/global.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script> 
+    <script src="operationsPerson.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="form" style="margin: 0  auto;">
+        <div style="width: 80%; margin: 0 auto; padding-top: 20px;">
+            <!--净化槽-->
+            <h2 class="headline-1">
+                <a class="anchor-1" name="1"></a><i class="fa fa-bank"></i><span class="headline-content">
+                    运维人员基本信息</span><span style="font-size: 14px; height: 100%; line-height: 100%;"></span>
+            </h2>
+            <div class="partbottom">
+                <table class="tableEnt form" style="margin-bottom: 10px;">
+                    <tr>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>姓名
+                        </td>
+                        <td class="tdRight">
+                            <input id="operationMaintenancePersonName" name="operationMaintenancePersonName"
+                                class="mini-textbox" vtype="maxLength:36" required="true" style="width: 90%;"
+                                selectonfocus="true" />
+                        </td>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled"></span>工号
+                        </td>
+                        <td class="tdRight">
+                            <input id="staffNo" name="staffNo" class="mini-textbox"   vtype="maxLength:36"
+                                style="width: 90%;" selectonfocus="true" onvaluechanged="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span> 运维单位
+                        </td>
+                        <td class="tdRight" >
+                             <input  class="mini-combobox" style="width: 90%;" id="operationMaintenanceUnitCode" textfield="operationMaintenanceUnitName"
+                            name="operationMaintenanceUnitCode" valuefield="operationMaintenanceUnitCode" shownullitem="true" nullitemtext="运维企业" emptytext="运维企业"
+                            onvaluechanged=""  required="true" /> 
+                        </td>
+                        <td class="tdleft">
+                            <span class="spanBase MustFilled">*</span>手机
+                        </td>
+                        <td class="tdRight">
+                            <input name="mobilePhone" class="mini-textbox" selectonfocus="true" maxlength="18"
+                                required="true" style="width: 90%;" onvalidation="onMobilePhoneValidation" onvaluechanged="" />
+                        </td>
+                    </tr>
+                    <tr>
+                    <td class="tdleft">
+                            顺序：
+                        </td>
+                        <td class="tdRight">
+                            <input name="ix" class="mini-spinner" selectonfocus="true" minvalue="1" maxvalue="2147483647"
+                                required="true" style="width: 90%;" />
+                        </td>
+                        <td class="tdleft" colspan =2>
+                            &nbsp;</td>
+                        
+                        
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+            <a id="btnsave" class="mini-button" style="margin-right: 20px;" onclick="insertOrUpdate"
+                iconcls="icon-save">保存</a> <a id="A2" class="mini-button" style="margin-right: 20px;"
+                    onclick="onCancel" iconcls="icon-cancel">取消</a>
+        </div>
+    </div>
+</body>
+</html>

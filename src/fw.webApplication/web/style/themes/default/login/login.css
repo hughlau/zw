@@ -1,0 +1,290 @@
+﻿@charset "UTF-8";
+/*===============================================
+  Animate.css Helpers
+================================================= */
+/* used in conjuction with "data-animate" 
+ * attr to create a delayed page animation
+ * read docs for more info on proper use*/
+.animated-delay,
+.animated-waypoint {
+  opacity: 0;
+}
+.sparkline-delay {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 35px;
+  line-height: 24px;
+}
+.animated.animated-short {
+  -webkit-animation-duration: 0.6s !important;
+  animation-duration: 0.6s !important;
+}
+.animated.animated-shorter {
+  -webkit-animation-duration: 0.3s !important;
+  animation-duration: 0.3s !important;
+}
+.animated.animated-long {
+  -webkit-animation-duration: 1.4s !important;
+  animation-duration: 1.4s !important;
+}
+.animated.animated-longer {
+  -webkit-animation-duration: 2s !important;
+  animation-duration: 2s !important;
+}
+
+/*===============================================
+  Animate.css "Fades" Pack
+================================================*/
+/* FADE ENTRANCES
+ * fadeIn
+ */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+/* fadeInDown */
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+/* fadeInLeft */
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+/* fadeInRight */
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+/* fadeInUp */
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+/*==================================================
+  Shared/Global Styles
+==================================================== */
+html {
+  height: 100%;
+  background: #fff;
+}
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 900px;
+  margin: 0;
+  padding: 0;
+  background: #e9e9e9;
+  overflow-x: hidden;
+  /* Fix for webkit rendering */
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font-size-adjust: 100%;
+}
+#main {
+  position: relative;
+  min-height: 100%;
+  background: #eeeeee;
+}
+/* psuedo background */
+#main:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #eeeeee;
+}
+#content_wrapper {
+  position: relative;
+  left: 0px;
+  
+}
+/* Transitions */
+body.onload-check .navbar,
+body.onload-check .navbar-branding,
+body.onload-check #sidebar_left,
+body.onload-check #sidebar_right,
+body.onload-check #content_wrapper,
+body.onload-check #topbar {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/*===============================================
+  G. External Pages - login, register,
+  screenlock, coming-soon, forgotpw
+================================================= */
+body.external-page {
+  min-height: 0;
+  overflow: auto;
+}
+body.external-page #main {
+  overflow: hidden;
+  background:  url("images/login_background.jpg") no-repeat top center #2d494d;
+}
+body.external-page #main:before {
+  display: none;
+}
+body.external-page #canvas-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+body.external-page #content .admin-form {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+body.external-page #content .panel {
+  box-shadow: 0 1px 40px 0 rgba(0, 0, 0, 0.3);
+}
+body.external-page #content .panel-heading {
+  padding: 2px 0;
+}
+body.external-page .login-links {
+  font-size: 15px;
+  color: #DDD;
+}
+body.external-page .login-links a {
+  color: #DDD;
+  font-weight: 300;
+}
+body.external-page .login-links a.active {
+  color: #FFF;
+  font-weight: 600;
+}
+body.external-page .login-links a:hover,
+body.external-page .login-links a:focus {
+  color: #FFF;
+  text-decoration: none;
+}
+body.external-page .coming-soon-title {
+  text-align: center;
+  color: #FFF;
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}

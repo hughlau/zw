@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>选择下发</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwUserDistributeBySelect.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 0px 0px;">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 40%; white-space: nowrap; text-align: left;">
+                    <a id="btnAddApp" class="mini-button" iconcls="icon-add" onclick="onMAppCodeSelect();"
+                        data-options="{minSelectedCount:1,maxSelectedCount:1}">添加APP</a>
+                </td>
+                <td style="width: 20%; white-space: nowrap; text-align: center;">
+                    <a id="btnSelect" class="mini-button" iconcls="icon-download" onclick="appSelectDistributeByAppCodeAndUserID();"
+                        data-options="{minSelectedCount:1,maxSelectedCount:1}">用户下发</a>
+                </td>
+                <td style="width: 40%; white-space: nowrap; text-align: right;">
+                    <a id="A3" class="mini-button" iconcls="icon-add" onclick="onMUserIDSelect();" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                        添加用户</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="mini-splitter" style="width: 100%; height: 450px; border-width: 0px 0px 0px 0px;">
+        <div size="50%" showcollapsebutton="false">
+            <div class="mini-fit">
+                <div id="dgAppList" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+                    idfield="mDataID" multiselect="false" frozenstartcolumn="0" showreloadbutton="false"
+                    showpageinfo="false" frozenendcolumn="1" allowmovecolumn="false" allowresizecolumn="false"
+                    onbeforeload="dgAppList_BeforeLoad" onrowdblclick="dgAppList_Rowdblclick">
+                    <div property="columns">
+                        <div header="<b>已选APP</b>" headeralign="center">
+                            <div property="columns">
+                                <div type="indexcolumn" width="30">
+                                </div>
+                                <div field="mDataID" width="120" headeralign="center" align="left" visible="false">
+                                    数据ID
+                                </div>
+                                <div field="mAppCode" width="100" headeralign="center" align="left" allowsort="false">
+                                    系统编码
+                                </div>
+                                <div field="mAppName" width="100" headeralign="center" align="left" allowsort="false">
+                                    APP名称
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div showcollapsebutton="false">
+            <div class="mini-fit">
+                <div id="dgUserList" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+                    idfield="mUserID" multiselect="false" frozenstartcolumn="0" showreloadbutton="false"
+                    showpageinfo="false" frozenendcolumn="1" allowmovecolumn="false" allowresizecolumn="false"
+                    onbeforeload="dgUserList_BeforeLoad" onrowdblclick="dgUserList_Rowdblclick">
+                    <div property="columns">
+                        <div header="<b>已选用户</b>" headeralign="center">
+                            <div property="columns">
+                                <div type="indexcolumn" width="30">
+                                </div>
+                                <div field="mUserID" width="120" headeralign="center" align="left" visible="false">
+                                    数据ID
+                                </div>
+                                <div field="mUserName" width="100" headeralign="center" align="left" allowsort="false">
+                                    用户名称
+                                </div>
+                                <div field="mUserTypeName" width="100" headeralign="center" align="left" allowsort="false">
+                                    用户类型
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="color: Green">
+        &nbsp;双击列表行进行已选APP或用户的移除操作
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>摄像机信息</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="addOrUpdateCarema.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="form" style="padding-top: 10px;">
+        <table class="tableForm" style="width: 90%; margin: 0px auto;">
+            <tr>
+                <td style="width: 35%;">
+                    摄像头名称：
+                </td>
+                <td style="width: 65%;">
+                    <input name="cameraName" class="mini-textbox" selectonfocus="true" required="true"
+                        maxlength="18" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    IP地址：
+                </td>
+                <td>
+                    <input name="IPAddress" class="mini-textbox" selectonfocus="true" required="true"
+                        maxlength="18" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    安装经度：
+                </td>
+                <td>
+                    <input changeonmousewheel="true" class="mini-spinner " minvalue="-180" maxvalue="180"
+                            format="n6" name="longitudeGps" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    安装纬度：
+                </td>
+                <td>
+                    <input changeonmousewheel="true" class="mini-spinner " minvalue="-90" maxvalue="90"
+                           format="n6" name="latitudeGps" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    安装地址：
+                </td>
+                <td>
+                    <input style="width: 90%; height: 60px;" class="mini-textarea " name="addressName" vtype="rangeLength:0,120" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="text-align: right; padding: 10px;">
+        <a id="insertOrUpdate" class="mini-button" style="margin-right: 20px;" iconcls="icon-save"
+            onclick="onInsertOrUpdate">保存</a> <a id="cancel" class="mini-button" style="margin-right: 20px;"
+                iconcls="icon-cancel" onclick="onCancel">取消</a>
+    </div>
+</body>
+</html>
+

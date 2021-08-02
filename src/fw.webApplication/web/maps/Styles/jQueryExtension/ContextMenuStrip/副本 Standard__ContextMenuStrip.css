@@ -1,0 +1,66 @@
+﻿        body div.jQueryExtension_UI_ContextMenuStrip
+{
+    width: 150px;
+    position: absolute;
+}
+body div.jQueryExtension_UI_ContextMenuStrip ul
+{
+    display: none;
+    position: relative;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    border-top: 1px solid #979797;
+    border-right: 1px solid #979797;
+    border-bottom: 1px solid #979797;
+    border-left: 1px solid #979797;
+    background: url(Images/ContextMenuStrip_VerticalLine.png) repeat-y scroll 0px 0px #F0F0F0;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li
+{
+    display: block;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    line-height: 30px;
+    height: 30px;
+    list-style: none;
+    border-bottom: 0px solid #97B4D1;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div
+{
+    height: 100%;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div div
+{
+    position: absolute;
+    width: 100%;
+    height: 30px;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div:hover div.ContextMenuStripSelected_Center
+{
+    background: url(Images/ContextMenuStripSelected_Center.png) repeat-x scroll center center transparent;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div:hover div.ContextMenuStripSelected_Right
+{
+    background: url(Images/ContextMenuStripSelected_Right.png) no-repeat scroll right center transparent;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div:hover div.ContextMenuStripSelected_Left
+{
+    background: url(Images/ContextMenuStripSelected_Left.png) no-repeat scroll left center transparent;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div div.ContextMenuStripItems
+{
+    background: url(Images/ContextMenuStripItems.png) no-repeat scroll right center transparent;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div div.ContextMenuStripItemIcon_Default
+{
+    background: url(Images/ContextMenuStripItemIcon_Default.png) no-repeat scroll left center transparent;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div div.ContextMenuStripItemText
+{
+    text-indent: 35px;
+}
+body div.jQueryExtension_UI_ContextMenuStrip li div div.ContextMenuStripItemText a
+{
+    display: block;
+    cursor: pointer;
+}

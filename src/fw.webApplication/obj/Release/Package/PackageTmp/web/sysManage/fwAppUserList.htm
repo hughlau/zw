@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户下发</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwAppUserList.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a class="mini-button" iconcls="icon-add" onclick="appUserAdd();" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                            用户下发</a>&nbsp;<a class="mini-button" iconcls="icon-remove" onclick="appUserDelete();"
+                                data-options="{minSelectedCount:1,maxSelectedCount:1}"> 删除用户</a>&nbsp;<a class="mini-button"
+                                    iconcls="icon-unlock" onclick="able(0);" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                                    启用用户</a> &nbsp;<a class="mini-button" iconcls="icon-lock" onclick="able(1);" data-options="{minSelectedCount:1,maxSelectedCount:1}">停用用户</a>&nbsp;<span
+                                        class="separator"></span>&nbsp; <a class="mini-button" iconcls="icon-add" onclick="appUserBatchAdd();">
+                                            用户批量下发</a>&nbsp;<a class="mini-button" iconcls="icon-edit" style="display: none;">检查下发情况</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入用户名称"
+                            style="width: 160px;" onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" plain="true" onclick="onSearch()">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            idfield="objID" multiselect="true" showcolumnsmenu="true" frozenstartcolumn="0"
+            frozenendcolumn="1" onbeforeload="datagrid1_BeforeLoad" sortfield="mUserName"
+            onselectionchanged="datagrid1_SelectionChanged" sortorder="asc" pagesize="10"
+            onselectionchanged="onSelectionChanged">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                </div>
+                <div type="checkcolumn" width="40">
+                </div>
+                <div field="mUserID" width="150" headeralign="center" align="left" visible="false">
+                    用户ID</div>
+                <div field="mUserName" width="100" headeralign="center" align="left" allowsort="true">
+                    用户</div>
+                <div field="mUserTypeName" width="60" headeralign="center" align="left" allowsort="false">
+                    用户类型</div>
+                <div field="mRoleNameStr" width="120" headeralign="center" align="left" allowsort="false">
+                    拥有角色</div>
+                <div field="mCanBindDeviceCount" width="80" headeralign="center" align="center">
+                    可绑定用户数</div>
+                <div field="mBindDeviceCount" width="80" headeralign="center" align="center">
+                    已绑定用户数</div>
+                <div type="checkboxcolumn" field="mIsDis" truevalue="1" falsevalue="0" width="60"
+                    headeralign="center" visible="false">
+                    停用</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

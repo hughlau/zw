@@ -1,0 +1,184 @@
+﻿body div.jQueryExtension_UI_Cards
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: left;
+}
+body div.jQueryExtension_UI_Card
+{
+    width: 100%;
+    float: left;
+    margin: 10px 10px auto auto;
+}
+body div.jQueryExtension_UI_Card div.jQueryExtension_UI_Card_Background
+{
+    width: 100%;
+    height: 100%;
+}
+body div.jQueryExtension_UI_Card div.jQueryExtension_UI_Card_Background.SmallCard
+{
+    background: url(Images/SmallCard.png) no-repeat scroll 0px 0px transparent;
+}
+body div.jQueryExtension_UI_Card div.jQueryExtension_UI_Card_Background.LargeCard
+{
+    background: url(Images/LargeCard.png) no-repeat scroll 0px 0px transparent;
+}
+body div.jQueryExtension_UI_Card div.jQueryExtension_UI_Card_Front
+{
+}
+body div.jQueryExtension_UI_Card div.jQueryExtension_UI_Card_Front div.jQueryExtension_UI_Card_Title
+{
+    width: 100%;
+    line-height: 28px;
+    text-indent: 28px;
+    font-size: 14px;
+}
+body div.jQueryExtension_UI_Card div.jQueryExtension_UI_Card_Front div.jQueryExtension_UI_Card_Content
+{
+    margin: 0px auto;
+    width: 100%;
+    border: 1px solid #97B4D1;
+    background-color: White;
+}
+body div.jQueryExtension_UI_Card div.jQueryExtension_UI_Card_Front div.jQueryExtension_UI_Card_Content div.jQueryExtension_UI_Card_Content_IframeLoading
+{
+    background: url(Images/Loading.gif) no-repeat scroll center center transparent;    
+    display:none;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent
+{
+    margin: 0px auto;
+    width: 318px;
+    height: 210px;
+    background-color1: #97B4D1;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent
+{
+    margin: 0px auto;
+    width: 648px;
+    height: 210px;
+    background-color1: #97B4D1;
+    overflow: hidden;
+}
+
+body div.jQueryExtension_UI_Card_SmallCardContent img, body div.jQueryExtension_UI_Card_LargeCardContent img
+{
+    width: 100%;
+    height: 100%;
+    border-width: 0px;
+}
+
+body div.jQueryExtension_UI_Card_LargeCardContent div.divCardLeft
+{
+    width: 320px;
+    height: 100%;
+    float: left;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent div.divCardRight
+{
+    width: 320px;
+    height: 100%;
+    float: right;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent div.divCardLeft iframe
+{
+    width: 318px;
+    height: 210px;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent div.divCardRight iframe
+{
+    width: 318px;
+    height: 210px;
+    margin-left:10px;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divContainer,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardLeft div.divContainer,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardRight div.divContainer
+{
+    margin-top: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 308px;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divContainer div.divGridView,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardLeft div.divContainer div.divGridView,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardRight div.divContainer div.divGridView
+{
+    width:306px;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent div.divChartContainer,body div.jQueryExtension_UI_Card_SmallCardContent div.divChartContainer
+{
+    margin-top:5px;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent div.divContainer
+{
+    margin-top: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 640px;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent div.divContainer div.divGridView
+{
+    width: 636px;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divCardTitle, body div.jQueryExtension_UI_Card_LargeCardContent div.divCardTitle
+{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divCardTitle label, body div.jQueryExtension_UI_Card_LargeCardContent div.divCardTitle label
+{
+    font-size: 14px;
+    margin-right: 10px;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divCardContent, body div.jQueryExtension_UI_Card_LargeCardContent div.divCardContent
+{
+    margin: 0px auto;
+    height: 180px;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent .highlight,body div.jQueryExtension_UI_Card_LargeCardContent .highlight
+{
+    color:Red;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divCardBottom,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardBottom
+{
+    height:24px;
+    text-align:center;
+    line-height:24px;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divCardTitle .divCardTitleLeft,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardTitle .divCardTitleLeft
+{
+    width:135px;
+    float:left;
+    background: url('Images/Title_18x18.png') no-repeat scroll 0px center transparent;
+    text-align:left;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divCardTitle .divCardTitleLeft .indent,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardTitle .divCardTitleLeft .indent
+{
+     margin-left:22px;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divCardTitle .divCardTitleRight,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardTitle .divCardTitleRight
+{
+    width:164px;
+    float:right;
+    text-align:right;
+}
+body div.jQueryExtension_UI_Card_SmallCardContent div.divCardTitle .divCardTitleLeft label,body div.jQueryExtension_UI_Card_SmallCardContent div.divCardTitle .divCardTitleRight label
+{
+    margin-right:0px;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent div.divCardLeft div.divCardTitle .divCardTitleLeft label,body div.jQueryExtension_UI_Card_LargeCardContent div.divCardLeft div.divCardTitle .divCardTitleRight label
+{
+    margin-right:0px;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent Summary
+{
+    height:100%;
+    overflow-y:auto;
+}
+body div.jQueryExtension_UI_Card_LargeCardContent span.spanSummary label
+{
+    font-size:18px;
+    line-height:1.5em;
+    font-weight:bold;
+}
+
+

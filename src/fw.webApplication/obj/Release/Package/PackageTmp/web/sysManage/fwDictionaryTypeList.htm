@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>字典类型管理</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwDictionaryTypeList.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a class="mini-button" iconcls="icon-add" onclick="insertRow();">增加</a> <a id="del"
+                            class="mini-button" iconcls="icon-remove" onclick="del();">删除</a> <span class="separator">
+                                </span><a id="insertOrUpdate" class="mini-button" iconcls="icon-edit" onclick="insertOrUpdate();">
+                                    保存</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入字典类型名称"
+                            style="width: 132px;" onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" plain="true" onclick="onSearch();">查询</a>
+                        <a id="select" class="mini-button" style="display: none;" iconcls="icon-add" onclick="select();">
+                            选择</a> <a id="selectClear" class="mini-button" style="display: none;" iconcls="icon-add"
+                                onclick="selectClear();">清除</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            idfield="mDataID" multiselect="true" showcolumnsmenu="true" frozenstartcolumn="0"
+            editnextonenterkey="true" editnextrowcell="true" frozenendcolumn="1" onbeforeload="datagrid1_BeforeLoad"
+            sortfield="mIx" sortorder="asc" pagesize="20" allowcelledit="true" allowcellselect="true"
+            onselectionchanged="datagrid1_SelectionChanged">
+            <div property="columns">
+                <div type="indexcolumn" width="24">
+                </div>
+                <div type="checkcolumn" width="36">
+                </div>
+                <div field="mDataID" width="150" headeralign="center" align="left" visible="false">
+                    数据ID
+                </div>
+                <div name="mDictionaryTypeCode" field="mDictionaryTypeCode" width="120" headeralign="center"
+                    align="left" allowsort="true" vtype="required">
+                    字典类型编码
+                    <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                        style="width: 100%;" />
+                </div>
+                <div field="mDictionaryTypeName" width="120" headeralign="center" align="left" allowsort="true"
+                    vtype="required">
+                    字典类型名称
+                    <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                        style="width: 100%;" />
+                </div>
+                <div field="mIx" width="48" headeralign="center" align="center" allowsort="true"
+                    vtype="required">
+                    顺序
+                    <input property="editor" class="mini-spinner" selectonfocus="true" minvalue="1" maxvalue="2147483647"
+                        style="width: 100%;" />
+                </div>
+                <div type="checkboxcolumn" field="mIsDis" truevalue="1" falsevalue="0" width="36"
+                    headeralign="center">
+                    停用
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

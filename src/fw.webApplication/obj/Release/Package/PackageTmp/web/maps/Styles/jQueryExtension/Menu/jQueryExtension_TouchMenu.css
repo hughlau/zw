@@ -1,0 +1,92 @@
+        body ul.jQueryExtension_UI_Menu
+        {
+            list-style: none;
+            margin:0px 0px;
+            padding:0px 0px;
+            font-size: 12px;
+            border: 1px solid #b3d9f5;
+            overflow:hidden;
+            background: url(Images/Standard__jQueryExtension_UI_Menu_RepeatY.png) repeat-y scroll 0px 0px #f2f9ff;
+        }
+        body ul.jQueryExtension_UI_Menu li div.jQueryExtension_UI_Menu_Title
+        {
+            height: 30px;
+            cursor:pointer;
+            padding-left: 24px;
+            padding-right: 24px;
+            background: url(Images/Standard__jQueryExtension_UI_Menu_RepeatX.png) repeat-x scroll 0px -32px transparent;            
+        }
+        body ul.jQueryExtension_UI_Menu li div.jQueryExtension_UI_Menu_Title a
+        {
+            display: block;
+            color:#2e92d1;
+            height:30px;
+            line-height:30px;            
+            text-decoration: none;
+            font-weight:bolder;
+            white-space: nowrap;
+            overflow:hidden;
+        }
+        body ul.jQueryExtension_UI_Menu li div.jQueryExtension_UI_Menu_Title span.jQueryExtension_UI_Menu_Title_Default
+        {
+            width: 24px;
+            height: 30px;
+            float: right;
+            margin-right: -24px;
+            background: url(Images/Standard__jQueryExtension_UI_Menu_Open.png) no-repeat scroll center center transparent;
+        }
+        body ul.jQueryExtension_UI_Menu li div.jQueryExtension_UI_Menu_Title span.jQueryExtension_UI_Menu_Title_Open
+        {
+            background-image: url(Images/Standard__jQueryExtension_UI_Menu_Open.png);
+        }
+        body ul.jQueryExtension_UI_Menu li div.jQueryExtension_UI_Menu_Title span.jQueryExtension_UI_Menu_Title_Close
+        {
+            background-image: url(Images/Standard__jQueryExtension_UI_Menu_Close.png);
+        }
+        body ul.jQueryExtension_UI_Menu li div.jQueryExtension_UI_Menu_Title span.jQueryExtension_UI_Menu_Title_Folder
+        {
+            width: 24px;
+            height: 30px;
+            float: left;            
+            margin-left: -24px;
+            background: url(Images/Standard__jQueryExtension_UI_Menu_Menu.png) no-repeat scroll center center transparent;
+        }
+        body ul.jQueryExtension_UI_Menu li ul.jQueryExtension_UI_Menu_Content
+        {
+            margin-left: 0px;
+            padding: 0px 0px;
+            border-bottom: 1px solid #b3d9f5;
+        }
+        body ul.jQueryExtension_UI_Menu li ul.jQueryExtension_UI_Menu_TreeView
+        {
+            margin-left: 20px;
+            padding: 0px 0px;
+        }
+       body ul.jQueryExtension_UI_Menu li ul.jQueryExtension_UI_Menu_Content li.jQueryExtension_UI_Menu_Content_List
+        {
+            line-height: 30px;
+            list-style: none;
+            cursor: pointer;
+            padding-left: 24px;
+        }
+        body ul.jQueryExtension_UI_Menu li ul.jQueryExtension_UI_Menu_Content li.jQueryExtension_UI_Menu_Content_List:hover
+        {
+            background-color: #a3d4f7;            
+        }
+        body ul.jQueryExtension_UI_Menu li ul.jQueryExtension_UI_Menu_Content li.jQueryExtension_UI_Menu_Content_List.jQueryExtension_UI_Menu_Content_ListNoHover:hover
+        {
+            background-color:transparent;          
+        }        
+       body ul.jQueryExtension_UI_Menu li ul.jQueryExtension_UI_Menu_Content li.jQueryExtension_UI_Menu_Content_ListSelected
+        {
+            background-color: #2d96df;
+        }
+       body ul.jQueryExtension_UI_Menu li ul.jQueryExtension_UI_Menu_Content li.jQueryExtension_UI_Menu_Content_ListSelected a
+        {
+            color:White;
+        }
+        body ul.jQueryExtension_UI_Menu li ul.jQueryExtension_UI_Menu_Content li.jQueryExtension_UI_Menu_Content_List div.jQueryExtension_UI_Menu_Content_ListTitle
+        {
+            padding-left: 18px;
+            background: url(Images/Standard__jQueryExtension_UI_Menu_List.png) no-repeat scroll left center transparent;
+        }

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维合同关联设施</title>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="ProjectMonitorSite.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="padding: 2px; border-bottom: 0;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;background-color: #F2FBFF;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap;">
+                        <a id="buttonAdd" class="mini-button" iconcls="icon-add">增加</a> <a id="buttonDelete"
+                            class="mini-button" iconcls="icon-remove">删除</a>
+                    </td>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        <input id="keyword" name="keyword" class="mini-textbox" emptytext="关键字..." />
+                        <a class="mini-button" id="buttonSearch" iconcls="icon-search" plain="true">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--撑满页面-->
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;background-color: white;" fitcolumns="false"
+            showpager="false" multiselect="true" onbeforeload="datagGidCacheLogList_BeforeLoad">
+            <div property="columns">
+                <div type="indexcolumn"width="60">
+                    序号
+                </div>
+                <div field="cantonName" width="180" headeralign="center" align="left" >
+                    行政区</div>
+                <div field="monitorSiteName" width="180" headeralign="center" align="left" renderer="datagrid1_Renderer">
+                    设施名称</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

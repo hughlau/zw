@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>设备管理</title>
+    <link href="../scripts/themes/default/basicInfo/basicInfo.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="detail.js" type="text/javascript"></script>
+
+    <style type="text/css">
+
+        #test-image-preview {
+            border: 1px solid #ccc;
+            width: 100%;
+            height: auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+
+        a.select {
+            display: inline-block;
+            white-space: nowrap;
+            height: 24px;
+            padding: 0 10px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 2px;
+            background-color: #f60;
+            margin-left: 5px;
+        }
+
+    </style>
+    <style>
+
+        #GPS {
+            height: 16px;
+            padding: 0;
+            padding-top: 12px;
+        }
+
+        #uploadFileParent {
+            vertical-align: middle
+        }
+
+            #uploadFileParent .ui-input-text {
+                display: inline-block;
+                padding-right: 2px;
+            }
+
+        .imgParent, .oldImgParent {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+            text-align: center;
+            margin-left: 2px;
+            border: 1px solid #356f9d;
+        }
+
+            .oldImgParent img {
+                width: 100%;
+                height: auto;
+            }
+
+            .imgParent img {
+                width: 100%;
+                height: auto;
+            }
+
+            .oldImgParent .OldeDelete {
+                position: absolute;
+                /*z-index: 9999;*/
+                right: 0;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                background: url(../../../resources/images/delete.png) 0 0 no-repeat;
+                background-size: 100% 100%;
+                cursor: pointer;
+            }
+
+            .imgParent .eDelete {
+                position: absolute;
+                /*z-index: 9999;*/
+                right: 0;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                background: url(../../../resources/images/delete.png) 0 0 no-repeat;
+                background-size: 100% 100%;
+                cursor: pointer;
+            }
+
+        .mini-buttonedit-border .mini-buttonedit-input {
+            font-size: 10pt;
+        }
+
+        .tableForm > tbody {
+            width: 100%;
+        }
+
+        table .mini-buttonedit-border {
+            height: 38px;
+        }
+
+        #btnChooseMonitor {
+            height: 38px;
+        }
+
+        .mini-buttonedit-border > input, {
+            padding: 0;
+        }
+
+        .mini-buttonedit-icon, .mini-errorIcon {
+            margin-top: 8px;
+        }
+
+        body .mini-error .mini-textbox-border, body .mini-error .mini-buttonedit-border {
+            border-color: #ffa8a8;
+            background-color: #fff3f3;
+        }
+
+        .file {
+            position: relative;
+            display: inline-block;
+            background: #D0EEFF;
+            border: 1px solid #99D3F5;
+            border-radius: 4px;
+            padding: 4px 12px;
+            overflow: hidden;
+            color: #1E88C7;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 20px;
+        }
+
+            .file input {
+                position: absolute;
+                font-size: 100px;
+                right: 0;
+                top: 0;
+                opacity: 0;
+            }
+
+            .file:hover {
+                background: #AADFFD;
+                border-color: #78C3F3;
+                color: #004974;
+                text-decoration: none;
+            }
+        /*\resources\Maps\ArcGIS\FrameWork\ags33\jsapi\arcgis\3.3\js\dojo\dojox\gfx\demos\images*/
+    </style>
+    <script type="text/javascript">
+        var resultStr = [
+            {
+                "code": 1,
+                "name": "区域"
+            },
+            {
+                "code": 2,
+                "name": "净化槽"
+            }
+        ]
+
+        var equipmentStr = [
+            {
+                "code": 1,
+                "name": "风机"
+            },
+            {
+                "code": 2,
+                "name": "水泵"
+            },
+            {
+                "code": 3,
+                "name": "药泵"
+            }
+        ]
+        var commandStr = [
+            {
+                "code": 1,
+                "name": "启动"
+            },
+            {
+                "code": 2,
+                "name": "停止"
+            }
+        ]
+
+        var executeType = [
+            {
+                "code": 1,
+                "name": "立即执行"
+            },
+            {
+                "code": 2,
+                "name": "延时执行"
+            },
+            {
+                "code": 3,
+                "name": "定时执行"
+            }
+        ]
+    </script>
+</head>
+<body style="background-color: white;" isloaduserinfo="1">
+    <div id="divForm" class="form">
+        <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+            <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                <tr>
+                    <th style="width: 20%;">
+                        方案名称：
+                    </th>
+                    <td style="width: 30%;" colspan="4">
+                        <input style="width: 96%;" id="name" name="name" class="mini-textbox "
+                               vtype="maxLength:50" required="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 20%;">
+                        方案说明：
+                    </th>
+                    <td style="width: 30%;" colspan="4">
+                        <input style="width: 96%;" id="detail" name="detail" class="mini-textbox "
+                               vtype="maxLength:50" required="true" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <fieldset id="float_f" style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">控制范围</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <td colspan="4">
+                            <div id="monitorType" class="mini-radiobuttonlist " repeatitems="4" repeatlayout="table"
+                                 name="monitorType" textfield="name" valuefield="code" required="true" data="resultStr">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="trArea" style="display:none;">
+                        <td colspan="1">
+                            <a class="mini-button" iconcls="icon-add" onclick=" openSetCanton(); ">行政区</a>
+                        </td>
+                        <td colspan="3">
+                            <div id="cantonSelectedList" style="word-break:break-word"></div>
+                        </td>
+                    </tr>
+                    <tr id="trMonitor" style="display:none;">
+                        <td colspan="1">
+                            <a class="mini-button" iconcls="icon-add" onclick=" openSetMonitor(); ">净化槽</a>
+                        </td>
+                        <td colspan="3">
+                            <div id="monitorSelectedList" style="word-break:break-word"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto; ">
+            <legend style="margin-left: 32px;">设备范围</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <td>
+                            <div id="equipmentType" name="equipmentType" class="mini-checkboxlist" repeatitems="5" repeatlayout="table"
+                                 textfield="name" valuefield="code" style="width: 96%;" required="false" data="equipmentStr">
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto; ">
+            <legend style="margin-left: 32px;">控制命令</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <td style="width: 50%;">
+                            <div id="controlCommand" class="mini-radiobuttonlist " repeatitems="4" repeatlayout="table"
+                                 name="controlCommand" textfield="name" valuefield="code" required="true" data="commandStr">
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">执行时间</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <td colspan="4">
+                            <div id="executeType" class="mini-radiobuttonlist " repeatitems="4" repeatlayout="table"
+                                 name="executeType" textfield="name" valuefield="code" required="true" data="executeType">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="trDelay" style="display:none;">
+                        <td colspan="4">
+                            <input style="width: 15%;" id="executeDelayHour" name="executeDelayHour" class="mini-textbox "
+                                   vtype="maxLength:3" required="true" value="0" />
+                            &nbsp;&nbsp;时
+                            <input style="width: 15%;" id="executeDelayMin" name="executeDelayMin" class="mini-textbox "
+                                   vtype="maxLength:3" required="true" value="0" />
+                            &nbsp;&nbsp;分
+                            <input style="width: 15%;" id="executeDelaySec" name="executeDelaySec" class="mini-textbox "
+                                   vtype="maxLength:3" required="true" value="0" />
+                            &nbsp;&nbsp;秒
+                        </td>
+                    </tr>
+                    <tr id="trOn" style="display:none;">
+                        <td colspan="1">
+                            执行时间
+                        </td>
+                        <td colspan="3">
+                            <input name="executeTime" id="executeTime" class="mini-datepicker" selectonfocus="true"
+                                   nullvalue="null" format="yyyy-MM-dd HH:mm:ss" showtime="true" showokbutton="true" showclearbutton="false"
+                                   emptytext="选择时间..." style="width: 240px;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        
+        <input type="hidden" id="hidCandon" />
+        <input type="hidden" id="hidMonitors" />
+        <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+            <table style="width: 90%; margin: 0px auto;" class="tableForm form"></table>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+            <a id="aSave" class="mini-button " style="width: 60px; margin-right: 20px;">保存</a>
+        </div>
+    </div>
+</body>
+</html>

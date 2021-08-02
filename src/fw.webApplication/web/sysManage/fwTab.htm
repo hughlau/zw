@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <title>用户信息</title>
+    <link href="../style/basicInfo/css/personalInfo.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <style type="text/css">
+        .mini-required .mini-textbox-border, .mini-required .mini-buttonedit-border
+        {
+            background-color: white;
+        }
+    </style>
+</head>
+<body isloaduserinfo="0">
+    <div id="mainTabs" class="mini-tabs" activeindex="0" style="width: 99%x; height: 98%;"
+        plain="false">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var mUserID = undefined;
+    var mRoleCode = undefined;
+    $.page.pageLoad = function () {
+        mUserID = $.page.params.mUserID;
+        mRoleCode = $.page.params.mRoleCode;
+        addTab();
+    };
+    function addTab() {
+        var tabs = mini.get("mainTabs");
+        var param = { ticket: $.page.ticket, mUserID: mUserID, mRoleCode: mRoleCode };
+        if (fw.fwObject.FWObjectHelper.hasValue($.page.params.mDataID)) {
+            param.mDataID = $.page.params.mDataID;
+        }
+        var tab = [];
+        var userUrl = "";
+        var userRoleUrl = "";
+        var userFunctionUrl = "";
+        var userMenuUrl = "";
+        if (fw.fwObject.FWObjectHelper.hasValue(mUserID)) {
+            userUrl = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/fwTabUserMappingUser.htm", param);
+            userRoleUrl = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/fwTabUserMappingRoleList.htm", param);
+
+            userFunctionUrl = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/fwTabUserMappingFunction.htm", param);
+            userMenuUrl = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/fwTabUserMappingMenu.htm", param);
+            tab = [
+        { title: "用户信息", refreshOnClick: "true", url: userUrl }
+        , { title: "角色信息", refreshOnClick: "true", url: userRoleUrl }
+        , { title: "权限信息", refreshOnClick: "true", url: userFunctionUrl }
+        , { title: "菜单信息", refreshOnClick: "true", url: userMenuUrl }
+        ];
+        }
+        if (fw.fwObject.FWObjectHelper.hasValue(mRoleCode)) {
+            userRoleUrl = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/fwTabUserMappingRole.htm", param);
+            userUrl = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/fwTabUserMappingUserList.htm", param);
+            userFunctionUrl = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/fwTabUserMappingFunction.htm", param);
+            userMenuUrl = $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysManage/fwTabUserMappingMenu.htm", param);
+            tab = [
+            { title: "角色信息", refreshOnClick: "true", url: userRoleUrl },
+            { title: "用户信息", refreshOnClick: "true", url: userUrl }
+            , { title: "权限信息", refreshOnClick: "true", url: userFunctionUrl }
+            , { title: "菜单信息", refreshOnClick: "true", url: userMenuUrl }
+        ];
+        }
+
+        for (var i = 0; i < tab.length; i++) {
+            tabs.addTab(tab[i]);
+        }
+        tabs.activeTab(tab[0]);
+    };
+</script>

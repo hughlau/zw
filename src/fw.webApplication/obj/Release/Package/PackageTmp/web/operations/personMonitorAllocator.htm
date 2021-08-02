@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>员工选择</title>  
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script> 
+    <script src="personMonitorAllocator.htm.js" type="text/javascript"></script>
+    <style type="text/css">
+        .icon-No
+        {
+            width: 16px;
+            height: 16px;
+            overflow: hidden;
+            margin: auto;
+            background: url(../style/images/No.png) no-repeat;
+            text-align: center;
+            display: block;
+        }
+    </style> 
+</head>
+<body isloaduserinfo="1">
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;"> 
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <input class="mini-treeselect " id="cantonCode" selectonfocus="true" style="width: 140px;"
+                            name="cantonCode" textfield="name" valuefield="code" parentfield="pCode" popupwidth="140px;"
+                            expandonload="0" onvaluechanged="" /> 
+                               <input id="allocatorStatusCode" name="allocatorStatusCode" class="mini-combobox" style="width: 120px;" textfield="name"
+                             valuefield="code" shownullitem="true" nullitemtext="分配状态" emptytext="分配状态" onvaluechanged="" /> 
+                        <input id="keyword" name="keyword" class="mini-textbox" style="width:250px" emptytext="请输入净化槽、设备编码或镇、村名称" onenter="" />
+                        <a class="mini-button" iconcls="icon-search" plain="true" onclick="onSearch()">查询</a>
+                        <a id="select" class="mini-button" style="" iconcls="icon-add" onclick="select();">批量分配</a>
+                         <a id="moredel" class="mini-button" style="" iconcls="icon-remove" onclick="moredel();">批量删除</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" sizelist="[50,100,200,500]" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+             idfield="staffCode" multiselect="true" frozenstartcolumn="0" frozenendcolumn="1"
+             onlycheckselection="true" allowrowselect="true" showpager="true" onbeforeload="datagrid1_BeforeLoad"
+             onrowclick="onrowclick" pagesize="10">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                </div>
+                <div type="checkcolumn" field="checkcolumn" width="40" headeralign="center"> 
+                </div>
+
+                <div field="monitorSiteName" width="100" headeralign="center" align="left">
+                    净化槽编码
+                </div>
+                <div field="equipmentNo" width="100" headeralign="center" align="left">
+                    设备编码
+                </div>
+                <div field="cantonName" width="100" headeralign="center" align="center">
+                    行政区
+                </div>
+                <div field="siteStatus" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    分配状态
+                </div> 
+                <div field="op" name="op" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    操作
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

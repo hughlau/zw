@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>报警信息</title>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="../operationMaintenance/OperationMaintenancePage.js" type="text/javascript"></script>
+    <script src="monitorSiteAlarm.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="divForm" class="form">
+        <table style="width: 90%; margin: 10px auto;" class="tableForm">
+            <tr>
+                <th style="width: 20%;">
+                    <span class="MustFilled">*</span> 设施点位：
+                </th>
+                <td style="width: 80%;">
+                    <input type="hidden" style=" display: none;" name="monitorSiteCode" class="mini-textbox " />
+                    <span class="spanBase ViewControl" jsondata="{Class:'ViewClass',Property:'monitorSiteName'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 20%;">设备：
+                </th>
+                <td style="width: 80%;">
+                    <input type="hidden" style=" display: none;" name="equipmentNo" class="mini-textbox " />
+                    <span class="spanBase ViewControl" jsondata="{Class:'ViewClass',Property:'equipmentNo'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="MustFilled">*</span> 报警名称：
+                </th>
+                <td>
+                    <input type="hidden" style="display: none;" name="monitorSiteAlarmCode" class="mini-textbox " />
+                    <span class="spanBase ViewControl" jsondata="{Class:'ViewClass',Property:'monitorSiteAlarmName'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="MustFilled">*</span> 报警类型：
+                </th>
+                <td>
+                    <input type="hidden" style="display: none;" name="alarmTypeCode" class="mini-textbox " />
+                    <span class="spanBase ViewControl" jsondata="{Class:'ViewClass',Property:'alarmTypeName'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="MustFilled">*</span> 报警时间：
+                </th>
+                <td>
+                    <span class="spanBase ViewControl" jsondata="{Class:'ViewClass',Property:'alarmTime'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    描述：
+                </th>
+                <td>
+                    <span class="spanBase ViewControl" jsondata="{Class:'ViewClass',Property:'description'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <td>
+                    <div id="ckisSolve" name="isSolve" class="mini-checkbox" checked="true" readonly="false" trueValue="1" falseValue="0"
+                        text="是否解决">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    意见：
+                </th>
+                <td>
+                    <input id="txtopinion" style="width: 99%; height: 60px;" class="mini-textarea" name="opinion"
+                        vtype="rangeLength:1,120" />
+                </td>
+            </tr>
+        </table>
+        <div style="text-align: right; padding: 10px;">
+            <a id="buttonSave" class="mini-button" style="width: 60px; margin-right: 20px;">保存</a>
+            <a id="buttonConcel" class="mini-button" style="width: 60px; margin-right: 20px;">取消</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿body Div.jQueryExtension_UI_DataList
+        {
+            position: relative;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Head
+        {
+            clear: both;
+            display: none;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Body
+        {
+            clear: both;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Body > ul.jQueryExtension_UI_DataList_Body
+        {
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Body > ul.jQueryExtension_UI_DataList_Body > li
+        {
+            float: left;
+            margin: 2px 2px;
+            background-color: Red;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Body > ul.jQueryExtension_UI_DataList_Body > li.jQueryExtension_UI_DataList_Body_LiSelected
+        {
+            background-color: Blue;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Body > ul.jQueryExtension_UI_DataList_Body > li > div
+        {
+            overflow: hidden;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Foot
+        {
+            clear: both;
+            margin-top: 2px;
+            height: 36px;
+            line-height: 36px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Foot > ul.jQueryExtension_UI_DataList_FootLeft
+        {
+            float: left;
+            margin: 0px 0px;
+            padding: 0px 0px;
+            list-style: none;
+            text-align: center;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Foot > ul.jQueryExtension_UI_DataList_FootLeft > li
+        {
+            float: left;
+            height: 36px;
+            margin-right: 10px;
+            background-color: Red;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Foot > ul.jQueryExtension_UI_DataList_FootRight
+        {
+            float: right;
+            height: 36px;
+            line-height: 36px;
+            margin: 0px 0px;
+            padding: 0px 0px;
+            list-style: none;
+            text-align: center;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Foot > ul.jQueryExtension_UI_DataList_FootRight > li
+        {
+            float: left;
+            width: 80px;
+            height: 36px;
+            margin-left: 10px;
+            background-color: Red;
+        }
+        body Div.jQueryExtension_UI_DataList > div.jQueryExtension_UI_DataList_Foot > ul.jQueryExtension_UI_DataList_FootRight > li.jQueryExtension_UI_DataList_FootRight_liPageChange
+        {
+            cursor: pointer;
+            background-color: Blue;
+        }
+        body Div.jQueryExtension_UI_DataList Div.jQueryExtension_UI_DataList_DivLoading
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(Images/Standard__jQueryExtension_UI_DataList_DivLoading.gif);
+            background-repeat: no-repeat;
+            background-position: center center;
+            top: 0px;
+            display: none;
+        }

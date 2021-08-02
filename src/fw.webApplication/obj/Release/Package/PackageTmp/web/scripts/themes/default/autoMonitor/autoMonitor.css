@@ -1,0 +1,134 @@
+﻿.divChooseStatic{    }
+.divChooseStatic ul{ margin-left:10px; }
+.divChooseStatic ul li{ float:left; list-style:none;margin-top: 3px; margin-left: 10px;padding-right:18px; }
+    
+    
+/*==================切换 start=====================*/
+div .div_ChangeBtn
+{
+    height: 29px;
+    width: 170px ; 
+}
+div .div_ChangeBtn li
+{
+    float: left;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    font-size: 13px;
+    width: 61px;
+    margin-left: 0px;
+    list-style-type: none; cursor:pointer;
+}
+div .div_ChangeBtn .nav_left
+{
+    background-image: url(images/left.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #333;
+    font-family:" 微软雅黑"
+}
+div .div_ChangeBtn .nav_left a
+{
+    color: #333;
+}
+div .div_ChangeBtn .nav_left_h
+{
+    background-image: url(images/left_h.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-family:" 微软雅黑"
+}
+div .div_ChangeBtn .nav_left_h a
+{
+    color: #ffffff;
+}
+div .div_ChangeBtn .nav_right
+{
+    background-image: url(images/right.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #333;
+    font-family:" 微软雅黑"
+}
+div .div_ChangeBtn .nav_right a
+{
+    color: #333;
+}
+div .div_ChangeBtn .nav_right_h
+{
+    background-image: url(images/right_h.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-family:" 微软雅黑";
+}
+div .div_ChangeBtn .nav_right_h a
+{
+    color: #ffffff;
+}
+
+/*==================切换 end=====================*/
+
+
+/*--------实时监测数据样式--------*/
+div.divMonitorTime
+{
+    float: right;
+   /*- margin: -20px 4px auto auto;*/
+     margin-top: 5px;
+    line-height: 12px;
+    color: #afafaf;
+    white-space: nowrap;
+    overflow: hidden;
+    /*width: 70px;*/
+    text-align: right;
+    font-size: 10px;
+}
+div.divMonitorTime.div0Days
+{
+    /*width: 55px;*/
+    text-indent: 12px;
+    background: url(../images/今.png) no-repeat scroll 0px 0px transparent;
+}
+div.divMonitorTime.div-1Days
+{
+    /*width: 55px;*/
+    text-indent: 12px;
+    background: url(../images/昨.png) no-repeat scroll 0px 0px transparent;
+}
+div.divMonitorTime.div-2Days
+{
+    /*width: 55px;*/
+    text-indent: 12px;
+    background: url(../images/前.png) no-repeat scroll 0px 0px transparent;
+}
+
+
+
+a:link
+{
+    text-decoration: none;
+    color: #0066CC;
+}
+a:link:visited
+{
+    text-decoration: none;
+    color: #666666;
+}
+a:link:hover
+{
+    text-decoration: underline;
+    color: #FF3300;
+}
+a:link:active
+{
+    text-decoration: none;
+    color: #0066CC;
+} 
+a.classNumber
+{
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+}

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwMethodInfo.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="form" style="padding-top: 10px;">
+        <fieldset style="width: 90%; margin: 10px auto; border: solid 1px #aaa;">
+            <legend style="margin-left: 32px;"><span><a>方法基本信息</a></span></legend>
+            <div style="width: 90%; margin: 0px auto; padding: 10px 10px;">
+                <input class="mini-hidden" name="objectID" />
+                <table class="tableForm" style="width: 100%; margin: 0px auto;">
+                    <tr>
+                        <td style="width: 30%;">
+                            方法名：
+                        </td>
+                        <td style="width: 70%;">
+                            <input name="mName" class="mini-textbox" style="width: 90%;" required="true" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            方法中文名：
+                        </td>
+                        <td>
+                            <input name="mChineseName" class="mini-textbox" style="width: 90%;" required="true" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            备注：
+                        </td>
+                        <td>
+                            <input name="mRem" class="mini-textarea" style="width: 90%;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; margin: 10px auto; border: solid 1px #aaa;">
+            <legend style="margin-left: 32px;"><span><a>参数列表</a></span></legend>
+            <div style="width: 90%; margin: 0px auto; padding: 10px 10px;">
+                <div id="conditionFormMFWParameterInfo" class="mini-toolbar form" style="width: 100%;
+                    border-width: 0px 0px 0px 0px; background-image: url(); background-color: White;">
+                    <table>
+                        <tr>
+                            <td id="functionListMFWParameterInfo" style="width: 100%; white-space: nowrap; text-align: left;">
+                                <a class="mini-button" iconcls="icon-add" onclick="insertRowMFWParameterInfo();"
+                                    data-options="{minSelectedCount:-1}">增加</a> <a id="A1" class="mini-button" iconcls="icon-remove"
+                                        onclick="delMFWParameterInfo();" data-options="{minSelectedCount:1}">删除</a>
+                                <a id="A2" class="mini-button" iconcls="icon-upload" onclick="moveItemMFWParameterInfo('up');"
+                                    data-options="{minSelectedCount:1,maxSelectedCount:1}">向上</a> <a id="A3" class="mini-button"
+                                        iconcls="icon-download" onclick="moveItemMFWParameterInfo('down');" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                                        向下</a> <span class="separator"></span><a id="insertOrUpdateMFWParameterInfo" class="mini-button"
+                                            iconcls="icon-edit" onclick="insertOrUpdateMFWParameterInfo();">保存</a>
+                            </td>
+                            <td style="white-space: nowrap; text-align: right;">
+                                <input id="keywordMFWParameterInfo" name="keyword" class="mini-textbox" selectonfocus="true"
+                                    emptytext="请输入参数名称" style="width: 160px; display: none;" onenter="onSearchMFWParameterInfo();" />
+                                <a class="mini-button" iconcls="icon-reload" onenter="onSearchMFWParameterInfo();"
+                                    onclick="onSearchMFWParameterInfo();">刷新</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="datagridMFWParameterInfo" class="mini-datagrid" style="width: 100%; height: 256px;
+                    margin: 0px auto;" idfield="metadataToken" multiselect="true" showcolumnsmenu="true"
+                    frozenstartcolumn="0" frozenendcolumn="1" showpager="false" allowcelledit="true"
+                    allowcellselect="true">
+                    <div property="columns">
+                        <div type="indexcolumn" width="24">
+                        </div>
+                        <div type="checkcolumn" width="36">
+                        </div>
+                        <div field="mName" width="120" headeralign="center" align="left" vtype="required">
+                            参数名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                                style="width: 100%;" />
+                        </div>
+                        <div field="mChineseName" width="120" headeralign="center" align="left" vtype="required">
+                            参数中文名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                                style="width: 100%;" />
+                        </div>
+                        <div field="mMapName" width="120" headeralign="center" align="left" vtype="required">
+                            参数映射名
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                                style="width: 100%;" />
+                        </div>
+                        <div field="mParameterType" width="100" headeralign="center" visible="false" align="left">
+                            参数类型编码
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                                style="width: 100%;" />
+                        </div>
+                        <div field="mParameterTypeName" width="100" headeralign="center" align="left">
+                            参数类型
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                                style="width: 100%;" />
+                        </div>
+                        <div field="mDefaultValue" width="100" headeralign="center" align="left">
+                            默认值
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                                style="width: 100%;" />
+                        </div>
+                        <div field="mTestValue" width="100" headeralign="center" align="left">
+                            测试值
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                                style="width: 100%;" />
+                        </div>
+                        <div field="mRem" width="100" headeralign="center" align="left">
+                            备注
+                            <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                                style="width: 100%;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; margin: 10px auto; border: solid 1px #aaa;">
+            <legend style="margin-left: 32px;"><span><a>返回值</a></span></legend>
+            <div style="width: 90%; margin: 0px auto; padding: 10px 10px;">
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>

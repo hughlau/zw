@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>设备列表</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="equipmentList.htm.js" type="text/javascript"></script>
+</head>
+<body isloaduserinfo="1" >
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a id="add" class="mini-button " iconcls="icon-add" onclick="insert();">关联设备</a>
+                        <a id="disable" class="mini-button" iconcls="icon-remove" onclick="del();"
+                                data-options="{minSelectedCount:1,maxSelectedCount:1}">解除关系</a> 
+                                <a class="mini-button" iconcls="icon-reload" plain="true" onclick=" onSearch() ">刷新</a> 
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="" style="width: 100%; white-space: nowrap; text-align: left;">
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--撑满页面-->
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" fitcolumns="false"
+            borderstyle="border-width: 0px;" sizelist="[5,10,20,50]" pagesize="10" multiselect="true" frozenStartColumn="0" frozenEndColumn="3"
+            onbeforeload="datagrid1_BeforeLoad" sortfield="" onselectionchanged="datagrid1_SelectionChanged"
+            showpager="false">
+            <div property="columns">
+                <div type="checkcolumn" width="40">
+                </div>
+                <div type="indexcolumn" width="60" headeralign="center" align="center">
+                    序号
+                </div>
+                <div field="equipmentNo" width="180" headeralign="center" align="left" visible="true">
+                    设备编码</div>
+                <div field="equipmentName" width="180" headeralign="center" align="left">
+                    设备名称</div>
+                <div field="cantonName" width="120" headeralign="center" align="center">
+                    行政区</div>
+                <div field="equipmentTypeName" width="120" headeralign="center" align="center">
+                    设备类型</div>
+                <div field="equipmentStatusName" width="120" headeralign="center" align="center"
+                    renderer="datagrid1_Renderer">
+                    设备状态</div>
+                <div field="monitorSiteName" width="120" headeralign="center" align="left">
+                    所属净化槽编码</div>
+                <div field="createTime" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    上线时间</div>
+                <div field="acceptanceTime" width="120" headeralign="center" align="left">
+                    验收时间</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Language="C#" Service="fw.m.sysManage.service.SysManageService"
+    Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>

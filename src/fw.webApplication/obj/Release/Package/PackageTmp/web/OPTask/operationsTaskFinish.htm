@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>任务解决 </title>
+    <link href="../style/global.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="operationsTaskFinish.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="infoForm" class="form" style="margin: 0  auto; width: 80%;">
+        <!--净化槽-->
+        <h2 class="headline-1">
+            <a class="anchor-1" name="1"></a><i class="fa fa-bank"></i><span class="headline-content">
+                 任务基本信息</span><span style="font-size: 14px; height: 100%; line-height: 100%;"></span>
+        </h2>
+        <div class="partbottom">
+            <table class="tableEnt form" style="margin-bottom: 10px;">
+                <tr>
+                    <td class="tdleft">
+                        净化槽编号
+                    </td>
+                    <td class="tdRight">
+                        <input id="monitorSiteName" name="monitorSiteName" class="mini-textbox asLabel" style="width: 90%;" />
+                    </td>
+                    <td class="tdleft">
+                        设备编号
+                    </td>
+                    <td class="tdRight">
+                        <input id="equipmentNo" name="equipmentNo" class="mini-textbox asLabel" style="width: 90%;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdleft">
+                        故障类型
+                    </td>
+                    <td class="tdRight">
+                        <input id="faultTypeName" name="faultTypeName" class="mini-textbox asLabel" style="width: 90%;" />
+                    </td>
+                    <td class="tdleft">
+                        故障时间
+                    </td>
+                    <td class="tdRight">
+                        <input id="faultTime" name="faultTime" class="mini-textbox asLabel" style="width: 90%;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdleft">
+                        运维人员
+                    </td>
+                    <td class="tdRight">
+                        <input id="operationMaintenancePersonName" name="operationMaintenancePersonName"
+                            class="mini-textbox asLabel" style="width: 90%;" />
+                    </td>
+                    <td class="tdleft">
+                    </td>
+                    <td class="tdRight">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="divForm" class="form">
+        <fieldset style="width: 80%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">反馈操作</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 10px;" class="tableForm">
+                    <tr>
+                        <th style="width: 20%;">
+                            规定修复时间：
+                        </th>
+                        <td colspan="3">
+                            <input name="prescribeRepairTime" class="mini-datepicker" format="yyyy-MM-dd HH:mm:ss"
+                                timeformat="HH:mm:ss" showtime="true" showclearbutton="true" required="true"
+                                style="width: 96%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            是否去现场：
+                        </th>
+                        <td>
+                            <div id="ckisGoSite" name="isGoSite" class="mini-checkbox " checked="true" readonly="false"
+                                truevalue="1" falsevalue="0" text="去现场">
+                            </div>
+                        </td>
+                        <th>
+                            是否解决：
+                        </th>
+                        <td>
+                            <div id="isSolve" name="isSolve" class="mini-checkbox " value="1" checked="true"
+                                readonly="false" truevalue="1" falsevalue="0" text="已解决">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            处理/反馈时间：
+                        </th>
+                        <td colspan="3">
+                            <input id="txtRepairTime" style="width: 96%;" class="mini-datepicker " selectonfocus="true"
+                                name="repairTime" nullvalue="null" emptytext="处理/反馈时间..." format="yyyy-MM-dd H:mm:ss"
+                                timeformat="H:mm:ss" showtime="true" showclearbutton="true" />
+                            <span class="spanBase ViewControl" jsondata="{Class:'ViewClass',Property:'repairTime'}">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            反馈原因：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%; height: 60px;" class="mini-textarea " name="opinion" vtype="rangeLength:1,120"
+                                selectonfocus="true" />
+                            <div style="width: 99%; height: auto; white-space: normal;" class="spanBase ViewControl"
+                                jsondata="{Class:'ViewClass',Property:'opinion'}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <div style="text-align: right; padding: 10px;">
+            <a id="buttonSave" class="mini-button " style="width: 60px; margin-right: 20px;">保存</a>
+            <a id="buttonConcel" class="mini-button" style="width: 60px; margin-right: 20px;">取消</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{951F66BE-7FA5-4386-8F19-069D35B0D2BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>fw.m.autoMonitor</RootNamespace>
+    <AssemblyName>fw.m.autoMonitor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fw">
+      <HintPath>..\fw.dll\fw.dll</HintPath>
+    </Reference>
+    <Reference Include="fw.m.sysManage">
+      <HintPath>..\fw.dll\fw.m.sysManage.dll</HintPath>
+    </Reference>
+    <Reference Include="fw.m.sysManage.data">
+      <HintPath>..\fw.dll\fw.m.sysManage.data.dll</HintPath>
+    </Reference>
+    <Reference Include="fw.m.userLogin">
+      <HintPath>..\fw.dll\fw.m.userLogin.dll</HintPath>
+    </Reference>
+    <Reference Include="fw.m.userLogin.data">
+      <HintPath>..\fw.dll\fw.m.userLogin.data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bll\AutoMonitorBll.cs" />
+    <Compile Include="bll\MonitorSiteRealtimeBll.cs" />
+    <Compile Include="dal\MMonitorSiteRealtimeFactorDataDal.cs" />
+    <Compile Include="data\entity\BLLMonitorSiteRealtimeFactorData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="service\AutoMonitorService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\fw.m.autoMonitor.data\fw.m.autoMonitor.data.csproj">
+      <Project>{FFEA4E3C-955B-41A0-80ED-82E7DFDDD8FD}</Project>
+      <Name>fw.m.autoMonitor.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\fw.m.Common\fw.m.Common.csproj">
+      <Project>{F906DED5-33AD-4894-81DC-9E3722D51CD8}</Project>
+      <Name>fw.m.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\fw.m.sysBasicManage.data\fw.m.sysBasicManage.data.csproj">
+      <Project>{9429D5D4-7D9F-41AF-8C13-CA4C5C96C77E}</Project>
+      <Name>fw.m.sysBasicManage.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\fw.m.sysBasicManage\fw.m.sysBasicManage.csproj">
+      <Project>{B9578EA6-3945-49C1-96D2-7426435FE78F}</Project>
+      <Name>fw.m.sysBasicManage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

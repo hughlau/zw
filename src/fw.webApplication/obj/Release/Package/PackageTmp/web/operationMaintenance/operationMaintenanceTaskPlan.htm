@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维任务</title>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="operationMaintenanceTaskPlan.htm.js" type="text/javascript"></script>
+    <script src="OperationMaintenancePage.js" type="text/javascript"></script>
+</head>
+<body isloaduserinfo="1">
+    <div id="divTaskPlan" class="form" style="width: 98%; height: 500px; margin-left: 10px;
+        overflow: hidden;">
+        <div style="display: none;">
+            <input type="hidden" style="width: 90%;" name="operationMaintenanceTaskPlanId" class="mini-textbox " />
+        </div>
+        <div class="divTask">
+            <div class="divTaskLeft">
+                <span class="MustFilled">*</span> 任务名称：
+            </div>
+            <div class="divTaskRight">
+                <input id="txtTaskName" class="mini-textbox cells" name="operationMaintenanceTaskPlanName"
+                    vtype="rangeLength:1,120" required="true" selectonfocus="true" />
+            </div>
+            <div class="divTaskLeft" style="height: 68px;">
+                <span class="MustFilled">*</span> 频率：
+            </div>
+            <div class="divTaskRight" style="height: 68px;">
+                <input id="rbFrequencyType" class="mini-radiobuttonlist cells" name="frequencyType"
+                    repeatlayout="table" repeatdirection="vertical" textfield="text" valuefield="id"
+                    value="0" data="[{ id: 0, text: '月' },{ id: 1, text: '年' }]" style="margin-top: 5px;"
+                    onvaluechanged="onFrequencyShow();" />
+                <div style="margin-top: 12px; font-size: 16px;">
+                    <div id="divMonth" style="display: block;">
+                        <div style="float: left;">
+                            每月&nbsp;</div>
+                        <div style="float: left;">
+                            <input id="txtStartDay" class="mini-textbox" name="startDay1" style="width: 60px;"
+                                vtype="int" required="true" />
+                        </div>
+                        <div style="float: left;">
+                            &nbsp;至每月&nbsp;
+                            <input id="txtEndDay" class="mini-textbox" name="endDay1" style="width: 60px;" vtype="int"
+                                required="true" />
+                        </div>
+                        <div style="float: left;">
+                            &nbsp;号</div>
+                    </div>
+                    <div id="divYear" style="display: none;">
+                        <div style="float: left;">
+                            <input id="txtMonthS" class="mini-textbox" name="startMonth" style="width: 60px;"
+                                vtype="int" required="true" />
+                        </div>
+                        <div style="float: left;">
+                            &nbsp;月&nbsp;
+                            <input id="txtDayS" class="mini-textbox" name="startDay2" style="width: 60px;" vtype="int"
+                                required="true" />
+                        </div>
+                        <div style="float: left;">
+                            &nbsp;号至&nbsp;</div>
+                        <div style="float: left;">
+                            <input id="txtMonthE" class="mini-textbox" name="endMonth" style="width: 60px;" vtype="int"
+                                required="true" />
+                        </div>
+                        <div style="float: left;">
+                            &nbsp;月&nbsp;
+                            <input id="txtDayE" class="mini-textbox" name="endDay2" style="width: 60px;" vtype="int"
+                                required="true" />
+                        </div>
+                        <div style="float: left;">
+                            &nbsp;号</div>
+                    </div>
+                </div>
+            </div>
+            <div class="divTaskLeft">
+                运维公司：
+            </div>
+            <div class="divTaskRight">
+                <input id="cmbOpMa" class="mini-combobox cells" textfield="operationMaintenanceUnitName"
+                    name="operationMaintenanceUnitCode" valuefield="operationMaintenanceUnitCode"  required="true"
+                    shownullitem="true" nullitemtext="运维公司" emptytext="请选择运维公司..." onvaluechanged="onPersonSearch();" />
+            </div>
+            <div class="divTaskLeft">
+                <span class="MustFilled">*</span> 运维人员：
+            </div>
+            <div class="divTaskRight">
+                <input id="cmbOMPerson" class="mini-combobox cells" textfield="operationMaintenancePersonName"
+                    name="operationMaintenancePersonCode" valuefield="operationMaintenancePersonCode"
+                    shownullitem="true" emptytext="请选择运维人员..." vtype="rangeLength:1,120" required="true"
+                    selectonfocus="true" />
+            </div>
+            <div class="divTaskLeft">
+                计划类型：
+            </div>
+            <div class="divTaskRight">
+                <input id="rbPlanType" class="mini-radiobuttonlist cells" name="planType" repeatlayout="table"
+                    repeatdirection="vertical" textfield="text" valuefield="id" value="0" data="[{ id: 0, text: '常规巡检' }]"
+                    style="margin-top: 5px;" />
+            </div>
+        </div>
+        <div style="text-align: right; padding: 10px; margin-right: 48px; margin-top: 20px;">
+            <a id="buttonSave" class="mini-button" style="width: 60px; margin-right: 20px;">保存</a>
+            <a id="buttonConcel" class="mini-button" style="width: 60px; margin-right: 20px;">取消</a>
+        </div>
+    </div>
+</body>
+</html>

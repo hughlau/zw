@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>功能信息</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwFunction.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="form" style="padding-top: 10px;">
+        <table class="tableForm" style="width: 90%; margin: 0px auto;">
+            <tr>
+                <td style="width: 20%;">
+                    模块名称：
+                </td>
+                <td style="width: 80%;">
+                    <input id="mBllModuleCode" name="mBllModuleCode" class="mini-combobox" selectonfocus="true"
+                        valuefield="mBllModuleCode" textfield="mBllModuleName" emptytext="模块..." style="width: 90%;"
+                        maxlength="18" required="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    功能名称：
+                </td>
+                <td>
+                    <input name="mFunctionName" class="mini-textbox" selectonfocus="true" required="true"
+                        maxlength="18" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    方法名称：
+                </td>
+                <td>
+                    <input id="mMethodName" name="mMethodName" class="mini-textbox" selectonfocus="true"
+                        required="true" maxlength="18" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input name="mIsVerifyRight" class="mini-checkbox" selectonfocus="true" text="是否验证权限"
+                        value="0" truevalue="1" falsevalue="0" required="true" />
+                    &nbsp;
+                    <input name="mIsWriteLog" class="mini-checkbox" selectonfocus="true" text="是否写日志"
+                        value="0" truevalue="1" falsevalue="0" required="true" />
+                    &nbsp;
+                    <input name="mIsDis" class="mini-checkbox" selectonfocus="true" text="是否停用" value="0"
+                        truevalue="1" falsevalue="0" required="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    顺序：
+                </td>
+                <td>
+                    <input name="mIx" class="mini-spinner" selectonfocus="true" minvalue="1" maxvalue="2147483647"
+                        value="1" required="true" style="width: 90%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    备注：
+                </td>
+                <td>
+                    <input name="mRem" class="mini-textarea" selectonfocus="true" maxlength="100" style="width: 90%;
+                        height: 80px;" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="text-align: right; padding: 10px;">
+        <a id="insertOrUpdate" class="mini-button" style="margin-right: 20px;" iconcls="icon-save"
+            onclick="onInsertOrUpdate">保存</a> <a id="cancel" class="mini-button" style="margin-right: 20px;"
+                iconcls="icon-cancel" onclick="onCancel">取消</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+﻿        body div.jQueryExtension_UI_Tabs
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            text-align: left;
+            border-left: 1px solid #b3d9f5;
+            border-right: 1px solid #b3d9f5;
+            border-bottom: 1px solid #b3d9f5;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title
+        {
+            height: 30px;
+            padding-top: 6px;
+            background: url(Images/Standard__jQueryExtension_UI_Tabs_RepeatX.png) repeat-x scroll 0px 0px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs
+        {
+            margin: 0px auto 0px 24px;
+            min-height: 24px;
+            overflow: hidden;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_Tabs_ToLeft
+        {
+            cursor: pointer;
+            float: left;
+            width: 16px;
+            height: 16px;
+            margin:-20px auto auto 4px;
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll 0px -32px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_Tabs_ToLeft:hover
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll 0px -64px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_Tabs_ToRight
+        {
+            cursor: pointer;
+            float: right;
+            width: 16px;
+            height: 16px;
+            margin:-20px 4px auto auto ;
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -32px -32px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_Tabs_ToRight:hover
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -32px -64px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs
+        {
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabEmpty
+        {
+            height: 24px;
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -192px 0px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabEmpty div.jQueryExtension_UI_Tabs_Title_TrTabs_TabEmptyInner
+        {
+            width: 18px;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabEmptyLeftSelected
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -64px 0px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabEmptyRightSelected
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -96px 0px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_Tab
+        {
+            cursor: pointer;
+            height: 24px;
+            background: url(Images/Standard__jQueryExtension_UI_Tabs_RepeatX.png) repeat-x scroll 0px -32px transparent;
+            white-space: nowrap;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_Tab div.jQueryExtension_UI_Tabs_Title_TrTabs_TabBrowser
+        {
+            width: 16px;
+            height: 16px;
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -96px -32px transparent;
+            margin-right: 5px;
+            border-width: 0px;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_Tab img.jQueryExtension_UI_Tabs_Title_TrTabs_TabImage
+        {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            border-width: 0px;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_Tab div.jQueryExtension_UI_Tabs_Title_TrTabs_NoTabClose
+        {
+            width: 16px;
+            height: 16px;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_Tab div.jQueryExtension_UI_Tabs_Title_TrTabs_TabClose
+        {
+            margin-left: 5px;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -64px -32px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_Tab div.jQueryExtension_UI_Tabs_Title_TrTabs_TabClose:hover
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -64px -64px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabSelected
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs_RepeatX.png) repeat-x scroll 0px -64px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabLeft
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll 0px 0px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabLeftSelected
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -32px 0px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabRight
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -128px 0px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Title div.jQueryExtension_UI_Tabs_Title_DivTabs table.jQueryExtension_UI_Tabs_Title_TableTabs tr.jQueryExtension_UI_Tabs_Title_TrTabs td.jQueryExtension_UI_Tabs_Title_TrTabs_TabRightSelected
+        {
+            background: url(Images/Standard__jQueryExtension_UI_Tabs.png) no-repeat scroll -160px 0px transparent;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Content
+        {
+            width: 100%;
+            overflow: hidden;
+        }
+        body div.jQueryExtension_UI_Tabs div.jQueryExtension_UI_Tabs_Content div.jQueryExtension_UI_Tabs_Content_Outer
+        {
+            overflow: hidden;
+        }

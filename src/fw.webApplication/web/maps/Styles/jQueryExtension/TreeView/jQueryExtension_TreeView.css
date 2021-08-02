@@ -1,0 +1,146 @@
+        .JQueryTreeView /* 根 */
+        {
+            list-style: none;
+            margin: 0px 0px;
+            padding: 0px 0px;
+    white-space: nowrap;
+        }
+        .JQueryTreeView ul, .JQueryTreeView ol /* 所有下级的菜单 */
+        {
+            list-style: none;
+            margin: 0px 0px;
+            padding: 0px 0px;
+            list-style: none;
+            display: block;
+        }
+        .JQueryTreeView li /* 所有的li */
+        {
+            list-style: none;
+            font-size: 12px;
+            line-height: 16px;
+            padding: 1px 0px 1px 16px;
+            margin: 0px 0px;
+            background: url(Images/default-line.gif) 0px 0px no-repeat;
+            color:Black;
+        }
+        .JQueryTreeView li.liJQueryTreeViewNode /* li节点 */
+        {
+            background-position: 0px -176px;
+        }
+        .JQueryTreeView li.liJQueryTreeViewLastNodeDefault /* li节点结束.默认为- */
+        {
+            background: url(Images/default.gif) -32px -67px  no-repeat;
+        }
+        .JQueryTreeView li.liFirstLastNode
+        {
+            background: url(Images/default-line.gif) 0px 0px no-repeat;
+        }
+        .JQueryTreeView li.liLastNode /* li分枝结束 */
+        {
+            background-position: 0px -1766px;
+        }
+        .JQueryTreeView li.liJQueryTreeViewLastNodeOpen
+        {
+            background-position: -32px -67px;
+        }
+        .JQueryTreeView li.liJQueryTreeViewLastNodeClose
+        {
+            background-position: 0px -111px;
+        }
+        .JQueryTreeView li span.spanJQueryTreeViewDefault /* 节点+-图标 */
+        {
+            background-image: url(Images/default.gif);
+            background-repeat: no-repeat;
+            float: left;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            cursor: pointer;
+            margin-left: -16px;
+            background-position: -80px -1px;
+        }
+        .JQueryTreeView li span.spanJQueryTreeViewClose /* 节点-图标 */
+        {
+            background-position: -64px -23px;
+        }
+        .JQueryTreeView li span.spanJQueryTreeViewNone
+        {
+            background-position: 0px 0px;
+        }
+        .NoLinejQueryTreeView li /* li去除一切线条 */
+        {
+            background-image: none;
+        }
+        .NoLinejQueryTreeView li.liJQueryTreeViewLastNodeDefault
+        {
+            background: url(Images/default.gif) -16px -89px no-repeat;
+        }
+        .NoLinejQueryTreeView li.liJQueryTreeViewLastNodeOpen
+        {
+            background-position: -16px -89px;
+        }
+        .NoLinejQueryTreeView li.liJQueryTreeViewLastNodeClose
+        {
+            background-position: -48px -45px;
+        }
+        .NoLinejQueryTreeView li span.spanJQueryTreeViewOpen /* 节点+图标 */
+        {
+            background-position: -16px -90px;
+        }
+        .NoLinejQueryTreeView li span.spanJQueryTreeViewClose /* 节点-图标 */
+        {
+            background-position: -48px -46px;
+        }
+        .JQueryTreeView div.divJQueryTreeViewFolder /* 文件夹图标 */
+        {
+            padding-left: 18px;
+            background: url(Images/folder-close.gif) 0px 0px no-repeat;
+        }
+        .JQueryTreeView div.divJQueryTreeViewFile /* 文件图标 */
+        {
+            padding-left: 18px;
+            background: url(Images/file.gif) 0px 0px no-repeat;
+        }
+        .JQueryTreeView li div.divJQueryTreeViewList
+        {
+        }
+        .JQueryTreeView li div.divJQueryTreeViewList:hover
+        {
+            background-color: #F8EBB9;
+        }
+        .JQueryTreeView li div.Selected
+        {
+            background-color: #F8EBB9;
+        }
+        .JQueryTreeView li div.divJQueryTreeViewList a
+        {
+            display: block;
+            cursor: pointer;
+            color: Blue;
+            text-decoration: none;
+        }
+        .JQueryTreeView li div.divJQueryTreeViewList a:link
+        {
+            text-decoration: none;
+            color: Black;
+        }
+        .JQueryTreeView li div.divJQueryTreeViewList a:link
+        {
+            text-decoration: none;
+            color: Blue;
+        }
+        .JQueryTreeView li div.divJQueryTreeViewList a:visited
+        {
+            text-decoration: none;
+            color: Blue;
+        }
+        .JQueryTreeView li div.divJQueryTreeViewList a:hover
+        {
+            text-decoration: none;
+            color: Blue;
+        }
+        .JQueryTreeView li div.divJQueryTreeViewList a:active
+        {
+            text-decoration: none;
+            color: Blue;
+        }

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{888204BE-0250-4CD0-BA77-B5F26E9EB56E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>fw.m.operationMaintenance.data</RootNamespace>
+    <AssemblyName>fw.m.operationMaintenance.data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fw">
+      <HintPath>..\fw.dll\fw.dll</HintPath>
+    </Reference>
+    <Reference Include="fw.m.sysManage.data">
+      <HintPath>..\fw.dll\fw.m.sysManage.data.dll</HintPath>
+    </Reference>
+    <Reference Include="fw.m.userLogin.data">
+      <HintPath>..\fw.dll\fw.m.userLogin.data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\fw.dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IOperationMaintenanceService.cs" />
+    <Compile Include="model\HTTPRealTimeData.cs" />
+    <Compile Include="model\JJMBLLRealTimeData.cs" />
+    <Compile Include="model\JJMBllRealTimeDataDevice.cs" />
+    <Compile Include="model\JJMBLLRealTimeDataDeviceData_Info.cs" />
+    <Compile Include="model\JJMBLLRealTimeDataDeviceData_Monitor.cs" />
+    <Compile Include="model\JJMBLLRealTimeDataDeviceData_Status.cs" />
+    <Compile Include="model\MBllEquipmentStatusInfoByDay.cs" />
+    <Compile Include="model\MBLLInoculationRecord.cs" />
+    <Compile Include="model\MBllMonitorSiteCleanRecord.cs" />
+    <Compile Include="model\MBllRealTimeData.cs" />
+    <Compile Include="model\MBreakdownInfo.cs" />
+    <Compile Include="model\MCantonData.cs" />
+    <Compile Include="model\MBLLOperationMaintenanceEquipmentPart.cs" />
+    <Compile Include="model\MBLLOperationMaintenanceFormTemplate.cs" />
+    <Compile Include="model\MBLLMonitorSiteRealtimeData.cs" />
+    <Compile Include="model\MBLLMonitorSiteRunningTimeData.cs" />
+    <Compile Include="model\MBLLMonitorSiteHisData.cs" />
+    <Compile Include="model\MBLLOperationMaintenancePersonAlarmReceiveItem.cs" />
+    <Compile Include="model\MBLLOperationMaintenancePersonLocation.cs" />
+    <Compile Include="model\MBLLOperationMaintenancePersonMappingMonitorSite.cs" />
+    <Compile Include="model\MBLLOperationMaintenanceTaskExec.cs" />
+    <Compile Include="model\MBLLOperationMaintenanceTaskPlan.cs" />
+    <Compile Include="model\MBLLOperationMaintenanceTaskPlanD.cs" />
+    <Compile Include="model\MBLLOperationMaintenanceRecords.cs" />
+    <Compile Include="model\MDailyMaintenanceTask.cs" />
+    <Compile Include="model\MMonitorSite.cs" />
+    <Compile Include="model\MMonitorSiteAlarm.cs" />
+    <Compile Include="model\MMonitorSiteFailureStatistics.cs" />
+    <Compile Include="model\MOperatingConditionStatistics.cs" />
+    <Compile Include="model\MOperationMaintenanceContract.cs" />
+    <Compile Include="model\MBLLOperationMaintenanceUnit.cs" />
+    <Compile Include="model\MBLLOperationMaintenancePerson.cs" />
+    <Compile Include="model\MOperationMaintenanceContractMappingMonitorSite.cs" />
+    <Compile Include="model\MOperationMaintenanceTask.cs" />
+    <Compile Include="model\MOperationMaintenanceTaskStatistics.cs" />
+    <Compile Include="model\MOperatorAssessment.cs" />
+    <Compile Include="model\MPersonTaskAnalysis.cs" />
+    <Compile Include="model\MQTTBLLRealTimeData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuerryMaintenanceEquipmentPart.cs" />
+    <Compile Include="QueryBasicParams.cs" />
+    <Compile Include="QueryContractParams.cs" />
+    <Compile Include="QueryInoculationTaskParams.cs" />
+    <Compile Include="QueryMBLLOperationMaintenancePersonMappingMonitorSiteParams.cs" />
+    <Compile Include="QueryMBLLOperationMaintenancePersonParams.cs" />
+    <Compile Include="QueryMBLLOperationMaintenanceUnitParams.cs" />
+    <Compile Include="QueryMonitorSiteAlarmParams.cs" />
+    <Compile Include="QueryTaskParams.cs" />
+    <Compile Include="QueryTaskPlan.cs" />
+    <Compile Include="QueryTaskPlanMain.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\fw.m.sysBasicManage.data\fw.m.sysBasicManage.data.csproj">
+      <Project>{9429D5D4-7D9F-41AF-8C13-CA4C5C96C77E}</Project>
+      <Name>fw.m.sysBasicManage.data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

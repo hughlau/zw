@@ -1,0 +1,434 @@
+﻿
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color:#f0fcfe;
+}
+ul {
+	margin: 0px;
+	padding: 0px;}
+li {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;}
+a img{border:none;}
+a { text-decoration: none;}
+#divMenu {
+	width: 140px;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+/*.tit为每个菜单的标题样式  .list 为菜单项目的样式*/
+.tit , .list{
+	width:120px; /*菜单的宽度*/
+} 
+
+/*======================================标题部分===============================*/
+.tit {/*菜单标题的样式*/
+	height: 40px;/*底部边框没有*/
+	color: #2c2c2e;/*文字样式依次为：粗体 大小/行高 字族*/
+	text-indent: 37px;/*文字缩进*/;/*外填充*/
+	position: relative;
+	font-family: "lucida Grande", verdana, lucida, Arial, helvetica, "微软雅黑", sans-serif;
+	font-size: 14px;
+	line-height: 40px;
+	font-weight: bold;
+	margin-bottom:8px;
+	margin-top:3px;
+}
+.tit a ,.tit a:link , .tit a hover{/*菜单标题中的链接的样式，共同的部分*/
+	color: #343534;
+	display:block;
+	text-decoration:none;
+	width:140px;
+	margin-bottom:3px;
+	margin-top:3px;
+	cursor: pointer;
+}
+
+/*====================
+	菜单标题中的箭头图片
+======================*/
+.on{
+    background-color:#67b5fa;
+	border-top:1px solid #c1c3d2;
+	border-left:1px solid #c1c3d2;
+	border-bottom:2px solid #f08300;
+	border-right:1px solid #c1c3d2;//*向上的箭头-暗色*/}
+.on a{color:#FFFFFF;text-decoration:none;/*向上的箭头-暗色*/}
+
+
+.on:hover{background-color:#67b5fa;/*向上的箭头-亮色*/}
+		
+
+.off{
+    background-color:#f4f5f9;
+	border-top:1px solid #c1c3d2;
+	border-left:1px solid #c1c3d2;
+	border-bottom:2px solid #3399ff;
+	border-right:1px solid #c1c3d2;/*向下的箭头-暗色*/}
+
+.off:hover{background-color:#fbfbd8/*向下的箭头-亮色*/}
+
+/*标题图标样式*/
+.titpic {
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	left: 12px;
+	bottom: 9px;
+}
+
+
+/*每一个标题图标，可变的部分*/
+#pc0{
+	background-image: url(images/menu_img/EntGK.png);
+	background-repeat: no-repeat;
+}
+#pc1{
+	background-image: url(images/menu_img/XXGK.png);
+	background-repeat: no-repeat;
+}
+#pc2{
+	background-image: url(images/menu_img/Lock.png);
+	background-repeat: no-repeat;
+}
+#pc3{
+	background-image: url(images/menu_img/ZDJianCe.png);
+	background-repeat: no-repeat;
+}
+#pc4{
+	background-image: url(images/menu_img/SDJianCe.png);
+	background-repeat: no-repeat;
+}
+#pc5{
+	background-image: url(images/menu_img/saomiao.png);
+	background-repeat: no-repeat;
+}
+#pc6{
+	background-image: url(images/menu_img/Star.png);
+	background-repeat: no-repeat;
+}
+#pc7{
+	background-image: url(images/menu_img/YearReport.png);
+	background-repeat: no-repeat;
+}
+#pc8{
+	background-image: url(images/menu_img/Pinion.png);
+	background-repeat: no-repeat;
+}
+#pc9{
+	background-image: url(images/menu_img/TJReport.png);
+	background-repeat: no-repeat;
+}
+#pc10{
+	background-image: url(images/menu_img/zcgk.png);
+	background-repeat: no-repeat;
+}
+/*每一个标题图标，可变的部分*/
+.pc1{
+	background-image: url(images/menu_img/Add.png);
+	background-repeat: no-repeat;
+}
+.pc2{
+	background-image: url(images/menu_img/Listing.png);
+	background-repeat: no-repeat;
+}
+.pc3{
+	background-image: url(images/menu_img/Lock.png);
+	background-repeat: no-repeat;
+}
+.pc4{
+	background-image: url(images/menu_img/Person.png);
+	background-repeat: no-repeat;
+}
+.pc5{
+	background-image: url(images/menu_img/saomiao.png);
+	background-repeat: no-repeat;
+}
+.pc6{
+	background-image: url(images/menu_img/Star.png);
+	background-repeat: no-repeat;
+}
+.pc7{
+	background-image: url(images/menu_img/Pinion.png);
+	background-repeat: no-repeat;
+}
+/*==========================================菜单体部分======================================*/
+/*====================
+	菜单列表的样式
+======================*/
+.list{
+	font-size: 12px;
+	color: #002280;
+	width: 183px;
+	text-align:left;
+	voice-family:"\"}\"";
+	voice-family:inherit;
+	width:159px;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-color: #FFF;
+}
+html>body .list {
+	width:159px;
+}
+.list ul{
+	list-style-type:none;
+	margin:0;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+.list li{
+	padding-left:44px;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	margin-top: 2px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-left: 10px;
+	display: block;
+}
+
+.list li:hover {
+	padding-left:44px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	margin-top: 2px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	margin-left: 10px;
+	display: block;
+	background-color: #62A912;
+	color: #FFF;
+	font-weight: bold;
+}
+/*============
+菜单链接的样式
+==============*/
+.list a{
+	text-decoration:none;
+	line-height: 28px;
+	display: block;
+	color: #333;
+}
+.list a:hover{
+	color:#FFF;
+	text-decoration:none;
+}
+/*每一个菜单体的背景图片可变部分*/
+#menu1_child{
+	background-image:url(images/bgmv.png);
+}
+/*#menu2_child{
+	background-image:url(images/bgring.png);
+}
+*/#menu3_child{
+	background-image:url(images/bgring.png);
+
+}
+#menu4_child{
+	background-image:url(images/bgpic.png);
+
+}
+#menu5_child{
+	background-image:url(images/bgmv.png);
+}
+
+/*每一个列表前的，列表图标*/
+#m1_1{
+   background-image: url(images/ico/11.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+#m1_2{
+	background-image: url(images/ico/12.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+/*2*/
+#m2_1{
+    background-image: url(images/ico/21.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+#m2_2{
+    background-image: url(images/ico/22.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+#m2_3{
+    background-image: url(images/ico/23.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+#m2_4{
+    background-image: url(images/ico/24.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+/*3*/
+#m3_1{
+    background-image: url(images/ico/31.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+#m3_2{
+    background-image: url(images/ico/32.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+
+#m3_3{
+    background-image: url(images/ico/33.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+#m3_4{
+    background-image: url(images/ico/01.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+/*4*/
+#m4_1{
+    background-image: url(images/ico/41.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+#m4_2{
+    background-image: url(images/ico/42.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+#m4_3{
+    background-image: url(images/ico/43.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+
+
+/*每一个列表前的，列表图标*/
+.m1_1{
+    background-image: url(images/ico/11.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m1_2{
+	background-image: url(images/ico/12.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m1_3{
+	background-image: url(images/ico/13.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m1_4{
+	background-image: url(images/ico/14.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m1_5{
+	background-image: url(images/ico/15.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+/*2*/
+.m2_1{
+    background-image: url(images/ico/21.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m2_2{
+    background-image: url(images/ico/22.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m2_3{
+    background-image: url(images/ico/23.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m2_4{
+    background-image: url(images/ico/24.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m2_5{
+    background-image: url(images/ico/25.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+/*3*/
+.m3_1{
+    background-image: url(images/ico/31.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m3_2{
+    background-image: url(images/ico/32.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+
+.m3_3{
+    background-image: url(images/ico/33.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m3_4{
+    background-image: url(images/ico/34.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m3_5{
+    background-image: url(images/ico/35.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+/*4*/
+.m4_1{
+    background-image: url(images/ico/41.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m4_2{
+    background-image: url(images/ico/42.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m4_3{
+    background-image: url(images/ico/43.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m4_4{
+    background-image: url(images/ico/44.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.m4_5{
+    background-image: url(images/ico/45.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+
+.div_xinxi{
+    width: 130px;
+	padding:5px;
+	background-color:#ffffff;
+     border:1px solid #d3efff;}
+.div_xinxi li{
+	font-size:12px;
+	color:#333333;
+	line-height:26px;
+	margin-bottom:10px;}
+.div_xinxi a{color:#333333;text-decoration: none;}

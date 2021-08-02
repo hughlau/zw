@@ -1,0 +1,75 @@
+.cf:before,.cf:after{
+	content: "";
+	height: 0;
+	display: table;
+}
+.cf:after{
+	clear: both;
+}
+.cf{
+	zoom: 1;
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+}
+.village{
+	height: 100%;
+	width: 100%;
+}
+.vg-main{
+	height: 100%;
+	width: 100%;
+}
+.vg-box{
+	height: 100%;
+	width: 100%;
+}
+.vgtab{
+	padding-left: 10%;
+}
+#loadbox{
+	width: 100%;
+}
+#loadbox ul{
+	width: 15%;
+	height: 660px;
+	background-color: #e3e8ef;
+	float: left;
+	overflow:auto;
+}
+#loadbox ul li{
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #eeeff3;
+	cursor: pointer;
+}
+#loadbox ul li.active,
+#loadbox ul li:hover {
+	background-color: #FFFFFF;
+	color: blue;
+}
+iframe{
+	width: 85%;
+	float: left;
+}
+/*��������ʽ*/
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 1px;
+}
+::-webkit-scrollbar-button {
+	background-color: #C6CCD1;
+}
+
+::-webkit-scrollbar-track {
+	background:#C6CCD1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #C6CCD1;
+	border-radius: 1px;
+}

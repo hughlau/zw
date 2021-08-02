@@ -1,0 +1,25 @@
+.autoComplete
+{
+    background: #fff;
+    border: 1px solid #4190db;
+    display: none;
+    width: 330px;
+}
+.autoComplete ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.autoComplete li
+{
+    color: #333;
+    cursor: pointer;
+    font: 12px/22px \5b8b\4f53;
+    text-indent: 5px;
+}
+.autoComplete .hover
+{
+    background: #6eb6fe;
+    color: #fff;
+}

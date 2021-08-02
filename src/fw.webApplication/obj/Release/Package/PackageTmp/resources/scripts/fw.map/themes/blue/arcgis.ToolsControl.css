@@ -1,0 +1,245 @@
+﻿body div.divArcGISToolsControl
+{
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    color: #e7e7e7;
+    top:150px;
+    right:49px;
+}
+body div.divArcGISToolsControl div.jQE_Container_Absolute
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+body div.divArcGISToolsControl div.divTools
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+body div.divArcGISToolsControl div.divTools div.divToolsImage
+{
+    position: absolute;
+    top: -145px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl.png) no-repeat scroll 0px 0px transparent;
+
+}
+body div.divArcGISToolsControl div.divTools div.divToolsImage:hover
+{
+    background: url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_hover.png) no-repeat scroll 0 0 transparent;
+}
+body div.divArcGISToolsControl div.divToolsMenu
+{
+    position: absolute;
+    top: -150px;
+    left: 87px;
+    display: none;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu
+{
+    border-collapse: collapse;
+    background: url(images/ToolsControlBackground.png) repeat scroll center center transparent;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td
+{
+    border: 1px solid #5797D5;
+    padding-bottom: 2px;
+}
+
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsType ul.ulToolsType
+{
+    list-style: none;
+    cursor: pointer;
+    padding: 0px 0px;
+    margin: 2px 1px 2px 1px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsType ul.ulToolsType li
+{
+    writing-mode1: tb-rl;
+    border: 1px solid #5797D5;
+    padding: 13px 2px 2px 2px;
+    margin-top: 4px;
+    font-size: 14px;
+    clear: both;
+    color:Black;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsType ul.ulToolsType li.Selected
+{
+    color:White;
+    background-color: #5797D5;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent
+{
+    list-style: none;
+    display: none;
+    padding: 0px 0px 4px 0px;
+    margin: 0px 0px;
+    width: 112px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li
+{
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin: 3px 0px 0px 3px;
+    cursor: pointer;
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll 0px -32px;
+    border: 1px solid #5797D5;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li:hover
+{
+    background-position: 0px -64px;
+}
+
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.ClearAll
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -32px -32px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.ClearAll:hover
+{
+    background-position: -32px -64px;
+}
+
+
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.MeasureDistance
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll 0px -128px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.MeasureDistance:hover
+{
+    background-position: 0px -160px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.MeasureArea
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -32px -128px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.MeasureArea:hover
+{
+    background-position: -32px -160px;
+}
+
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.PointRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll 0px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.PointRange:hover
+{
+    background-position: 0px -256px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.DrawControl
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -96px -128px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.DrawControl:hover
+{
+    background-position: -96px -160px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.AddPoint
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -64px -128px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.AddPoint:hover
+{
+    background-position: -64px -160px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.MultipointRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -32px -192px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.MultipointRange:hover
+{
+    background-position: -32px -254px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.LineRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -64px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.LineRange:hover
+{
+    background-position: -64px -254px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.PolylineRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -96px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.PolylineRange:hover
+{
+    background-position: -96px -254px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.FreehandPolylineRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -128px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.FreehandPolylineRange:hover
+{
+    background-position: -128px -254px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.CircleRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -160px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.CircleRange:hover
+{
+    background-position: -160px -254px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.EllipseRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -192px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.EllipseRange:hover
+{
+    background-position: -192px -254px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.TriangleRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -224px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.TriangleRange:hover
+{
+    background-position: -224px -256px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.PolygonRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -320px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.PolygonRange:hover
+{
+    background-position: -320px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.FreehandPolygonRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -352px -256px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.FreehandPolygonRange:hover
+{
+    background-position: -352px -256px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.ArrowRange
+{
+    background: transparent url(images/Standard__jQueryExtension_UI_ArcGIS_ToolsControl_more.png) no-repeat scroll -384px -224px;
+}
+body div.divArcGISToolsControl div.divToolsMenu table.tableToolsMenu td div.divToolsContent ul.ulToolsContent li.ArrowRange:hover
+{
+    background-position: -384px -256px;
+}
+body #SearchContent
+{
+    position: absolute;
+    left: 60px;
+    top: -147px;
+}

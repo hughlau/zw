@@ -1,0 +1,86 @@
+﻿        table.jQueryExtension_UI_FileUpLoad
+        {           
+            font-size:12px;
+        }        
+        table.jQueryExtension_UI_FileUpLoad div.divFileUpLoadFileName
+        {
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+        }        
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadProgressBar
+        {
+            
+            padding: 1px 1px 0px 1px;
+            width: 100px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadProgressBar div.divFileUpLoadProgressBarBorder
+        {
+            width: 99%;
+            height: 10px;
+            text-align: left;
+            border: 1px solid #FF00FF;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadProgressBar div.divFileUpLoadProgressBarBorder div.divFileUpLoadProgressBar
+        {
+            background-color: Red;
+            width: 0%;
+            height: 10px;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadProgressBar div.divAnalyzeFile
+        {
+            display:none;
+            position:absolute;     
+            width:200px;
+            margin-top:-7px;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadProgressValue
+        {
+            width: 50px;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadPause
+        {
+            width: 20px;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadDelete
+        {
+            width: 20px;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadPause div.divFileUpLoadPause
+        {
+            cursor: pointer;
+            width: 13px;
+            height: 13px;
+            background-image: url('Images/FileUpLoadPause.png');
+            background-repeat: no-repeat;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadPause div.divFileUpLoadContinue
+        {
+            cursor: pointer;
+            width: 13px;
+            height: 13px;
+            background-image: url('Images/FileUpLoadContinue.png');
+            background-repeat: no-repeat;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadDelete div.divFileUpLoadDelete
+        {
+            cursor: pointer;
+            width: 13px;
+            height: 13px;
+            background-image: url('Images/FileUpLoadDelete.png');
+            background-repeat: no-repeat;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadLength
+        {
+            width: 55px;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadUpLoadLength
+        {
+            width: 55px;
+        }
+        table.jQueryExtension_UI_FileUpLoad td.tdFileUpLoadUpLoadSpeed
+        {
+            width: 70px;
+        }

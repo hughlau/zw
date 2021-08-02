@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>更新信息</title>
+    <link href="../style/global.css" rel="stylesheet" type="text/css" />
+     <link href="../scripts/themes/default/basicInfo/basicInfo.css" rel="stylesheet" type="text/css" />
+    <style>
+        .box {
+            width: 100%;
+            height: 100%;
+            /* 设置元素两端对齐 */
+            text-align: justify;
+        }
+            /* 这里的伪元素一定要加上，不然span元素不能两端对齐 */
+            .box:after {
+                content: "";
+                display: inline-block;
+                overflow: hidden;
+                width: 100%;
+            }
+
+            .box span {
+                display: inline-block;
+            } 
+    </style>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="releaseNote.js" type="text/javascript"></script>
+    <script src="../../resources/scripts/jsRender/jsrender.js" type="text/javascript"></script>
+    <script id="theTmpl" type="text/x-jsrender">
+        <div class="box">
+            <span style="font-size: 22px; font-weight:bolder;">{{:version}}</span>
+            <span style="font-size: 14px; font-weight:bold;">{{cdate:createTime}}</span>
+        </div>
+        <table class="tableEnt form" style="margin-bottom:10px;">
+            <tbody>
+                <tr>
+                    <td class="tdRight">
+                        {{:description}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+</head>
+<body style="background-color: white;" isloaduserinfo="1">
+    <div style="margin: 0 auto; padding-top: 20px;">
+        <div class="partbottom" id="factorContent">
+            
+        </div>
+    </div>
+        
+</body>
+</html>

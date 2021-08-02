@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>水质超标记录</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <link href="../style/home/css/gufei_table.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="producedWaterQuality.htm.js" type="text/javascript"></script>
+</head>
+<body isneedlogin="0">
+    <div class="mini-toolbar" style="padding: 2px; border-bottom: 0;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                    </td>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        设施：<input id="mUserID" name="mUserID" class="mini-buttonedit" selectonfocus="true"
+                            style="width: 160px;" onbuttonclick="onMUserIDSelect" allowinput="false" emptytext="设施..."
+                            onenter="onSearch();" value='董浜镇污水处理设施-01' />
+                        起始：<input name="mCallTimeFrom" id="mCallTimeFrom" class="mini-datepicker" selectonfocus="true"
+                            nullvalue="null" format="yyyy-MM-dd H:mm  " timeformat="H:mm:ss" showtime="true"
+                            showokbutton="true" showclearbutton="false" emptytext="开始时间..." style="width: 160px;"
+                            value="2015-08-01 12:00" />
+                        至<input name="mCallTimeFrom" id="Text1" class="mini-datepicker" selectonfocus="true"
+                            nullvalue="null" format="yyyy-MM-dd H:mm " timeformat="H:mm:ss" showtime="true"
+                            showokbutton="true" showclearbutton="false" emptytext="结束时间..." style="width: 160px;"
+                            value="2015-08-31 13:00" />
+                        <a class="mini-button" id="buttonSearch" iconcls="icon-search" plain="true">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--撑满页面-->
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 400px;" fitcolumns="false"
+            sizelist="[5,10,20,50]" pagesize="10" multiselect="true" onbeforeload="datagGidCacheLogList_BeforeLoad"
+            onrowclick="dataGrid_Rowclick">
+            <div property="columns">
+                <div type="indexcolumn" width="60" headeralign="center" align="center">
+                    序号
+                </div>
+                <div field="siteNo" width="120" headeralign="center" align="center">
+                    设施编号</div>
+                <div field="siteName" width="160" headeralign="center" align="center">
+                    设施名称</div>
+                <div field="timeFrom" width="120" headeralign="center" align="center">
+                    起始时间</div>
+                <div field="timeTo" width="120" headeralign="center" align="center">
+                    结束时间</div>
+                <div field="waterT" width="80" headeralign="center" align="center">
+                    排放量(吨)</div>
+                <div field="index" width="100" headeralign="center" align="center">
+                    超标指标</div>
+                <div field="monitoringValue" width="100" headeralign="center" align="center">
+                    检测值</div>
+                <div field="mulriple" width="100" headeralign="center" align="center">
+                    超标倍数</div>
+            </div>
+        </div>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab_top3">
+        <tbody>
+            <tr>
+                <td class="tab_top3_tf" width="40%">
+                    信息统计
+                </td>
+                <td align="right" width="60%">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="k_b3">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tab_f">
+            <tbody>
+                <tr>
+                    <td class="tf_r" width="15%">
+                        污水总排放量：
+                        <input type="hidden" name="cfdw" id="Hidden1" value="">
+                    </td>
+                    <td width="25%" id="Td1">
+                        60
+                    </td>
+                    <td class="tf_r" width="15%">
+                        超标排放量：
+                    </td>
+                    <td width="15%" id="Td2">
+                        7.5
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tf_r" width="15%">
+                        达标排放率：
+                    </td>
+                    <td class="tf_l" id="Td5" width="25%">
+                       87.5%
+                    </td>
+                    <td class="tf_r" width="15%">
+                        
+                    </td>
+                    <td width="15%" id="Td3">
+                         
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

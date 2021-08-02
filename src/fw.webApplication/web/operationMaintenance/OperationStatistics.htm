@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维表单</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <script src="OperationMaintenancePage.js" type="text/javascript"></script>
+    <script src="OperationStatistics.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="divForm" class="form">
+        <input type="hidden" id="txtHidden" />
+        <table style="margin-left: auto; margin-right: auto; margin-top: 10px;" class="tableForm "
+            border="1" cellspacing="0" cellpadding="0" width="800px">
+            <tr>
+                <th style="text-align: center; font-size: 18px; font-weight: bold;" colspan="4">
+                    设施运维情况
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    运维单位
+                </th>
+                <td>
+                    <span class="OperAndMaintenanceName" jsondata="{Class:'ViewClass',Property:'OperAndMaintenanceName'}">
+                    </span>
+                </td>
+                <th>
+                    运维日期
+                </th>
+                <td>
+                    <span class="OMDate" jsondata="{Class:'ViewClass',Property:'OperationMaintenanceDate' ,Type:'Date',FormatString:'yyyy-MM-dd'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    设施名称
+                </th>
+                <td>
+                    <span class="EquipmentName" jsondata="{Class:'ViewClass',Property:'monitorSiteName'}">
+                    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="txtEquipmentCode" jsondata="{Class:'EditClass',Property:'MonitorSiteCode'}"
+                        style="display: none"></span>
+                </td>
+                <th>
+                    停机时间
+                </th>
+                <td>
+                    <!--           <input class="mini-datepicker EditControl" selectonfocus="true" name="te1" required="true"
+                        name="StopDate" nullvalue="null" format="yyyy-MM-dd" emptytext="停机时间..." showclearbutton="true"
+                        style="width: 150px;" />-->
+                    <span class="ViewControl" jsondata="{Class:'ViewClass',Property:'StopDate'}"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    风管压力是否正常
+                </th>
+                <td>
+                    是
+                    <input type="checkbox" class="checked" checked="checked" id="tdY1" jsondata="{Class:'EditClass',Property:'tdY1',Type:'Boolean'}"
+                        onfocus="select();" />
+                    否<input type="checkbox" class="checked" id="tdN1" jsondata="{Class:'EditClass',Property:'tdN1',Type:'Boolean'}"
+                        onfocus="select();" />
+                </td>
+                <th>
+                    风管压力值
+                </th>
+                <td>
+                    <span class="ViewControl" jsondata="{Class:'ViewClass',Property:'WindPressure'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    消毒液是否缺少
+                </th>
+                <td>
+                    是
+                    <input type="checkbox" class="checked" checked="checked" id="Checkbox1" jsondata="{Class:'EditClass',Property:'tdY2',Type:'Boolean'}"
+                        onfocus="select();" />
+                    否<input type="checkbox" class="checked" id="Checkbox2" jsondata="{Class:'EditClass',Property:'tdN2',Type:'Boolean'}"
+                        onfocus="select();" />
+                </td>
+                <th>
+                    消毒液量
+                </th>
+                <td>
+                    <span class="ViewControl" jsondata="{Class:'ViewClass',Property:'SterilizeCount'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    污泥高度
+                </th>
+                <td colspan="3">
+                    <span class="ViewControl" jsondata="{Class:'ViewClass',Property:'SludgeHeight'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th rowspan="2">
+                    设施检修情况
+                </th>
+                <td>
+                    检修情况描述
+                </td>
+                <td colspan="2">
+                    <span class="ViewControl" jsondata="{Class:'ViewClass',Property:'Description'}">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    更换部件
+                </td>
+                <td colspan="2">
+                    <!-- <input id="btnEditFile" class="mini-buttonedit" onbuttonclick="onButtonEdit" name="Code"
+                        style="width: 90%;" textname="Name" />-->
+                    PH试纸<br />
+                    消毒液<br />
+                </td>
+            </tr>
+            <tr style='height: 35.2pt'>
+                <th>
+                    备注
+                </th>
+                <td colspan="3">
+                    <div style="margin: 5px;">
+                        <span class="ViewControl" jsondata="{Class:'ViewClass',Property:'remark'}"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    维修人员
+                </th>
+                <td>
+                    <span class="ViewControl" jsondata="{Class:'ViewClass',Property:'OperAndMaintenanceContacterName'}">
+                    </span>
+                </td>
+                <th>
+                    运维结束时间
+                </th>
+                <td>
+                    <span class="ViewControl" jsondata="{Class:'ViewClass',Property:'EndDate'}"></span>
+                </td>
+            </tr>
+        </table>
+        <div style="text-align: right; padding: 10px;">
+            <a id="buttonSave" class="mini-button EditControl" style="width: 60px; margin-right: 20px;">
+                保存</a><span style="display: inline-block; width: 25px;"></span><a id="buttonCancel"
+                    class="mini-button" style="width: 60px;"> 取消</a>
+        </div>
+    </div>
+</body>
+</html>

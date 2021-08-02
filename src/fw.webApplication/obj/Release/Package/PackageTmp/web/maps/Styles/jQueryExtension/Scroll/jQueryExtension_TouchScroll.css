@@ -1,0 +1,119 @@
+﻿        body Div.jQE_UI_TouchScroll Div.jQE_Container_Absolute
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Background
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Compatible
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Content
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+        }      
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Scroll_Y
+        {
+            position: absolute;
+            right: 0px;
+            width: 17px;
+            height: 100%;
+            z-index: 199;
+            display: none;
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Scroll_Y .jQE_Container_ScrollBar
+        {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            width: 6px;
+            height: 0px;
+            margin-left: -4px;
+            overflow: hidden;
+            background-color: #333;
+            opacity: 0.6; /* Firefox, Safari(WebKit), Opera)     filter: "alpha(opacity=60)"; /* IE 8 */
+            filter: alpha(opacity=60); /* IE 4-7 */
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -o-border-radius: 3px;
+            -ms-border-radius: 3px;
+            border-radius: 3px;
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Scroll_X
+        {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 17px;
+            z-index: 199;
+            display: none;
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Scroll_X .jQE_Container_ScrollBar
+        {
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            width: 0px;
+            height: 6px;
+            margin-top: -4px;
+            overflow: hidden;
+            background-color: #333;
+            opacity: 0.6; /* Firefox, Safari(WebKit), Opera)     filter: "alpha(opacity=60)"; /* IE 8 */
+            filter: alpha(opacity=60); /* IE 4-7 */
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -o-border-radius: 3px;
+            -ms-border-radius: 3px;
+            border-radius: 3px;
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Loading
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            display:none;
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Loading .jQE_Container_Background
+        {
+            background-color: #333;
+            opacity: 0.6; /* Firefox, Safari(WebKit), Opera)     filter: "alpha(opacity=60)"; /* IE 8 */
+            filter: alpha(opacity=60); /* IE 4-7 */
+        }
+        body Div.jQE_UI_TouchScroll Div.jQE_Container_Loading .jQE_Container_Content
+        {
+            background: url(../Images/Standard__jQueryExtension_UI_Loading_96x96.gif) no-repeat scroll center center transparent;
+        }

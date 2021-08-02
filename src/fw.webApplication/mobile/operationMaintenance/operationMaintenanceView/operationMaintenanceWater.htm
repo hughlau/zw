@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../../../resources/scripts/bootMobile.js" type="text/javascript"></script>
+    <script src="../../scripts/page.js" type="text/javascript"></script>
+    <script src="operationMaintenanceAir.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="divPage" data-role="page">
+        <div id="divHeader" data-role="header" data-position="fixed" data-theme="a">
+            <h1>
+                运维表单
+            </h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div id="divForm">
+              <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            外观情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isEnclosureNormal"  style="width:200px">
+                            围栏是否正常:</label>
+                        <select name="isEnclosureNormal" id="isEnclosureNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isManholecoverNormal"  style="width:200px">
+                            人孔盖是否正常:</label>
+                        <select name="isManholecoverNormal" id="isManholecoverNormal"
+                            data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isTileNormal"  style="width:200px">
+                            花砖是否正常:</label>
+                        <select name="isTileNormal" id="isTileNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                      <li class="ui-field-contain">
+                        <label for="isPowerSupplyBoxNormal"  style="width:200px">
+                           配电箱是否正常:</label>
+                        <select name="isPowerSupplyBoxNormal" id="isPowerSupplyBoxNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            供电情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLeakageProtectorNormal" style="width:200px">
+                            漏电保护器是否正常:</label>
+                        <select name="isLeakageProtectorNormal" id="isLeakageProtectorNormal" data-role="slider"
+                            disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLeakageProtectorSwitchNormal" style="width:200px">
+                            漏电保护器开关是否正常:</label>
+                        <select name="isLeakageProtectorSwitchNormal" id="isLeakageProtectorSwitchNormal"
+                            data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isPowerSupplyLineNormal" style="width:200px">
+                            供电线路是否正常:</label>
+                        <select name="isPowerSupplyLineNormal" id="isPowerSupplyLineNormal" data-role="slider"
+                            disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true" class="air">
+                    <li data-role="list-divider">
+                        <h1>
+                            气压情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isBarometerNormal" style="width:200px">
+                            气压否正常运行:</label>
+                        <select name="isBarometerNormal" id="isBarometerNormal" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isAirPumpNormal" style="width:200px">
+                            气泵是否正常:</label>
+                        <select name="isAirPumpNormal" id="isAirPumpNormal" data-role="slider" disabled="disabled">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="airDuctSituation" class="select" style="width:200px">
+                            气管情况:</label>
+                        <select name="airDuctSituation" id="airDuctSituation" disabled="disabled" style="width:300px">
+                            <option value="1" selected>正常</option>
+                            <option value="0-0-1">低压-漏气</option>
+                            <option value="0-0-2">低压-气泵不良</option>
+                            <option value="0-0-3">低压-供电偏低</option>
+                        </select>
+                    </li>
+                </ul>           
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            运维情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="operationMaintenanceExplain">
+                            运维工作说明:</label>
+                        <textarea cols="40" rows="20" name="operationMaintenanceExplain" id="operationMaintenanceExplain"
+                            disabled="disabled"></textarea>
+                    </li>
+                </ul>
+                   <ul data-role="listview" data-inset="true">                  
+                    <li class="ui-field-contain">
+                        <label for="operationMaintenanceAddress" > 
+                            当前位置:</label>
+                        <textarea cols="40" rows="4" name="operationMaintenanceAddress" id="operationMaintenanceAddress"
+                            disabled="disabled"></textarea>
+                    </li>
+                </ul>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-c">
+                        <a id="aSave" data-ajax="false" class="ui-shadow ui-btn ui-corner-all" style="display: none;">
+                            保存</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

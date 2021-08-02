@@ -1,0 +1,1817 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>fw.m.sysBasicManage.data</name>
+    </assembly>
+    <members>
+        <member name="P:fw.m.sysBasicManage.data.Contact.userID">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.Contact.userName">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.Contact.photoUrl">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.Contact.photoFileFingerprint">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.Contact.orgName">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.Contact.orgFullName">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.Message.title">
+            <summary>
+            ClassName
+            长度为 200
+            可为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.Message.content">
+            <summary>
+            用户名称
+            长度为 50
+            可为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.Message.protocol">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.JPublishObject">
+            <summary>
+            推送内容
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MApp">
+            <summary>
+            第三方系统信息
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._dataID">
+            <summary>
+            数据主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._appCode">
+            <summary>
+            系统编码
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._appName">
+            <summary>
+            系统名称
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._appRootDirectory">
+            <summary>
+            系统登录地址
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._appAccountName">
+            <summary>
+            系统用户名
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._remark">
+            <summary>
+            备注
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._isDis">
+            <summary>
+            是否禁用
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._createrID">
+            <summary>
+            创建人主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._createTime">
+            <summary>
+            创建时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._updaterID">
+            <summary>
+            更新人主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MApp._updateTime">
+            <summary>
+            更新时间
+            </summary>		
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MBaseEnterprsie">
+            <summary>
+            企业信息表
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.id">
+            <summary>
+            自动增长列
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.cantonCode">
+            <summary>
+            行政区编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.cantonName">
+            <summary>
+            行政区 名称
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.bossIDNumber">
+            <summary>
+            法人身份证
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.address">
+            <summary>
+            工商注册地址
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.bossIDImagePath">
+            <summary>
+            组织机构代码证件
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.registrationNoImagePath">
+            <summary>
+            组织机构代码证件
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.mobile">
+            <summary>
+            移动电话
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.mobileCode">
+            <summary>
+            移动电话 验证码
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.mIsPassed">
+            <summary>
+            移动电话 验证码 是否通过 -1验证不通过 0-可以验证 1-验证通过  2-过期作废
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.eMail">
+            <summary>
+            电子邮箱
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.eMailCode">
+            <summary>
+            电子邮箱 验证码
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.eIsPassed">
+            <summary>
+            电子邮箱 验证码 是否通过 -1验证不通过 0-可以验证 1-验证通过  2-过期作废
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.dataMode">
+            <summary>
+            数据来源（1下发2用户注册）
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.dataModeName">
+            <summary>
+            数据来源名称（1下发2用户注册）
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.userCount">
+            <summary>
+            用户数量
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.isDelete">
+            <summary>
+            删除状态
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.recordPeople">
+            <summary>
+            记录创建人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.recordTime">
+            <summary>
+            记录创建时间
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.lastUpdatePeople">
+            <summary>
+            最后更新人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.lastUpdateTime">
+            <summary>
+            最后更新时间
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.isVerify">
+            <summary>
+            审核状态
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.verifyName">
+            <summary>
+            审核状态 名称
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.verifyDate">
+            <summary>
+            审核 时间
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.verifyUserName">
+            <summary>
+            审核人
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.verifyComment">
+            <summary>
+            审核意见
+            </summary>	
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MCanton">
+            <summary>
+            行政区
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MCanton.cantonCode">
+            <summary>
+            行政区编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MCanton.cantonName">
+            <summary>
+            行政区名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MCanton.parentCantonCode">
+            <summary>
+            父级行政区编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MCantonTreeData.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MCantonTreeData._parentCode">
+            <summary>
+            父类编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MCantonTreeData.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MCantonTreeData.childTreeDataList">
+            <summary>
+            子级数据
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MCantonTreeData.level">
+            <summary>
+            行政区登级
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MEnterprise">
+            <summary>
+            企业信息  基类  用于用户对象
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.enterpriseCode">
+            <summary>
+            企业主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.cantonCode">
+            <summary>
+            企业主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.boss">
+            <summary>
+            企业主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.enterpriseName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.bossID">
+            <summary>
+            组织结构代码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.registrationNo">
+            <summary>
+            营业执照注册号
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.registrationAddress">
+            <summary>
+            营业执照注册地址
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.userCount">
+            <summary>
+            用户数量
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.isCanRegister">
+            <summary>
+            是否可以注册
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.isHasAdmin">
+            <summary>
+            是否已注册管理员 0 没有 1 有
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterprise.verifyResult">
+            <summary>
+            是否审核通过    2 通过  1正在审核  
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo">
+            <summary>
+            企业注册审核信息
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo.enterpriseHisCode">
+            <summary>
+            企业历史主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo.FileType">
+            <summary>
+            文件类型
+            </summary>		 
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo.FilePath">
+            <summary>
+            FilePath
+            </summary>		 
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo._createtime">
+            <summary>
+            创建时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo._isVerify">
+            <summary>
+            审核状态
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo._verifyTime">
+            <summary>
+            审核时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo._verifyUserID">
+            <summary>
+            审核用户ID  管理员
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MEnterpriseRegisterInfo._verifyComment">
+            <summary>
+            审核备注
+            </summary>		
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MEntUserInfo">
+            <summary>
+            用户注册信息
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.id">
+            <summary>
+            自动增长列
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MEntUserInfo._userID">
+            <summary>
+            用户ID
+            </summary>		
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.parentUserID">
+            <summary>
+            父级用户编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.userName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.userChineseName">
+            <summary>
+            中文名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.userType">
+            <summary>
+            用户类型
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MEntUserInfo._IDNumber">
+            <summary>
+            身份证号码
+            </summary>		
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.enterpriseCode">
+            <summary>
+            企业主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.enterpriseName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.positionCode">
+            <summary>
+            邮政编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.mobile">
+            <summary>
+            手机号码
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.mobileCode">
+            <summary>
+            移动电话 验证码
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.mIsPassed">
+            <summary>
+            移动电话 验证码 是否通过 -1验证不通过 0-可以验证 1-验证通过  2-过期作废
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.eMail">
+            <summary>
+            电子邮箱
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.eMailCode">
+            <summary>
+            电子邮箱 验证码
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.eIsPassed">
+            <summary>
+            电子邮箱 验证码 是否通过 -1验证不通过 0-可以验证 1-验证通过  2-过期作废
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.dataMode">
+            <summary>
+            数据来源
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.isAdmin">
+            <summary>
+            是否管理员
+            </summary>		
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.isFreeze">
+            <summary>
+            是否冻结
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.fileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.filePath">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.fileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.userPhotoPath">
+            <summary>
+            用户照片名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.IDNumberImgPath">
+            <summary>
+            身份证
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.userCount">
+            <summary>
+            用户数量
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.keyNumber">
+            <summary>
+            自动登录key编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.isDelete">
+            <summary>
+            删除状态
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.recordPeople">
+            <summary>
+            记录创建人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.recordTime">
+            <summary>
+            记录创建时间
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.lastUpdatePeople">
+            <summary>
+            最后更新人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.lastUpdateTime">
+            <summary>
+            最后更新时间
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.isVerify">
+            <summary>
+            审核状态
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.verifyName">
+            <summary>
+            审核状态 名称
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.verifyDate">
+            <summary>
+            审核 时间
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.verifyUserID">
+            <summary>
+            审核人
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MEntUserInfo.verifyComment">
+            <summary>
+            审核意见
+            </summary>	
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.dataID">
+            <summary>
+            dic编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.pCode">
+            <summary>
+            父类编码
+            </summary> 
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.level">
+            <summary>
+            行政区等级
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.childDataList">
+            <summary>
+            子级数据
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.isSelected">
+            <summary>
+            是否选择分配
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.selectedUserId">
+            <summary>
+            分配人员
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.posX">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.posY">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MFWSendEMail">
+            <summary>
+            邮件发送
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.autoID">
+            <summary>
+            自动增长列
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.toPersonEmail">
+            <summary>
+            接收人邮箱
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.ccPersonMail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.sendDate">
+            <summary>
+            发送日期
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.validTime">
+            <summary>
+            有效日期
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.sender">
+            <summary>
+            发送人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.senderName">
+            <summary>
+            发件人名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.bHaveSend">
+            <summary>
+            是否发送
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendEMail.bccPersonMail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MFWSendSMS">
+            <summary>
+            短信发送历史
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.EnterpriseName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.autoID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MFWSendSMS._SendTypeCode">
+            <summary>
+            发送类型编码
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MFWSendSMS._SendTypeName">
+            <summary>
+            发送类型名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.sMSTypeName">
+            <summary>
+            短信类型
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.sMSTypeCode">
+            <summary>
+            短信类型名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.sMSNumber">
+            <summary>
+            短信号码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.sMSMessage">
+            <summary>
+            短信信息
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.sMSDateTime">
+             <summary>
+            发送时间
+             </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.sMSSenderID">
+            <summary>
+            发信人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.sMSSenderName">
+            <summary>
+            发信人名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.receiverTypeCode">
+            <summary>
+            接收人类型
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.receiverTypeName">
+            <summary>
+            接收人类型名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.receiverName">
+            <summary>
+            接收人名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.receiverUserID">
+            <summary>
+            接收人编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.isSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.isSuccessName">
+            <summary>
+            是否成功名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSendSMS.validTime">
+            <summary>
+            有效时间
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MFWSystemLogEx">
+            <summary>
+            系统日志表扩展
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSystemLogEx.mBllModuleNameEx">
+            <summary>
+            模块名扩展
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSystemLogEx.mFunctionNameEx">
+            <summary>
+            功能名扩展
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWSystemLogEx.mStatusNameEx">
+            <summary>
+            执行状态名称
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MFWUserInfo">
+            <summary>
+            实体类用户登录 (属性说明自动提取数据库字段的描述信息)
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mChineseName">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mPhotoRelativePath">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mPhotoAction">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mPhotoFileFingerprint">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mPhotoUrl">
+            <summary>
+            用户名称
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mGender">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mGenderName">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mEthnic">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mEthnicName">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mBirthdayTypeCode">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mBirthdayTypeName">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mBirthday">
+            <summary>
+            是否启用
+            长度为 10
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mIdentificationCard">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mZipCode">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mAddress">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mMobilePhone">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mFax">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mEMail">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mDeviceOperatingSystemCode">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mDeviceOperatingSystemName">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mDeviceAlias">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mLongitude">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mLatitude">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.mLastLocationTime">
+            <summary>
+            用户密码
+            长度为 50
+            不能为空
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.cantonCode">
+            <summary>
+              行政区
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MFWUserMappingDictionary">
+            <summary>
+            角色字典对应表
+            </summary> 
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserMappingDictionary.mDataID">
+            <summary>
+            变主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserMappingDictionary.mUserID">
+            <summary>
+            角色编号
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MFWUserMappingDictionary.mDictionaryDataID">
+            <summary>
+            字典表主键
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MMenuEx">
+            <summary>
+            菜单扩展表
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.AutoID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.pageID">
+            <summary>
+            页面编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.menuCode">
+            <summary>
+            页面编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.keyWords">
+            <summary>
+            页面编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.funDescription">
+            <summary>
+            功能描述
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.instructions">
+            <summary>
+            操作说明
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.questions">
+            <summary>
+            操作说明
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.attachmentName">
+            <summary>
+            附件名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.attachmentURL">
+            <summary>
+            附件下载地址
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.keysParamsJson">
+            <summary>
+            调用参数
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.keysReturnJson">
+            <summary>
+            调用参数 返回结果格式
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.frequency">
+            <summary>
+            调阅频次
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.isDelete">
+            <summary>
+            调阅频次
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.showType">
+            <summary>
+            显示方式
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.mFWMenuExInfoList">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.inputMan">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.inputTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.updaterMan">
+            <summary>
+            更新人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.updateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuEx.openMeans">
+            <summary>
+            显示方式
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MMenuKeyword">
+            <summary>
+            菜单关键字
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuKeyword.keywordCode">
+            <summary>
+            关键字编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMenuKeyword.keywordName">
+            <summary>
+            关键字名称
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MMessage">
+            <summary>
+            消息信息
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._messageCode">
+            <summary>
+            消息主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._messageTitle">
+            <summary>
+            消息标题
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._messageTime">
+            <summary>
+            消息发送时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._messageContent">
+            <summary>
+            消息内容
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._messageType">
+            <summary>
+            消息类型
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._messageTypeName">
+            <summary>
+            消息类型名称
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._receiveUserID">
+            <summary>
+            消息接收人
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._userChineseName">
+            <summary>
+            消息接收人中文名
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._isRead">
+            <summary>
+            是否已读
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._pMessageCode">
+            <summary>
+            父级消息编码
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._deleteflag">
+            <summary>
+            删除标记
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._editby">
+            <summary>
+            修改人,姓名名称
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._edittime">
+            <summary>
+            修改时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._createby">
+            <summary>
+            创建人
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessage._createtime">
+            <summary>
+            创建时间
+            </summary>		
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MMessageTemplet">
+            <summary>
+            消息信息模板
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessageTemplet._messageName">
+            <summary>
+            消息名称
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessageTemplet._messageType">
+            <summary>
+            消息类型
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessageTemplet._smsFormart">
+            <summary>
+            短信内容格式
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessageTemplet._emailFormart">
+            <summary>
+            邮件内容格式
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MMessageTemplet._remark">
+            <summary>
+            备注
+            </summary>		
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson">
+            <summary>
+            运维单位 实体对象
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.operationMaintenanceUnitCode">
+            <summary>
+            单位编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.operationMaintenanceUnitName">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.operationMaintenancePersonCode">
+            <summary>
+             运维人员code
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.operationMaintenancePersonName">
+            <summary>
+             运维人员姓名
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.cantonCode">
+            <summary>
+            行政区编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.organizationCode">
+            <summary>
+            法人代码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.legalPerson">
+            <summary>
+            法人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.contactPerson">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.mobilePhone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.fax">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.eMail">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.zipCode">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.rem">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.isDis">
+            <summary>
+            是否停用
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMobileInfo.taskAmount">
+            <summary>
+            任务数量
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MMobileInfo.messageAmount">
+            <summary>
+            消息数量
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MProblem">
+            <summary>
+            问题咨询
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._problemCode">
+            <summary>
+            问题主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._pageID">
+            <summary>
+            页面ID
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._menuCode">
+            <summary>
+            菜单主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._problemTitle">
+            <summary>
+            问题标题
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._problemDescription">
+            <summary>
+            问题描述
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._askUserID">
+            <summary>
+            提问用户主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._askUserName">
+            <summary>
+            问题提问人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblem.askEnterpriseCode">
+            <summary>
+            企业主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblem.askEnterpriseName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._askTime">
+            <summary>
+            提问时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._isSolve">
+            <summary>
+            是否解决
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._usefulForMeCount">
+            <summary>
+            对我有用
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._createtime">
+            <summary>
+            创建时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._editby">
+            <summary>
+            修改人,姓名名称
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._edittime">
+            <summary>
+            修改时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._createby">
+            <summary>
+            创建人
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._deleteflag">
+            <summary>
+            删除标记
+            </summary>		
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblem.bHasPublish">
+            <summary>
+            是否公布
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._problemReplyList">
+            <summary>
+            问题回复列表
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._problemType">
+            <summary>
+            问题类型
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblem._problemTypeName">
+            <summary>
+            问题类型名称
+            </summary>		
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MProblemReply">
+            <summary>
+            问题咨询回复
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._problemReplyCode">
+            <summary>
+            问题回复主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._problemCode">
+            <summary>
+            问题主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._replyContent">
+            <summary>
+            回复内容
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._replyUserID">
+            <summary>
+            回复用户主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._replyTime">
+            <summary>
+            回复时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._sequence">
+            <summary>
+            回复顺序
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._replyUserName">
+            <summary>
+            问题回复人
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblemReply.replyEnterpriseCode">
+            <summary>
+            问题回复人企业主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblemReply.replyEnterpriseName">
+            <summary>
+            问题回复人企业名称
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._pProblemReplyCode">
+            <summary>
+            父级问题回复主键
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._createtime">
+            <summary>
+            创建时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._editby">
+            <summary>
+            修改人,姓名名称
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._edittime">
+            <summary>
+            修改时间
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._createby">
+            <summary>
+            创建人
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MProblemReply._deleteflag">
+            <summary>
+            删除标记
+            </summary>		
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MProblemStatistics">
+            <summary>
+            问题统计
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblemStatistics.totalAmount">
+            <summary>
+            所有数量
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblemStatistics.solvedAmount">
+            <summary>
+            已解决问题
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblemStatistics.unSolvedAmount">
+            <summary>
+            未解决问题
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblemStatistics.replyAmount">
+            <summary>
+            已回复数量
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MProblemStatistics.unReplyAmount">
+            <summary>
+            未回复数量
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MSystemUserInfo">
+            <summary>
+            用户附属信息实体类
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MSystemUserInfo.dictionaryName">
+            <summary>
+            字典名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MSystemUserInfo.parentDictionaryCode">
+            <summary>
+            父级编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MSystemUserInfo.userCode">
+             <summary>
+            用户编码
+             </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MUserLogin">
+            <summary>
+            用户登录
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MUserLogin.mUserID">
+            <summary>
+            用户主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MUserLogin.mUserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MUserLogin.mChineseName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MUserLogin.UserTypeCode">
+            <summary>
+            用户类型编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MUserLogin.UserTypeName">
+            <summary>
+            用户类型编码
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.MVerifyResult">
+            <summary>
+            审核结果
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MVerifyResult.enterpriseCode">
+            <summary>
+            企业主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.MVerifyResult.enterpriseHisCode">
+            <summary>
+            企业历史主键
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MVerifyResult._userID">
+            <summary>
+            用户主键
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MVerifyResult._userHisCode">
+            <summary>
+            用户历史主键
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MVerifyResult._isVerify">
+            <summary>
+            审核状态
+            </summary>		
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.MVerifyResult._verifyComment">
+            <summary>
+            审核备注
+            </summary>		
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton">
+            <summary>
+            树形数据(行政区)
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton._ParentCode">
+            <summary>
+            父类编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton.ChildTreeDataList">
+            <summary>
+            子级数据
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton.Level">
+            <summary>
+            行政区登级
+            </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton._Longitude">
+             <summary>
+            经度
+             </summary>
+        </member>
+        <member name="F:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton._Latitude">
+             <summary>
+            纬度
+             </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.model.TreeData">
+            <summary>
+            返回名字，编码实体类
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.TreeData.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.TreeData.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.model.TreeData.ChildTreeDataList">
+            <summary>
+            子级
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.QueryBasicManageParams">
+            <summary>
+            系统管理基础查询类
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.keyword">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.pkCode">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.typeCode">
+            <summary>
+            类型编码(label代表标签)
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.cantonCode">
+            <summary>
+            行政区编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.cantonCodeList">
+            <summary>
+            行政区列表
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.enterpriseCode">
+            <summary>
+            企业编码
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.QueryCantonParams">
+            <summary>
+            行政区查询条件
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryCantonParams.parentCode">
+            <summary>
+            父级编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryCantonParams.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryCantonParams.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="T:fw.m.sysBasicManage.data.QueryMMenuExParams">
+            <summary>
+            菜单扩展查询实体
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryMMenuExParams.menuCode">
+            <summary>
+            菜单编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryMMenuExParams.pMenuCode">
+            <summary>
+            父级菜单编码
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.QueryPageMFWUserInfoParams.keyword">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.SysBasicManageUserInfo.operationMaintenancePersonCode">
+            <summary>
+             运维人员主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.SysBasicManageUserInfo.operationMaintenancePersonName">
+            <summary>
+             运维人员姓名
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.PageUserInfo.operationMaintenancePersonCode">
+            <summary>
+             运维人员主键
+            </summary>
+        </member>
+        <member name="P:fw.m.sysBasicManage.data.PageUserInfo.operationMaintenancePersonName">
+            <summary>
+             运维人员姓名
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,129 @@
+﻿body div.jQueryExtension_UI_ContextMenuStrip
+        {            
+            position: absolute;        
+            z-index:5555;             
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip ul
+        {
+            display: none;
+            min-width:150px;   
+            height:auto;
+            position: absolute;
+            padding: 0px 0px;
+            margin: 0px 0px;
+            border: 1px solid #979797;
+            background: url(Images/ContextMenuStrip_VerticalLine.png) repeat-y scroll 0px 0px #F0F0F0;
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li
+        {
+            display: block;
+            padding: 0px 0px;
+            margin: 0px 0px;
+            width:100%;            
+            height: 30px;
+            line-height: 30px;
+            list-style: none;
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute
+        {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            cursor: pointer;
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripSelected
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            display:none;
+        }             
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute:hover div.ContextMenuStripSelected
+        {
+            display:block;
+        }    
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripSelected div.ContextMenuStripSelected_Center
+        {
+            position: absolute;
+            top: 0px;
+            right: 30px;
+            bottom: 0px;
+            left: 30px;
+            height: 100%;
+            background: url(Images/ContextMenuStripSelected_Center.png) repeat-x scroll center center transparent;
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripSelected div.ContextMenuStripSelected_Right
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            width: 30px;
+            height: 100%;
+            background: url(Images/ContextMenuStripSelected_Right.png) no-repeat scroll right center transparent;
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripSelected div.ContextMenuStripSelected_Left
+        {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 30px;
+            height: 100%;
+            background: url(Images/ContextMenuStripSelected_Left.png) no-repeat scroll left center transparent;
+        }    
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripItem
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background: url(null) no-repeat scroll left center transparent;
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripItem div.ContextMenuStripItems
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            width: 30px;
+            height: 100%;
+            background: url(Images/ContextMenuStripItems.png) no-repeat scroll center center transparent;
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripItem div.ContextMenuStripItemIcon_Default
+        {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 30px;
+            height: 100%;
+            background: url(Images/ContextMenuStripItemIcon_Default.png) no-repeat scroll center center transparent;
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripItem div.ContextMenuStripItemIcon_Default.Selected
+        {
+            background-image: url(Images/ContextMenuStripItemIcon_Selected.png);
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripItem div.ContextMenuStripItemIcon_Default.NotSelected
+        {
+            background-image: url(Images/ContextMenuStripItemIcon_NotSelected.png);
+        }
+        body div.jQueryExtension_UI_ContextMenuStrip li div.jQE_Container_Absolute div.ContextMenuStripItem div.ContextMenuStripItemText
+        {
+            position: absolute;
+            top: 0px;
+            right: 30px;
+            bottom: 0px;
+            left: 30px;
+            height: 100%;
+            text-indent: 5px;
+            background: url(null) no-repeat scroll left center transparent;
+            overflow:hidden;
+        }

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>设施故障统计</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="../operationMaintenance/OperationMaintenancePage.js" type="text/javascript"></script>
+    <script src="personTaskStatus.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap;">
+                    </td>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                       
+                        <input name="dStart" id="mCallTimeFrom" class="mini-datepicker" selectonfocus="true"
+                            nullvalue="null" format="yyyy-MM-dd" showtime="false" showokbutton="true" showclearbutton="false"
+                            emptytext="开始时间..." ondrawdate="onDrawStartDate" style="width: 120px;" onvaluechanged="onSearch();" />
+                        <span>至</span>
+                        <input name="dEnd" id="mCallTimeTo" class="mini-datepicker" selectonfocus="true"
+                            nullvalue="null" format="yyyy-MM-dd" showtime="false" showokbutton="true" showclearbutton="false"
+                            emptytext="结束时间..." ondrawdate="onDrawEndDate" style="width: 120px;" onvaluechanged="onSearch();" />                       
+                        <a class="mini-button" iconcls="icon-search" id="btnSearch">查询</a><a
+                            class="mini-button" iconcls="icon-download" id="export" onclick="dataExport();">导出</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            pagesize="20" sizelist="[5,50,100]" fitcolumns="false" multiselect="true" onbeforeload="datagrid1_BeforeLoad"
+            onselectionchanged="datagrid1_SelectionChanged">
+            <div property="columns">
+                <div type="indexcolumn" width="50px" headeralign="center" >
+                    序号
+                </div>
+                 <div field="operationMaintenancePersonCode" name="operationMaintenancePersonCode" width="100px" headeralign="center" allowsort="true">
+                    运维人员编码</div>
+                <div field="operationMaintenancePersonName" width="100px" headeralign="center" allowsort="true">
+                    运维人员</div>
+                <div field="常规任务未解决数量" width="140px" headeralign="center" renderer="">
+                    巡检任务未解决数量</div>
+                   <div field="常规任务已解决数量" width="140px" headeralign="center" renderer="">
+                    巡检任务已解决数量</div>
+
+                    <div field="报警任务未解决数量" width="140px" headeralign="center" renderer="">
+                    报警任务未解决数量</div>
+                    <div field="报警任务已解决数量" width="140px" headeralign="center" renderer="">
+                    报警任务已解决数量</div>
+
+                     <div field="任务总量" width="100px" headeralign="center" renderer="">
+                    任务总量</div>
+                    <div field="op" width="100px" headeralign="center" align="center" renderer="dataGrid_Renderer">
+                    操作</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

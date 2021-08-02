@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>反控选择</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="enterEquipReCtrList.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        <a class="mini-button" style="width: 70px; margin-right: 10px;" onclick="enterClick()">
+                            确 定</a>  <a class="mini-button" id="buttonReturn" iconcls="icon-cancel" onclick="closeWindow()" >取消</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit" style="overflow: hidden;">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;"
+            borderstyle="border-width:1px;" idfield="objID" multiselect="true" showcolumnsmenu="true" showpager="false" onbeforeload="datagrid1_BeforeLoad">
+            <div property="columns">
+               
+                <div field="equipmentNo" name="IrrName" width="150" headeralign="center" align="center">
+                    设备编码</div>
+                <div field="equipmentTypeName" name="IrrName" width="150" headeralign="center" align="center">
+                    模块类型</div>
+                <div field="ReCtrSampTime" name="IrrSerial" width="80" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    反控时间</div>
+                <div field="operation" name="operations" width="80" headeralign="center" align="center"
+                    renderer="datagrid1_Renderer">
+                    操作</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

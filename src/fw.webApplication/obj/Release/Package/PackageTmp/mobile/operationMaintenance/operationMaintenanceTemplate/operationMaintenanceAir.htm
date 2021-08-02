@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../../../resources/scripts/bootMobile.js" type="text/javascript"></script>
+   <!--  <script src="../../../resources/scripts/cordova.js" type="text/javascript"></script>-->
+    <script src="../../scripts/page.js" type="text/javascript"></script>
+    <script src="operationMaintenanceAir.htm.js" type="text/javascript"></script>
+</head>
+
+<body>
+ 
+    <div id="divPage" data-role="page">
+        <div id="divHeader" data-role="header" data-position="fixed" data-theme="a">
+            <h1>
+                运维表单
+            </h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div id="divForm">
+               <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            外观情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isEnclosureNormal"  style="width:200px">
+                            围栏是否正常:</label>
+                        <select name="isEnclosureNormal" id="isEnclosureNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isManholecoverNormal"  style="width:200px">
+                            人孔盖是否正常:</label>
+                        <select name="isManholecoverNormal" id="isManholecoverNormal"
+                            data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isTileNormal"  style="width:200px">
+                            花砖是否正常:</label>
+                        <select name="isTileNormal" id="isTileNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                      <li class="ui-field-contain">
+                        <label for="isPowerSupplyBoxNormal"  style="width:200px">
+                           配电箱是否正常:</label>
+                        <select name="isPowerSupplyBoxNormal" id="isPowerSupplyBoxNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            供电情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLeakageProtectorNormal"  style="width:200px">
+                            漏电保护器是否正常:</label>
+                        <select name="isLeakageProtectorNormal" id="isLeakageProtectorNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLeakageProtectorSwitchNormal"  style="width:200px">
+                            漏电保护器开关是否正常:</label>
+                        <select name="isLeakageProtectorSwitchNormal" id="isLeakageProtectorSwitchNormal"
+                            data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isPowerSupplyLineNormal"  style="width:200px">
+                            供电线路是否正常:</label>
+                        <select name="isPowerSupplyLineNormal" id="isPowerSupplyLineNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true" class="air">
+                    <li data-role="list-divider">
+                        <h1>
+                            气压情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isBarometerNormal"  style="width:200px">
+                            气压否正常运行:</label>
+                        <select name="isBarometerNormal" id="isBarometerNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isAirPumpNormal"  style="width:200px">
+                            气泵是否正常:</label>
+                        <select name="isAirPumpNormal" id="isAirPumpNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="airDuctSituation" class="select" style="width:200px">
+                            气管情况:</label>
+                        <select name="airDuctSituation" id="airDuctSituation" style="width:300px">
+                            <option value="1" selected>正常</option>
+                            <option value="0-0-1">低压-漏气</option>
+                            <option value="0-0-2">低压-气泵不良</option>
+                            <option value="0-0-3">低压-供电偏低</option>
+                        </select>
+                    </li>
+                </ul>
+               
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            运维情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="operationMaintenanceExplain" >
+                            说明:</label>
+                        <textarea cols="40" rows="8" name="operationMaintenanceExplain" id="operationMaintenanceExplain"></textarea>
+                    </li>
+                </ul>
+ <ul data-role="listview" data-inset="true">                  
+                    <li class="ui-field-contain">
+                        <label for="operationMaintenanceAddress">
+                            当前位置:</label>
+                        <textarea cols="40" rows="4" name="operationMaintenanceAddress" id="operationMaintenanceAddress"
+                            disabled="disabled"></textarea>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">                  
+                    <li class="ui-field-contain">
+                        <label for="operationMaintenanceAddress">
+                            现场图片:</label>
+                         <video id="video" autoplay=""style='width:100px;height:100px'></video>
+                         <button id='picture' onclick='openPhoto()'>picture</button> 
+                           <button id='Button1' onclick='showActionSheet()'>picture1</button> 
+                        <canvas id="canvas" width="100" height="100"></canvas>
+                         
+
+
+                    </li>
+                </ul>
+               
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-c">
+                        <a id="aSave" data-ajax="false" class="ui-shadow ui-btn ui-corner-all" style="display: none;">
+                            保存</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      
+        var video = document.getElementById("video");
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        var errocb = function () {
+            console.log('sth wrong!');
+        }
+
+        if (navigator.getUserMedia) { // 标准的API  
+
+            navigator.getUserMedia({ "video": true }, function (stream) {
+                video.src = stream;
+                video.play();
+            }, errocb);
+        } else if (navigator.webkitGetUserMedia) { // WebKit 核心的API
+            navigator.webkitGetUserMedia({ "video": true }, function (stream) {
+                video.src = window.webkitURL.createObjectURL(stream);
+                alert(window.webkitURL.createObjectURL(stream));
+                video.play();
+            }, errocb);
+        } else if (navigator.mozGetUserMedia) { // Firefox 前缀
+            navigator.mozGetUserMedia({ "video": true }, function (stream) {
+                video.src = window.URL.createObjectURL(stream);
+                video.play();
+            }, errocb);
+        }
+        else if (navigator.msGetUserMedia) {
+
+            navigator.msGetUserMedia({ "video": true }, function (stream) {
+                video.src = window.createObjectURL(stream);
+                video.play();
+            }, errocb);
+
+        }
+
+
+        function openPhoto() {
+            context.drawImage(video, 0, 0, 100, 100);
+            
+        }
+
+        //点击事件，弹出选择摄像头和相册的选项  
+        function showActionSheet() {
+            var bts = [{
+                title: "拍照"
+            }, {
+                title: "从相册选择"
+            }];
+            plus.nativeUI.actionSheet({
+                cancel: "取消",
+                buttons: bts
+            },
+                function (e) {
+                    if (e.index == 1) {
+                        getImage();
+                    } else if (e.index == 2) {
+                        galleryImgs();
+                    }
+                }
+            );
+            }
+
+            //调用手机摄像头并拍照  
+            function getImage() {
+                var cmr = plus.camera.getCamera();
+                cmr.captureImage(function (p) {
+                    plus.io.resolveLocalFileSystemURL(p, function (entry) {
+                        compressImage(entry.toLocalURL(), entry.name);
+                    }, function (e) {
+                        plus.nativeUI.toast("读取拍照文件错误：" + e.message);
+                    });
+                }, function (e) {
+                }, {
+                    filter: 'image'
+                });
+            }
+            //从相册选择照片  
+            function galleryImgs() {
+                plus.gallery.pick(function (e) {
+                    var name = e.substr(e.lastIndexOf('/') + 1);
+                    compressImage(e, name);
+                }, function (e) {
+                }, {
+                    filter: "image"
+                });
+            }
+        
+    
+</script> 
+</body>
+</html>

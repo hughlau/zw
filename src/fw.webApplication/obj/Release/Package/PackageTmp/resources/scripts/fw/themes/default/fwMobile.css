@@ -1,0 +1,30 @@
+﻿
+.statusBar.ui-header.ui-header-fixed {
+	top: -1px;
+	padding-top: 21px;
+}
+
+.statusBar.ui-header.ui-header-fixed.ui-fixed-hidden{
+	top: 0px;
+	padding-top: 20px;
+}
+
+.statusBar.ui-header.ui-header-fixed > .ui-btn.ui-btn-left,.statusBar.ui-header.ui-header-fixed > .ui-btn.ui-btn-right
+{
+    margin-top:20px;
+}
+
+.ui-listview li.statusBar
+{
+    padding-top1: 21px;
+}
+
+.ui-listview li.statusBar a
+{
+    padding-top: 32px;
+    border-top-width:0px;
+}
+.ui-listview li.statusBar a:after
+{
+    margin-top:0px;
+}

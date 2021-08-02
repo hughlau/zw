@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运维单位列表查询</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script> 
+    <script src="operationsUnitList.htm.js" type="text/javascript"></script>
+</head>
+<body   isloaduserinfo="1">
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a class="mini-button" iconcls="icon-add" onclick="openInfo('insert');">增加</a> <a
+                            class="mini-button" iconcls="icon-edit" onclick=" openInfo('update'); " data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                            修改</a>
+                        <!--<a class="mini-button" iconcls="icon-remove" onclick="del();" data-options="{minSelectedCount:1}">
+                            删除</a> <a id="enable" class="mini-button" iconcls="icon-unlock" onclick="able(0);"
+                                data-options="{minSelectedCount:1}">启用</a>-->
+                        <a id="disable" class="mini-button" iconcls="icon-remove" onclick="able(1);" data-options="{minSelectedCount:1}">
+                            删除</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <input class="mini-treeselect " selectonfocus="true" style="width: 140px;" id="cantonCode"
+                           name="cantonCode" textfield="name" valuefield="code" parentfield="pCode"
+                           expandonload="0"  onvaluechanged="" />
+                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入单位名称"
+                            style="width: 160px;" onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" plain="true" onclick=" onSearch() ">查询</a>
+                        <a id="select" class="mini-button" style="display: none;" iconcls="icon-add" onclick=" select(); ">
+                            选择</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            idfield="operationMaintenanceUnitCode" multiselect="true" showcolumnsmenu="true"
+            frozenstartcolumn="0" frozenendcolumn="1" onbeforeload="datagrid1_BeforeLoad"
+             onselectionchanged="datagrid1_SelectionChanged"
+            sortorder="asc" pagesize="10" onselectionchanged="onSelectionChanged">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                </div>
+                <div type="checkcolumn" width="40">
+                </div>
+                <div field="operationMaintenanceUnitName" width="150" headeralign="center" align="left"
+                    renderer="datagrid1_Renderer">
+                    单位名称</div>
+                <div field="cantonName" width="80" headeralign="center" align="center" allowsort="true" >
+                    行政区</div>
+                <div field="organizationCode" width="80" headeralign="center" align="left" allowsort="true">
+                    组织机构代码</div>
+                <div field="legalPerson" width="80" headeralign="center" align="left" allowsort="false">
+                    法人</div>
+                <div field="contactPerson" width="80" headeralign="center" align="center">
+                    联系人</div>
+                <div field="mobilePhone" width="80" headeralign="center" align="center">
+                    手机</div>
+                <div field="eMail" width="60" headeralign="center" align="left" allowsort="false">
+                    邮箱</div>
+                <!-- <div field="isDis" width="60" headeralign="center" align="center" renderer="datagrid1_Renderer"
+                    allowsort="true">
+                    停用状态</div>-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

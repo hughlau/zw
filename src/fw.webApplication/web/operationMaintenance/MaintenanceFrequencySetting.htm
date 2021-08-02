@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运频率设置</title>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="OperationMaintenancePage.js" type="text/javascript"></script>
+    <script src="MaintenanceFrequencySetting.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="divForm" class="form">
+        <input type="hidden" style="width: 90%; display: none;" name="ProjectCode" class="mini-textbox " />
+        <input type="hidden" style="width: 90%; display: none;" name="OperAndMaintenanceName"
+            class="mini-textbox " />
+        <input type="hidden" style="width: 90%; display: none;" name="IsOvertime" class="mini-textbox " />
+        <table style="width: 90%; margin: 10px; form" class="tableForm">
+            <tr>
+                <th>
+                    <span class="spanBase MustFilled">*</span>月核定巡检次数：
+                </th>
+                <td>
+                    <input style="width: 90%;" name="monthInspectsCount" required="true" vtype="rangeLength:1,50"
+                        class="mini-textbox EditControl" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="spanBase MustFilled">*</span>频率类型：
+                </th>
+                <td>
+                    <div id="cblFrequency" class="mini-checkboxlist" repeatitems="5" repeatlayout="table" textfield="name"
+                        valuefield="code" >
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="spanBase MustFilled">*</span>频率次数：
+                </th>
+                <td>
+                    <input style="width: 90%;" name="ProjectName" required="true" vtype="rangeLength:1,50"
+                        class="mini-textbox EditControl" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="text-align: right; padding: 10px;">
+        <a id="buttonSave" class="mini-button" style="width: 60px; margin-right: 20px;">保存</a>
+        <a id="buttonConcel" class="mini-button" style="width: 60px; margin-right: 20px;">取消</a>
+    </div>
+</body>
+</html>

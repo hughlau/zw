@@ -1,0 +1,721 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>文件上传</title>
+    <style type="text/css">
+        body
+        {
+            height: 100%;
+        }
+        
+        #silverlightControlHost
+        {
+            height: 100%;
+            text-align: center;
+        }
+        
+        .progressbar
+        {
+            position: relative;
+            background: #bbb;
+            width: 100%;
+            height: 16px;
+            overflow: hidden;
+        }
+        
+        .progressbar-percent
+        {
+            position: absolute;
+            height: 18px;
+            background: blue;
+            left: 0;
+            top: 0px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .progressbar-label
+        {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            font-size: 13px;
+            color: White;
+            z-index: 10;
+            text-align: center;
+            height: 16px;
+            line-height: 16px;
+        }
+        
+        .action-continue
+        {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0px 4px;
+            cursor: pointer;
+            background: url(../../resources/scripts/fw/themes/icons/continue.png) no-repeat scroll center center transparent;
+        }
+        
+        .action-pause
+        {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0px 4px;
+            cursor: pointer;
+            background: url(../../resources/scripts/fw/themes/icons/pause.png) no-repeat scroll center center transparent;
+        }
+        
+        .action-transparent
+        {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0px 4px;
+            background: url(../../resources/scripts/fw/themes/icons/transparent.png) no-repeat scroll center center transparent;
+        }
+        
+        .action-delete
+        {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0px 4px;
+            cursor: pointer;
+            background: url(../../resources/scripts/fw/themes/icons/delete.png) no-repeat scroll center center transparent;
+        }
+        
+        #flashContent
+        {
+            display: none;
+        }
+    </style>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <!-- Enable Browser History by replacing useBrowserHistory tokens with two hyphens -->
+    <!-- BEGIN Browser History required section -->
+    <link href="../../clientBin/history/history.css" rel="stylesheet" type="text/css" />
+    <script src="../../clientBin/history/history.js" type="text/javascript"></script>
+    <!-- END Browser History required section -->
+    <script src="../../clientBin/swfobject.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. 
+        var swfVersionStr = "11.4.0";
+        // To use express install, set to playerProductInstall.swf, otherwise the empty string. 
+        var xiSwfUrlStr = "../../clientBin/playerProductInstall.swf";
+
+        // showConsoleMsg 是否在控制台打印调试信息， 0 不打印， 1 打印
+        var flashvars = {
+            "showConsoleMsg": "0"
+        };
+        var params = {};
+
+        params.quality = "high";
+        //params.bgcolor = "#ffffff";
+        //params.allowscriptaccess = "sameDomain";
+        params.allowscriptaccess = "always";
+        params.allowfullscreen = "true";
+        params.wmode = "transparent";
+
+        var attributes = {};
+        attributes.id = "FileUploaderPlugin";
+        attributes.name = "FileUploaderPlugin";
+        attributes.align = "left";
+        swfobject.embedSWF("../../clientBin/FileUploaderPlugin.swf", "flashContent", "64px", "23px", swfVersionStr, xiSwfUrlStr, flashvars, params, attributes);
+        // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
+        swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+
+        var fileUploadSettings = {
+            selectFileImageUrl: null //选择文件的图片Url
+		,
+            selectFileText: null //选择文件的文本
+		,
+            uploadCount: 1 //上传文件的个数
+		,
+            extensions: null //允许上传文件的格式gif|bmp|jpg|jpeg|png
+		,
+            extensionType: fw.fwData.FWFileExtensionType.Image,
+            maxLength: 1024 * 1024 * 2 //上传文件的最大大小,默认2M
+        };
+
+        //页面初始化
+        $.page.pageInit = function () {
+            $.page.dataSourceSettingsDictionary = {
+
+            };
+        };
+
+        //页面加载
+        $.page.pageLoad = function () {
+
+            fileUploadSettings = {
+                selectFileImageUrl: fw.fwObject.FWObjectHelper.hasValue($.page.params.selectFileImageUrl) ? $.page.params.selectFileImageUrl : fileUploadSettings.selectFileImageUrl,
+                selectFileText: fw.fwObject.FWObjectHelper.hasValue($.page.params.selectFileText) ? $.page.params.selectFileText : fileUploadSettings.selectFileText,
+                uploadCount: parseInt(fw.fwObject.FWObjectHelper.hasValue($.page.params.uploadCount) ? $.page.params.uploadCount : fileUploadSettings.uploadCount, 10),
+                extensions: fw.fwObject.FWObjectHelper.hasValue($.page.params.extensions) ? $.page.params.extensions : fileUploadSettings.extensions,
+                extensionType: fw.fwObject.FWObjectHelper.hasValue($.page.params.extensionType) ? $.page.params.extensionType : fileUploadSettings.extensionType,
+                maxLength: parseFloat(fw.fwObject.FWObjectHelper.hasValue($.page.params.maxLength) ? $.page.params.maxLength : fileUploadSettings.maxLength)
+            };
+            if (!fw.fwObject.FWObjectHelper.hasValue(fileUploadSettings.selectFileImageUrl)) {
+                fileUploadSettings.selectFileImageUrl = "";
+            }
+            ;
+            if (!fw.fwObject.FWObjectHelper.hasValue(fileUploadSettings.selectFileText)) {
+                fileUploadSettings.selectFileText = "";
+            }
+            ;
+            if (!fw.fwObject.FWObjectHelper.hasValue(fileUploadSettings.extensions)) {
+                switch (fileUploadSettings.extensionType) {
+                    case fw.fwData.FWFileExtensionType.Image.toString():
+                        fileUploadSettings.extensions = fw.fwFileUpload.fwFileUploadHelper.imageExtensions;
+                        break;
+                    case fw.fwData.FWFileExtensionType.Word.toString():
+                        fileUploadSettings.extensions = fw.fwFileUpload.fwFileUploadHelper.wordExtensions;
+                        break;
+                }
+                ;
+            }
+            ;
+
+            fileUploadSettings.multiselect = fileUploadSettings.uploadCount > 1;
+
+            //判断选择回调有值
+            if (fw.fwObject.FWObjectHelper.hasValue($.page.params.enterCallback) && fileUploadSettings.multiselect) {
+                //显示选择按钮
+                $.page.idM.enter.show();
+            }
+            ;
+            //判断选择清除有值
+            if (fw.fwObject.FWObjectHelper.hasValue($.page.params.enterClearCallback) && fileUploadSettings.multiselect) {
+                //显示清空按钮
+                $.page.idM.enterClear.show();
+            }
+
+            if (!fileUploadSettings.multiselect && fw.fwObject.FWObjectHelper.hasValue($.page.params.uploadInfoSelector)) {
+                $.page.idJQ.divToolbar.css("background", "url() no-repeat scroll center center transparent");
+            }
+            ;
+
+            //开始查询
+            $.page.windowResize();
+        };
+
+        $.page.windowResize = function () {
+            var clientWidth = fw.clientWidth();
+            //var clientHeight = fw.clientHeight();
+            if (clientWidth <= 512) {
+                $.page.idM.datagrid1.hideColumn("length");
+                $.page.idM.datagrid1.hideColumn("uploadLength");
+                $.page.idM.datagrid1.hideColumn("restLength");
+                $.page.idM.datagrid1.hideColumn("speed");
+                $.page.idM.datagrid1.hideColumn("useTime");
+                $.page.idM.datagrid1.hideColumn("restTime");
+            } else {
+                $.page.idM.datagrid1.showColumn("length");
+                $.page.idM.datagrid1.showColumn("uploadLength");
+                $.page.idM.datagrid1.showColumn("restLength");
+                $.page.idM.datagrid1.showColumn("speed");
+                $.page.idM.datagrid1.showColumn("useTime");
+                $.page.idM.datagrid1.showColumn("restTime");
+            }
+            ;
+        };
+
+
+        // 提示错误信息
+        function showErrorMsg(msg) {
+            alert(msg);
+        }
+
+        // 提示控制台信息
+        function showConsoleMsg(msg) {
+            if (console) {
+                console.log(msg);
+            }
+        }
+
+        // 文件选择回调
+        function onFileSelectedListener(fileInfo) {
+
+            var isError = false;
+            var errorInfo = "";
+            var isUploadFile = true;
+
+            if (isUploadFile && $.page.idM.datagrid1.data.length >= fileUploadSettings.uploadCount) {
+                if (!isError) {
+                    errorInfo = "最多只能上传" + fileUploadSettings.uploadCount + "个文件";
+                    if (!fileUploadSettings.multiselect) {
+                        alert(errorInfo);
+                    } else {
+                        mini.alert(errorInfo);
+                    }
+                    ;
+                }
+                ;
+
+                isUploadFile = false;
+            }
+            ;
+
+            if (isUploadFile && fw.fwObject.FWObjectHelper.hasValue(fileUploadSettings.extensions)) {
+                if (("|" + fileUploadSettings.extensions + "|").toUpperCase().indexOf("|" + fileInfo.extension.replace('.', '').toUpperCase() + "|") < 0) {
+                    if (!isError) {
+                        errorInfo = "只能上传以下格式的文件：" + fileUploadSettings.extensions;
+                        if (!fileUploadSettings.multiselect) {
+                            alert(errorInfo);
+                        } else {
+                            mini.alert(errorInfo);
+                        }
+                        ;
+                    }
+                    ;
+                    isUploadFile = false;
+                }
+                ;
+            }
+            ;
+
+            if (isUploadFile && fileUploadSettings.maxLength > 0) {
+                fileInfo.length = parseFloat(fileInfo.length);
+                if (fileInfo.length > fileUploadSettings.maxLength) {
+                    if (!isError) {
+                        errorInfo = "文件不能大于 " + fw.fwNumber.FWNumberHelper.toFileSize(fileUploadSettings.maxLength);
+                        if (!fileUploadSettings.multiselect) {
+                            alert(errorInfo);
+                        } else {
+                            mini.alert(errorInfo);
+                        }
+                        ;
+                    }
+                    ;
+                    isUploadFile = false;
+                }
+                ;
+            }
+            ;
+
+            if (isUploadFile) {
+                fileInfo.fileUploadStatus = fw.fwData.FWFileUploadStatus.Analysing;
+                fileInfo.progressValue = "开始加载文件...";
+                fileInfo.action = "";
+
+                $.page.idM.datagrid1.addRow(fileInfo);
+
+                FileUploaderPlugin.startLoadFileCallback(fileInfo.uploadID);
+
+            } else {
+                isError = true;
+                //删除上传文件
+                FileUploaderPlugin.deleteUpload(fileInfo.uploadID);
+            }
+            ;
+
+        };
+
+        // 获取ajax调用服务地址
+        function getServiceSiteRootUrl() {
+            var serviceSiteRootUrl = $.page.serviceSiteRootUrl;
+            /* var dynamicDirectory = fw.fwConfig.FWConfigHelper.dynamicDirectory;
+            var dataPublicKey = fw.fwConfig.FWConfigHelper.dataPublicKey;
+
+            if (fw.fwObject.FWObjectHelper.hasValue(dynamicDirectory)) {
+            serviceSiteRootUrl = serviceSiteRootUrl
+            + dynamicDirectory
+            + "/" + fw.fwSafe.FWSafeHelper.encrypt("service/json/call/fs",
+            dynamicDirectory);
+            } else {
+            serviceSiteRootUrl = serviceSiteRootUrl + "service/json/call/fs";
+            }; */
+
+            serviceSiteRootUrl = serviceSiteRootUrl + "service/json/call/fs";
+
+            return serviceSiteRootUrl;
+
+        }
+
+        // 获取加密过的URL请求参数
+        function getURLRequestParameter(properties) {
+
+            var settings = {
+                serviceType: "crossDomainCall",
+                serviceName: "sysManage",
+                methodName: "getFileUploadInfo",
+                data: {
+                    ticket: $.page.ticket
+                }
+            };
+            $.extend(settings, properties);
+
+            var result = {
+                serviceName: settings.serviceName,
+                methodName: settings.methodName,
+                paramsJson: mini.encode(settings.data)
+            };
+
+            //不进行加解密操作
+            //var dataPublicKey = fw.fwConfig.FWConfigHelper.dataPublicKey;
+            // result = fw.fwSafe.FWSafeHelper.encrypt(result,dataPublicKey);
+
+            var resultStr = "";
+            for (var key in result) {
+                resultStr += encodeURIComponent(key) + "=" + encodeURIComponent(result[key]) + "&";
+            }
+            ;
+
+            resultStr = resultStr.substring(0, resultStr.length - 1);
+
+            return resultStr;
+        }
+
+        // 解密调用结果
+        function decodeResultData(resultData) {
+            var dataPublicKey = fw.fwConfig.FWConfigHelper.dataPublicKey;
+
+            if (fw.fwObject.FWObjectHelper.hasValue(dataPublicKey)) {
+                //resultData = resultData.replace(/\"/g,"");
+                resultData = fw.fwJson.FWJsonHelper.deserializeObject(fw.fwSafe.FWSafeHelper.decrypt(resultData, dataPublicKey));
+            } else {
+
+                resultData = eval("(" + resultData + ")");
+            }
+            ;
+            return resultData;
+        }
+
+        // 暂停上传
+        function pauseUpload(_uid) {
+
+            var fileInfo = findRowByUploadID(_uid);
+
+            if (fileInfo != null && fileInfo.fileUploadStatus == fw.fwData.FWFileUploadStatus.Uploading) {
+
+                var actionHtml = '<a class="action-continue" onclick="continueUpload(\'' + fileInfo.uploadID + '\');">&nbsp;</a>';
+                actionHtml += '<a class="action-delete" onclick="deleteUpload(\'' + fileInfo.uploadID + '\');">&nbsp;</a>';
+                fileInfo.action = actionHtml;
+
+                fileInfo.fileUploadStatus = fw.fwData.FWFileUploadStatus.Pause;
+
+                $.page.idM.datagrid1.updateRow(fileInfo);
+
+                FileUploaderPlugin.pauseUpload(_uid);
+
+            }
+            ;
+        };
+
+        //继续上传
+        function continueUpload(_uid) {
+
+            var fileInfo = findRowByUploadID(_uid);
+
+            if (fileInfo != null && fileInfo.fileUploadStatus == fw.fwData.FWFileUploadStatus.Pause) {
+
+                fileInfo.fileUploadStatus = fw.fwData.FWFileUploadStatus.Uploading;
+
+                var actionHtml = '<a class="action-continue" onclick="pauseUpload(\'' + fileInfo.uploadID + '\');">&nbsp;</a>';
+                actionHtml += '<a class="action-delete" onclick="deleteUpload(\'' + fileInfo.uploadID + '\');">&nbsp;</a>';
+                fileInfo.action = actionHtml;
+
+                $.page.idM.datagrid1.updateRow(fileInfo);
+
+                FileUploaderPlugin.continueUpload(_uid);
+
+            }
+            ;
+        };
+
+        // 删除上传
+        function deleteUpload(_uid) {
+
+            var fileInfo = findRowByUploadID(_uid);
+
+            if (fw.fwObject.FWObjectHelper.hasValue(fileInfo)) {
+
+                $.page.idM.datagrid1.removeRow(fileInfo);
+
+                FileUploaderPlugin.deleteUpload(_uid);
+            }
+            ;
+        };
+
+        function findRowByUploadID(_uid) {
+            var rowRecord = $.page.idM.datagrid1.findRow(function (row) {
+                if (row.uploadID == _uid) {
+                    return true;
+                }
+                ;
+            });
+
+            return rowRecord;
+
+        }
+
+        function updateMD5GenerateProgress(uid) {
+
+            var rowRecord = findRowByUploadID(uid);
+
+            if (!rowRecord) {
+                return false;
+            }
+            ;
+
+            rowRecord.progressValue = "文件分析中...";
+
+            //更新数据
+            $.page.idM.datagrid1.updateRow(rowRecord);
+
+            setTimeout(function () {
+                generateMD5String(uid)
+            }, 100);
+
+            return;
+
+        }
+
+        function generateMD5String(uid) {
+            FileUploaderPlugin.generateMD5String(uid);
+        }
+
+        function updateFileLoadProgress(uid, progressValue) {
+
+            var rowRecord = findRowByUploadID(uid);
+
+            if (!rowRecord) {
+                return false;
+            }
+            ;
+
+            progressValue = progressValue * 100;
+
+            if (progressValue < 0) {
+                progressValue = 0;
+            }
+            ;
+
+            if (progressValue >= 100) {
+                progressValue = 100;
+            }
+            ;
+
+            var progressHtml = '<div class="progressbar">';
+            progressHtml += '<div class="progressbar-percent" style="width:' + progressValue.toFixed(2) + '%;"></div>';
+            progressHtml += '<div class="progressbar-label">加载文件: ' + progressValue.toFixed(2) + '%</div>';
+            progressHtml += '</div>';
+
+            rowRecord.progressValue = progressHtml;
+
+            //更新数据
+            $.page.idM.datagrid1.updateRow(rowRecord);
+
+            return;
+
+        }
+
+        // 更新上传信息
+        function updateFileInfo(fileInfo) {
+
+            var rowRecord = findRowByUploadID(fileInfo.uploadID);
+
+            if (!rowRecord) {
+                return false;
+            }
+            ;
+
+            var isUploadFilePaused = false;
+            if (rowRecord.fileUploadStatus == fw.fwData.FWFileUploadStatus.Pause) {
+                isUploadFilePaused = true;
+            }
+            ;
+
+            $.extend(rowRecord, fileInfo);
+
+            rowRecord.speed = rowRecord.speed > 0 ? rowRecord.speed.toFixed(2) + " KB/秒" : "";
+            rowRecord.useTime = rowRecord.useTime > 0 ? rowRecord.useTime.toFixed(2) + " 秒" : "0.00 秒";
+
+            rowRecord.restTime = rowRecord.restTime.toFixed(2) + " 秒";
+
+            if (fileInfo.fileUploadStatus == fw.fwData.FWFileUploadStatus.Uploading) {
+
+                fileInfo.progressValue = fw.fwNumber.FWNumberHelper.toString(fileInfo.uploadLength * 100 / fileInfo.length, "#.00");
+
+                if (fileInfo.length < 1) {
+                    fileInfo.progressValue = 100.00;
+                }
+                ;
+
+                if (fileInfo.progressValue >= 100) {
+                    fileInfo.progressValue = 100;
+                }
+                ;
+
+                var progressHtml = '<div class="progressbar">';
+                progressHtml += '<div class="progressbar-percent" style="width:' + fileInfo.progressValue + '%;"></div>';
+                progressHtml += '<div class="progressbar-label">正在上传: ' + fileInfo.progressValue + '%</div>';
+                progressHtml += '</div>';
+
+                rowRecord.progressValue = progressHtml;
+
+                var actionHtml = '';
+                if (isUploadFilePaused) {
+                    rowRecord.fileUploadStatus = fw.fwData.FWFileUploadStatus.Pause;
+
+                    actionHtml += '<a class="action-continue" onclick="continueUpload(\'' + rowRecord.uploadID + '\');">&nbsp;</a>';
+                    actionHtml += '<a class="action-delete" onclick="deleteUpload(\'' + rowRecord.uploadID + '\');">&nbsp;</a>';
+                } else {
+                    actionHtml += '<a class="action-pause" onclick="pauseUpload(\'' + rowRecord.uploadID + '\');">&nbsp;</a>';
+                    actionHtml += '<a class="action-delete" onclick="deleteUpload(\'' + rowRecord.uploadID + '\');">&nbsp;</a>';
+                }
+                ;
+
+                rowRecord.action = actionHtml;
+
+            } else if (fileInfo.fileUploadStatus == fw.fwData.FWFileUploadStatus.Finished) {
+                rowRecord.name = '<a href="' + $.page.serviceSiteRootUrl + fileInfo.path + fileInfo.md5 + fileInfo.extension + '" target="_blank">' + fileInfo.name + '</a>';
+
+                var progressHtml = '<div class="progressbar">';
+                progressHtml += '<div class="progressbar-percent" style="width:100%;"></div>';
+                progressHtml += '<div class="progressbar-label">100%</div>';
+                progressHtml += '</div>';
+
+                rowRecord.progressValue = progressHtml;
+
+                var actionHtml = '<a class="action-delete" onclick="deleteUpload(\'' + rowRecord.uploadID + '\');">&nbsp;</a>';
+
+                rowRecord.action = actionHtml;
+            } else if (fileInfo.fileUploadStatus == fw.fwData.FWFileUploadStatus.Pause) {
+                // do something
+            }
+            ;
+
+            //更新数据
+            $.page.idM.datagrid1.updateRow(rowRecord);
+
+        };
+        //选择选中项(提供给父页面调用)
+        function enter() {
+            //            var dataList = $.page.idM.datagrid1.getSelecteds();
+            //            if (!fw.fwObject.FWObjectHelper.hasValue(dataList)) {
+            //                mini.alert("请勾选需要上传的文件！");
+            //            } else {
+            //                mini.confirm("确定保存吗?", "消息", function (s) {
+            //                    if (s == "ok") {
+            //                        //调用回调方法
+            //                        fw.callFunction(fw.openWindow(), $.page.params.enterCallback, dataList[0]);
+            //                        //关闭窗口
+            //                        fw.closeWindow();
+            //                    }; 
+            //                });
+            //            };
+            //判断选择类型以及选择回调方法有值
+            if (fw.fwObject.FWObjectHelper.hasValue($.page.params.enterCallback)) {
+                //判断是单选
+                if (fileUploadSettings.uploadCount == 1) {
+                    //获取选中项对象
+                    var entity = null;
+                    var dataList = $.page.idM.datagrid1.data;
+                    if (fw.fwObject.FWObjectHelper.hasValue(dataList)) {
+                        var data = dataList[0];
+                        entity = {
+                            name: data.name
+                            , filePath: data.path + data.md5 + data.extension
+                            , fileUrl: $.page.serviceSiteRootUrl + data.path + data.md5 + data.extension
+                        };
+                    };
+                    //判断选中项对象有值
+                    if (fw.fwObject.FWObjectHelper.hasValue(entity)) {
+                        //调用回调方法
+                        fw.callFunction(fw.openWindow(), $.page.params.enterCallback, [entity]);
+                        //删除所有上传
+                       // deleteAll();
+                        //关闭窗口
+                        fw.closeWindow();
+                    };
+                } else if (fileUploadSettings.uploadCount > 1) {
+                    //获取选中项对象集合
+                    var entityList = [];
+                    var dataList = $.page.idM.datagrid1.data;
+                    if (fw.fwObject.FWObjectHelper.hasValue(dataList)) {
+                        var len = dataList.length > fileUploadSettings.uploadCount ? fileUploadSettings.uploadCount : dataList.length;
+                        var data;
+                        for (var i = 0; i < len; i++) {
+                            data = dataList[i];
+                            entityList.push({
+                                name: data.name
+                                , filePath: data.path + data.md5 + data.extension
+                                , fileUrl: $.page.serviceSiteRootUrl + data.path + data.md5 + data.extension
+                            });
+                        };
+                    };
+                    //判断选中项对象集合有值
+                    if (fw.fwObject.FWObjectHelper.hasValue(entityList)) {
+                        //调用回调方法
+                        fw.callFunction(fw.openWindow(), $.page.params.enterCallback, [entityList]);
+                        //删除所有上传
+                        //deleteAll();
+                        //关闭窗口
+                        fw.closeWindow();
+                    };
+                };
+            };
+        };
+    </script>
+</head>
+<body isneedlogin="0">
+    <div id="divToolbar" class="mini-toolbar" style="border-width: 0px 0px 0px 0px;">
+        <table style="width: 100%;">
+            <tr>
+                <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;
+                    vertical-align: middle;">
+                    <div id="flashContent">
+                        <p>
+                            To view this page ensure that Adobe Flash Player version 11.4.0 or greater is installed.</p>
+                        <script type="text/javascript">
+                            document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='../../clientBin/get_flash_player.gif' alt='Get Adobe Flash player' /></a>");
+                        </script>
+                    </div>
+                </td>
+                <td style="white-space: nowrap; text-align: right;">
+                    <a id="enter" class="mini-button" iconcls="icon-add" onclick="enter();">选择</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 1px 0px 0px 0px;"
+            showcolumnsmenu="true" frozenstartcolumn="0" frozenendcolumn="0" showpager="false"
+            sortmode="client">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                    序号</div>
+                <div type="checkcolumn" width="30">
+                </div>
+                <div field="name" width="240" headeralign="center" align="left" allowsort="true">
+                    文件名</div>
+                <div field="progressValue" width="120" headeralign="center" align="center" allowsort="true">
+                    进度</div>
+                <div name="length" field="length" width="80" headeralign="center" align="center"
+                    allowsort="true">
+                    大小</div>
+                <div name="uploadLength" field="uploadLength" width="80" headeralign="center" align="center"
+                    allowsort="true">
+                    已上传</div>
+                <div name="restLength" field="restLength" width="80" headeralign="center" align="center"
+                    allowsort="true">
+                    剩余</div>
+                <div name="speed" field="speed" width="80" headeralign="center" align="center" allowsort="true">
+                    速度</div>
+                <div name="useTime" field="useTime" width="80" headeralign="center" align="center"
+                    allowsort="true">
+                    用时</div>
+                <div name="restTime" field="restTime" width="80" headeralign="center" align="center"
+                    allowsort="true">
+                    剩余时间</div>
+                <div field="action" width="80" headeralign="center" align="center">
+                    操作</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

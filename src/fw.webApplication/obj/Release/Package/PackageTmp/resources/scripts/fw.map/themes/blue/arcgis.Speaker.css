@@ -1,0 +1,97 @@
+body div.jQueryExtension_UI_Speaker
+{
+    width: 37px;
+    min-width: 37px;
+    height: 37px;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-left: 200px;
+    margin-top: 200px;
+    color: White;
+    font-size: 14px;
+}
+body div.jQueryExtension_UI_Speaker.Open
+{
+    width1: 220px;
+}
+body div.jQueryExtension_UI_Speaker > div.jQueryExtension_UI_Speaker_Container_Background
+{
+    position: relative;
+    width: 100%;
+    height: 37px;
+    background-color: rgba(255,154,2,0.6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#99FF9A02, endcolorstr=#99FF9A02);
+    /* Firefox, Safari(WebKit), Opera)     filter: "alpha(opacity=60)"; /* IE 8 */
+    // filter: alpha(opacity=60); /* IE 4-7 */
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -o-border-radius: 18px;
+    -ms-border-radius: 18px;
+    border-radius: 18px;
+}
+body div.jQueryExtension_UI_Speaker > div.jQueryExtension_UI_Speaker_Container_Content
+{
+    position: relative;
+    width: 100%;
+    height: 37px;
+    margin-top: -37px;
+}
+body div.jQueryExtension_UI_Speaker > div.jQueryExtension_UI_Speaker_Container_Content > div.jQueryExtension_UI_Speaker_divContent
+{
+    width: 100%;
+    height: 37px;
+    margin-left: -37px;
+    padding-right: 37px;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Speaker > div.jQueryExtension_UI_Speaker_Container_Content > div.jQueryExtension_UI_Speaker_divContent > ul.jQueryExtension_UI_Speaker_ulContent
+{
+    width: 100%;
+    line-height: 37px;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    text-indent1: 74px;
+    list-style: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+body div.jQueryExtension_UI_Speaker > div.jQueryExtension_UI_Speaker_Container_Content > div.jQueryExtension_UI_Speaker_divContent > ul.jQueryExtension_UI_Speaker_ulContent > li
+{
+    margin-left: 74px;
+}
+
+body div.jQueryExtension_UI_Speaker > div.jQueryExtension_UI_Speaker_Container_Content > div.jQueryExtension_UI_Speaker_divClose
+{
+    float: right;
+    width: 31px;
+    height: 31px;
+    margin-top: -34px;
+    margin-right: 3px;
+    background: url(Images/divClose.png) no-repeat scroll center center transparent;
+    cursor: pointer;
+    display: none;
+}
+body div.jQueryExtension_UI_Speaker > div.jQueryExtension_UI_Speaker_Container_Content > div.jQueryExtension_UI_Speaker_divMore
+{
+    float: right;
+    width: 31px;
+    height: 31px;
+    margin-top: -34px;
+    margin-right: 3px;
+    background: url(Images/divMore.png) no-repeat scroll center center transparent;
+    cursor: pointer;
+    display: none;
+}
+body div.jQueryExtension_UI_Speaker > div.jQueryExtension_UI_Speaker_Container_Content > div.jQueryExtension_UI_Speaker_divOpen
+{
+    float: left;
+    width: 31px;
+    height: 31px;
+    margin-top: -34px;
+    margin-left: 3px;
+    background: url(Images/SpeakerList.png) no-repeat scroll 0px 0px transparent;
+    cursor: pointer;
+}

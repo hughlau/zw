@@ -1,0 +1,148 @@
+﻿
+body #jQueryExtension_UI_DateTime
+{
+    position: absolute;
+    z-index: 9999;
+    border: 1px solid #95B6D9;
+    background-color: #FFFFFF;
+    font-size: 12px;
+    color: #004182;
+    line-height: 18px;
+}
+body #jQueryExtension_UI_DateTime_DivSubtractMonth
+{
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: #24549b;
+    background-color: #ADCCF5;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_SelectYear
+{
+    width: 54px;
+    height: 18px;
+    line-height: 18px;
+    color: #24549b;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_SelectMonth
+{
+    width: 36px;
+    height: 18px;
+    line-height: 18px;
+    color: #24549b;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_DivAddMonth
+{
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: #24549b;
+    background-color: #ADCCF5;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_TheadYearMonth tr th div
+{
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: #24549b;
+    background-color: #ADCCF5;
+}
+
+body #jQueryExtension_UI_DateTime tbody.jQueryExtension_UI_DateTime_TbodyDay tr td div
+{
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: #24549b;
+    background-color: #FFFFFF;
+}
+body #jQueryExtension_UI_DateTime tbody.jQueryExtension_UI_DateTime_TbodyDay tr td div.jQueryExtension_UI_DateTime_TbodyDay_Day
+{
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime tbody.jQueryExtension_UI_DateTime_TbodyDay tr td div.jQueryExtension_UI_DateTime_TbodyDay_NowDay
+{
+    color: #24549b;
+    background-color: #F8EBB9;
+}
+body #jQueryExtension_UI_DateTime tbody.jQueryExtension_UI_DateTime_TbodyDay tr td div.jQueryExtension_UI_DateTime_TbodyDay_SelectedDay
+{
+    color: #FFFFFF;
+    background-color: #24549b;
+}
+body #jQueryExtension_UI_DateTime_SelectHour
+{
+    margin:1px auto;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    color: #24549b;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_SelectMinute
+{
+    margin:1px auto;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    color: #24549b;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_SelectSecond
+{
+    margin:1px auto;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    color: #24549b;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_Empty
+{
+    margin:1px auto;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: #24549b;
+    background-color: #ADCCF5;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_Now
+{
+    margin:1px auto;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: #24549b;
+    background-color: #ADCCF5;
+    cursor: pointer;
+}
+body #jQueryExtension_UI_DateTime_Enter
+{
+    margin:1px auto;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: #24549b;
+    background-color: #ADCCF5;
+    cursor: pointer;
+}
+

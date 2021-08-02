@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>扩展表</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwDictionaryTypeExtend.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="form">
+        <table class="tableForm noBorder1" style="width: 100%; margin: 0px auto;">
+            <tr>
+                <td style="width: 100px;">
+                    扩展表名称：
+                </td>
+                <td>
+                    <input name="mExtendTableName" class="mini-textbox" selectonfocus="true" required="true"
+                        maxlength="128" style="width: 100%;" borderstyle="padding-left: 108px;" />
+                    <input class="mini-textbox leftCover" required="true" value="FWDictionary_" style="width: 110px;"
+                        readonly />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    扩展表中文名：
+                </td>
+                <td>
+                    <input name="mExtendTableChineseName" class="mini-textbox" selectonfocus="true" required="false"
+                        maxlength="64" style="width: 100%;" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="mini-toolbar" style="border-width: 1px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a class="mini-button" iconcls="icon-add" onclick="insertRow();">增加列</a> <a id="del"
+                            class="mini-button" iconcls="icon-remove" onclick="del();">删除列</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px 0px 1px 0px;"
+            idfield="mDataID" multiselect="true" showcolumnsmenu="true" frozenstartcolumn="0"
+            editnextonenterkey="true" editnextrowcell="true" frozenendcolumn="1" onbeforeload="datagrid1_BeforeLoad"
+            allowcelledit="true" allowcellselect="true" showpager="false" oncellbeginedit="OnCellBeginEdit"
+            oncellcommitedit="OnCellCommitEdit">
+            <div property="columns">
+                <div type="indexcolumn" width="24">
+                </div>
+                <div type="checkcolumn" width="36">
+                </div>
+                <div field="mDataID" width="150" headeralign="center" align="left" visible="false">
+                    数据ID
+                </div>
+                <div name="mColumnName" field="mColumnName" width="80" headeralign="center" align="left"
+                    allowsort="false" vtype="required">
+                    列名
+                    <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                        style="width: 100%;" />
+                </div>
+                <div field="mColumnChineseName" width="70" headeralign="center" align="left" allowsort="false"
+                    vtype="required">
+                    列中文名
+                    <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="36"
+                        style="width: 100%;" />
+                </div>
+                <div field="mColumnType" width="80" headeralign="center" align="center" allowsort="false"
+                    vtype="required">
+                    数据类型
+                    <input property="editor" selectonfocus="true" class="mini-combobox" data="ColumnDataType"
+                        required="true" style="width: 100%;" />
+                </div>
+                <div field="mDataLen" width="50" headeralign="center" align="center" allowsort="false"
+                    renderer="datagrid1_Renderer">
+                    数据长度
+                    <input property="editor" class="mini-spinner" selectonfocus="true" minvalue="0" maxvalue="2147483647"
+                        style="width: 100%;" />
+                </div>
+                <div type="checkboxcolumn" field="mIsNull" truevalue="1" falsevalue="0" width="60"
+                    headeralign="center">
+                    允许Null值
+                </div>
+                <div field="mIx" width="36" headeralign="center" align="center" allowsort="false"
+                    vtype="required">
+                    顺序
+                    <input property="editor" class="mini-spinner" selectonfocus="true" minvalue="1" maxvalue="2147483647"
+                        style="width: 100%;" />
+                </div>
+                <div type="checkboxcolumn" field="mIsDis" truevalue="1" falsevalue="0" width="48"
+                    headeralign="center">
+                    是否停用
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divButton" style="text-align: right; padding: 10px;">
+        <a id="insertOrUpdate" class="mini-button" iconcls="icon-save" style="margin-right: 20px;"
+            onclick="buttonSave">保存</a> <a id="cancel" class="mini-button" iconcls="icon-cancel"
+                style="margin-right: 20px;" onclick="onCancel()">取消</a>
+    </div>
+</body>
+</html>

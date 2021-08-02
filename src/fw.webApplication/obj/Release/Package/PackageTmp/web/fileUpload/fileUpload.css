@@ -1,0 +1,115 @@
+﻿
+.lazyPrint .lazyPrint_ShowBox_Content
+{
+    height: 20px;
+    padding: 8px;
+    font-family: '微软雅黑';
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Top
+{
+    height: 40px;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Center
+{
+    height: 180px;
+    border: 1px solid #E4E5E9;
+    background-color: #FAFBFE;
+    overflow: scroll;
+    overflow-x: hidden;
+    text-align: center;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_CenterMsg
+{
+    font-size: 22px;
+    color: #9CA4BC;
+    margin-top: 60px;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_CenterBrower
+{
+    font-size: 14px;
+    color: #9CA4BC;
+    margin-top: 2px;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Center_List
+{
+    border-bottom: 1px solid #E4E5E9;
+    height: 35px;
+    width: 100%;
+    line-height: 35px;
+    text-align: left;
+    background: url('/web/fileUpload/images/Validate.png') no-repeat;
+    background-position: 6px -28px;
+    font-size: 12px;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Center_List:hover
+{
+    background-color: #F0F8FF;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Center_List span
+{
+    color: #838EAA;
+    margin-left: 30px;
+    display: block;
+    float: left;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Center_List .spanTitle
+{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #3F4D72;
+    font-weight: bold;
+    width: 30%;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Center_List .spanLength
+{
+    width: 15%;
+    text-align: right;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Center_List .spanProgress
+{
+    width: 18%;
+    text-align: center;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Center_List .spanDelete
+{
+    text-align: center;
+    cursor: pointer;
+    height: 36px;
+    width: 6%;
+    background: url('/web/fileUpload/images/Validate.png') no-repeat;
+    background-position: 6px 10px;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Bottom
+{
+    margin-top: 15px;
+    height: 30px;
+    padding-left: 26px;
+    background: url('/web/fileUpload/images/Validate.png') no-repeat 0px 3px;
+    background-position: 0 -77px;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Bottom_Left
+{
+    float: left;
+    color: #838EAA;
+    font-size: 12px;
+    line-height: 22px;
+}
+.lazyPrint .lazyPrint_ShowBox_Content_Bottom_Right
+{
+    float: right;
+}
+.lazyPrint .lazyPrintBtnSmall
+{
+    width: 90px;
+    height: 25px;
+    background-color: #386C98;
+    color: white;
+    font-size: 13px;
+    border: 0px;
+    border-radius: 4px;
+    font-family: '微软雅黑';
+}
+
+

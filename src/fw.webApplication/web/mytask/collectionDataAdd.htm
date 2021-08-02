@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>设备管理</title>
+    <link href="../scripts/themes/default/basicInfo/basicInfo.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="collectionDataAdd.js" type="text/javascript"></script>
+
+    <style type="text/css">
+
+        #test-image-preview {
+              border: 1px solid #ccc;
+            width: 100%;
+            height: auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+    <style>
+
+        #GPS {
+            height: 16px;
+            padding: 0;
+            padding-top: 12px;
+        }
+
+        #uploadFileParent {
+            vertical-align: middle
+        }
+
+            #uploadFileParent .ui-input-text {
+                display: inline-block;
+                padding-right: 2px;
+            }
+
+        .imgParent, .oldImgParent {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+            text-align: center;
+            margin-left: 2px;
+            border: 1px solid #356f9d;
+        }
+
+            .oldImgParent img {
+                width: 100%;
+                height: auto;
+            }
+
+            .imgParent img {
+                width: 100%;
+                height: auto;
+            }
+
+            .oldImgParent .OldeDelete {
+                position: absolute;
+                /*z-index: 9999;*/
+                right: 0;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                background: url(../../../resources/images/delete.png) 0 0 no-repeat;
+                background-size: 100% 100%;
+                cursor: pointer;
+            }
+
+            .imgParent .eDelete {
+                position: absolute;
+                /*z-index: 9999;*/
+                right: 0;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                background: url(../../../resources/images/delete.png) 0 0 no-repeat;
+                background-size: 100% 100%;
+                cursor: pointer;
+            }
+
+        .mini-buttonedit-border .mini-buttonedit-input {
+            font-size: 10pt;
+        }
+
+        .tableForm > tbody {
+            width: 100%;
+        }
+
+        table .mini-buttonedit-border {
+            height: 38px;
+        }
+
+        #btnChooseMonitor {
+            height: 38px;
+        }
+
+        .mini-buttonedit-border > input, {
+            padding: 0;
+        }
+
+        .mini-buttonedit-icon, .mini-errorIcon {
+            margin-top: 8px;
+        }
+
+        body .mini-error .mini-textbox-border, body .mini-error .mini-buttonedit-border {
+            border-color: #ffa8a8;
+            background-color: #fff3f3;
+        }
+
+        .file {
+            position: relative;
+            display: inline-block;
+            background: #D0EEFF;
+            border: 1px solid #99D3F5;
+            border-radius: 4px;
+            padding: 4px 12px;
+            overflow: hidden;
+            color: #1E88C7;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 20px;
+        }
+
+            .file input {
+                position: absolute;
+                font-size: 100px;
+                right: 0;
+                top: 0;
+                opacity: 0;
+            }
+
+            .file:hover {
+                background: #AADFFD;
+                border-color: #78C3F3;
+                color: #004974;
+                text-decoration: none;
+            }
+        /*\resources\Maps\ArcGIS\FrameWork\ags33\jsapi\arcgis\3.3\js\dojo\dojox\gfx\demos\images*/
+    </style>
+</head>
+<body style="background-color: white;" isloaduserinfo="1">
+    <div id="divForm" class="form">
+        <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+            <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                <tr style="display: none;">
+                    <td colspan="4">
+                        <input type="hidden" style="width: 96%; display: none;" name="equipmentCode" class="mini-textbox " />
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 20%;">
+                        净化槽编码：
+                    </th>
+                    <td style="width: 30%;" colspan="4">
+                        <input id="btnChooseMonitor" class="mini-buttonedit" onclick="onButtonChooseMonitorSite"
+                            style="width: 100%;" name="monitorSiteName" required="true" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+            <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+            </table>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+            <a id="aSave" class="mini-button " style="width: 60px; margin-right: 20px;">保存</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<html>
+<head>        
+<title>FineReport Demo</title>       
+        <script type="text/javascript" src="/ReportServer?op=emb&resource=finereport.js"></script>         
+       <link rel="stylesheet" type="text/css" href="/ReportServer?op=emb&resource=finereport.css"/>         
+        <script type="text/javascript">
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]); return null;
+            }
+
+            function doPrint() {     //通过sessionid打印
+                var recordCodes = GetQueryString("data");
+                var flag = GetQueryString("flag");
+              //  alert(flag);
+                var recordCodeList = recordCodes.split(',');
+                var p = [];
+                if (flag == 'dailyRecord')
+                {
+                    for (var i = 0; i < recordCodeList.length; i += 1) {
+                        p.push("{reportlet: '/dailyMaintenance.cpt',recordCodeSec: " + recordCodeList[i] + "}");
+                }
+                }
+                else {
+
+                    for (var i = 0; i < recordCodeList.length; i += 2) {
+                        var j = i;
+                        if (recordCodeList.length % 2 == 1 && i == recordCodeList.length - 1)  //如果选择项个数为奇数
+                        {
+                            switch (flag) {
+                                case "maintenanceRecord":
+                                    p.push("{reportlet: '/maintenanceSingle.cpt',recordCodeSec: " + recordCodeList[j] + "}");
+                                    break;
+                                case "cleanRecord":
+                                    p.push("{reportlet: '/cleanSingle.cpt',recordCodeSec: " + recordCodeList[j] + "}");
+                                    break;
+                            }
+                        }
+                        else {
+                            switch (flag) {
+                                case "maintenanceRecord":
+                                    p.push("{reportlet: '/maintenance.cpt',recordCodeSec: " + recordCodeList[j] + ",idCode: " + recordCodeList[++j] + "}");
+                                    break;
+                                case "cleanRecord":
+                                    p.push("{reportlet: '/clean.cpt',recordCodeSec: " + recordCodeList[j] + ",idCode: " + recordCodeList[++j] + "}");
+                                    break;
+                            }
+                        }
+                    }
+                }
+
+                var rp = p.join(",");
+                 //使用FineReport自带的方法cjkEncode进行转码
+                var reportlets = FR.cjkEncode("[" + rp + "]");
+                var printurl = "http://101.201.82.103:8083/ReportServer?op=write";
+                alert(reportlets);
+                //var reportlets = FR.cjkEncode("[{reportlet:'/maintenance.cpt',recordCode:'47babbbb-352c-4b56-8ddd-6e27ed8db105'},{reportlet:'/test1.cpt'}]");
+                var config = {
+                    url: printurl,
+                    isPopUp: true,
+                    data: {
+                        reportlets: reportlets
+                    }
+                };
+                FR.doURLPDFPrint(config);//doURLFlashPrint
+            }
+
+</script>         
+</head>         
+<body>         
+<form name="report" width="200" height="200" ">    
+   <!-- <input id="config1" type="checkbox" value="47babbbb-352c-4b56-8ddd-6e27ed8db105" />1<br>      
+    <input id="config2" type="checkbox" value="47babbbb-352c-4b56-8ddd-6e27ed8db105" />2<br>    -->       
+    <input type="button"  onClick="doPrint();" value="预览打印" style=""  ></br>
+    </br> 
+    <input type="button"  onClick="doPrint();" value="重新打印" ></br> 
+</form>         
+<body>         
+</html>    

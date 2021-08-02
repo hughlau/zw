@@ -1,0 +1,506 @@
+﻿body, td, th
+{
+    font-family: 宋体;
+    font-size: 12px;
+}
+body
+{
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    height: 100%;
+}
+
+html
+{
+    overflow: auto;
+    height: 100%;
+    margin: 0;
+}
+
+a img
+{
+    border: none;
+}
+a
+{
+    text-decoration: none;
+}
+
+ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+li
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    list-style-type: none;
+}
+span
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+/**************************************/
+div.divIndexTop
+{
+}
+div.divIndexTop div.top
+{
+    width: 100%;
+    height: 60px;
+    background-color: #3399cc;
+}
+
+div.divIndexTop div.top div.logo
+{
+    float: left;
+    background-image: url(home/images/Logo.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    height: 60px;
+    width: 120px;
+}
+div.divIndexTop div.top div.logo_logo
+{
+    float: left;
+    height: 60px;
+    width: 500px;
+    line-height: 60px;
+    font-family: "微软雅黑";
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+div.divIndexTop div.top div.about
+{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    height: 60px; 
+}
+
+
+div.divIndexTop div.top div.about div.about_man
+{
+        float: left;
+    /* width: 50px; */
+    height: 50px;
+    /* padding: 5px; */
+    padding-top: 10px;
+}
+
+div.divIndexTop div.top div.about div.about_right
+{
+    float: left;
+    height: 60px;
+    width: 150px;
+}
+
+div.divIndexTop div.top div.about div.about_right div.about_admin
+{
+    float: left;
+    height: 60px;
+}
+div.divIndexTop div.top div.about div.about_right div.about_admin li
+{
+    line-height: 30px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #ffffff;
+    width: 120px;
+}
+
+div.divIndexTop div.top div.about div.about_tis
+{
+    float: left;
+    height: 24px;
+    width: 48px;
+    margin-top: 0px;
+}
+div.divIndexTop div.top div.about div.about_right div.about_admin li .about_tis_one
+{
+    height: 24px;
+    width: 24px;
+    float: left;
+    padding-top: 3px;
+    background-image: url(home/images/man.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+div.divIndexTop div.nav
+{
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #999;
+    background-image: url(home/images/nav_bg.png);
+    background-repeat: repeat-x;
+    background-position: top;
+    margin-bottom: 10px;
+    font-family: "微软雅黑";
+}
+div.divIndexTop div.nav li.liMenu
+{
+    float: left;
+    height: 40px;
+    width: 130px;
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+}
+
+div.divIndexTop div.nav li.liMenu:hover
+{
+    float: left;
+    height: 40px;
+    width: 130px;
+    background-image: url(home/images/nav_bg_h.png);
+    background-repeat: repeat-x;
+    background-position: top;
+    color: #ffffff;
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.divIndexTop div.nav li.liMenuSelect
+{
+    float: left;
+    height: 40px;
+    width: 130px;
+    background-image: url(home/images/nav_bg_h.png);
+    background-repeat: repeat-x;
+    background-position: top;
+    color: #ffffff;
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+
+
+div.divIndexTop div.main_ss
+{
+    position: absolute;
+    right: 15px;
+    top: 62px;
+    height: 30px;
+}
+
+
+div.divIndexTop div.main_ss .main_ss_btnSearch
+{
+    float: right;
+    width: 30px;
+    height: 30px;
+    background-color: #ef8400;
+    background-image: url(home/images/bjxc.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #ef8400;
+    cursor: pointer;
+}
+div.divIndexTop div.main_ss .main_ss_btnSearch:hover
+{
+    float: right;
+    width: 30px;
+    height: 30px;
+    background-color: #b86606;
+    background-image: url(home/images/bjxc.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #b86606;
+    cursor: pointer;
+}
+
+div.divIndexTop div.main_ss div.main_ss_btnSearchBox
+{
+    float: right;
+    width: 300px;
+    height: 28px;
+    background-color: #FFF;
+    border: 1px solid #e6e6e6;
+}
+
+div.divIndexTop div.main_ss div.main_ss_btnSearchBox .main_ss_btnSearchBox_xiala
+{
+    float: right;
+    width: 28px;
+    height: 28px;
+    background-image: url(home/images/nav/xiala.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+div.divIndexTop div.main_ss div.main_ss_btnSearchBox .main_ss_btnSearchBox_input
+{
+    float: right;
+    width: 272px;
+    height: 28px;
+    text-align: right;
+    line-height: 28px;
+}
+div.divIndexTop div.main_ss div.main_ss_btnSearchBox .main_ss_btnSearchBox_input .index_input
+{
+    height: 16px;
+    background-color: #ffffff;
+    width: 152px;
+    border: 1px solid #ffffff;
+    color: #6882a3;
+    padding: 3px 3px 3px 3px;
+}
+
+div.divIndexTop div.main_ss div.main_ss_btnSearchBox .main_ss_btnSearchBox_input .index_label
+{
+    height: 16px;
+    background-color: #ffffff;
+    width: 120px;
+    border: 1px solid #ffffff;
+    color: #6882a3;
+    padding: 3px;
+}
+/**************************************/
+
+
+div.divIndexLeft
+{
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #CCC;
+    width: 214px;
+    height: 99%;
+    z-index: 10;
+    margin: 0 auto;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+}
+
+div.divIndexLeft div.divIndexLeft_Top
+{
+    /*width: 116px;*/
+    height: 32px;
+    padding: 5px;
+    border-bottom: 1px solid #CCC;
+    background-color: #3398ce;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    /*padding-left: 30px;*/
+    text-align: center;
+}
+
+
+div.divIndexLeft div.divIndexLeft_Top .left_top_one
+{
+    float: left;
+    background-color: #ff9933;
+    background-image: url(home/images/shoye.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+div.divIndexLeft div.divIndexLeft_Top .left_top_one:hover
+{
+    background-color: #f08300;
+}
+
+div.divIndexLeft div.divIndexLeft_Top .left_top_two
+{
+    float: left;
+    background-color: #3ac6f4;
+    background-image: url(home/images/zhanneixinxi.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+    margin-left: 2px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+div.divIndexLeft div.divIndexLeft_Top .left_top_two:hover
+{
+    background-color: #3399cc;
+}
+div.divIndexLeft div.divIndexLeft_Top .left_top_three
+{
+    float: left;
+    background-color: #adcb81;
+    background-image: url(home/images/xinxin.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+div.divIndexLeft div.divIndexLeft_Top .left_top_three:hover
+{
+    background-color: #95b06e;
+}
+div.divIndexLeft div.divIndexLeft_Top .left_top_four
+{
+    float: left;
+    background-color: #f37576;
+    background-image: url(home/images/guanbi.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+div.divIndexLeft div.divIndexLeft_Top .left_top_four:hover
+{
+    background-color: #df6b6c;
+}
+
+div.divIndexLeft div.divIndex_Bottom
+{
+}
+
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox
+{
+}
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelOne
+{
+    position: relative;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #cccccc;
+    /*width: 116px;*/
+    height: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelOne:hover
+{
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #cccccc;
+   /*width: 116px;*/
+}
+
+
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelOneIcon
+{
+    background-image: url(home/images/nav/pc2.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    cursor: pointer;
+}
+
+/*======箭头======*/
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelOne .divIndexBottom_levelOne_xiala
+{
+    float: right;
+    background-image: url(home/images/nav/xiala.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 28px;
+    height: 40px;
+    cursor: pointer;
+}
+
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelOne .divIndexBottom_levelOne_xialaSelect
+{
+    float: right;
+    background-image: url(home/images/nav/shang.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 28px;
+    height: 40px;
+    cursor: pointer;
+}
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelOne .divIndexBottom_levelOne_Word
+{
+    height: 40px;
+    text-indent: 28px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    line-height: 40px;
+    color: #1e1e1e;
+    cursor: pointer;
+    overflow: hidden;
+    width: 160px;
+}
+
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelTwo
+{
+}
+
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelTwo .divIndexBottom_levelTwo_Word
+{
+    background-color: #ffffff;
+    border-bottom: 1px solid #CCC;
+   /* width: 126px;*/
+    height: auto;
+    text-indent: 27px;
+    line-height: 40px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    /*color: #999999;*/
+    cursor: pointer;
+    overflow: hidden; 
+}
+
+div.divIndexLeft div.divIndex_Bottom div.divMenuBox .divIndexBottom_levelTwo .divIndexBottom_levelTwo_WordSelect
+{
+    background-color: #ffffff;
+    background-image: url(home/images/nav/nex_nav.png);
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #CCC;
+    background-position: 15px center;
+    padding-left: 15px;
+    height: auto;
+    text-indent: 12px;
+    line-height: 40px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #388bff;
+    cursor: pointer;
+    overflow: hidden;
+    /*width: 110px;*/
+}
+.divSearchSelectOption
+{
+    position: absolute;
+    z-index: 10;
+    right: 37px;
+    top: 90px;
+    height: 90px;
+    width: 95px;
+    background-image: url(home/images/nav/top_tc_bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+    display:none;
+}
+.divSearchSelectOption li
+{
+    line-height: 30px;
+    text-align: center;
+    width: 95px;
+    border-bottom: 1px solid #CCC;
+    font-size: 14px;
+    color: #333;
+    font-family: "微软雅黑";
+    cursor:pointer;
+}

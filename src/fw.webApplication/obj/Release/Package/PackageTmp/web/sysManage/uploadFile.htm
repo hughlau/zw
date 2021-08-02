@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../Styles/Page.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/jQueryExtension/FileUpLoad/Standard__FileUpLoad.css" rel="stylesheet"
+        type="text/css" />
+    <style type="text/css">
+        #divInfo img
+        {
+            clear: both;
+        }
+    </style>
+    <script src="../Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jQueryExtension/jQueryExtension.js" type="text/javascript"></script>
+    <script src="../Scripts/jQueryExtension/FileUpLoad/jQueryExtension.FileUpLoad.js"
+        type="text/javascript"></script>
+    <script src="../Scripts/jquery.Page.js" type="text/javascript"></script>
+    <script src="../Scripts/JS.ashx" type="text/javascript"></script>
+</head>
+<body scroll="no" style="overflow: hidden;">
+    <div class="jQueryExtension_UI_Layout_Function">
+        <ul class="jQueryExtension_UI_Layout_FunctionLeft" style="margin-top: 6px;">
+            <li><a><span><span>
+                <div id="silverlightControlHost" style="width: 77px; height: 19px;">
+                </div>
+            </span></span></a></li>
+        </ul>
+        <ul class="jQueryExtension_UI_Layout_FunctionRight" style="margin-top: 3px;">
+            <li><a id="buttonEnter" class="jQueryExtension_UI_Button"><span><span>确定</span></span></a></li>
+        </ul>
+    </div>
+    <div id="divUpLoadInfo" style="width: 100%; min-width: 600px; height: 48px; overflow-x: hidden;
+        overflow-y: auto;">
+    </div>
+    <div id="divInfo" style="overflow-x: hidden; overflow-y: auto; margin-top: 5px;">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var Multiselect = null;                      //是否允许多选（1多选 0单选 默认0）
+    var UpLoadFileCount = null;                  //允许上传的文件数(默认1)
+    var Extensions = null;                       //上传文件的类型限制(gif|bmp|jpg 默认所有文件)
+    var MaxLength = null;                        //上传文件的大小单位M(默认2M)
+    var ImageWidth = null;                       //如果上传的是图片，上传图片的显示宽度（默认400）
+    var ImageHeight = null;                      //如果上传的是图片，上传图片的显示高度（默认300）
+    var CallbackMethodName = null;               //点确定按钮的回调方法名称
+    $.Page.Page_Load = function () {
+        Multiselect = jExtension.Request("Multiselect");
+        if (jQueryExtension.IsUndefinedOrNullOrEmpty(Multiselect)) {
+            Multiselect = "false";
+        };
+        Multiselect = (Multiselect.toLowerCase() == "true" || Multiselect == "1") ? true : false;
+
+        UpLoadFileCount = jExtension.Request("UpLoadFileCount");
+        if (jQueryExtension.IsUndefinedOrNullOrEmpty(UpLoadFileCount) || !jQueryExtension.IsNumber(UpLoadFileCount)) {
+            UpLoadFileCount = 1;
+        } else {
+            UpLoadFileCount = parseInt(UpLoadFileCount);
+        };
+        $("#divUpLoadInfo").height(17 * UpLoadFileCount);
+
+        Extensions = jExtension.Request("Extensions");
+
+        MaxLength = jExtension.Request("MaxLength");
+        if (jQueryExtension.IsUndefinedOrNullOrEmpty(MaxLength) || !jQueryExtension.IsNumber(MaxLength)) {
+            MaxLength = 200;
+        } else {
+            MaxLength = parseInt(MaxLength);
+        };
+
+        ImageWidth = jExtension.Request("ImageWidth");
+        if (jQueryExtension.IsUndefinedOrNullOrEmpty(ImageWidth) || !jQueryExtension.IsNumber(ImageWidth)) {
+            ImageWidth = 400;
+        } else {
+            ImageWidth = parseInt(ImageWidth);
+        };
+
+        ImageHeight = jExtension.Request("ImageHeight");
+        if (jQueryExtension.IsUndefinedOrNullOrEmpty(ImageHeight) || !jQueryExtension.IsNumber(ImageHeight)) {
+            ImageHeight = 300;
+        } else {
+            ImageHeight = parseInt(ImageHeight);
+        };
+
+        CallbackMethodName = jExtension.Request("CallbackMethodName");
+
+        //页面控件自适应绑定
+        $(window).bind("resize", function () {
+            var divInfoPosition = jQueryExtension.Position("#divInfo");
+            jQueryExtension.ResizeWidthHeight({
+                Selector: "#divInfo"
+                , Width: null
+                , Height: jQueryExtension.ClientHeight() - 2 - divInfoPosition.AbsoluteTop
+            });
+        });
+        WindowResize();
+
+        $("#buttonEnter").bind("click", function () {
+            if (!jQueryExtension.IsUndefinedOrNullOrEmpty(CallbackMethodName)) {
+                parent[CallbackMethodName]($.FileUpLoad.GetUpLoadFile("#divUpLoadInfo"));
+                //                eval("parent." + CallbackMethodName + "()");
+                jQueryExtension.UI.OpenClose();
+            };
+        });
+
+        $('#silverlightControlHost').FileUpLoad({
+            Source: "../../ClientBin/Silverlight.FileUpLoad.xap"
+            , FileUpLoadService: $.Page.WebSiteRootUrl + "Service/FileUpLoad/XmlService__FileUpLoad.svc"
+            , GetUpLoadFileUrl: function (UpLoadFileName) {
+                return "../UpLoadFolder/" + UpLoadFileName;
+            }
+            , Path: "Web/UpLoadFolder/"
+            , Multiselect: Multiselect
+            , UpLoadFileCount: UpLoadFileCount
+            , Extensions: Extensions
+            , MaxLength: 1024 * 1024 * MaxLength
+            , UpLoadInfoSelector: "#divUpLoadInfo"
+            , UpLoadFinished: function (Entity) {
+                if ("|gif|bmp|jpg|jpeg|png|".toUpperCase().indexOf("|" + Entity.Extension.replace('.', '').toUpperCase() + "|") > -1) {
+                    $("<img id=\"img" + Entity.UpLoadID + "\" src=\"../UpLoadFolder/" + Entity.UpLoadFileName + "\" style=\"width:" + ImageWidth + "px;height:" + ImageHeight + "px;\" />").appendTo("#divInfo");
+                };
+            }
+            , DeleteUpLoad: function (UpLoadID) {
+                $("#img" + UpLoadID).remove();
+            }
+        });
+
+        //        $('#silverlightControlHost').FileUpLoad({
+        //            Source: "../../ClientBin/Silverlight.FileUpLoad.xap"
+        //            , FileUpLoadService: $.Page.WebSiteRootUrl + "Service/FileUpLoad/XmlService__FileUpLoad.svc"
+        //            , GetUpLoadFileUrl: function (UpLoadFileName) {
+        //                return "../UpLoadFolder/" + UpLoadFileName;
+        //            }
+        //            , Path: "Web/UpLoadFolder/"
+        //            , Multiselect: true
+        //            , UpLoadFileCount: 100
+        //            , Extensions: ""
+        //            //        , MaxLength: 1024 * 1024 * 10
+        //            , UpLoadInfoSelector: "#divUpLoadInfo"
+        //            , UpLoadFinished: function (Entity) {
+        //                if (",gif,bmp,jpg,jpeg,png,".toUpperCase().indexOf("," + Entity.Extension.replace('.', '').toUpperCase() + ",") > -1) {
+        //                    $("<img id=\"img" + Entity.UpLoadID + "\" src=\"../UpLoadFolder/" + Entity.UpLoadFileName + "\" />").appendTo("#divInfo");
+        //                };
+        //                //            alert(Entity.UpLoadID + "\\n" + Entity.FileName+ "\\n" + Entity.Extension + "\\n" + Entity.UpLoadFileName);
+        //            }
+        //            , DeleteUpLoad: function (UpLoadID) {
+        //                $("#img" + UpLoadID).remove();
+        //                //            alert(UpLoadID);
+        //            }
+        //        });
+    };
+
+    
+
+    
+    
+</script>

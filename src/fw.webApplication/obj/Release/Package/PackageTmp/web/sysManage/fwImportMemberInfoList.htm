@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>导入成员信息列表</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwImportMemberInfoList.htm.js" type="text/javascript"></script>
+</head>
+<body isneedlogin="1">
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a class="mini-button" iconcls="icon-edit" onclick="openInfo();" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                            修改</a> <a id="del" class="mini-button" iconcls="icon-remove" onclick=" del(); " data-options="{minSelectedCount:1}">
+                                删除</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入用户名称"
+                            style="width: 160px;" onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" plain="true" onclick="onSearch()">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            idfield="mDataID" multiselect="true" showcolumnsmenu="true" onbeforeload="datagrid1_BeforeLoad"
+            sortfield="mfieldName" onselectionchanged="datagrid1_SelectionChanged" sortorder="asc"
+            pagesize="10" onselectionchanged="onSelectionChanged">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                </div>
+                <div type="checkcolumn" width="40">
+                </div>
+                <div field="mFieldName" width="150" headeralign="center" align="left">
+                    字段名称</div>
+                <div field="mChineseName" width="150" headeralign="center" align="left">
+                    字段描述</div>
+                <div field="mMapFieldType" width="80" headeralign="center" align="right">
+                    字段类型</div>
+                <div field="mNumbers" width="70" headeralign="center" align="right">
+                    小数位数</div>
+                <div field="mMapTableName" width="150" headeralign="center" align="left">
+                    外键表</div>
+                <div field="mMapFiledName" width="150" headeralign="center" align="left">
+                    外键字段</div>
+                <div field="mCheckColumn" width="150" headeralign="center" align="center">
+                    对应列</div>
+                <div field="mDefeatValue" width="150" headeralign="center" align="center">
+                    默认值</div>
+                <div field="mAutoCheck" width="60" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    是否<br>
+                    自动对应</div>
+                <div field="mIsNull" width="60" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    是否可空</div>
+                <div field="mIsPK" width="60" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    是否主键</div>
+                <div field="mIsUnique" width="60" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    是否唯一</div>
+                <div field="mRem" width="80" headeralign="center" align="center" visible="false">
+                    备注</div>
+                <div field="mDataFlag" width="166" headeralign="center" align="left" renderer="datagrid1_Renderer">
+                    数据状态</div>
+                <div field="mDataID" width="150" headeralign="center" align="left" visible="false">
+                    用户ID</div>
+                <div field="mModelID" width="150" headeralign="center" align="left" visible="false">
+                    对应表ID</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

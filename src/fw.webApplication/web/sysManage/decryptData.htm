@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>数据解密</title>
+    <link href="../../resources/scripts/fw/themes/default/json_type.css" rel="stylesheet"  type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="decryptData.htm.js" type="text/javascript"></script>
+</head>
+<body>
+        <table border="0" cellpadding="1" cellspacing="2" style="width: 100%; table-layout: fixed;">
+        <tr>
+            <td>
+                <input name="dataInfo" id="dataInfo" class="mini-textarea" style="width: 100%; height: 200px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="text-align: right; padding: 10px;">
+                    <a id="illegal" class="mini-button" style="width: 190px; margin-right: 20px;" onclick="onIllegal">去除jQuery*("保留加密内容");</a> 
+                    <a id="decrypt" class="mini-button" style="width: 60px; margin-right: 20px;" onclick="onDecrypt">解密</a> 
+                    <a id="fjson" class="mini-button" style="width: 120px; margin-right: 20px;" onclick="onFjson">Json格式化</a>
+                    <a id="encrypt" class="mini-button" style="width: 60px; margin-right: 20px;" onclick="onEncrypt">加密</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+        <div>
+            <span id="TabSizeHolder">缩进量
+            <select id="TabSize" onchange="tabSizeChanged();">
+                <option value="1" selected="true">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            </span>
+            <label for="QuoteKeys">
+                <input type="checkbox" id="QuoteKeys" onclick="quoteKeysClicked();" checked="true">引号</label>
+            &nbsp; <a class="mini-button" onclick="SelectAllClicked();">全选</a> &nbsp;
+            <span id="CollapsibleViewHolder">
+                <label for="CollapsibleView">
+                    <input type="checkbox" id="CollapsibleView" onclick="collapsibleViewClicked();" checked="true">
+                    显示控制
+                </label>
+            </span>
+            <span id="CollapsibleViewDetail">
+                <a class="mini-button" onclick="expandAllClicked();">展开</a> 
+                <a class="mini-button" onclick="collapseAllClicked();">叠起</a> 
+                <a class="mini-button" onclick="collapseLevel(3);">2级</a>
+                <a class="mini-button" onclick="collapseLevel(4);">3级</a> 
+                <a class="mini-button" onclick="collapseLevel(5);">4级</a>
+                <a class="mini-button" onclick="collapseLevel(6);">5级</a> 
+                <a class="mini-button" onclick="collapseLevel(7);">6级</a> 
+                <a class="mini-button" onclick="collapseLevel(8);">7级</a> 
+                <a class="mini-button" onclick="collapseLevel(9);">8级</a>
+            </span>
+        </div>
+    <div id="Canvas" class="Canvas"></div>         
+</body>
+</html>

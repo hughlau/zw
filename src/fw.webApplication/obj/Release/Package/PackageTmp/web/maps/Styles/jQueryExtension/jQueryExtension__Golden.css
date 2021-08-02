@@ -1,0 +1,292 @@
+﻿body.bodyGolden div.jQueryExtension_UI_Lock
+{
+    position: absolute;
+    background-color: black;
+}
+body.bodyGolden div.jQueryExtension_UI_LockLoading
+{
+    background-image: url(Images/Golden__jHelper_Window_Document_LockLoading.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body.bodyGolden div.jQueryExtension_UI_Window
+        {
+            position: absolute;
+            font-size: 12px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer
+        {
+            position: absolute;
+            padding: 10px 10px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner
+        {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_Center
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_LeftTop
+        {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            left: -10px;
+            top: -10px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll 0px 0px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_Top
+        {
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            top: -10px;
+            background: url(Images/Golden__jQueryExtension_UI_Window_RepeatX.png) repeat-x scroll 0px 0px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_RightTop
+        {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            right: -10px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -25px 0px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_Right
+        {
+            position: absolute;
+            width: 10px;
+            height: 100%;
+            right: -10px;
+            background: url(Images/Golden__jQueryExtension_UI_Window_RepeatY.png) repeat-y scroll -25px 0px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_RightBottom
+        {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            right: -10px;
+            bottom: -10px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -50px 0px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_Bottom
+        {
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            bottom: -10px;
+            background: url(Images/Golden__jQueryExtension_UI_Window_RepeatX.png) repeat-x scroll 0px -25px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_LeftBottom
+        {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            left: -10px;
+            bottom: -10px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -75px 0px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Resize div.jQueryExtension_UI_Window_Resize_Left
+        {
+            position: absolute;
+            width: 10px;
+            height: 100%;
+            left: -10px;
+            background: url(Images/Golden__jQueryExtension_UI_Window_RepeatY.png) repeat-y scroll 0px 0px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: url(Images/Golden__jQueryExtension_UI_Window_Repeat.png) repeat scroll center center transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head
+        {
+            height: 25px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Title
+        {
+            height: 20px;
+            line-height: 20px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools
+        {
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_FullScreen
+        {
+            display: none;
+            float: right;
+            margin-left: 5px;
+            width: 21px;
+            height: 19px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -25px -25px transparent;
+            cursor: pointer;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_FullScreen:hover
+        {
+            background-position: -25px -50px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_FullScreenExit
+        {
+            display: none;
+            float: right;
+            margin-left: 5px;
+            width: 21px;
+            height: 19px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -125px -25px transparent;
+            cursor: pointer;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_FullScreenExit:hover
+        {
+            background-position: -125px -50px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_Min
+        {
+            display: block;
+            float: right;
+            margin-left: 5px;
+            width: 21px;
+            height: 19px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -50px -25px transparent;
+            cursor: pointer;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_Min:hover
+        {
+            background-position: -50px -50px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_Max
+        {
+            display: block;
+            float: right;
+            margin-left: 5px;
+            width: 21px;
+            height: 19px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -75px -25px transparent;
+            cursor: pointer;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_Max:hover
+        {
+            background-position: -75px -50px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_MaxExit
+        {
+            display: none;
+            float: right;
+            margin-left: 5px;
+            width: 21px;
+            height: 19px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -150px -25px transparent;
+            cursor: pointer;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_MaxExit:hover
+        {
+            background-position: -150px -50px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_Close
+        {
+            display: block;
+            float: right;
+            margin-left: 5px;
+            width: 21px;
+            height: 19px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -100px -25px transparent;
+            cursor: pointer;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Head div.jQueryExtension_UI_Window_Content_Head_Tools div.jQueryExtension_UI_Window_Content_Head_Tools_Close:hover
+        {
+            background-position: -100px -50px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body
+        {
+            border: 1px solid #5d9acf;
+            background-color: White;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body div.jQueryExtension_UI_Window_Content_Body_AlertImage
+        {
+            width: 48px;
+            height: 48px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll 0px -125px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body div.jQueryExtension_UI_Window_Content_Body_ConfirmImage
+        {
+            width: 48px;
+            height: 48px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll -50px -125px transparent;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body div.jQueryExtension_UI_Window_Content_Body_Content
+        {
+            overflow-y: auto;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body div.jQueryExtension_UI_Window_Content_Body_Function
+        {
+            height: 50px;
+            line-height: 30px;
+            vertical-align: middle;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body div.jQueryExtension_UI_Window_Content_Body_Function div.jQueryExtension_UI_Window_Content_Body_Function_Enter
+        {
+            float: right;
+            margin-top: 15px;
+            margin-right: 20px;
+            width: 66px;
+            height: 23px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll 0px -75px transparent;
+            cursor: pointer;
+            line-height: 23px;
+            text-align: center;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body div.jQueryExtension_UI_Window_Content_Body_Function div.jQueryExtension_UI_Window_Content_Body_Function_Enter:hover
+        {
+            color:White;
+            background-position: 0px -100px;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body div.jQueryExtension_UI_Window_Content_Body_Function div.jQueryExtension_UI_Window_Content_Body_Function_Cancel
+        {
+            float: right;
+            margin-top: 15px;
+            margin-right: 20px;
+            width: 66px;
+            height: 23px;
+            background: url(Images/Golden__jQueryExtension_UI_Window.png) no-repeat scroll 0px -75px transparent;
+            cursor: pointer;
+            line-height: 23px;
+            text-align: center;
+        }
+        body.bodyGolden div.jQueryExtension_UI_Window div.jQueryExtension_UI_Window_Outer div.jQueryExtension_UI_Window_Inner div.jQueryExtension_UI_Window_Content div.jQueryExtension_UI_Window_Content_Body div.jQueryExtension_UI_Window_Content_Body_Function div.jQueryExtension_UI_Window_Content_Body_Function_Cancel:hover
+        {
+            color:White;
+            background-position: 0px -100px;
+        }

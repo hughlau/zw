@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DTU参数设置</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="DtuList.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap; text-align: left;display:none;">
+                        <input id="IrrAreaState" name="IrrAreaState" class="mini-combobox" style="width: 100px;
+                            margin-right: 30px;" onvaluechanged="onSelectChange" textfield="name" valuefield="code"
+                            shownullitem="false" data="[{code:'0',name:'停止'},{code:'1',name:'启动'}]" />
+                    </td>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">      
+                      <input id="keyWord" name="keyWord" class="mini-textbox" selectonfocus="true" emptytext="请输入DTU编码"
+                            style="width: 160px;" onenter="onSearch();" />                         
+                        <a class="mini-button" iconcls="icon-search" plain="true" onclick=" onSearch() ">查询</a>             
+                        <input style="display: none;" name="ReCtrSampTime" id="ReCtrSampTime" class="mini-datepicker"
+                            nullvalue="null" allowinput="false" showtime="true" mindate="new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDay()-1)"
+                            showtodaybutton="false" showokbutton="true" showclearbutton="true" format="yyyy-MM-dd HH:mm"
+                            style="width: 180px; margin-right: 3px;" />
+                        <a id="ReCtrK" class="mini-button" onclick="onReCtrK()" style="width: 70px; margin-right: 10px;">
+                           参数设置</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--撑满页面-->
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" fitcolumns="false"
+            borderstyle="border-width: 0px;" sizelist="[5,10,20,50]" pagesize="10" multiselect="true"
+            onbeforeload="datagrid1_BeforeLoad" sortfield="" onselectionchanged="datagrid1_SelectionChanged">
+            <div property="columns">
+                <div type="indexcolumn" width="60" headeralign="center" align="center">
+                    序号
+                </div>
+                <div type="checkcolumn" width="40">
+                </div>
+                <div field="dtuMac" width="180" headeralign="center" align="left" allowsort="true">
+                    dtu mac地址</div>                                            
+                <div field="realDataReportPeriod" width="200" headeralign="center" align="center">
+                数据上报时间间隔</div>
+                <div field="createDatetime" width="200" headeralign="center" align="center">
+                    配置时间</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

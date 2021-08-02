@@ -1,0 +1,633 @@
+﻿/*菜单*/
+body Div.divModuleList
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding-top: 108px;
+  /*  z-index: 2000;*/
+}
+body Div.divModuleList Div.jQE_Container_Absolute
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+body Div.divModuleList Div.jQE_Container_Background
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url(images/divModuleListBackground.png) repeat scroll center center transparent;
+}
+body Div.divModuleList Div.jQE_Container_Compatible
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+body Div.divModuleList Div.jQE_Container_Content
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+body Div.divModuleList Div.jQE_Container_Content Div.jQE_Container_Background
+{
+    background-color: transparent;
+}
+body Div.divModuleList Div.jQE_Container_Content ul
+{
+    margin: 0px auto;
+    padding: 0px 0px 32px 0px;
+    width: 90%;
+    list-style: none;
+}
+body Div.divModuleList Div.jQE_Container_Content ul li
+{
+    float: left;
+    width: 96px;
+    height: 100px;
+    margin: 32px 32px 0px 0px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+body Div.divModuleList Div.jQE_Container_Content ul li div.ModuleImage
+{
+    width: 96px;
+    height: 76px;
+}
+body Div.divModuleList Div.jQE_Container_Content ul li div.ModuleImage img
+{
+    width: 76px;
+    height: 76px;
+    margin: 0px auto;
+}
+body Div.divModuleList Div.jQE_Container_Content ul li div.ModuleName
+{
+    white-space: nowrap;
+    width: 96px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    overflow: hidden;
+    font-family: 微软雅黑;
+    color: White;
+}
+body Div.divModuleList Div.jQE_Container_Content ul li div.ModuleInfoNumber
+{
+    position: relative;
+    float: right;
+    margin: -104px 6px auto auto;
+    white-space: nowrap;
+    width: auto;
+    min-width: 24px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0px 6px;
+    text-align: center;
+    overflow: hidden;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -o-border-radius: 16px;
+    -ms-border-radius: 16px;
+    border-radius: 16px;
+    border: 2px solid white;
+    color: White;
+    background: url(images/divModuleInfoNumberBackground.png) repeat-x scroll 0px 0px transparent;
+}
+
+
+/*菜单下拉列表*/
+body Div.divModule
+{
+    position: absolute;
+    z-index: 1000;
+}
+body Div.divModule Div.divModuleTitle
+{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+}
+body Div.divModule Div.divModuleTitle Div.divModuleName
+{
+    text-indent: 30px;
+    line-height: 36px;
+    height: 40px;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    color: White;
+    background: url(images/liModuleMenu_Hover.png) repeat-x scroll 0px 0px transparent;
+}
+body Div.divModule Div.divModuleTitle Div.divModuleTitleSlideImage
+{
+    float: left;
+    margin: -34px 2px;
+    width: 24px;
+    height: 24px;
+    background: url(images/divModuleTitleSlideImage_Up.png) no-repeat scroll center center transparent;
+}
+body Div.divModule Div.divModuleTitle Div.divModuleTitleSlideImage.SlideDown
+{
+    background: url(images/divModuleTitleSlideImage_Down.png) no-repeat scroll center center transparent;
+}
+body Div.divModule Div.divModuleTitle Div.divModuleImage
+{
+    float: right;
+    width: 38px;
+    height: 38px;
+}
+body Div.divModule Div.divModuleTitle Div.divModuleImage img
+{
+    width: 38px;
+    height: 38px;
+    margin: 0px auto;
+}
+
+body Div.divModule Div.divModuleMenuList
+{
+    top: -4px;
+    border-bottom: 1px solid #000000;
+    z-index: 1;
+    background: url(images/divModuleMenuListBackground.png) repeat scroll 0px 0px transparent;
+}
+body Div.divModule Div.divModuleMenuList ul
+{
+    color: #e7e7e7;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    width: 100%;
+    list-style: none;
+}
+body Div.divModule Div.divModuleMenuList ul li
+{
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    cursor: pointer;
+    background: url(images/liModuleMenu.png) repeat-x scroll 0px 0px transparent;
+}
+body Div.divModule Div.divModuleMenuList ul li:nth-child(2n+1)
+{
+    background-color1: #66ff99;
+}
+body Div.divModule Div.divModuleMenuList ul li:hover, body Div.divModule Div.divModuleMenuList ul li.Selected
+{
+    background: url(images/liModuleMenu_Hover.png) repeat-x scroll 0px 0px transparent;
+}
+body Div.divModule Div.divModuleMenuList ul li div
+{
+    text-indent: 0px;
+}
+body Div.divModule Div.divModuleMenuList ul li img
+{
+    float: left;
+    margin: 7px 3px;
+    width: 24px;
+    height: 22px;
+}
+
+
+
+
+/*搜索*/
+body Div.divSearchAndConcern
+{
+    position: absolute;
+    z-index: 1000;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernTitle
+{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernTitle Div.divSearchAndConcernContainer
+{
+    text-indent: 36px;
+    line-height: 36px;
+    height: 40px;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    color: White;
+    background: url(images/divSearchAndConcernContainerBackground.png) repeat-x scroll 0px 0px transparent;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernTitle Div.divSearchAndConcernContainer Div.divSearchButton
+{
+    float: left;
+    width: 49.5%;
+    text-align: left;
+    border-right: 0px solid white;
+    background: url(images/divSearchBackground.png) no-repeat scroll 8px center transparent;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernTitle Div.divSearchAndConcernContainer Div.divConcernButton
+{
+    float: right;
+    width: 49.5%;
+    text-align: left;
+    border-left: 1px solid white;
+    background: url(images/divConcernBackground.png) no-repeat scroll 8px center transparent;
+    display:none;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernTitle Div.divSearchAndConcernImage
+{
+    float: right;
+    width: 38px;
+    height: 38px;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernTitle Div.divSearchAndConcernImage img
+{
+    width: 38px;
+    height: 38px;
+    margin: 0px auto;
+}
+body Div.divSearchAndConcern Div.divKeyword
+{
+    position: relative;
+    top: -4px;
+    height: 38px;
+    overflow: hidden;
+    display: none;
+}
+body Div.divSearchAndConcern Div.divKeyword input.inputKeyword
+{
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    border-width: 0px;
+    background: url(images/liModuleMenu.png) repeat-x scroll 0px 0px transparent;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernContent
+{
+    top: -4px;
+    border-bottom: 1px solid #000000;
+    background: url(images/divModuleMenuListBackground.png) repeat scroll 0px 0px transparent;
+    z-index: 1;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernContent ul
+{
+    color: #e7e7e7;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    width: 100%;
+    list-style: none;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernContent ul li
+{
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    cursor: pointer;
+    background: url(images/liModuleMenu.png) repeat-x scroll 0px 0px transparent;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernContent ul li:nth-child(2n+1)
+{
+    background-color: #66ff99;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernContent ul li:hover, body Div.divSearchAndConcern Div.divSearchAndConcernContent ul li.Selected
+{
+    background: url(images/liModuleMenu_Hover.png) repeat-x scroll 0px 0px transparent;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernContent ul li div
+{
+    text-indent: 0px;
+}
+body Div.divSearchAndConcern Div.divSearchAndConcernContent ul li img
+{
+    float: left;
+    margin: 7px 3px;
+    width: 24px;
+    height: 22px;
+}
+
+/*统计列表*/
+body Div.divCantonStatistics
+{
+    position: absolute;
+    left: 0px;
+    bottom: 70px;
+    z-index: 1000;
+}
+body Div.divCantonStatistics table
+{
+    border-collapse: collapse;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer
+{
+    overflow: hidden;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer div.divCantonStatisticsTitle
+{
+    color: #e7e7e7;
+    height: 40px;
+    line-height: 40px;
+    background: url(images/divCantonStatisticsTitleBackground.png) repeat scroll 0px 0px transparent;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer div.divCantonStatisticsTitle table tr td
+{
+    padding-left: 4px;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer div.divCantonStatisticsTitle table tr td.tdCantonStatisticsHide
+{
+    cursor: pointer;
+    width: 32px;
+    background: url(images/tdCantonStatisticsHide.png) no-repeat scroll center center transparent;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer div.divCantonStatisticsTitle table tr td Div.divConcernCantonList ul.ulConcernCantonList
+{
+    width: 0px;
+    height: 40px;
+    white-space: nowrap;
+    list-style: none;
+    overflow: hidden;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer div.divCantonStatisticsTitle table tr td Div.divConcernCantonList ul.ulConcernCantonList li
+{
+    float: left;
+    margin-left: 8px;
+    cursor: pointer;
+    color: Blue;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList
+{
+    background: url(images/divCantonStatisticsListBackground.png) repeat scroll center center transparent;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul
+{
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 30px;
+    list-style: none;
+    clear: both;
+    height: 40px;
+    text-align: left;
+    vertical-align: middle;
+    color: #ffffff;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul li
+{
+    float: left;
+    height: 40px;
+    margin: auto 4px;
+    padding: 4px 0px;
+    text-align: center;
+    display: block;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul li.Icon1
+{
+    background: transparent;height:40px;width:130px;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul li a
+{
+    display: block; clear: both;
+    float: left;
+    padding-left: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid #161616;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul li a.active
+{
+    background: url(images/divCantonStatisticsListBackground.png) repeat-x scroll 0px 0px transparent;
+}
+
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul li a span
+{
+    display: block;
+    float: left;
+    height: 100%;
+    padding-right: 8px;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul li a span span
+{
+    display: block;
+    float: left;
+    height: 100%;
+    padding-right: 0px;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul li a span span span.Icon
+{
+    display: block;
+    float: left;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    margin: 8px 4px auto 4px;
+    background-color: White;
+    border: 0px solid #c8c8c8;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 14px;
+    font-size: 10pt;
+    font-weight: bold;
+}
+body Div.divCantonStatistics table tr td div.divCantonStatisticsContainer Div.divCantonStatisticsList ul li a.Checked span span span.Icon
+{
+    background: url(images/Standard__jQE_UI_ButtonCheckboxChecked.png) no-repeat scroll 0px 0px #5599cc;
+    border: 1px solid #5599cc;
+}
+body Div.divCantonStatistics table tr td.tdCantonStatisticsToggle
+{
+    width: 24px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background: url(images/tdCantonStatisticsToggleBackground.png) repeat scroll center center transparent;
+}
+body Div.divCantonStatistics table tr td.tdCantonStatisticsToggle div.divCantonStatisticsToggle
+{
+    width: 18px;
+    height: 18px;
+    background: url(images/divCantonStatisticsToggle_Right.png) no-repeat scroll center center transparent;
+}
+body Div.divCantonStatistics table tr td.tdCantonStatisticsToggle.ToLeft div.divCantonStatisticsToggle
+{
+    background: url(images/divCantonStatisticsToggle_Left.png) no-repeat scroll center center transparent;
+}
+
+
+
+
+
+/*****PopUpFrameBox样式******/
+body div#divPopUpFrameBox {
+    position: absolute;
+    z-index: 99;
+    border: 1px solid #414849;
+    background-color: #fff;
+    display: none;
+}
+body div#divPopUpFrameBox .title
+{
+    height: 30px;
+    background-color: #414849;
+    color: #fff;
+}
+
+body div#divPopUpFrameBox div#jQE_Container_Absolute
+{
+    width: 100%;
+    height: 100%;
+}
+body  div#divPopUpFrameBox .title_tit
+{
+    float: left;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #FFFFFF;
+    padding-left: 12px;
+}
+body div#divPopUpFrameBox .title_close
+{
+    background-image: url(images/close.png);
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: right;
+    margin-right: 4px;
+    cursor: pointer;
+}
+body div#divPopUpFrameBox .title_min
+{
+    background-image: url(images/min.png);
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: right;
+    margin-right: 2px;
+    cursor: pointer;
+}
+body div#divPopUpFrameBoxSearch 
+{
+    background-image: url(search.png);
+    height: 96px;
+    width: 82px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    left:10px;
+    bottom:10px;
+    display: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+body Div.divThematicMap
+{
+    position: absolute;
+    z-index: 1000;
+}
+body Div.divThematicMap Div.divThematicMapTitle
+{
+    text-indent: 4px;
+    line-height: 36px;
+    height: 40px;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    color: White;
+    overflow: hidden;
+    background: url(images/divSearchAndConcernContainerBackground.png) repeat-x scroll 0px 0px transparent;
+}
+body Div.divThematicMap Div.divThematicMapFunction
+{
+    line-height: 36px;
+    height: 40px;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    color: White;
+}
+body Div.divThematicMap Div.divThematicMapFunction ul.ulThematicMapFunction
+{
+    float: right;
+    color: #e7e7e7;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    width: 100%;
+    list-style: none;
+    text-align: right;
+}
+body Div.divThematicMap Div.divThematicMapFunction ul.ulThematicMapFunction li
+{
+    float: right;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 8px;
+    padding: 0px 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: url(images/liModuleMenu.png) repeat-x scroll 0px 0px transparent;
+}
+
+.divFixedButton {
+  top: 20px;
+  z-index: 1001;
+  position: absolute;
+  right: 80px;
+  width: 50px;
+}
+
+
+.badge-important
+{
+    background-color: #b94a48;
+}
+.badge
+{
+    padding-right: 9px;
+    padding-left: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px; 
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    white-space: nowrap;
+    vertical-align: baseline; 
+    
+      margin-top: -4px;
+  margin-left: -13px;
+  position: absolute;
+} 

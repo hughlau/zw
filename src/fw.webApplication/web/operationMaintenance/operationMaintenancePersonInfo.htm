@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>个人信息</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script> 
+    <script src="OperationMaintenancePage.js" type="text/javascript"></script>
+    <script src="operationMaintenancePersonInfo.htm.js" type="text/javascript"></script>
+</head>
+<body isneedlogin="1" isloaduserinfo="1">
+    <div id="editform" class="form" style="margin: 0  auto;">
+        <fieldset style="width: 90%; margin: 0 auto; border: solid 1px #aaa; border-width: 1px 1px 1px 1px;">
+            <legend style="margin-left: 32px;"><span>基本信息 </span></legend>
+            <div class="fieldset-body" style="padding: 10px 10px;">
+                <div style="text-align: right; padding: 10px;">
+                    <a id="buttonEdit" class="mini-button" style="margin-right: 20px;display:none;" iconcls="icon-save"
+                        onclick="eidtInfo()">编辑</a> <a id="insertOrUpdate" class="mini-button" style="margin-right: 20px; display:none;"
+                            iconcls="icon-save" onclick="insertOrUpdate">保存</a> <a id="buttonEditCancel" class="mini-button"
+                                style="margin-right: 20px; display: none;" iconcls="icon-cancel" onclick="cancelEdit()">
+                                取消</a>
+                </div>
+                <table class="tableForm" style="width: 100%; margin: 0px auto; table-layout: fixed;">
+                    <tr>
+                        <th style="width: 20%;">
+                            <span class="spanBase MustFilled">*</span>人员名称：
+                        </th>
+                        <td style="width: 30%;">
+                            <input name="operationMaintenancePersonName" class="mini-textbox" selectonfocus="true"
+                                required="true" maxlength="18" style="width: 90%;" />
+                        </td>
+                        <th style="width: 20%; text-align: right;">
+                            照片：
+                        </th>
+                        <td style="width: 30%;" rowspan="5">
+                            <div id="mPhotoUploadInfo" style="width: 113px; height: 139px; border: solid 1px #aaa;">
+                            </div>
+                            <div style="display: none;">
+                                <input id="mPhotoRelativePath" name="mPhotoRelativePath" class="mini-hidden" />
+                                <input id="mPhotoAction" name="mPhotoAction" class="mini-hidden" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span class="spanBase MustFilled">*</span> 手机：
+                        </th>
+                        <td>
+                            <input name="mobilePhone" class="mini-textbox" selectonfocus="true" maxlength="18"
+                                required="true" style="width: 90%;" onvalidation="onMobilePhoneValidation" onvaluechanged="onMobilePhoneValuechanged" />
+                        </td>
+                        <th style="text-align: right;">
+                            尺寸:358x441
+                        </th>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span class="spanBase MustFilled">*</span>邮箱：
+                        </th>
+                        <td>
+                            <input name="eMail" class="mini-textbox" selectonfocus="true" maxlength="18" required="true"
+                                vtype="email" style="width: 90%;" />
+                        </td>
+                        <td style="text-align: right;">
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            邮政编码：
+                        </th>
+                        <td>
+                            <input name="zipCode" class="mini-textbox" selectonfocus="true" maxlength="18" style="width: 90%;"
+                                onvalidation="onPostCodeValidation" />
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            传真：
+                        </th>
+                        <td>
+                            <input name="fax" class="mini-textbox" selectonfocus="true" maxlength="18" style="width: 90%;" />
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            顺序：
+                        </th>
+                        <td>
+                            <input name="ix" class="mini-spinner" selectonfocus="true" minvalue="1" maxvalue="2147483647"
+                                required="true" style="width: 90%;" />
+                        </td>
+                        <th>
+                            <span class="OPUnitCls" style="display: none;">运维单位</span>
+                        </th>
+                        <td>
+                            <input id="operationMaintenanceUnitCode" class="mini-buttonedit OPUnitCls" onclick="onButtonChooseOPUnit"
+                                style="width: 200px; display: none;" name="operationMaintenanceUnitCode" required="true" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span class="spanBase MustFilled">*</span>报警接收类型：
+                        </th>
+                        <td colspan="3">
+                            <!--    <div id="alarmReceiveTypeCode" valuefield="code" textfield="name" class="mini-checkboxlist"
+                                class="mini-checkboxlist" repeatitems="0" repeatlayout="flow" repeatdirection="horizontal"
+                                style="border: 0" required="true">
+                            </div>-->
+                            <div id="alarmReceiveTypeCode" class="mini-checkboxlist" repeatitems="5" repeatlayout="table"
+                                textfield="name" valuefield="code">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            地址：
+                        </th>
+                        <td colspan="3">
+                            <input name="address" class="mini-textbox" selectonfocus="true" maxlength="18" style="width: 96%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            备注：
+                        </th>
+                        <td colspan="3">
+                            <input name="rem" id="rem" class="mini-textarea" selectonfocus="true" maxlength="200"
+                                style="width: 96%; height: 48px;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; margin: 0 auto; border: solid 1px #aaa; border-width: 1px 1px 1px 1px;">
+            <legend style="margin-left: 32px;"><span><a onclick=" var fieldsetBodyJQ = $(this).parent().parent().next(); var fieldsetJQ = fieldsetBodyJQ.parent(); if (fieldsetBodyJQ.is(':hidden')) {fieldsetJQ.css({ 'border-width': '1px 1px 1px 1px' });fieldsetBodyJQ.show();} else {fieldsetJQ.css({ 'border-width': '1px 0px 0px 0px' });fieldsetBodyJQ.hide();}; ">
+                运维设施</a></span></legend>
+            <div class="fieldset-body" style="padding: 10px 10px;">
+                <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+                    <div id="conditionForm" class="form">
+                        <ul id="tree1" class="mini-tree" style="width: 100%; height: 305px;" showtreeicon="true"
+                            textfield="name" onbeforeload="onBeforeTreeLoad" idfield="code" parentfield="pCode"
+                            resultastree="false" onbeforeexpand='onBeforeexpand' showcheckbox="true" showfoldercheckbox="false"
+                            onbeforenodeselect="beforenodeselect">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>

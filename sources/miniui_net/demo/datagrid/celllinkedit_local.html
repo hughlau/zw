@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CellLinkEdit 单元格联动编辑 </title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="../demo.css" rel="stylesheet" type="text/css" />
+
+    
+    <script src="../../scripts/boot.js" type="text/javascript"></script> 
+    
+
+</head>
+<body>
+    <h1>CellLinkEdit 单元格联动编辑</h1>
+    
+    
+    <div id="datagrid1" class="mini-datagrid" style="width:600px;height:280px;" 
+        url="../data/AjaxService.aspx?method=SearchEmployees" 
+        allowCellEdit="true" allowCellSelect="true" multiSelect="true"    
+    
+    >
+        <div property="columns">
+            <div field="loginname" width="120" headerAlign="center" allowSort="true">员工帐号</div>
+               
+            <div field="dept_id" width="150" headerAlign="center" >部门
+                <input property="editor" class="mini-combobox" style="width:100%;" 
+                    valueField="id" textField="name" url="../data/AjaxService.aspx?method=GetDepartments"/>                
+            </div>   
+            <div field="position" width="150" headerAlign="center" >职位
+                <input property="editor" class="mini-combobox" style="width:100%;" 
+                    valueField="id" textField="name"
+                />                
+            </div>   
+        </div>
+    </div>
+    <script type="text/javascript">
+        var Genders = [{ id: 1, text: '男' }, { id: 2, text: '女'}];
+
+        mini.parse();
+
+        var grid = mini.get("datagrid1");
+        grid.load();
+
+        //////////////////////////////////////////////////////////////////////////////////////
+        //本地数据处理联动编辑：性能更好、功能更强
+
+        //部门数据
+        var deptData = [
+            { "name": "市场销售部","id": "sc" },
+            { "name": "人事部","id": "rs" },
+            { "name": "技术部","id": "js" },
+            { "name": "财务部","id": "cw" }
+        ];
+
+        //职位数据
+        var positionData = [
+            { "id": "cw1", "dept_id": "cw", "name": "财务总监" },
+            { "id": "cw2", "dept_id": "cw", "name": "会计" },
+            { "id": "cw3", "dept_id": "cw", "name": "出纳" },
+            { "id": "sc1", "dept_id": "sc", "name": "市场总监" },
+            { "id": "sc2", "dept_id": "sc", "name": "销售经理" },
+            { "id": "sc3", "dept_id": "sc", "name": "销售员" },
+            { "id": "js1", "dept_id": "js", "name": "技术总监" },
+            { "id": "js2", "dept_id": "js", "name": "后台工程师" },
+            { "id": "js3", "dept_id": "js", "name": "前端工程师" },
+            { "id": "js4", "dept_id": "js", "name": "美工" },
+            { "id": "js5", "dept_id": "js", "name": "实习生" },
+            { "id": "rs1", "dept_id": "rs", "name": "人事部经理" },
+            { "id": "rs2", "dept_id": "rs", "name": "人事助理" }
+        ];
+
+        function getTextByValue(data, value, defaultValue, idField, textField) {
+            if (!idField) idField = "id";
+            if (!textField) textField = "text";
+
+            for (var i = 0, l = data.length; i < l; i++) {
+                var o = data[i];
+                if (o[idField] === value) {
+                    return o[textField];
+                }
+            }
+
+            return defaultValue;
+        }
+
+        function getChildData(data, id) {
+            var childData = [];
+
+            for (var i = 0, l = data.length; i < l; i++) {
+                var o = data[i];
+                if (o.dept_id == id) {
+                    childData.push(o);
+                }
+            }
+
+            return childData;
+        }
+
+        grid.on("drawcell", function (e) {
+            if (e.field == "dept_id") {
+                e.cellHtml = getTextByValue(deptData, e.value, null, "id", "name");
+            }
+            if (e.field == "position") {
+                e.cellHtml = getTextByValue(positionData, e.value, null, "id", "name");
+            }
+        });
+
+        //单元格编辑前，找到对应的下拉数据进行填充
+        grid.on("cellbeginedit", function (e) {
+            if (e.field == "position") {
+                var data = getChildData(positionData, e.record.dept_id);
+                e.editor.setData(data);
+            }
+        });
+
+        //在前面列编辑后，清理后面列的数据
+        grid.on("cellcommitedit", function (e) {
+            var grid = e.sender,
+                record = e.record;
+
+            if (e.field == "dept_id") {
+                grid.updateRow(record, { position: ""});
+            }
+        });
+
+    </script>
+
+    <div class="description">
+        <h3>Description</h3>
+        <p>部门和职位联动选择</p>
+    </div>
+</body>
+</html>

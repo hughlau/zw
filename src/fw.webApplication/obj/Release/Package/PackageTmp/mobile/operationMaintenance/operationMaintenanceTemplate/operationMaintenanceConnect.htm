@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../../../resources/scripts/bootMobile.js" type="text/javascript"></script>
+    <script src="../../scripts/page.js" type="text/javascript"></script>
+    <script src="operationMaintenanceConnect.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="divPage" data-role="page">
+        <div id="divHeader" data-role="header" data-position="fixed" data-theme="a">
+            <h1>
+                运维表单
+            </h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div id="divForm">
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            供电情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLeakageProtectorNormal">
+                            漏电保护器是否正常:</label>
+                        <select name="isLeakageProtectorNormal" id="isLeakageProtectorNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isLeakageProtectorSwitchNormal">
+                            漏电保护器开关是否正常:</label>
+                        <select name="isLeakageProtectorSwitchNormal" id="isLeakageProtectorSwitchNormal"
+                            data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isPowerSupplyLineNormal">
+                            供电线路是否正常:</label>
+                        <select name="isPowerSupplyLineNormal" id="isPowerSupplyLineNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true" class="connect">
+                    <li data-role="list-divider">
+                        <h1>
+                            RTU情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isPowerLightNormal">
+                            电源灯是否正常:</label>
+                        <select name="isPowerLightNormal" id="isPowerLightNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="isNetworkLightNormal">
+                            网络灯是否正常:</label>
+                        <select name="isNetworkLightNormal" id="isNetworkLightNormal" data-role="slider">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            零部件更新</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="equipmentPart" class="select">
+                            零部件:</label>
+                        <select name="equipmentPart" id="equipmentPart" >
+                        </select>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="changeNum">
+                            数量:</label>
+                        <input name="changeNum" id="changeNum"></input>
+                    </li>
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">
+                        <h1>
+                            运维情况</h1>
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="operationMaintenanceExplain">
+                            运维工作说明:</label>
+                        <textarea cols="40" rows="20" name="operationMaintenanceExplain" id="operationMaintenanceExplain"
+                            disabled="disabled"></textarea>
+                    </li>
+                </ul>
+                   <ul data-role="listview" data-inset="true">                  
+                    <li class="ui-field-contain">
+                        <label for="operationMaintenanceAddress">
+                            当前位置:</label>
+                        <textarea cols="40" rows="4" name="operationMaintenanceAddress" id="operationMaintenanceAddress"
+                            disabled="disabled"></textarea>
+                    </li>
+                </ul>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-c">
+                        <a id="aSave" data-ajax="false" class="ui-shadow ui-btn ui-corner-all" style="display: none;">
+                            保存</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

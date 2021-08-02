@@ -1,0 +1,562 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>登录-振网监控系统</title>
+    <link href="style/themes/login.aspx.css" rel="stylesheet" type="text/css" />
+    <link href="scripts/jquery.autocomplete/jquery.autocomplete.css" rel="stylesheet"
+          type="text/css" />
+
+    <script src="../resources/scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="../resources/scripts/miniui-3.4/miniui.js" type="text/javascript"></script>
+    <script src="../resources/scripts/js.RSA.js" type="text/javascript"></script>
+    <script src="../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="scripts/jquery.autocomplete/jquery.autocomplete.js" type="text/javascript"></script>
+    <script src="scripts/jquery.placeholder/jquery.placeholder.js" type="text/javascript"></script>
+    <script src="scripts/page.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var loginFailureValidateCount = 3;
+        var thirdLogins = null;
+        var isRememberUserName = false;
+        var isRememberUserNamePassword = false;
+        var isAutoLogin = false;
+        var thirdCodes = null;
+        var cookieTimeout = null;
+        var userName = null;
+        var password = null;
+        var loginFailureCount = 0;
+        var data = null;
+        var index = 0;
+        //页面初始化
+        $.page.pageInit = function () {
+            $("input").placeholder();
+
+
+        };
+
+        var showLoginFailureInfo = function (infoList) {
+            var html = "<ol>";
+            for (var i = 0; i < infoList.length; i++) {
+                html += ("<li style='color:#FF0000;'>" + infoList[i] + "</li>");  //modify by lxg  密码错了提示红色字体
+            };
+            html += "</ol>";
+            $.page.idJQ.loginFailureInfo.html(html).show();
+            //modify by lxg  密码错了也可以多次输入
+            //clearTimeout(window.showLoginFailureInfoTimeout);
+            //window.showLoginFailureInfoTimeout = setTimeout(function () {
+            //    $.page.idJQ.loginFailureInfo.fadeOut(200);
+            //}, 5000);
+        };
+
+        var checkLoginFailureCount = function (isLoginFailure) {
+            loginFailureCount = fw.fwCookie.FWCookieHelper("login_loginFailureCount");
+            if (fw.fwObject.FWObjectHelper.hasValue(loginFailureCount)) {
+                loginFailureCount = fw.fwObject.FWObjectHelper.toNumber(loginFailureCount);
+            };
+            if (!fw.fwObject.FWObjectHelper.hasValue(loginFailureCount)) {
+                loginFailureCount = 0;
+            };
+            //modify by lxg  密码错了也可以多次输入
+            //if (isLoginFailure) {
+            //    loginFailureCount++;
+            //    fw.fwCookie.FWCookieHelper("login_loginFailureCount", loginFailureCount, { expires: 1 });
+            //};
+            if (loginFailureCount >= loginFailureValidateCount) {
+                $.page.idJQ.divValidateCode.show();
+                refreshValidateCode();
+            };
+            //$.page.idJQ.liInfo.html(loginFailureCount);
+        };
+
+        //页面加载
+        $.page.pageLoad = function () {
+            var f1 = function () {
+                $('.account_arrow').css('display', 'block');
+                $('.arrow_img').css('display', 'none');
+                $('.account_box').css('display', 'none');
+                $('.arrow_infor').css('display', 'block');
+                $('.account_code').css('display', 'block');
+                $('#loginQuickResponseCodeInfo').css('display', 'block');
+            };
+            var f2 = function () {
+                $.page.idJQ.textUserName.focus();
+                $('.account_arrow').css('display', 'block');
+                $('.arrow_infor').css('display', 'none');
+                $('.account_code').css('display', 'none');
+                $('.arrow_img').css('display', 'block');
+                $('.account_box').css('display', 'block');
+                $('#loginQuickResponseCodeInfo').css('display', 'none');
+            };
+            //#region 登陆方式切换
+            $('.account_arrow').click(function () {
+                if (index == 0) {
+                    f1();
+                    index = 1;
+                } else {
+                    f2();
+                    index = 0;
+
+                }
+            });
+            //#endregion
+
+            $(document).keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $.page.idJQ.buttonLogin.click();
+                }
+            });
+            initPage();
+        };
+
+
+
+        function checkTicket(ticket, cookieTimeout) {
+            var data = {
+                ticket: ticket
+            };
+            $.page.ajax($.page.getAjaxSettings({
+                serviceType: "crossDomainCall"
+                , serviceName: "sysManage"
+                , methodName: "getUserLoginInfo"
+                , data: data
+                , beforeSend: function () {
+                    $.page.idJQ.buttonLogin.attr("disabled", "disabled");
+                }
+                , success: function (resultData) {
+                    //判断登录成功
+                    if (resultData.status == fw.fwData.FWResultStatus.Success && resultData.data != null && resultData.data.isLogin) {
+                        fw.fwCookie.FWCookieHelper("login_role", resultData.data.userRoleList[0].mRoleCode);
+
+                        var goEntry = function (userRole) {
+                            var data = fw.fwJson.FWJsonHelper.deserializeObject(userRole.mEntryParamsJson);
+                            if (data == null) { data = {}; };
+                            data.ticket = resultData.data.ticket;
+                            var url = fw.fwUrl.FWUrlHelper.addParams(fw.fwUrl.FWUrlHelper.getAbsoluteUrl(userRole.mEntry, $.page.webSiteRootUrl), data);
+                            //fw.fwShell.FWShellHelper.login(ticket, userRole.mRoleCode);
+                            window.location.replace(url);
+                        };
+                        if (fw.fwObject.FWObjectHelper.hasValue($.page.params.referrerURL)) {
+                            goEntry({
+                                mEntry: $.page.params.referrerURL
+                            });
+                        } else {
+                            if (fw.fwObject.FWObjectHelper.hasValue(resultData.data.userRoleList)) {
+                                //config role's entry
+                                resultData.data.userRoleList = $.Enumerable.From(resultData.data.userRoleList).Where("$.mEntry!=''").ToArray();
+                                if (resultData.data.userRoleList.length > 1) {
+                                    $.page.idJQ.divLogin.hide();
+                                    $.page.idJQ.divUserRole.show();
+                                    $.page.idJQ.userRoleList.empty();
+                                    var Seconds = 3;
+                                    var setIntervalFunction = setInterval(function () {
+                                        if (Seconds > 0) {
+                                            $.page.idJQ.divDefaultSelectUserRole.html(" " + (Seconds--) + " 秒后自动进入角色 " + resultData.data.userRoleList[0].mRoleName);
+                                        } else {
+                                            clearInterval(setIntervalFunction);
+                                            goEntry(resultData.data.userRoleList[0]);
+                                        };
+                                    }, 1000);
+                                    for (var i = 0; i < resultData.data.userRoleList.length; i++) {
+                                        var entity = resultData.data.userRoleList[i];
+                                        var liJQ = $("<li></li>").appendTo($.page.idJQ.userRoleList);
+                                        $("<div class=\"divRole\">" + entity.mRoleName + "</div>").appendTo(liJQ).data("entity", entity).bind("click", function () {
+                                            clearInterval(setIntervalFunction);
+                                            var entity = $(this).data("entity");
+                                            goEntry(entity);
+                                        }).bind("mouseover", function () {
+                                            clearInterval(setIntervalFunction);
+                                            $.page.idJQ.divDefaultSelectUserRole.html("");
+                                        });
+                                    };
+                                } else {
+                                    goEntry(resultData.data.userRoleList[0]);
+                                };
+                            } else {
+                                showLoginFailureInfo(["该用户没有主页访问权限！"]);
+                            };
+                        };
+                    } else {
+                        isAutoLogin = false;
+                        isRememberUserNamePassword = false;
+                        showLoginFailureInfo(resultData.infoList);
+                        //$.page.idJQ.imgValidateCode.click();
+                        checkLoginFailureCount(true);
+                    };
+                }
+                , complete: function () {
+                    $.page.idJQ.buttonLogin.removeAttr("disabled");
+                }
+            }));
+        };
+
+        function initPage() {
+            $.page.bodyJQ.show();
+            checkLoginFailureCount(false);
+
+            $.page.idJQ.aValidateCodeChange.add($.page.idJQ.imgValidateCode).bind('click', function () {
+                refreshValidateCode();
+            });
+
+            var initLoginForm = function () {
+                var loginFormJQ = $(".account_box");
+                var inputJQ = $("input", loginFormJQ);
+                var valueChangeFunction = function (event) {
+                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                    if (event.type == "keydown" && keycode == '13' && $(".autoComplete").is(":hidden")) {
+                        //                        var target = event.target || event.srcElment; //srcElment针对IE
+                        //                        alert(target.id);
+                        $.page.idJQ.buttonLogin.click();
+                    };
+                };
+                inputJQ.bind("keydown", valueChangeFunction).bind("keyup", valueChangeFunction).bind("keypress", valueChangeFunction).bind("change", valueChangeFunction).bind("focus", valueChangeFunction).bind("blur", valueChangeFunction).blur();
+            };
+            initLoginForm();
+
+            $.page.idJQ.buttonLogin.bind("click", function () {
+                var validateCode = $.page.idJQ.textValidateCode.val();
+                userName = $.page.idJQ.textUserName.val();
+                password = $.page.idJQ.textPassword.val();
+                var infoList = [];
+                if (!fw.fwObject.FWObjectHelper.hasValue(userName)) {
+                    infoList.push("用户名不能为空！");
+                };
+                if ((!isAutoLogin || !isRememberUserNamePassword) && !fw.fwObject.FWObjectHelper.hasValue(password)) {
+                    infoList.push("密码不能为空！");
+                };
+                if (loginFailureCount >= loginFailureValidateCount && !fw.fwObject.FWObjectHelper.hasValue(validateCode)) {
+                    infoList.push("验证码不能为空！");
+                };
+
+                if (infoList.length > 0) {
+                    showLoginFailureInfo(infoList);
+                    return;
+                };
+                data = {
+                    validateCodeImageFullName: $.page.idJQ.imgValidateCode.data("validateCodeImageFullName")
+                    , validateCode: validateCode
+                    , userName: userName
+                    , password: (isAutoLogin || isRememberUserNamePassword) ? password : FWRSAHelper.encrypt(password)
+                };
+
+                //登陆
+                $.page.ajax($.page.getAjaxSettings({
+                    serviceType: "crossDomainCall",
+                    serviceName: "userLogin",
+                    methodName: loginFailureCount >= loginFailureValidateCount ? "thirdLoginByValidateCode" : "thirdLogin",
+                    data: data,
+                    beforeSend: function () {
+                        $.page.idJQ.buttonLogin.attr("disabled", "disabled");
+                    },
+                    success: function (resultData) {
+                        //判断登录成功
+                        if (resultData.status == fw.fwData.FWResultStatus.Success && resultData.data != null && resultData.data.isLogin) {
+                            cookieTimeout = 7; //默认保存7天;
+                            if (fw.fwObject.FWObjectHelper.hasValue(cookieTimeout)) {
+                                cookieTimeout = fw.fwObject.FWObjectHelper.toNumber(cookieTimeout);
+                            };
+                            var cookieProperties = {};
+                            if (fw.fwObject.FWObjectHelper.hasValue(cookieTimeout)) {
+                                cookieProperties.expires = cookieTimeout;
+                                fw.fwCookie.FWCookieHelper("login_cookieTimeout", cookieTimeout, cookieProperties);
+                            };
+                            isAutoLogin = $.page.idJQ.checkboxIsAutoLogin.is(':checked');
+                            fw.fwCookie.FWCookieHelper("login_isAutoLogin", isAutoLogin ? 1 : 0, cookieProperties);
+                            isRememberUserNamePassword = isAutoLogin ? isAutoLogin : $.page.idJQ.checkboxIsRememberUserNamePassword.is(':checked');
+                            fw.fwCookie.FWCookieHelper("login_isRememberUserNamePassword", isRememberUserNamePassword ? 1 : 0, cookieProperties);
+                            isRememberUserName = isRememberUserNamePassword ? isRememberUserNamePassword : $.page.idJQ.checkboxIsRememberUserName.is(':checked');
+                            fw.fwCookie.FWCookieHelper("login_isRememberUserName", isRememberUserName ? 1 : 0, cookieProperties);
+
+                            if (isRememberUserNamePassword) {
+                                fw.fwCookie.FWCookieHelper("login_userName", data.userName, cookieProperties);
+                                fw.fwCookie.FWCookieHelper("login_password", data.password, cookieProperties);
+                            } else {
+                                fw.fwCookie.FWCookieHelper("login_password", null);
+                                if (isRememberUserName) {
+                                    fw.fwCookie.FWCookieHelper("login_userName", data.userName, cookieProperties);
+                                } else {
+                                    fw.fwCookie.FWCookieHelper("login_userName", null);
+                                };
+                            };
+                            fw.fwCookie.FWCookieHelper("login_loginFailureCount", 0, { expires: 1 });
+
+                            checkTicket(resultData.data.ticket, cookieTimeout);
+                            //页面跳转
+                            //                            var datainfo = {
+                            //                                ticket: resultData.data.ticket
+                            //                            };
+                            //                            var url = fw.fwUrl.FWUrlHelper.addParams(fw.fwUrl.FWUrlHelper.getAbsoluteUrl("web/maps/Map.htm", $.page.webSiteRootUrl), datainfo);
+                            //                            window.location.replace(url);
+                        } else {
+                            isAutoLogin = false;
+                            isRememberUserNamePassword = false;
+                            showLoginFailureInfo(resultData.infoList);
+                            //$.page.idJQ.imgValidateCode.click();
+                            checkLoginFailureCount(true);
+                        };
+                    },
+                    complete: function () {
+                        $.page.idJQ.buttonLogin.removeAttr("disabled");
+                    }
+                }));
+            });
+
+            var loginByQuickResponseCodeFunction = function () {
+                if (window.loginByQuickResponseCode) {
+                    $.page.ajax($.page.getAjaxSettings({
+                        serviceType: "crossDomainCall"
+                        , serviceName: "userLogin"
+                        , methodName: "loginByQuickResponseCode"
+                        , data: { quickResponseCodeImageFullName: $.page.idJQ.imgQuickResponseCode.data("quickResponseCodeImageFullName") }
+                        , success: function (resultData) {
+                            //判断登录成功
+                            if (resultData.status == fw.fwData.FWResultStatus.Success && resultData.data != null && resultData.data.isLogin) {
+                                checkTicket(resultData.data.ticket);
+                            } else {
+                                if (resultData.infoList.length > 0) {
+                                    //$.page.idJQ.loginQuickResponseCodeInfo.html(resultData.infoList[0]).show();
+                                } else {
+                                    //$.page.idJQ.loginQuickResponseCodeInfo.hide();
+                                };
+                            };
+                            setTimeout(loginByQuickResponseCodeFunction, 1000);
+                        }
+                    }));
+                } else {
+                    setTimeout(loginByQuickResponseCodeFunction, 1000);
+                };
+            };
+            loginByQuickResponseCodeFunction();
+
+            if (fw.fwObject.FWObjectHelper.hasValue(thirdLogins)) {
+                var thirdLoginArray = [];
+                var sAA = thirdLogins.split(";");
+                for (var i = 0; i < sAA.length; i++) {
+                    if (fw.fwObject.FWObjectHelper.hasValue(sAA[i])) {
+                        var sA = sAA[i].split(",");
+                        if (sA.length > 0) {
+                            if (fw.fwObject.FWObjectHelper.hasValue(sA[0])) {
+                                thirdLoginArray.push({
+                                    value: sA[0]
+                                    , text: !!sA[1] ? sA[1] : sA[0]
+                                });
+                            };
+                        };
+                    };
+                };
+                if (thirdLoginArray.length > 0) {
+                    thirdCodes = thirdLoginArray;
+                };
+            };
+
+            isAutoLogin = fw.fwCookie.FWCookieHelper("login_isAutoLogin");
+            if (fw.fwObject.FWObjectHelper.hasValue(isAutoLogin)) {
+                isAutoLogin = fw.fwObject.FWObjectHelper.toBoolean(isAutoLogin);
+            };
+            if (!fw.fwObject.FWObjectHelper.hasValue(isAutoLogin)) {
+                isAutoLogin = false;
+            };
+            isRememberUserNamePassword = fw.fwCookie.FWCookieHelper("login_isRememberUserNamePassword");
+            if (fw.fwObject.FWObjectHelper.hasValue(isRememberUserNamePassword)) {
+                isRememberUserNamePassword = fw.fwObject.FWObjectHelper.toBoolean(isRememberUserNamePassword);
+            };
+            if (!fw.fwObject.FWObjectHelper.hasValue(isRememberUserNamePassword)) {
+                isRememberUserNamePassword = false;
+            };
+            isRememberUserName = fw.fwCookie.FWCookieHelper("login_isRememberUserName");
+            if (fw.fwObject.FWObjectHelper.hasValue(isRememberUserName)) {
+                isRememberUserName = fw.fwObject.FWObjectHelper.toBoolean(isRememberUserName);
+            };
+            if (!fw.fwObject.FWObjectHelper.hasValue(isRememberUserName)) {
+                isRememberUserName = true;
+            };
+            userName = fw.fwCookie.FWCookieHelper("login_userName");
+            password = fw.fwCookie.FWCookieHelper("login_password");
+
+            if (isAutoLogin) {
+                $.page.idJQ.checkboxIsAutoLogin.attr("checked", "checked");
+            } else {
+                $.page.idJQ.checkboxIsAutoLogin.removeAttr("checked");
+            };
+            if (isRememberUserNamePassword) {
+                $.page.idJQ.checkboxIsRememberUserNamePassword.attr("checked", "checked");
+            } else {
+                $.page.idJQ.checkboxIsRememberUserNamePassword.removeAttr("checked");
+            };
+            if (isRememberUserName) {
+                $.page.idJQ.checkboxIsRememberUserName.attr("checked", "checked");
+            } else {
+                $.page.idJQ.checkboxIsRememberUserName.removeAttr("checked");
+            };
+            $.page.idJQ.textPassword.val(password).blur();
+            $.page.idJQ.textUserName.val(userName).focus();
+
+            $("#aAnalogScanning").bind("click", function () {
+                $.page.ajax($.page.getAjaxSettings({
+                    serviceType: "crossDomainCall"
+                    , serviceName: "userLogin"
+                    , methodName: "bindQuickResponseCode"
+                    , data: {
+                        quickResponseCodeImageFullName: $.page.idJQ.imgQuickResponseCode.data("quickResponseCodeImageFullName")
+                        , deviceTypeCode: "1010"
+                        , deviceCode: FWRSAHelper.encrypt("1010")
+                        , isCanLogin: 1
+                    }
+                    , success: function (resultData) {
+                        //判断登录成功
+                        if (resultData.status == fw.fwData.FWResultStatus.Success && resultData.data) {
+                            $.page.idJQ.loginQuickResponseCodeInfo.html("扫描成功！");
+                        };
+                    }
+                }));
+            });
+
+        };
+
+
+    </script>
+</head>
+<body isneedlogin="0" style="display: none;">
+    <div>
+        <!-- login_header Start-->
+        <div class="login_header">
+            <div class="wrap clear">
+                <div class="header_left">
+                    <h1 class="header_title">
+                        振网监控系统
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <!-- login_header End-->
+        <!-- main Start-->
+        <div class="main">
+            <div class="login_account">
+                <div id="divLogin"  class="account_con">
+                    <span class="account_arrow"><a class="arrow_img" href="javascript:void(0)"></a><a
+                        class="arrow_infor" href="javascript:void(0)" style="display: none;"></a></span>
+                    <input name="type" id="type" type="hidden" value="0" />
+                    <div class="account_box">
+                        <h3 class="account_title">
+                            <span>账号登录</span></h3>
+                        <ul class="account_list" id="form_inputs">
+                            <li>
+                                <div class="account_inner">
+                                    <span class="account_email"></span>
+                                    <input type="text" name="textUserName" id="textUserName" class="text" style="width: 312px;"
+                                        placeholder="用户名" autocomplete="off" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="account_inner">
+                                    <span class="account_password"></span>
+                                    <input type="password" class="text" name="textPassword" id="textPassword" style="width: 312px;"
+                                        placeholder="密码" />
+                                    <p class="account_letter" id="capsLock_tips" style="display: none;">
+                                        键盘大写锁定被打开，请注意大小写</p>
+                                </div>
+                                <p class="account_site">
+                                    <div id="loginFailureInfo">
+                                    </div>
+                                </p>
+                            </li>
+                            <li id="divValidateCode" style="display: none;">
+                                <div class="account_inner">
+                                    <span class="account_check"></span>
+                                    <input type="text" id="textValidateCode" name="textValidateCode" class="text" placeholder="验证码"
+                                        style="width: 160px;" />
+                                    <strong class="account_icon" style="display: none;"></strong>
+                                </div>
+                                <span class="account_img">
+                                    <img id="imgValidateCode" alt="验证码" src="" width="96" height="45" /></span>
+                                <a id="aValidateCodeChange" class="account_else" href="javascript:void(0)">换一换</a>
+                            </li>
+                        </ul>
+                        <p class="account_txt">
+                            <!--modify by lxg 取消忘记密码功能-->
+                            <!--<a href="javascript:void(0)">忘记密码？</a>-->
+                            <label class="checkbox">
+                                <input type="checkbox" id="checkboxIsRememberUserName"/>
+                                <span>记住用户名</span>
+                            </label>
+                            &nbsp;
+                            <label class="checkbox" style="display: none;">
+                                <input type="checkbox" id="checkboxIsRememberUserNamePassword"/>
+                                <span>记住用户名密码</span>
+                            </label>
+                            &nbsp;
+                            <label class="checkbox" style="display: none;">
+                                <input type="checkbox" id="checkboxIsAutoLogin"/>
+                                <span>下次自动登录</span>
+                            </label>
+                        </p>
+                        <input type="button" id="buttonLogin" class="login_btn" value="立即登录" />
+                    </div>
+                    <div class="account_code" style="display: none;">
+                        <h3 class="account_title">
+                            <span>扫码登录</span></h3>
+                        <div class="code_con">
+                            <div class="code_tips">
+                                扫码<a href="javascript:void(0)">下载Android客户端</a></div>
+                            <span class="code_img" style="width: 165px; height: 165px;">
+                                <img width="165" height="165" id="imgQuickResponseCode" alt="二维码" src="style/themes/images/wushui.png" /></span>
+                            <p class="code_change">
+                                <a href="javascript:void(0)" onclick="">刷新一下</a></p>
+                        </div>
+                        <div style="text-align: center; margin-top: 8px; display: none;">
+                            <a id="aAnalogScanning" style="color: Blue; cursor: pointer;">模拟扫描</a>
+                        </div>
+                    </div>
+                    <div class="account_share" style="text-align: center;">
+                        <span id="loginQuickResponseCodeInfo" style="display: none;"></span>
+                    </div>
+                </div>
+                <div id="divUserRole"  class="account_con" style=" display: none; height: 347px;">
+                    <div class="divLeft">
+                        <div class="divTabs">
+                            <div class="tabs">
+                                <ul>
+                                    <li class="selected" style="cursor: auto;">请选择登录角色</li>
+                                </ul>
+                            </div>
+                            <div class="tabsContent">
+                                <div class="tabContent" style="display: block;">
+                                    <div class="divForm">
+                                        <div style="margin-top: 36px;">
+                                            <ul id="userRoleList">
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div id="divDefaultSelectUserRole">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="account_banner">
+                    <img src="style/themes/images/cegai.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <!-- main End-->
+        <!-- login_bottom Start-->
+        <div class="login_bottom">
+            <div class="login_bottom_box">
+                <div class="login_bottom_links" style="display: none;">
+                    <a href="#" target="_blank">友情链接</a> |<a href="#" target="_blank">友情链接</a> |<a href="#"
+                        target="_blank">友情链接</a> |<a href="#" target="_blank">友情链接</a> |<a href="#" target="_blank">友情链接</a>
+                    |<a href="#" target="_blank">友情链接</a> |<a href="#" target="_blank">友情链接</a> |<a href="#"
+                        target="_blank">友情链接</a> |<a href="#" target="_blank">友情链接</a>
+                </div>
+                <div class="login_bottom_copyright"><br />
+                    推荐使用1024*768分辨率，并使用chrome或IE9.0或以上版本浏览器
+                </div>
+            </div>
+        </div>
+        <!-- login_bottom End-->
+    </div>
+</body>
+</html>

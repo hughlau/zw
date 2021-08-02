@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>靖江市农村污水处理设施远程监控系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="Styles/Page_Custom.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/jQueryExtension/TreeView/jQueryExtension_TreeView.css" rel="stylesheet"
+    type="text/css" />
+    <link href="Styles/jQueryExtension/Scroll/jQueryExtension_TouchScroll.css" rel="stylesheet"
+    type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="scripts/jQueryExtension/jQueryExtension.js" type="text/javascript"></script>
+    <script src="scripts/jQueryExtension/ImagePlayer/jQueryExtension.ImagePlayer.js"
+    type="text/javascript"></script>
+    <script src="scripts/jQueryExtension/Speaker/jQueryExtension.Speaker.js" type="text/javascript"></script>
+    <script src="scripts/jQueryExtension/Scroll/jQueryExtension.TouchScroll.js" type="text/javascript"></script>
+    <script src="scripts/jQueryExtension/TreeView/jQueryExtension.TreeView.js" type="text/javascript"></script>
+    <script src="../scripts/highcharts/highcharts.js" type="text/javascript"></script>
+    <!-- ArcGIS -->
+    <script src="../../resources/scripts/bootMap.js" type="text/javascript"></script>
+    <script src="map.htm.js" type="text/javascript"></script>
+    <script src="map.htm.speark.js" type="text/javascript"></script>
+    <script src="map.htm.Business_CLSSControl.js" type="text/javascript"></script>
+    <script src="map.htm.SliderControlBusinessEvent.js.js" type="text/javascript"></script>
+    <script src="map.htm.Data.js" type="text/javascript"></script>
+    <style>
+    body,html{
+        width: 100%;
+        height: 100%;
+    }
+
+    
+
+    .highchartTitle
+    {
+    }
+    .highchartTitle:hover
+    {
+        cursor: pointer;
+        color: #5797d5;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .mini-panel-border
+    {
+        border-color: #5797d6;
+    }
+    .mini-buttonedit-border
+    {
+        height: 30px;
+    }
+    .mini-buttonedit-input
+    {
+        height: 30px;
+    }
+    .mini-buttonedit-border
+    {
+        border-color:#5797d6;
+    }
+    .divcss5
+    {
+      position:absolute;
+      width:100px;
+      height:100px;
+      left:43%;
+      top:50%; 
+      margin-left:0px;
+      margin-top:0px;
+  }
+  #divMenuSystem .BodyContentImageFontLeft .BodyContentCheck
+  {
+      display: inline-block;
+      height: 40px;
+      width: 90px;
+      background-color: #3cb5f7;
+      margin-top: 15px;
+      line-height: 40px;
+      border-radius: 5px;
+  }
+  .BodyContentHeight
+  {
+     float: left;
+     width: 15%;
+ }        
+ .BodyMenuContentLiDiv
+ {
+    font-size:9.5pt;
+
+    height: 48px;
+    line-height: 48px;
+}
+/*底部控制栏*/
+.divConditionExtension>span
+{
+    color: #32485d;
+}
+
+#divArcGISMap_zoom_slider
+{
+    border-width: 0px ;
+}
+
+/*ie浏览器顶部换行问题*/
+.BodyMenu {
+    overflow-y: hidden;
+}
+
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/  
+select::-ms-expand { display: none; } 
+</style>
+<!--    <script type="text/javascript">
+        function myrefresh() {
+            window.location.reload();
+        }
+        setTimeout('myrefresh()', 60000*5); //指定5分钟刷新一次 
+    </script> -->
+</head>
+<body scroll="no" style="overflow: hidden;" isneedloaduserinfo="1" isneedlogin="0">
+    <div id="divLogo" class="divLogo">
+        <div class="divLogoBackground" style="height: 70px;">
+            <!-- 蓝色背景顶部  王洋添加-->
+            <div class="Menu classDefaultHidden1" id="divMenuSystem">
+            </div>   
+            <div class="Menu classDefaultHidden1" id="divMenuSystem_1" >
+            </div>
+            <!-- 注销 -->
+            <div id="divQuit" class="divQuit" title="注销">
+        </div>
+                <!-- style="position: absolute;
+            float: right; width: 200px; height: 542px; top: 80px; right: 0; z-index: 1000; -->
+        </div> 
+        <div id="SystemTitle" class="divLogoTitle">
+                <div class="divLogoPic"></div><div class="divTitleText">靖江市农村污水处理设施远程监控系统</div>
+
+            </div>
+    </div>    
+    <div class='divMiddleDown'>
+        <div class="divMiddleDownContent" >
+            <div class="divMiddleDownBorder">
+        <div class="divLogoEnvironmentalProtection" style="display:     none;">
+        </div>
+        <div id="divArcGISExtentControl" class="    divArcGISExtentControl" style="display: none;">
+        </div>
+        <!-- 图层以及天地图 -->
+        <div class="smallToolsControls">
+            <div class="smallToolsControlsBefore"></div>
+            <div class="bgplus" style='width: 36px; height: 36px;'></div>
+            <div class="bgmin"  style='width: 36px; height: 36px;'></div>
+            <div id="divArcGISToolsControl" class="  divArcGISToolsControl">
+            </div>
+            <div id="divArcGISLayersControl" class=" divArcGISLayersControl">
+            </div>
+            <!-- 主页图标 -->
+        <div id="fullExtent" class="fullExtent" title='刷新'>
+            <!-- <img src="../../resources/scripts/fw.map/themes/blue/images/fullExtent.png" alt="全图" title="全图" style="float: left; margin-top: 5px; margin-left: 5px;" /> -->
+        </div>
+        <div id="divSearchAllPoints" style="position: absolute; left: 22px; top: 194px; width: 230px;">
+            <div id="divSearchLogo" class="divSearchLogo" title="搜索">
+                <div id="divSearchImage" class="divSearchImage" name="隐藏">
+                </div>
+            </div>
+            <div id="SearchContent" style="display: none; width: 198px; height: 32px; float: right;">
+                <input id="autocompleteArcgisSearch" class="mini-autocomplete" style="width: 198px;
+                opacity: 0.9; height: 32px;" valuefield="monitorSiteCode" textfield="monitorSiteName" enterquery="true"
+                popuploadingtext="加载中..." popupemptytext='没有任何匹配项' emptytext="请输入净化槽编码..." selectonfocus="true" />
+            </div>
+        </div>
+        <div class="smallToolsControlsAfter"></div>
+        <div id="divHomeInit" class="divHomeInit" title="项目列表">
+        </div>
+        </div>
+
+
+        <div id="divModuleToggle" class="divFunctionToggle" title="菜单导航" style="display: block;">
+        </div>
+        <div id="divDataSynchronizationStatusToggle" class="divFunctionToggle">
+        </div>
+        
+
+        
+        
+        <div id="divArcGIS">
+            <div id="divArcGISMap" class="claro">
+            </div>
+        </div>
+        <div class="divFixedButton" style="display: none;">
+            <img alt="报警列表" class="classLink" src="../../resources/scripts/fw.map/themes/blue/images/zhong_h.png"
+            onclick=" showAlarmList() ">
+            <span class="badge badge-important">4</span>
+        </div>
+
+        <div id="divModule">
+        </div>
+        <div id="divModuleList">
+        </div>
+        <!-- <div id="divSearchAndConcern"> </div>-->                   
+        <div id="divMouseFollow">
+        </div>
+        <div id="divDataSynchronizationStatus" style="display: none;">
+        </div>
+        <div id="divDataSynchronizationStatusIframe">
+            <iframe id="iframeDataSynchronizationStatus" name="iframeDataSynchronizationStatus"
+            frameborder="0" width="100%" height="100%" ></iframe>
+        </div>
+        <div id="divOpenMenuFunctionDevelop" class="divOpenMenuFunctionDevelop">
+        </div>
+        <div id="divMenuFunctionDevelopWindow" class="divMenuFunctionDevelopWindow">
+        </div>
+        <div class="MenuLeft classDefaultHidden" id="divMenuLeft" style="position: absolute;
+        float: right; right: 195px; top: 136px; z-index: 1000; cursor: pointer;">
+    </div>
+
+                    <!-- 2017年9月25日 王洋注释 移动至115行<div class="Menu classDefaultHidden1" id="divMenuSystem" style="position: absolute; float: right; width: 200px; height: 542px; top: 80px; right: 0; z-index: 1000;">
+                    </div> -->
+
+                    <!--  style="position: absolute; float: right; width: 200px; height: 542px; top: 80px; right: 0; z-index: 1000; -->
+                    <div id="divArcGISCarRoute" class="divArcGISCarRoute" style="display: none;">
+                    </div>
+                    <div id="divArcGISDrawControl" class="divArcGISDrawControl" style="display: none;">
+                    </div>
+                    <div id="divArcGISLocateControl" class="divArcGISLocateControl" style="display: none;">
+                    </div>
+                    <div id="divArcGISSearch" class="divArcGISSearchPollutantCanton">
+                    </div>
+                    
+                       <!--  <div id="divLegendControl" class="legend" style="width: 180px !important; display: none;"> -->
+                    </div>
+                    <div id="divPopUpFrameBox" class="divPopUpFrameBox">
+                    </div>
+                    <div id="divPopUpFrameBoxSearch" title='点击显示列表'>
+                    </div>
+                    <div id="amount" class="legend">
+                    </div>
+                    <div id="slider-range">
+                        <div id="process" class="divcss5" style="display:none">
+                           <img src="../style/themes/images/timg.gif" style="width:100px;height:100px"/>
+                       </div>
+                   </div>
+               </div>
+               <div id="divSliderControl">
+                    </div>
+        </div>
+    </div>
+ <script type="text/javascript">
+
+$('.divMiddleDown').height($(window).height()-$(".divMiddleDown").position().top)
+$('.divMiddleDown').width($(window).width())
+$('.divMiddleDownContent').height($('.divMiddleDown').height()-2*$('.divMiddleDownContent').position().top)
+$('.divMiddleDownContent').width($('.divMiddleDown').width()-2*$('.divMiddleDownContent').position().left)
+$('.divMiddleDownBorder').height($('.divMiddleDownContent').height()-2*$('.divMiddleDownBorder').position().top)
+$('.divMiddleDownBorder').width($('.divMiddleDownContent').width()-2*$('.divMiddleDownBorder').position().left)
+
+
+
+  $("#divSearchImage").bind("click", function () {
+      if ($("#divSearchImage").attr("name") == "搜索") {
+          $("#divSearchImage").attr("name", "隐藏");
+          $("#SearchContent").hide();
+          $(".divSearchLogo").css({ "border-bottom-right-radius": "3px", "border-top-right-radius": "3px" });
+      } else {
+          $("#divSearchImage").attr("name", "搜索");
+          $("#SearchContent").show();
+          $(".divSearchLogo").css({ "border-bottom-right-radius": 0, "border-top-right-radius": 0 });
+      };
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>平台管理</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="main.htm.js" type="text/javascript"></script>
+    <style type="text/css">
+        html, body
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .header
+        {
+            background: url(../sysManage/header.gif) repeat-x;
+        }
+        .header div
+        {
+            font-family: 'Trebuchet MS' ,Arial,sans-serif;
+            font-size: 25px;
+            line-height: 60px;
+            padding-left: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        body .header .topNav
+        {
+            position: absolute;
+            right: 8px;
+            top: 10px;
+            font-size: 12px;
+            line-height: 25px;
+        }
+        .header .topNav a
+        {
+            text-decoration: none;
+            color: #222;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 25px;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+        .header .topNav a:hover
+        {
+            text-decoration: underline;
+            color: Blue;
+        }
+        .mini-layout-region-south img
+        {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body isloaduserinfo="1">
+    <div class="mini-layout" style="width: 100%; height: 100%;">
+        <div title="north" region="north" class="header" bodystyle="overflow:hidden;" height="56"
+            showheader="false" showsplit="false">
+            <div>
+                平台管理</div>
+            <div class="topNav">
+                <a>登录用户：</a><a id="aUserInfo"></a>
+            </div>
+        </div>
+        <div id="layout1" region="west" title="平台菜单" showheader="true" expanded="true" bodystyle="padding-left:1px;"
+            showspliticon="true" width="200" minwidth="100" maxwidth="350">
+            <ul id="tree1" class="mini-tree" style="width: 100%; height: 100%;" showtreeicon="true"
+                textfield="mMenuName" idfield="mMenuCode" parentfield="mPMenuCode" resultastree="true"
+                allowdrag="true" allowdrop="true" expandonload="true" onnodeclick="onNodeClick"
+                onendedit="onEndEdit" asyncload="false">
+            </ul>
+        </div>
+        <div title="center" region="center" style="border: 0;">
+            <div id="mainTabs" class="mini-tabs" activeindex="0" contextmenu="#contextMenu" bodystyle="padding:0px 0px;"
+                style="width: 100%; height: 100%;" onactivechanged="onTabsActiveChanged">
+                 
+            </div>
+        </div>
+    </div>
+    <ul id="contextMenu" class="mini-contextmenu" onbeforeopen="onBeforeOpen">
+        <li name="Refresh" onclick="onItemClick">刷新</li>
+        <li class="separator"></li>
+        <li name="Close" onclick="onItemClick">关闭</li>
+        <li name="CloseAll" onclick="onItemClick">全部关闭</li>
+        <li name="CloseAllWithoutCurrent" onclick="onItemClick">除此之外全部关闭</li>
+        <li class="separator"></li>
+        <li name="CloseLeftWithoutCurrent" onclick="onItemClick">关闭左侧标签</li>
+        <li name="CloseRightWithoutCurrent" onclick="onItemClick">关闭右侧标签</li>
+        <li class="separator"></li>
+        <li name="Cancel" onclick="onItemClick">取消</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>系统全局配置</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="sysConfig.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a id="insertOrUpdate" class="mini-button" iconcls="icon-edit" onclick="insertOrUpdate();">
+                            保存</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; " borderstyle="border-width: 0px;"
+            idfield="mDataID" multiselect="true" showcolumnsmenu="true" frozenstartcolumn="0"
+            showpager="false" editnextonenterkey="true" editnextrowcell="true" frozenendcolumn="1"
+            allowcelledit="true" allowcellselect="true">
+            <div property="columns">
+                <div type="checkcolumn" width="20">
+                </div>
+                <div field="key" width="300" headeralign="center" align="center">
+                    Key
+                </div>
+                <div field="value" width="300" headeralign="center" align="left" allowsort="false"
+                    vtype="required">
+                    Value
+                    <input property="editor" class="mini-textbox" selectonfocus="true" maxlength="200"
+                        style="width: 100%;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

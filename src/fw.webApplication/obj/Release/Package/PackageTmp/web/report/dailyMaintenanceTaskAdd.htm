@@ -1,0 +1,1137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>设备管理</title>
+    <link href="../scripts/themes/default/basicInfo/basicInfo.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/x2js/1.2.0/xml2json.min.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/jSignature/2.1.3/jSignature.min.js"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="dailyMaintenanceTaskAdd.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var weatherStr = [{
+            "id": 1,
+            "text": "晴"
+        },
+	{
+	    "id": 2,
+	    "text": "多云"
+	},
+    {
+        "id": 3,
+        "text": "雨"
+    }
+
+];
+        var resultStr = [
+    { "id": 1,
+        "text": "已修复"
+    },
+    { "id": 0,
+        "text": "未修复"
+    }]
+
+    </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 10%;
+        }
+        #test-image-preview {
+　　border: 1px solid #ccc;
+   width: 100%;
+   height: auto;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+    </style>
+</head>
+<body style="background-color: white;" isloaduserinfo="1">
+    <div id="divForm" class="form">
+        <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+            <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                <tr style="display: none;">
+                    <td colspan="4">
+                        <input type="hidden" style="width: 96%; display: none;" name="equipmentCode" class="mini-textbox " />
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 20%;">
+                        净化槽编码：
+                    </th>
+                    <td style="width: 30%;" colspan="4">
+                        <input id="btnChooseMonitor" class="mini-buttonedit" onclick="onButtonChooseMonitorSite"
+                               style="width: 100%;" name="monitorSiteName" required="true" />
+                        <!--                        <input style="width: 96%;" id="monitorSiteName" name="monitorSiteName" class="mini-textbox "
+                        vtype="maxLength:50" disabled="true" />-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">设施侵占</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            设施：
+                        </th>
+                        <td style="width: 80%;">
+                            <table style="width: 100%">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isFacilityNormal"
+                                               selectonfocus="true" title="" name="isFacilityNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%">
+                                                    <input class="mini-checkbox " text="堆放杂物" style="width: 96%;" id="pileUpDebris" name="pileUpDebris"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%">
+                                                    <input class="mini-checkbox " text="设施被圈占" style="width: 96%;" id="facilityOccupied"
+                                                           name="facilityOccupied" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%">
+                                                    <input class="mini-checkbox " text="设施被掩埋" style="width: 96%;" id="facilityBuried"
+                                                           name="facilityBuried" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%">
+                                                    <input class="mini-checkbox " text="设施被挖出" style="width: 96%;" id="facilityGouged"
+                                                           name="facilityGouged" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            围栏：
+                        </th>
+                        <td style="width: 80%;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isFenceNormal" name="isFenceNormal"
+                                               truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%">
+                                                    <input class="mini-checkbox " text="围栏损坏" style="width: 96%;" id="fenceDamage" name="fenceDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%">
+                                                    <input class="mini-checkbox " text="围栏底座倾斜" style="width: 96%;" id="fenceBaseTilt"
+                                                           name="fenceBaseTilt" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            顶板：
+                        </th>
+                        <td style="width: 80%;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isRoofNormal" name="isRoofNormal"
+                                               truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%">
+                                                    <input class="mini-checkbox " text="顶板被破坏" style="width: 96%;" id="roofDestroyed"
+                                                           name="roofDestroyed" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%">
+                                                    <input class="mini-checkbox " text="开裂下沉" style="width: 96%;" id="cracksink" name="cracksink"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            电控箱基础：
+                        </th>
+                        <td style="width: 80%;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isElectricCabinetBaseNormal"
+                                               name="isElectricCabinetBaseNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="电控箱基础倾斜" style="width: 96%;" id="electricCabinetBaseTilt"
+                                                           name="electricCabinetBaseTilt" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="电控箱基础开裂" style="width: 96%;" id="electricCabinetBaseDestroyed"
+                                                           name="electricCabinetBaseDestroyed" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            备注：
+                        </th>
+                        <td style="width: 80%;">
+                            <textarea class="mini-textarea" style="width: 100%; height: 70px;" emptytext="" id="structureNote"
+                                      name="structureNote"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">电气设备</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            电控箱：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isElectricControlBoxNormal"
+                                               name="isElectricControlBoxNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="漏保跳闸" style="width: 96%;" id="leakageProtectionTrip"
+                                                           name="leakageProtectionTrip" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="电压线接不牢" style="width: 96%;" id="wireNotStrong"
+                                                           name="wireNotStrong" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="模块故障" style="width: 96%;" id="moduleFailure"
+                                                           name="moduleFailure" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="电线烧坏" style="width: 96%;" id="wireBurnout" name="wireBurnout"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="表面腐蚀" style="width: 96%;" id="surfaceCorrosion"
+                                                           name="surfaceCorrosion" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="箱体破损" style="width: 96%;" id="boxDamage" name="boxDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="天线损坏" style="width: 96%;" id="antennaDamage"
+                                                           name="antennaDamage" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="锁具损坏" style="width: 96%;" id="lockDamage" name="lockDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            电表箱：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isElectricControlBoxNormal2"
+                                               name="isElectricControlBoxNormal2" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="漏保跳闸" style="width: 96%;" id="leakageProtectionTrip2"
+                                                           name="leakageProtectionTrip2" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="电线烧坏" style="width: 96%;" id="wireBurnout2" name="wireBurnout2"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="电压线接不牢" style="width: 96%;" id="wireNotStrong2"
+                                                           name="wireNotStrong2" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="电表损坏" style="width: 96%;" id="meterDamage2" name="meterDamage2"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="表面腐蚀" style="width: 96%;" id="surfaceCorrosion2"
+                                                           name="surfaceCorrosion2" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="箱体破损" style="width: 96%;" id="boxDamage2" name="boxDamage2"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="锁具损坏" style="width: 96%;" id="lockDamage2" name="lockDamage2"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            电缆线：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="IsCableNormal" name="IsCableNormal"
+                                               truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="线路损坏" style="width: 96%;" id="lineDamage" name="lineDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="电线管裸露" style="width: 96%;" id="wireTubeBare"
+                                                           name="wireTubeBare" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            风机：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isBlowerNormal" name="isBlowerNormal"
+                                               truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="接头漏气" style="width: 96%;" id="jointLeak" name="jointLeak"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="管道漏气" style="width: 96%;" id="pipeLeak" name="pipeLeak"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="风机丢失" style="width: 96%;" id="blowerLost" name="blowerLost"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="风机损坏" style="width: 96%;" id="blowerDamage" name="blowerDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="差错插座" style="width: 96%;" id="wrongSocket" name="wrongSocket"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            备注：
+                        </th>
+                        <td style="width: 80%;">
+                            <textarea class="mini-textarea" style="width: 100%; height: 70px;" emptytext="" id="eControlSystemNote"
+                                      name="eControlSystemNote"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">管网系统</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            检查井：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isManholeCoverNormal"
+                                               name="isManholeCoverNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="检查井井盖损坏" style="width: 96%;" id="manholeCoverDamage"
+                                                           name="manholeCoverDamage" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="检查井井盖丢失" style="width: 96%;" id="manholeCoverLost"
+                                                           name="manholeCoverLost" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="检查井损坏" style="width: 96%;" id="manholeDamage"
+                                                           name="manholeDamage" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="检查井堵塞" style="width: 96%;" id="manholeBlock"
+                                                           name="manholeBlock" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            进水管网：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isInPipeNormal" name="isInPipeNormal"
+                                               truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="进水管道外露" style="width: 96%;" id="pipeBare" name="pipeBare"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="进水管道堵塞" style="width: 96%;" id="pipeBlockage"
+                                                           name="pipeBlockage" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="进水管道损坏" style="width: 96%;" id="pipeDamage" name="pipeDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            出水管网：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isOutPipeNormal"
+                                               name="isOutPipeNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="出水管道外露" style="width: 96%;" id="pipeBare2" name="pipeBare2"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="出水管道堵塞" style="width: 96%;" id="pipeBlockage2"
+                                                           name="pipeBlockage2" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="出水管道损坏" style="width: 96%;" id="pipeDamage2"
+                                                           name="pipeDamage2" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            备注：
+                        </th>
+                        <td style="width: 80%;">
+                            <textarea class="mini-textarea" style="width: 100%; height: 70px;" emptytext="" id="waterPipeNote"
+                                      name="waterPipeNote"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">净化槽本体</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            槽体：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isTankNormal" name="isTankNormal"
+                                               truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="槽体破损" style="width: 96%;" id="tankDamage" name="tankDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            载体：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isCarrierNormal"
+                                               name="isCarrierNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="载体外溢" style="width: 96%;" id="carrierOverflow"
+                                                           name="carrierOverflow" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            人孔盖：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isManholeCoverNormal2"
+                                               name="isManholeCoverNormal2" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="人孔盖丢失" style="width: 96%;" id="manholeCoverLost2"
+                                                           name="manholeCoverLost2" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="人孔盖损坏" style="width: 96%;" id="manholeCoverDamage2"
+                                                           name="manholeCoverDamage2" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="人孔盖锁丢失" style="width: 96%;" id="lockCapLost2"
+                                                           name="lockCapLost2" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            加高桶：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isBucketHeightNormal"
+                                               name="isBucketHeightNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="加高桶漏水" style="width: 96%;" id="bucketHeightLeak"
+                                                           required="true" name="bucketHeightLeak" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="加高桶变形" style="width: 96%;" id="bucketHeightDeform"
+                                                           required="true" name="bucketHeightDeform" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="加高桶损坏" style="width: 96%;" id="bucketHeightDamage"
+                                                           required="true" name="bucketHeightDamage" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            回流管路：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isReturnLineNormal"
+                                               name="isReturnLineNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="回流管堵塞" style="width: 96%;" id="pipeBlockage3"
+                                                           name="pipeBlockage3" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="回流管损坏" style="width: 96%;" id="pipeDamage3" name="pipeDamage3"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="回流阀丢失" style="width: 96%;" id="valveLost3" name="valveLost3"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            曝气管管路：
+                        </th>
+                        <td style="width: 30%;" colspan="3">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isAerationTubeLineNormal"
+                                               name="isAerationTubeLineNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="曝气管堵塞" style="width: 96%;" id="pipeBlockage4"
+                                                           name="pipeBlockage4" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="曝气管损坏" style="width: 96%;" id="pipeDamage4" name="pipeDamage4"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="曝气管阀丢失" style="width: 96%;" id="valveLost4" name="valveLost4"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            消毒槽：
+                        </th>
+                        <td style="width: 80%;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isDisinfectGrooveNormal"
+                                               name="isDisinfectGrooveNormal" truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="无消毒片" style="width: 96%;" id="noDisinfectant"
+                                                           name="noDisinfectant" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="消毒桶丢失" style="width: 96%;" id="disinfectPailLost"
+                                                           name="disinfectPailLost" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="消毒桶损坏" style="width: 96%;" id="disinfectPailDamage"
+                                                           name="disinfectPailDamage" truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="消毒槽损坏" style="width: 96%;" id="disinfectGrooveDamage"
+                                                           name="disinfectGrooveDamage" truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            备注：
+                        </th>
+                        <td style="width: 80%;">
+                            <textarea class="mini-textarea" style="width: 100%; height: 70px;" emptytext="" id="PurificateTankNote"
+                                      name="PurificateTankNote"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">电气设备</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            提升井：
+                        </th>
+                        <td style="width: 80%;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 18%">
+                                        <input class="mini-checkbox " text="正常" style="width: 96%;" id="isLiftEqNormal" name="isLiftEqNormal"
+                                               truevalue="true" falsevalue="false" />
+                                    </td>
+                                    <td>
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="提升井线路故障" style="width: 96%;" id="lineFault" name="lineFault"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="水泵堵塞" style="width: 96%;" id="pumpBlockage" name="pumpBlockage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="水泵损坏" style="width: 96%;" id="pumpDamage" name="pumpDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <input class="mini-checkbox " text="浮球损坏" style="width: 96%;" id="floatDamage" name="floatDamage"
+                                                           truevalue="true" falsevalue="false" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            备注：
+                        </th>
+                        <td style="width: 80%;">
+                            <textarea class="mini-textarea" style="width: 100%; height: 70px;" emptytext="" id="liftEqNote"
+                                      name="liftEqNote"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">现场操作</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <td style="width: 100%;" colspan="2">
+                            <div id="operation" class="mini-checkboxlist" repeatitems="3" repeatlayout="table"
+                                 textfield="name" valuefield="code">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            其他：
+                        </th>
+                        <td style="width: 80%;">
+                            <textarea class="mini-textarea" style="width: 100%; height: 70px;" emptytext="" id="others"
+                                      name="others"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">浮渣厚度/cm</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            夹杂物去除槽：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="inclusionRemoval_F" name="inclusionRemoval_F" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            厌氧滤床槽：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="anaerobicFilter_F" name="anaerobicFilter_F" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            沉淀槽：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="settlingChamber_F" name="settlingChamber_F" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">污泥厚度/cm</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            夹杂物去除槽：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="inclusionRemoval_D" name="inclusionRemoval_D" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            厌氧滤床槽：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="anaerobicFilter_D" name="anaerobicFilter_D" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            沉淀槽：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="settlingChamber_D" name="settlingChamber_D" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">水质</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            BOD：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="water_BOD" name="water_BOD" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            COD：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="water_COD" name="water_COD" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            总磷：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="water_TP" name="water_TP" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            总氮：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="water_TN" name="water_TN" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            悬浮物：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="water_SS" name="water_SS" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            氨氮：
+                        </th>
+                        <td colspan="3">
+                            <input style="width: 96%;" id="water_NH34" name="water_NH34" class="mini-textbox "
+                                   vtype="maxLength:50" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+            <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                <tr>
+                    <th style="width: 20%;">
+                        清掏：
+                    </th>
+                    <td style="width: 30%;">
+                        <input class="mini-combobox " selectonfocus="true" style="width: 96%;" id="isNeedClean"
+                               name="isNeedClean" textfield="name" valuefield="code" value="0" />
+                    </td>
+                    <th style="width: 20%;">
+                        倒灌：
+                    </th>
+                    <td style="width: 30%;">
+                        <input class="mini-combobox " selectonfocus="true" style="width: 96%;" id="isBackflow"
+                               name="isBackflow" textfield="name" valuefield="code" />
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 20%;">
+                        接种：
+                    </th>
+                    <td style="width: 30%;">
+                        <input class="mini-combobox " selectonfocus="true" style="width: 96%;" id="isInocation"
+                               name="isInocation" textfield="name" valuefield="code" value="0" />
+                    </td>
+                    <th style="width: 20%;">
+                    </th>
+                    <td style="width: 30%;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
+            <legend style="margin-left: 32px;">备注</legend>
+            <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+                <table style="width: 90%; margin: 0px auto;" class="tableForm form">
+                    <tr>
+                        <th style="width: 20%;">
+                            电表编号：
+                        </th>
+                        <td style="width: 30%;">
+                            <label style="width: 96%;" name="meterNo" id="meterNo">
+                            </label>
+                            <!-- <input style="width: 96%;" name="meterNo" id="meterNo" class="mini-textbox " />-->
+                        </td>
+                        <th style="width: 20%;">
+                            电表读数：
+                        </th>
+                        <td style="width: 30%;">
+                            <input style="width: 96%;" name="meterNum" id="meterNum" class="mini-textbox " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            当前位置：
+                        </th>
+                        <td style="width: 30%;" colspan="4">
+                            <input style="width: 96%;" name="GPS" id="GPS" class="mini-textbox " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            问题描述：
+                        </th>
+                        <td colspan="3">
+                            <textarea class="mini-textarea" style="width: 100%; height: 70px;" emptytext="" id="remark"
+                                      name="remark"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            巡检人员：
+                        </th>
+                        <td style="width: 30%;" colspan="4">
+                            <input style="width: 96%;" name="maintainers" id="maintainers" class="mini-textbox " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            记录人员：
+                        </th>
+                        <td style="width: 30%;" colspan="4">
+                            <input style="width: 96%;" name="recorder" id="recorder" class="mini-textbox " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 20%;">
+                            巡检状态：
+                        </th>
+                        <td style="width: 30%;" colspan="4">
+                            <input class="mini-combobox " selectonfocus="true" style="width: 96%;" id="status"
+                                   name="status" textfield="name" valuefield="code" />
+                        </td>
+                    </tr>
+                    <tr style="display:none;">
+                        <th style="width: 20%;">
+                            审核人员：
+                        </th>
+                        <td style="width: 30%;" colspan="4">
+                            <input style="width: 96%;" name="reviewer" id="reviewer" class="mini-textbox " />
+                        </td>
+                    </tr>
+                    <tr style="display:none;">
+                        <th style="width: 20%;">
+                            审核人签名：
+                        </th>
+                        <td colspan="3">
+                            <div id="fsImg" style="text-align: center;">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
+            <table style="width: 90%; margin: 0px auto;" class="tableForm form"></table>
+        </div>
+        <div id="panelReview" style="display: none;">
+            <div id="signature">
+            </div>
+            <div style="text-align: right; padding: 5px; border-top: 1px solid #b3b3b3;">
+                <a id="resetSig" class="mini-button " style="width: 60px; margin-right: 20px;">重置</a>
+                <a id="saveSig" class="mini-button " style="width: 60px; margin-right: 20px;">确定</a>
+            </div>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+            <!--<a id="btnReview" class="mini-button " style="width: 60px; margin-right: 20px;">审核</a>-->
+            <a id="aSave" class="mini-button " style="width: 60px; margin-right: 20px;">保存</a>
+        </div>
+    </div>
+</body>
+</html>

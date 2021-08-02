@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>统计运维列表</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="./echarts.min.js"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <!-- <script src="../scripts/page1.js" type="text/javascript"></script> -->
+
+    <script src="../operationMaintenance/OperationMaintenancePage.js" type="text/javascript"></script>
+
+    <script src="equipmentStatusInfoByDay.js" type="text/javascript"></script>
+<style>
+    .checkedButton
+    {
+        background-color: #e6e6e6;
+    }
+</style>
+</head>
+
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+               
+                <tr>
+                    <td style="width: 100%; white-space: nowrap; text-align: left;">
+                        <input class="mini-treeselect " selectonfocus="true" style="width: 160px;" id="cantonCode"
+                            name="cantonCode" textfield="name" valuefield="code" parentfield="pCode" expandonload="0" />
+                        <input name="dStart" id="mCallTimeFrom" class="mini-datepicker" selectonfocus="true"
+                            nullvalue="null" format="yyyy-MM-dd" showtime="false" showokbutton="true" showclearbutton="false"
+                            emptytext="开始时间..." ondrawdate="onDrawStartDate" style="width: 120px;" onvaluechanged="onSearch();" />
+                        <span>至</span>
+                        <input name="dEnd" id="mCallTimeTo" class="mini-datepicker" selectonfocus="true"
+                            nullvalue="null" format="yyyy-MM-dd" showtime="false" showokbutton="true" showclearbutton="false"
+                            emptytext="结束时间..." ondrawdate="onDrawEndDate" style="width: 120px;" onvaluechanged="onSearch();" />
+                       <!-- <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入净化槽、设备编码或镇、村名称"
+                            style="width: 250px;" onenter="onSearch();" />-->
+                        <a class="mini-button" iconcls="icon-search" id="btnSearch">查询</a>
+                        <a class="mini-button" iconcls="icon-download" id="export" onclick="dataExport();">导出</a>
+                        <span>
+                            <a class="mini-button checkedButton" id="chart_form" >统计列表</a>
+                            <a class="mini-button" id="chart_line" >统计折线图</a>
+                            <a class="mini-button" id="chart_pilar" >统计柱状图</a>
+                        </span>
+                       
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="mini-fit">
+        <div id='eChartMain' style="width: 100%; height: 100%;display: none"></div>
+        <div id="datagrid1" class="mini-datagrid" fitcolumns='true' style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            pagesize="9999" sizelist="[10000]" fitcolumns="true" multiselect="true" onbeforeload="datagrid1_BeforeLoad"
+            onselectionchanged="datagrid1_SelectionChanged">
+            <div property="columns">
+                
+                <div type="indexcolumn" width="30px" headeralign="center" >
+                    序号
+                </div>
+              <!--  <div field="townName" width="80px" headeralign="center" allowsort="true"  align="center"> class='eChartMain'
+                    建制镇</div>
+                <div field="villageName" width="80px" headeralign="center" allowsort="true"  align="center">
+                    行政村</div>-->
+                     <div field="createTimeFormat" name="createTimeFormat" width="100px" headeralign="center"  align="center">
+                   记录日期</div>
+                    <div field="projectNo" width="100px" headeralign="center" allowsort="true"  align="center">
+                    项目代号</div>    
+                <div field="cantonName" width="100px" headeralign="center" allowsort="true"  align="center">
+                    行政区</div>               
+                <div field="normalNum" width="100px" headeralign="center">
+                    正常</div>
+                     <div field="offLineNum" width="100px" headeralign="center"  align="left">
+                    通讯故障</div>
+                <div field="electricFault" width="100px" headeralign="center"  align="center">
+                    供电故障</div>               
+                <div field="blockNum" width="100px" headeralign="center"  align="left">
+                    设备堵塞</div>
+                      <div field="blowByNum" width="100px" headeralign="center"  align="left">
+                    设备漏气</div>
+                     <div field="testNum" width="100px" headeralign="center"  align="left">
+                    设调试中</div>
+               
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>

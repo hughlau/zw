@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>反控设置</title>
+    <link href="../scripts/themes/default/basicInfo/basicInfo.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="EquipReCtrSetting.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="editform" class="mini-fit form" style="padding-top: 5px;">
+        <table style="width: 95%; table-layout: fixed;" class="table01">
+            <tr>
+                <th style="width: 20%;">
+                    风机动作：
+                </th>
+                <td colspan="3">
+                    <input id="IrrAreaState" name="IrrAreaState" class="mini-combobox" style="width: 98%;
+                        margin-right: 30px;" onvaluechanged="reCtrTypeChange" textfield="name" valuefield="code"
+                        selectindex="0" shownullitem="false" data="[{code:'0',name:'关'},{code:'1',name:'开'}]"
+                        value="1" />
+                </td>
+            </tr>
+            <tr style="display:none">
+                <th style="width: 20%;">
+                    启动方式：
+                </th>
+                <td style="width: 30%;">
+                    <input id="reCtrType" name="reCtrType" class="mini-combobox" style="width: 100%;
+                        margin-right: 30px;" onvaluechanged="reCtrTypeChange" textfield="name" valuefield="code"
+                        selectindex="0" shownullitem="false" data="[{code:'0',name:'马上启动'},{code:'1',name:'定时启动'}]" />
+                </td>
+                <th class="ReCtrSampTime" style="width: 20%; display: none;">
+                    启动时间：
+                </th>
+                <td class="ReCtrSampTime" style="display: none; width: 30%; " >
+                    <input name="ReCtrSampTime" id="ReCtrSampTime" class="mini-datepicker" nullvalue="null"
+                        allowinput="false" showtime="true" mindate="new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDay()-1)"
+                        showtodaybutton="false" showokbutton="true" showclearbutton="true" timeformat="H:mm:ss"
+                        format="HH:mm:ss" style="width: 100%; margin-right: 3px;" />
+                </td>
+            </tr>
+        </table>
+        <div style="text-align: center; padding: 10px; margin-top: 15px;">
+            <a class="mini-button" style="width: 70px; margin-right: 40px;" onclick="settingClick()">
+                设 置 </a><a id="cancel" class="mini-button" style="width: 70px; margin-right: 40px;"
+                    iconcls="icon-cancel" onclick="onCancel()">取 消</a>
+        </div>
+    </div>
+</body>
+</html>

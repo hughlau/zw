@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>超标统计</title>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="overflowInfo.htm.js" type="text/javascript"></script>
+    <style type="text/css">
+        #conditionForm table
+        {
+            background-color: #F2FBFF;
+        }
+        .mini-datagrid
+        {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="mini-toolbar" style="padding: 2px; border-bottom: 0;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap;">
+                    </td>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        <input id="keyword" name="keyword" class="mini-textbox" emptytext="关键字..." />
+                        <a class="mini-button" id="buttonSearch" iconcls="icon-search" plain="true">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--撑满页面-->
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" fitcolumns="false"
+            showpager="false" sizelist="[5,10,20,50]" pagesize="10" multiselect="true">
+            <div property="columns">
+                <div type="indexcolumn">
+                    序号
+                </div>
+                <div field="cantonName" width="120" headeralign="center" align="center">
+                    行政区</div>
+                <div field="monitorSiteName" width="180" headeralign="center" align="left">
+                    设施名称</div>
+                <div field="overflowDate" width="150" headeralign="center" align="center">
+                    投运时间</div>
+                <div field="overflowCount" width="180" headeralign="center" align="left">
+                    超标次数</div>
+                <div field="option" width="100" headeralign="center" align="center" renderer="datagrid1_Renderer">
+                    操作</div>
+            </div>
+        </div>
+    </div>
+</body>

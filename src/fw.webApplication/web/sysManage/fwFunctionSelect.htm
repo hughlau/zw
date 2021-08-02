@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>菜单管理</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwFunctionSelect.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <span style="line-height: 24px;">&nbsp;</span>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <a class="mini-button" iconcls="icon-search" plain="true" style="display: none;"
+                            onclick="onSearch();">查询</a> <a id="select" class="mini-button" style="display: none;"
+                                iconcls="icon-add" onclick="select();">选择</a> <a id="selectClear" class="mini-button"
+                                    style="display: none;" iconcls="icon-add" onclick="selectClear();">清除</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="treegrid1" class="mini-treegrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            multiselect="true" showcolumnsmenu="true" frozenstartcolumn="0" frozenendcolumn="1"
+            ondrawcell="treegrid1_DrawCell" allowcellwrap="true" showtreeicon="true" treecolumn="mBllModuleName"
+            idfield="mBllModuleCode" parentfield="mPBllModuleCode" resultastree="true" expandonload="true">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                </div>
+                <div name="mBllModuleName" field="mBllModuleName" width="120" headeralign="center" align="left">
+                    模块名称</div>
+                <div field="checkAll" width="60" headeralign="center" align="center">
+                    全选</div>
+                <div field="mFWFunctionList" width="100%" headeralign="center" align="left">
+                    权限</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>净化槽设备查询-状态</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js.code.js" type="text/javascript"></script>
+    <script src="monitorSiteByStatusList.htm.js" type="text/javascript"></script>
+</head>
+<body isneedlogin="0">
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap;">
+                        <span></span>
+                        <input class="mini-treeselect " id="cantonCode" selectonfocus="true" style="width: 170px;"
+                            name="cantonCode" textfield="name" valuefield="code" parentfield="pCode" expandonload="0"
+                            onvaluechanged="" />
+                        <span id ="statusSpan">设施状态：</span>
+                        <div id="statusCode" name="statusCode" class="mini-combobox" style="width: 130px;" nullItemText="请选择设施状态..." showNullItem="true"
+                            popupwidth="200" valuefield="code" textfield="name" multiselect="false"   >
+                        </div>
+                    </td>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        <input id="keyword" name="keyword" class="mini-textbox" emptytext="请输入净化槽、设备编码或镇、村名称" onenter="onSearch();"
+                            style="width: 250px;" />
+                             <input id="householdName" name="householdName" class="mini-textbox" style ="width: 100px;"  emptytext="请输入户主名" onenter="onSearch();" />
+                        <a class="mini-button" id="buttonSearch" iconcls="icon-search" plain="true" onclick="onSearch();">
+                            查询</a>   <a class="mini-button" iconcls="icon-download" id="export" onclick="dataExport();">导出</a>
+                        <a id="moveBT" class="mini-button" style="" iconcls="icon-remove" onclick="moveBT();">移除</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--撑满页面-->
+    <div class="mini-fit">
+        <div id="datagrid1" class="mini-datagrid" style="width: 100%; height: 100%;" fitcolumns="false"
+            frozenstartcolumn="0" frozenendcolumn="2" borderstyle="border-width: 0px;" sizelist="[5,10,20,50]"
+            pagesize="10" multiselect="true" onbeforeload="datagrid1_BeforeLoad">
+            <div property="columns">
+                <div type="indexcolumn" width="60" headeralign="center" align="center">
+                    序号
+                </div>
+                <div name="checkcolumn" type="checkcolumn" field="checkcolumn" width="40" headeralign="center"> 
+                </div>
+                <div field="address" width="50" headeralign="center" align="left" renderer="datagrid1_Renderer">
+                    定位</div>
+                <div field="monitorSiteName" width="140" headeralign="center" align="left" renderer="datagrid1_Renderer">
+                    净化槽编码</div>
+                <div field="equipmentNo" width="140" headeralign="center" align="left">
+                    设备编码</div>
+                <div field="statusCode" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer"
+                    allowsort="true" name="status" style="display: none">
+                    设施状态</div>
+                <div field="monitorSiteTypeName" width="120" headeralign="center" align="center">
+                    净化槽型号</div>
+                <div field="cantonName" width="180" headeralign="center" align="left" allowsort="true">
+                    行政区</div>
+                <div field="pumpTypeName" width="120" headeralign="center" align="center">
+                    提升泵</div>
+                <div field="operateTime" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer"
+                    allowsort="true">
+                    投运时间</div>
+                <div field="householdsCount" width="100" headeralign="center" align="right">
+                    接入户数</div>
+                <div field="householdName" width="180" headeralign="center" align="left">
+                    户主名</div>
+                <div field="meterNo" width="120" headeralign="center" align="left">
+                    电表号</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

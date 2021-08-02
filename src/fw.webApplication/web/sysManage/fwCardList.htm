@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>卡片查询</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="../scripts/page.js" type="text/javascript"></script>
+    <script src="fwCardList.htm.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <table style="width: 100%;">
+            <tr>
+                <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                    <a class="mini-button" iconcls="icon-add" onclick="openInfo('insert');">增加</a>
+                    <!-- <a class="mini-button" iconcls="icon-edit" onclick="openInfo('query');">查看</a>-->
+                    <a class="mini-button" iconcls="icon-edit" onclick="openInfo('query');" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                        修改</a> <a id="enable" class="mini-button" iconcls="icon-unlock" onclick="able(0);"
+                            data-options="{minSelectedCount:1}">启用</a> <a id="disable" class="mini-button" iconcls="icon-lock"
+                                onclick="able(1);" data-options="{minSelectedCount:1}">停用</a> <a class="mini-button"
+                                    iconcls="icon-remove" onclick="del();" data-options="{minSelectedCount:1}">删除</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 100%; white-space: nowrap; text-align: right;">
+                        <input id="mBllModuleCode" name="mBllModuleCode" valuefield="mBllModuleCode" class="mini-combobox"
+                            selectonfocus="true" onvaluechanged="onSearch()" textfield="mBllModuleName" emptytext="模块类型..."
+                            onenter="onSearch();" />
+                        <input id="mCardTypeCode" onvaluechanged="onSearch()" name="mCardTypeCode" class="mini-combobox"
+                            selectonfocus="true" valuefield="mCardTypeCode" textfield="mCardTypeName" emptytext="卡片类型..." />
+                        <input name="keyword" class="mini-textbox" selectonfocus="true" style="width: 160px;"
+                            onenter="onSearch();" />
+                        <a class="mini-button" iconcls="icon-search" selectonfocus="true" onenter="onSearch();"
+                            plain="true" onclick="onSearch();">查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="dataGridCardList" class="mini-datagrid" style="width: 100%; height: 100%;"
+            borderstyle="border-width: 0px;" idfield="objID" multiselect="true" showcolumnsmenu="true"
+            frozenstartcolumn="0" onselectionchanged="datagrid1_SelectionChanged" frozenendcolumn="1"
+            onbeforeload="datagrid1_BeforeLoad" sortfield="mIx" sortorder="desc" pagesize="20">
+            <div property="columns">
+                <div type="indexcolumn" width="40">
+                </div>
+                <div type="checkcolumn" width="40">
+                </div>
+                <div field="mCardCode" width="150" headeralign="center" align="center" visible="false">
+                    卡片编码</div>
+                <div field="mCardName" width="100" headeralign="center" align="center" renderer="dataGridCardList_Renderer">
+                    卡片名称</div>
+                <div field="mUrl" width="100" headeralign="center" align="left">
+                    卡片URL</div>
+                <div field="mIconUrl" width="100" headeralign="center" align="left" visible="false">
+                    卡片图标地址</div>
+                <div field="mThumbnailUrl" width="100" headeralign="center" align="left" visible="false">
+                    卡片缩略图地址</div>
+                <div field="mWidth" width="100" headeralign="center" align="right" visible="false">
+                    宽度</div>
+                <div field="mHeight" width="100" headeralign="center" align="right" visible="false">
+                    高度</div>
+                <div field="mLinkName" width="100" headeralign="center" align="center" visible="false">
+                    链接名称</div>
+                <div field="mLinkUrl" width="100" headeralign="center" align="left" visible="false">
+                    链接URL</div>
+                <div field="mBllModuleCode" width="150" headeralign="center" align="center" visible="false">
+                    模块编码</div>
+                <div field="mBllModuleName" width="150" headeralign="center" align="center" renderer="dataGridCardList_Renderer">
+                    模块名称</div>
+                <div field="mCardTypeCode" width="150" headeralign="center" align="center" visible="false">
+                    卡片类型编码</div>
+                <div field="mRem" width="100" headeralign="center" align="center" visible="false">
+                    备注</div>
+                <div field="mIx" width="60" headeralign="center" align="right" allowsort="true">
+                    顺序</div>
+                <div type="mIsDis" field="mIsDis" truevalue="1" falsevalue="0" align="center" width="80"
+                    headeralign="center" renderer="dataGridCardList_Renderer">
+                    是否停用</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
