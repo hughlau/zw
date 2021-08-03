@@ -37,7 +37,7 @@ document.write('<!--[if IE 7]><link href="' + bootPATH + 'font-awesome/css/font-
 //document.write('<link href="' + bootPATH + 'fw/themes/default/fw.css" rel="stylesheet" type="text/css" />');
 if (window.location.href.indexOf("system/index")<1) {
     document.write('<link href="' + bootPATH + 'miniui-3.4/themes/icons.css" rel="stylesheet" type="text/css" />');
-    document.write('<link href="' + bootPATH + 'miniui-3.4/themes/default/miniui.css" rel="stylesheet" type="text/css" />');
+    document.write('<link href="' + bootPATH + 'miniui-3.4/themes/metro/skin.css" rel="stylesheet" type="text/css" />');
     document.write('<link href="' + bootPATH + 'fw/themes/default/fw.css" rel="stylesheet" type="text/css" />');
 }
 document.write('<link href="' + bootPATH + 'layer/skin/layer.css" rel="stylesheet" type="text/css" />');
