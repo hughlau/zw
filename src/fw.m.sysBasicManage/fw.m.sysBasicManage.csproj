@@ -92,7 +92,9 @@
     <Compile Include="service\SysBasicManageService.cs" />
     <Compile Include="service\SysBasicManageUserLogining.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\fw.m.Common\fw.m.Common.csproj">
       <Project>{f906ded5-33ad-4894-81dc-9e3722d51cd8}</Project>
