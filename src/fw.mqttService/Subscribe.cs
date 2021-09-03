@@ -22,6 +22,8 @@ namespace fw.mqttService
             // TODO: 在此处添加代码以启动服务。
             WSMqttClient wSMqttClient = new WSMqttClient();
             Task.Run(async () => { await wSMqttClient.ConnectMqttServerAsync(); });
+
+            Task.Run(async () => { await wSMqttClient.ConnectMqttServerAsync(););
         }
 
         protected override void OnStop()

@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appSettings.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\fw.m.autoMonitor.data\fw.m.autoMonitor.data.csproj" />
+    <ProjectReference Include="..\fw.m.autoMonitor\fw.m.autoMonitor.csproj" />
+    <ProjectReference Include="..\fw.m.basicInfo.data\fw.m.basicInfo.data.csproj" />
+    <ProjectReference Include="..\fw.m.basicInfo\fw.m.basicInfo.csproj" />
+    <ProjectReference Include="..\fw.m.Common\fw.m.Common.csproj" />
+    <ProjectReference Include="..\fw.m.operationMaintenance.data\fw.m.operationMaintenance.data.csproj" />
+    <ProjectReference Include="..\fw.m.operationMaintenance\fw.m.operationMaintenance.csproj" />
+    <ProjectReference Include="..\fw.m.sysBasicManage.data\fw.m.sysBasicManage.data.csproj" />
+    <ProjectReference Include="..\fw.m.sysBasicManage\fw.m.sysBasicManage.csproj" />
+    <ProjectReference Include="..\fw.mqttClient\fw.mqttClient.csproj" />
+    <ProjectReference Include="..\fw.mqttService\fw.mqttService.csproj" />
+    <ProjectReference Include="..\sysManageAdapter\fw.m.sysManageAdapter.csproj" />
+  </ItemGroup>
+
+</Project>

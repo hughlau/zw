@@ -294,3 +294,11 @@ E:\orginPro\git_zw\zw\src\fw.webApplication\obj\Debug\fw.webApplication.csproj.C
 E:\orginPro\git_zw\zw\src\fw.webApplication\obj\Debug\fw.webApplication.csproj.CopyComplete
 E:\orginPro\git_zw\zw\src\fw.webApplication\obj\Debug\fw.webApplication.dll
 E:\orginPro\git_zw\zw\src\fw.webApplication\obj\Debug\fw.webApplication.pdb
+E:\orginPro\git_zw\zw\src\fw.webApplication\bin\Apache.NMS.dll
+E:\orginPro\git_zw\zw\src\fw.webApplication\bin\Apache.NMS.ActiveMQ.dll
+E:\orginPro\git_zw\zw\src\fw.webApplication\bin\fw.m.autoMonitor.dll.config
+E:\orginPro\git_zw\zw\src\fw.webApplication\bin\fw.m.basicInfo.dll.config
+E:\orginPro\git_zw\zw\src\fw.webApplication\bin\fw.m.Common.dll.config
+E:\orginPro\git_zw\zw\src\fw.webApplication\bin\fw.m.operationMaintenance.dll.config
+E:\orginPro\git_zw\zw\src\fw.webApplication\bin\fw.m.sysBasicManage.dll.config
+E:\orginPro\git_zw\zw\src\fw.webApplication\bin\fw.m.sysManageAdapter.dll.config

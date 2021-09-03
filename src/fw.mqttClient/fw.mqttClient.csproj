@@ -54,10 +54,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MqttQueue.cs" />
+    <Compile Include="MSMQJobConsumer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WSMqttClient.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\fw.m.Common\fw.m.Common.csproj">
+      <Project>{f906ded5-33ad-4894-81dc-9e3722d51cd8}</Project>
+      <Name>fw.m.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\fw.m.operationMaintenance.data\fw.m.operationMaintenance.data.csproj">
       <Project>{888204be-0250-4cd0-ba77-b5f26e9eb56e}</Project>
       <Name>fw.m.operationMaintenance.data</Name>

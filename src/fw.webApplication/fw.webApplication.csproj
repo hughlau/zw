@@ -5515,6 +5515,10 @@
       <Project>{4B025103-49F0-4FE4-B639-B55B73B49472}</Project>
       <Name>fw.m.basicInfo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\fw.m.Common\fw.m.Common.csproj">
+      <Project>{f906ded5-33ad-4894-81dc-9e3722d51cd8}</Project>
+      <Name>fw.m.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\fw.m.operationMaintenance.data\fw.m.operationMaintenance.data.csproj">
       <Project>{888204BE-0250-4CD0-BA77-B5F26E9EB56E}</Project>
       <Name>fw.m.operationMaintenance.data</Name>

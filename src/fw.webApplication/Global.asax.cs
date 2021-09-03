@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using fw.m.basicInfo.bll;
+using fw.m.Common;
+using fw.m.Common.mq;
 using fw.m.operationMaintenance.bll;
 using fw.webApplication.handler;
 
@@ -19,9 +21,12 @@ namespace fw.webApplication
         public static bool isde=false;
         protected void Application_Start(object sender, EventArgs e)
         {
+
             QueueInfoHandler.instance.Start();
             TimingTaskHandler.start();
             WeatherHandler.instance.Start();
+
+
         }
 
         protected void Session_Start(object sender, EventArgs e)
