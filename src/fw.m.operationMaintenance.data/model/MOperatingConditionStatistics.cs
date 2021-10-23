@@ -15,19 +15,19 @@ namespace fw.m.operationMaintenance.data.model
     {
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode { get; set; }
 
         /// <summary>
-        /// 行政区名称
+        /// 厂区名称
         /// </summary>
         [DataMember]
         public string cantonName { get; set; }
 
         /// <summary>
-        /// 行政区登级
+        /// 厂区登级
         /// </summary>
         [DataMember]
         public Int32 level { get; set; }
@@ -35,13 +35,13 @@ namespace fw.m.operationMaintenance.data.model
         
 
          /// <summary>
-        /// 父级行政区编码
+        /// 父级厂区编码
         /// </summary>
         [DataMember]
         public string PCantoncode { get; set; } 
 
         /// <summary>
-        /// 父级行政区编码
+        /// 父级厂区编码
         /// </summary>
         [DataMember]
         public string parentCantonCode { get; set; } 

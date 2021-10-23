@@ -146,47 +146,47 @@
 
 
     /// <summary>
-    ///     行政区统计触发改变事件
+    ///     厂区统计触发改变事件
     /// </summary>
     ,
     CantonStatisticsChange: function () { }
     /// <summary>
-    ///     行政区统计向下滑动增大
+    ///     厂区统计向下滑动增大
     /// </summary>
     ,
     CantonStatisticsSlideDown: function () { }
     /// <summary>
-    ///     行政区统计向下滑动减小
+    ///     厂区统计向下滑动减小
     /// </summary>
     ,
     CantonStatisticsSlideUp: function () { }
     /// <summary>
-    ///     行政区统计滑动切换（增大时减小、减小时增大）
+    ///     厂区统计滑动切换（增大时减小、减小时增大）
     /// </summary>
     ,
     CantonStatisticsSlideToggle: function () { }
     /// <summary>
-    ///     显示行政区统计
+    ///     显示厂区统计
     /// </summary>
     ,
     CantonStatisticsShow: function () { }
     /// <summary>
-    ///     隐藏行政区统计
+    ///     隐藏厂区统计
     /// </summary>
     ,
     CantonStatisticsHide: function () { }
     /// <summary>
-    ///     行政区统计显示切换（显示时隐藏、隐藏时显示）
+    ///     厂区统计显示切换（显示时隐藏、隐藏时显示）
     /// </summary>
     ,
     CantonStatisticsToggle: function () { }
     /// <summary>
-    ///     行政区域统计取消绑定（关闭）
+    ///     厂区域统计取消绑定（关闭）
     /// </summary>
     ,
     CantonStatisticsUnbind: function () { }
     /// <summary>
-    ///     行政区域统计取消绑定（打开）
+    ///     厂区域统计取消绑定（打开）
     /// </summary>
     ,
     CantonStatisticsBind: function (Properties) {
@@ -195,7 +195,7 @@
         };
     }
     /// <summary>
-    ///     行政区域统计结果内容绑定
+    ///     厂区域统计结果内容绑定
     /// </summary>
     ,
     CantonStatisticsAdd: function (Properties) {
@@ -472,7 +472,7 @@
         //返回地图初始范围值
         getFullExtent: function () {
         },
-        //缩放到行政区 
+        //缩放到厂区 
         zoomToCanton: function (Properties) {
             var Settings = {
                 CantonCode: "",

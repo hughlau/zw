@@ -93,7 +93,7 @@ namespace fw.m.operationMaintenance.data
         public string operationMaintenanceUnitCode { get; set; }
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode { get; set; }
@@ -132,7 +132,7 @@ namespace fw.m.operationMaintenance.data
         public string  isFilterType { get; set; }
 
         /// <summary>
-        ///净化槽编码
+        ///现场设备编码
         /// </summary>
         [DataMember]
         public string monitorSiteCode { get; set; }

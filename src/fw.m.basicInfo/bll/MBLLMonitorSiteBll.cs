@@ -27,14 +27,14 @@ using System.Diagnostics;
 namespace fw.m.basicInfo.bll
 {
     /// <summary>
-    /// 净化槽管理 MBLLMonitorSite
+    /// 现场设备管理 MBLLMonitorSite
     /// </summary>
     public class MBLLMonitorSiteBll
     {
-        #region 净化槽-查询操作
+        #region 现场设备-查询操作
 
         /// <summary>
-        /// 净化槽 分页查询
+        /// 现场设备 分页查询
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="pageParams"></param>
@@ -140,7 +140,7 @@ and MPM.operationMaintenancePersonCode='{0}' ", queryParams.operationMaintenance
         }
 
         /// <summary>
-        /// 净化槽 分页查询(修改时间倒序)
+        /// 现场设备 分页查询(修改时间倒序)
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="pageParams"></param>
@@ -357,7 +357,7 @@ and MPM.operationMaintenancePersonCode='{0}' ", queryParams.operationMaintenance
 
 
         /// <summary>
-        /// 净化槽 实体查询
+        /// 现场设备 实体查询
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="queryParams"></param>
@@ -466,7 +466,7 @@ WHERE ISNULL(monitorSite.isDel,0)=0
             if (string.IsNullOrEmpty(monitorSiteCode))
             {
                 result.status = FWResultStatus.Failure;
-                result.infoList.Add("净化槽主键不能为空！");
+                result.infoList.Add("现场设备主键不能为空！");
                 return result;
             }
 
@@ -527,7 +527,7 @@ WHERE ISNULL(monitorSite.isDel,0)=0  AND monitorSite.monitorSiteCode='{3}'
 
 
         /// <summary>
-        /// 净化槽分配查询
+        /// 现场设备分配查询
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="pageParams"></param>
@@ -654,7 +654,7 @@ AND NOT EXISTS (
 
 
         /// <summary>
-        /// 运维人员 净化槽负责查询
+        /// 运维人员 现场设备负责查询
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="pageParams"></param>
@@ -797,7 +797,7 @@ AND ( NOT EXISTS (
 
         #endregion
 
-        #region 净化槽-编码重复性校验
+        #region 现场设备-编码重复性校验
         /// <summary>
         /// 设备编号 重复验证
         /// </summary>
@@ -846,7 +846,7 @@ SELECT *  FROM  [dbo].[BLLMonitorSite]
                 if (entityList != null && entityList.Count > 0)
                 {
                     result.status = FWResultStatus.Failure;
-                    //result.infoList.Add("该净化槽编码已存在！\n");
+                    //result.infoList.Add("该现场设备编码已存在！\n");
                 }
                 else
                 {
@@ -865,7 +865,7 @@ SELECT *  FROM  [dbo].[BLLMonitorSite]
         }
         #endregion
 
-        #region 净化槽-新增/更新
+        #region 现场设备-新增/更新
 
         public static void defaultBLLMonitorSiteEntity(IFWUserInfo userInfo, MBLLMonitorSite entity)
         {
@@ -902,8 +902,8 @@ SELECT *  FROM  [dbo].[BLLMonitorSite]
                     throw new Exception("实体不能为空！");
                 }
 
-                #region 净化槽编码 重复性判断
-                //songshasha modified by songshasha 2017-06-06 暂时取消净化槽编码重复性校验（18-1-23提交代码时，恢复校验）
+                #region 现场设备编码 重复性判断
+                //songshasha modified by songshasha 2017-06-06 暂时取消现场设备编码重复性校验（18-1-23提交代码时，恢复校验）
                 result = MBLLMonitorSiteBll.MBLLMonitorSiteNoCheck(mEntity);
                 if (result.status != FWResultStatus.Success)
                 {
@@ -911,7 +911,7 @@ SELECT *  FROM  [dbo].[BLLMonitorSite]
                 }
                 #endregion
 
-                #region 净化槽 实体
+                #region 现场设备 实体
                 defaultBLLMonitorSiteEntity(userInfo, mEntity);
                 if (!string.IsNullOrEmpty(mEntity.action) && mEntity.action.Equals("add"))
                 {
@@ -922,7 +922,7 @@ SELECT *  FROM  [dbo].[BLLMonitorSite]
                 result = insertUpdateBLLMonitorSite(userInfo, siteEntity, fwSqlTransaction);
                 if (result.status != FWResultStatus.Success)
                 {
-                    throw new Exception("净化槽新增/更新失败！");
+                    throw new Exception("现场设备新增/更新失败！");
                 }
                 #endregion
 
@@ -997,7 +997,7 @@ SELECT *  FROM  [dbo].[BLLMonitorSite]
                         result = MBLLMonitorSiteMonitorFactorBll.insertUpdateBasMonitorSiteMonitorFactor(BasFactorEntity, fwSqlTransaction);
                         if (result.status != FWResultStatus.Success)
                         {
-                            throw new Exception("净化槽 因子关系添加失败！");
+                            throw new Exception("现场设备 因子关系添加失败！");
                         }
                     }
                 }
@@ -1047,7 +1047,7 @@ SELECT *  FROM  [dbo].[BLLMonitorSite]
 
         #endregion
 
-        #region 净化槽信息批量级联删除操作
+        #region 现场设备信息批量级联删除操作
         public static FWResult<bool> delMonitorSiteAndEquipmentByCascade(IFWUserInfo userInfo, List<string> monitorSiteCodeList)
         {
 
@@ -1056,7 +1056,7 @@ SELECT *  FROM  [dbo].[BLLMonitorSite]
             {
                 result.data = false;
                 result.status = FWResultStatus.Failure;
-                result.infoList.Add("净化槽主键不能为空！");
+                result.infoList.Add("现场设备主键不能为空！");
                 return result;
             }
             FWSqlCommand fwSqlCommand = new FWSqlCommand();
@@ -1081,7 +1081,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
         }
         #endregion
 
-        #region 净化槽-报警设置处理
+        #region 现场设备-报警设置处理
         /// <summary>
         /// 报警项目操作
         /// </summary>
@@ -1116,13 +1116,13 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
         }
         #endregion
 
-        #region 净化槽-关联因子实体初始化
+        #region 现场设备-关联因子实体初始化
         /// <summary>
-        /// 净化槽&因子关联实体
+        /// 现场设备&因子关联实体
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="dataID">记录主键</param>
-        /// <param name="monitorSiteCode">净化槽主键</param>
+        /// <param name="monitorSiteCode">现场设备主键</param>
         /// <param name="equipmentCode">设备主键</param>
         /// <param name="BasFactorEntity">设置数据</param>
         /// <returns></returns>
@@ -1151,9 +1151,9 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
 
         #region 移动端方法
 
-        #region 净化槽/设备-快速操作
+        #region 现场设备/设备-快速操作
         /// <summary>
-        /// 净化槽/设备 单一操作
+        /// 现场设备/设备 单一操作
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="mEntity"></param>
@@ -1196,9 +1196,9 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
                     //throw new Exception(result.infoList.Aggregate((pre, next) => pre + ";" + next));
                     throw new Exception("该设备编码（ltu）已存在!");//输出信息一致
                 }
-                //净化槽编码
+                //现场设备编码
 
-                //songshasha modified by songshasha 2017-06-06 暂时取消净化槽编码重复性校验（18-1-23提交代码时，恢复校验）
+                //songshasha modified by songshasha 2017-06-06 暂时取消现场设备编码重复性校验（18-1-23提交代码时，恢复校验）
                 result = MBLLMonitorSiteBll.MBLLMonitorSiteNoCheck(mEntity);
                 if (result.status != FWResultStatus.Success)
                 {
@@ -1212,7 +1212,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
                 //}
                 #endregion
 
-                #region 净化槽 实体
+                #region 现场设备 实体
                 defaultBLLMonitorSiteEntity(userInfo, mEntity);
                 if (!string.IsNullOrEmpty(mEntity.action) && mEntity.action.Equals("add"))
                 {
@@ -1223,7 +1223,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
                 result = insertUpdateBLLMonitorSite(userInfo, siteEntity, fwSqlTransaction);
                 if (result.status != FWResultStatus.Success)
                 {
-                    throw new Exception("净化槽新增/更新失败！");
+                    throw new Exception("现场设备新增/更新失败！");
                 }
                 #endregion
 
@@ -1363,7 +1363,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
                         result = MBLLMonitorSiteMonitorFactorBll.insertUpdateBasMonitorSiteMonitorFactor(BasFactorEntity, fwSqlTransaction);
                         if (result.status != FWResultStatus.Success)
                         {
-                            throw new Exception("净化槽 因子关系添加失败！");
+                            throw new Exception("现场设备 因子关系添加失败！");
                         }
                         //新增数据
                         BLLMonitorSiteMonitorFactor entity = setSiteMonitorFactor(userInfo, Guid.NewGuid().ToString(), mEntity.monitorSiteCode, equipmentEntity.equipmentCode, MBasFactorEntity);
@@ -1399,7 +1399,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
         }
 
         /// <summary>
-        /// 净化槽/设备 删除
+        /// 现场设备/设备 删除
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="monitorSiteCode"></param>
@@ -1412,7 +1412,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode] in 
             {
                 result.data = false;
                 result.status = FWResultStatus.Failure;
-                result.infoList.Add("净化槽主键不能为空！");
+                result.infoList.Add("现场设备主键不能为空！");
                 return result;
             }
             FWSqlCommand fwSqlCommand = new FWSqlCommand();
@@ -1438,7 +1438,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode]='{0
         }
         #endregion
 
-        #region 净化槽-点位纠偏
+        #region 现场设备-点位纠偏
         public static FWResult<bool> quickSetPosition(SysBasicManageUserInfo userInfo, MBLLMonitorSite mEntity)
         {
             FWResult<bool> result = new FWResult<bool>();
@@ -1451,7 +1451,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode]='{0
                 }
                 if (string.IsNullOrEmpty(mEntity.monitorSiteCode))
                 {
-                    throw new Exception("净化槽主键不能为空！");
+                    throw new Exception("现场设备主键不能为空！");
                 }
 
                 mEntity.updater = userInfo.userName;
@@ -1469,7 +1469,7 @@ DELETE  FROM [dbo].[T_Bas_MonitorSiteMonitorFactor] WHERE  [monitorSiteCode]='{0
         #endregion
         #endregion
 
-        #region 净化槽设备关联操作
+        #region 现场设备设备关联操作
         public static FWResult<bool> AddEquipmentMonitorSiteRelation(SysBasicManageUserInfo userInfo, string equipmentCode, string monitorSiteCode)
         {
             FWResult<bool> result = new FWResult<bool>();
@@ -1721,7 +1721,7 @@ WHERE  isnull(t1.[isDel],0)=0   ");
 
         #endregion
 
-        #region 行政区查询
+        #region 厂区查询
         internal static FWResult<List<MLazyTreeData>> queryCantonListForLazyTree(IFWUserInfo userInfo, string unitCode, string personCode)
         {
             FWResult<List<MLazyTreeData>> result = new FWResult<List<MLazyTreeData>>();
@@ -2474,7 +2474,7 @@ WHERE  isnull(t1.isDel,0)=0 ");
                 var entityList = (from v in villageList select v).Union(from t in townList select t).ToList();
                 entityList.Add(city);
                 #endregion
-                #region 将统计数据 关联到对应的行政区
+                #region 将统计数据 关联到对应的厂区
 
                 FWSqlCommand sqlCmd_cantonList = new FWSqlCommand();
 
@@ -2531,7 +2531,7 @@ order by code  ", SysBasicManageBll.CartonToStr("t1.code", basicUserInfo.cantonC
         {
             FWResult<List<Data_Canton>> result = new FWResult<List<Data_Canton>>();
             List<MLazyTreeData> monitorsites = new List<MLazyTreeData>();
-            #region  获取数据行政区数据
+            #region  获取数据厂区数据
             FWSqlCommand fwSqlCommand = new FWSqlCommand();
             fwSqlCommand.CommandText = string.Format(@"   
 SELECT  
@@ -2583,7 +2583,7 @@ AND t1.code like '{1}%'  order by code  ", DictionaryTypeCodeSettings.BLLCanton,
                 //获取种植历史记录
                 monitorsiteDataTraversalSummary(cantonTreeList, monitorsites);
 
-                // 将返回到前端的对象中的净化槽数据清空 add by songshasha 2016-11-21
+                // 将返回到前端的对象中的现场设备数据清空 add by songshasha 2016-11-21
                 monitorsiteClean(cantonTreeList);
                 result.data = cantonTreeList;
                 //遍历获取
@@ -2617,7 +2617,7 @@ AND t1.code like '{1}%'  order by code  ", DictionaryTypeCodeSettings.BLLCanton,
 
             //返回前台设备状态的属性
             List<SiteStatusData> siteStatusDatas = new List<SiteStatusData>();
-            #region  获取数据行政区数据
+            #region  获取数据厂区数据
 
             FWSqlCommand fwSqlCommand = new FWSqlCommand();
 
@@ -2907,7 +2907,7 @@ FROM    (SELECT u1.* FROM dbo.view_monitorStats u1  ";
 
             //返回前台设备状态的属性
             List<SiteStatusData> siteStatusDatas = new List<SiteStatusData>();
-            #region  获取数据行政区数据
+            #region  获取数据厂区数据
 
             FWSqlCommand fwSqlCommand = new FWSqlCommand();
 
@@ -3043,7 +3043,7 @@ AND t1.code like '{1}%'  AND LEN(t1.code)<14  order by code  ", DictionaryTypeCo
             }
         }
 
-        //将返回到前端的对象中的净化槽数据清空，前端不需要这些数据，冗余的数据会占用网络流量，造成界面加载慢  add by songshasha 2016-11-21
+        //将返回到前端的对象中的现场设备数据清空，前端不需要这些数据，冗余的数据会占用网络流量，造成界面加载慢  add by songshasha 2016-11-21
         private static List<Data_Canton> monitorsiteClean(List<Data_Canton> cantonList)
         {
             foreach (var item in cantonList)
@@ -3102,7 +3102,7 @@ AND t1.code like '{1}%'  AND LEN(t1.code)<14  order by code  ", DictionaryTypeCo
         private static void siteStatusAmount(Data_Canton item, List<MLazyTreeData> siteStatusList)
         {
             item.monitorsites = siteStatusList;
-            //汇总当前行政区数据
+            //汇总当前厂区数据
             item.monitorSiteAmount = getsiteStatusAmount(siteStatusList, string.Empty);
             item.realtimeStatusStatis = new MonitorSiteRealtimeStatis()
             {
@@ -3140,12 +3140,12 @@ AND t1.code like '{1}%'  AND LEN(t1.code)<14  order by code  ", DictionaryTypeCo
         }
         #endregion
 
-        #region 获取树形行政区列表
+        #region 获取树形厂区列表
         public static FWResult<List<Data_Canton>> queryMonitorSiteTree(IFWUserInfo userInfo)
         {
             FWResult<List<Data_Canton>> result = new FWResult<List<Data_Canton>>();
             List<MLazyTreeData> monitorsites = new List<MLazyTreeData>();
-            #region  获取数据行政区数据
+            #region  获取数据厂区数据
             FWSqlCommand fwSqlCommand = new FWSqlCommand();
             fwSqlCommand.CommandText = string.Format(@"   
 SELECT  
@@ -3234,7 +3234,7 @@ WHERE  t1.[dictionaryTypeCode] = '{0}'  AND  ISNULL(T1.[isDis],0)=0  ", Dictiona
 
         //各镇设施故障数量统计  add by songshasha 2017-3-15
         public static FWResult<FWPageData<MBLLMonitorSiteState>> queryPageMonitorSiteState(IFWUserInfo userInfo,
-           FWPageParams pageParams, string cantonCode, string projectNo, int isDetail)//isDetail 1:净化槽工作状态详情页，0：净化槽工作状态页面
+           FWPageParams pageParams, string cantonCode, string projectNo, int isDetail)//isDetail 1:现场设备工作状态详情页，0：现场设备工作状态页面
         {
 
             FWResult<FWPageData<MBLLMonitorSiteState>> result = new FWResult<FWPageData<MBLLMonitorSiteState>>();
@@ -3264,7 +3264,7 @@ WHERE  t1.[dictionaryTypeCode] = '{0}'  AND  ISNULL(T1.[isDis],0)=0  ", Dictiona
                 sqlbuilder.AppendFormat(@" where a.isdel=0 and  a.moduleTypeCode= '1' and substring(a.cantonCode,1,6)='{0}' 
 								and a.monitorSiteCode=b.monitorSiteCode and b.isdel=0 and a.monitorSiteCode=c.monitorSiteCode
                                  and a.equipmentCode = c.equipmentCode ", cantonCode);
-                //增加登录用户所辖行政区数据的过滤
+                //增加登录用户所辖厂区数据的过滤
                 sqlbuilder.AppendFormat(@" and ( {0} )", SysBasicManageBll.CartonToStr("a.cantonCode", basicUserInfo.cantonCodeList));
                 //增加项目数据过滤
                 if (!string.IsNullOrEmpty(projectNo))
@@ -3406,7 +3406,7 @@ WHERE  t1.[dictionaryTypeCode] = '{0}'  AND  ISNULL(T1.[isDis],0)=0  ", Dictiona
         public static List<monitorSiteTypeInfo> setMonitorSiteInfo()
         {
             //HCZ-50——10T、HCZ-25——5T、KJ-5或HJA-10——1T、KJ-10——2T
-            //5吨10吨以上的是前提升   1吨2吨是后提升     1是数量 (净化槽一体化提升泵类型：1 无提升 2前提升 3后提升)
+            //5吨10吨以上的是前提升   1吨2吨是后提升     1是数量 (现场设备一体化提升泵类型：1 无提升 2前提升 3后提升)
             List<monitorSiteTypeInfo> monitorSiteInfo = new List<MBLLMonitorSiteBll.monitorSiteTypeInfo>();
             monitorSiteTypeInfo monitorSite = new monitorSiteTypeInfo();
             monitorSite.setValue("HCZ-50", 10, 2);
@@ -3469,7 +3469,7 @@ WHERE  t1.[dictionaryTypeCode] = '{0}'  AND  ISNULL(T1.[isDis],0)=0  ", Dictiona
             {
                 string pumpType = string.Empty;
                 string minitorSiteType = string.Empty;
-                monitorSiteInfo = setMonitorSiteInfo();//根据净化槽型号自动判断提升井类型，提升井列如果有值，则认为是有提升，再根据净化槽型号判断提升井的类型
+                monitorSiteInfo = setMonitorSiteInfo();//根据现场设备型号自动判断提升井类型，提升井列如果有值，则认为是有提升，再根据现场设备型号判断提升井的类型
 
                 #region 数据解析
 
@@ -3931,19 +3931,19 @@ select code from [dbo].[FWDictionary] where fullName like '%{0}' and isDis=0 ", 
 
                 #region  重复性判断
 
-                //净化槽编码             
+                //现场设备编码             
                 result = MBLLMonitorSiteBll.MBLLMonitorSiteNoCheck(mEntity);
                 if (result.status != FWResultStatus.Success)
                 {
-                    //result.infoList.Add(mEntity.monitorSiteName + "净化槽编码已存在");
-                    throw new Exception(mEntity.monitorSiteName + "净化槽编码已存在;\r\n");
+                    //result.infoList.Add(mEntity.monitorSiteName + "现场设备编码已存在");
+                    throw new Exception(mEntity.monitorSiteName + "现场设备编码已存在;\r\n");
                 }
 
                 #endregion
 
 
 
-                #region 净化槽 实体
+                #region 现场设备 实体
                 //defaultBLLMonitorSiteEntity(userInfo, mEntity);
                 //if (!string.IsNullOrEmpty(mEntity.action) && mEntity.action.Equals("add"))
                 //{
@@ -3956,7 +3956,7 @@ select code from [dbo].[FWDictionary] where fullName like '%{0}' and isDis=0 ", 
                 {
                     // result.infoList.Add(mEntity.monitorSiteName + result .infoList[0].ToString ());
 
-                    throw new Exception(mEntity.monitorSiteName + "净化槽新增/更新失败！" + result.infoList[0].ToString() + ";");
+                    throw new Exception(mEntity.monitorSiteName + "现场设备新增/更新失败！" + result.infoList[0].ToString() + ";");
                 }
                 #endregion
 
@@ -3998,7 +3998,7 @@ select code from [dbo].[FWDictionary] where fullName like '%{0}' and isDis=0 ", 
                     result = MBLLMonitorSiteMonitorFactorBll.insertUpdateBasMonitorSiteMonitorFactor(BasFactorEntity, fwSqlTransaction);
                     if (result.status != FWResultStatus.Success)
                     {
-                        //throw new Exception("净化槽 因子关系添加失败！");
+                        //throw new Exception("现场设备 因子关系添加失败！");
                     }
                     //新增数据
                     BLLMonitorSiteMonitorFactor entity = setSiteMonitorFactor(basicUserInfo, Guid.NewGuid().ToString(), mEntity.monitorSiteCode, equipmentEntity.equipmentCode, MBasFactorEntity);

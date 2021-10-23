@@ -16,11 +16,11 @@ namespace fw.m.sysBasicManage.bll
     public class MCantonBll
     {
         /// <summary>
-        /// 获取行政区列表
+        /// 获取厂区列表
         /// </summary>
         /// <param name="userInfo">用户信息</param>
         /// <param name="xxCode">XXCode编码</param>
-        /// <returns>行政区列表</returns>
+        /// <returns>厂区列表</returns>
         public static FWResult<FWDataTable> queryCantonList(IFWUserInfo userInfo, string cantonCode)
         {
             FWResult<FWDataTable> result = new FWResult<FWDataTable>() { };
@@ -46,12 +46,12 @@ order by leve, pCode
         }
 
         /// <summary>
-        /// 用户管辖行政区规范化
+        /// 用户管辖厂区规范化
         /// </summary>
-        /// <param name="cantonCodeList">用户管辖行政区</param>
-        /// <param name="paramsCantonCodeList">传入参数行政区</param>
+        /// <param name="cantonCodeList">用户管辖厂区</param>
+        /// <param name="paramsCantonCodeList">传入参数厂区</param>
         /// <param name="userID">用户编号</param>
-        /// <returns>用户管辖行政区列表</returns>
+        /// <returns>用户管辖厂区列表</returns>
         public static List<String> specialCantonCodeConvert(List<String> cantonCodeList, List<String> paramsCantonCodeList, String userID)
         {
             cantonCodeList = (cantonCodeList != null && cantonCodeList.Count > 0) ? cantonCodeList : searchUserCanton(userID);
@@ -67,10 +67,10 @@ order by leve, pCode
         }
 
         /// <summary>
-        /// 获取用户管辖行政区
+        /// 获取用户管辖厂区
         /// </summary>
         /// <param name="userID">用户编码</param>
-        /// <returns>用户管辖行政区</returns>
+        /// <returns>用户管辖厂区</returns>
         public static List<String> searchUserCanton(String userID)
         {
             List<String> list = new List<string>();
@@ -102,7 +102,7 @@ ORDER BY a.Code");
         }
 
         /// <summary>
-        /// 获取子级行政区列表
+        /// 获取子级厂区列表
         /// </summary>
         /// <param name="CantonCodeList"></param>
         /// <returns></returns>
@@ -125,9 +125,9 @@ ORDER BY a.Code");
             return StringList;
         }
         /// <summary>
-        /// 查询行政区列表
+        /// 查询厂区列表
         /// </summary>
-        /// <returns>行政区列表</returns>
+        /// <returns>厂区列表</returns>
         public static FWResult<List<MCanton>> queryCantonList(IFWUserInfo userInfo, QueryCantonParams queryParams)
         {
             FWResult<List<MCanton>> result = new FWResult<List<MCanton>>();
@@ -164,9 +164,9 @@ ORDER BY a.Code");
         }
 
         /// <summary>
-        /// 查询行政区列表
+        /// 查询厂区列表
         /// </summary>
-        /// <returns>行政区列表</returns>
+        /// <returns>厂区列表</returns>
         public static FWResult<List<MCanton>> queryCantonList(QueryCantonParams queryParams)
         {
             FWResult<List<MCanton>> result = new FWResult<List<MCanton>>();
@@ -440,7 +440,7 @@ WHERE  t1.[dictionaryTypeCode] = '{0}'
                 }
 
                 var cantonTreeList = fwList.FWListHelper<MFWCantonData>.toTree(cantonList, "pCode", "code", "childDataList", "BLLCanton");
-                //已分配的行政区列表
+                //已分配的厂区列表
                 var cantonSelectedList = getCantonByLvl(cantonTreeList);
                 if (cantonSelectedList != null && cantonSelectedList.Count > 0)
                 {
@@ -482,7 +482,7 @@ AND ISNULL(t1.isDis,0)=0
             return result;
         }
 
-        #region 获取用户行政区中心坐标点
+        #region 获取用户厂区中心坐标点
         public static MFWCantonData getCantonPosXY(string userID)
         {
             MFWCantonData result = new MFWCantonData();
@@ -513,7 +513,7 @@ code
         }
         #endregion
 
-        //行政区过滤
+        //厂区过滤
         public static string getCantonCodeFilterSql(List<string> cantonCodeList, string conditionField)
         {
             string result = string.Empty;
@@ -531,7 +531,7 @@ code
             return result;
         }
 
-        #region 获取行政区字典列表
+        #region 获取厂区字典列表
         public static FWResult<FWDataTable> getCantonDicData(IFWUserInfo userInfo, string pCode)
         {
             if (string.IsNullOrEmpty(pCode))
@@ -560,7 +560,7 @@ code
                 cantonCacheData = new FWDataTable(dtbl);
                 FWCacheHelper<FWDataTable>.set(cantonCode, new FWCacheData<FWDataTable>
                 {
-                    description = cantonCode + "行政区字典信息",
+                    description = cantonCode + "厂区字典信息",
                     data = cantonCacheData
                 });
             }
@@ -578,7 +578,7 @@ code
             cantonCacheData = new FWDataTable(dataTable);
             FWCacheHelper<FWDataTable>.set("BLLCanton", new FWCacheData<FWDataTable>
             {
-                description ="BLLCanton行政区字典信息",
+                description ="BLLCanton厂区字典信息",
                 data = cantonCacheData
             });
 
@@ -603,7 +603,7 @@ code
             return listCantonCode;
         }
 
-        #region 手机端获取行政区字典列表
+        #region 手机端获取厂区字典列表
 
         public static FWResult<List<MFWDictionary>> getCantonDicDataByMobile(IFWUserInfo userInfo, string pCode)
         {
@@ -632,7 +632,7 @@ code
                 var cantonData = FWSqlEntityToFWCommandStaticHelper.queryList<MFWDictionary>(fwSqlCommand);
                 FWCacheHelper<List<MFWDictionary>>.set(code + "Mobile", new FWCacheData<List<MFWDictionary>>
                 {
-                    description = code + "行政区字典信息",
+                    description = code + "厂区字典信息",
                     data = cantonData
                 });
             }
@@ -649,7 +649,7 @@ code
             var bllCantonData= FWSqlEntityToFWCommandStaticHelper.queryList<MFWDictionary>(cmd);
             FWCacheHelper<List<MFWDictionary>>.set("BLLCanton" + "Mobile", new FWCacheData<List<MFWDictionary>>
             {
-                description = "BLLCanton行政区字典信息",
+                description = "BLLCanton厂区字典信息",
                 data = bllCantonData
             });
             result.data = FWCacheHelper<List<MFWDictionary>>.getData(pCode + "Mobile"); ;

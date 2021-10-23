@@ -23,13 +23,13 @@ namespace fw.m.autoMonitor.data
         public string equipmentCode { get; set; }
 
         /// <summary>
-        /// 行政区
+        /// 厂区
         /// </summary>
         [DataMember]
         public string cantonCode { get; set; }
 
         /// <summary>
-        /// 行政区列表
+        /// 厂区列表
         /// </summary>
         [DataMember]
         public List<string> cantonCodeList { get; set; }
@@ -123,7 +123,7 @@ namespace fw.m.autoMonitor.data
         }
 
         /// <summary>
-        /// 净化槽 设备设备关键字
+        /// 现场设备 设备设备关键字
         /// </summary>
         [DataMember]
         public string siteEquipmentKeyword { get; set; }

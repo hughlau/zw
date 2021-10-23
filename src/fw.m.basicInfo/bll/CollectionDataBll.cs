@@ -78,7 +78,7 @@ namespace fw.m.basicInfo.bll
         }
 
         /// <summary>
-        /// 净化槽状态列表
+        /// 现场设备状态列表
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="cantonCode"></param>
@@ -117,7 +117,7 @@ namespace fw.m.basicInfo.bll
             return result;
         }
 
-        //查询已经关联设备的净化槽列表
+        //查询已经关联设备的现场设备列表
         public static List<MBLLMonitorSite> queryMonitorSiteList(SysBasicManageUserInfo userInfo
             , QueryCollectionBasicInfoParams queryParams)
         {
@@ -267,7 +267,7 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
             {
                 result.data = false;
                 result.status = FWResultStatus.Failure;
-                result.infoList.Add("净化槽已经被收藏");
+                result.infoList.Add("现场设备已经被收藏");
             }
             return result;
         }

@@ -156,7 +156,7 @@ FROM
             return result;
         }
 
-        #region 用户行政区分配  CRUD
+        #region 用户厂区分配  CRUD
 
         public static FWResult<List<MFWUserMappingDictionary>> queryFWUserMappingCantonCodeList(IFWUserInfo userInfo, string userID)
         {

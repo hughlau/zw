@@ -260,7 +260,7 @@ function openInfo(action, monitorSiteCode) {
         data.monitorSiteCode = monitorSiteCode;
     };
 
-    pageParams = { url: "web/monitorSite/monitorSiteViewMain.htm", width: 850, height: 600, title: "净化槽信息" };
+    pageParams = { url: "web/monitorSite/monitorSiteViewMain.htm", width: 850, height: 600, title: "现场设备信息" };
     $.pageCustomer.openPage(data, pageParams, function () {
         onSearch();
     });

@@ -326,7 +326,7 @@ WHERE ISNULL(MonitorSiteAlarm.isDis,0)=0
 
 
         #region 设施故障统计 -先用报警记录计算
-        //查询已经关联设备的净化槽列表 
+        //查询已经关联设备的现场设备列表 
         public static List<MMonitorSiteAlarm> queryBreakdownList(IFWUserInfo userInfo, QueryMonitorSiteAlarmParams queryParams)
         {
             List<MMonitorSiteAlarm> result = new List<MMonitorSiteAlarm>();

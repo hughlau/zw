@@ -223,8 +223,8 @@ function queryMonitorSiteFactorList(monitorSiteFactorList, monitorSiteLatestData
 function setColumns(monitorSiteFactorList) {
     var columns_data = [
     { type: "indexcolumn", header: "序号", width: 60, headerAlign: "center" },
-    { header: "行政区名称", field: "cantonName", name: "cantonName", width: 160, headerAlign: "center", align: "left" }
-    , { header: "净化槽编码", field: "monitorSiteName", name: "monitorSiteName", width: 120, headerAlign: "center", align: "left", renderer: "datagrid1_Renderer" }
+    { header: "厂区名称", field: "cantonName", name: "cantonName", width: 160, headerAlign: "center", align: "left" }
+    , { header: "现场设备编码", field: "monitorSiteName", name: "monitorSiteName", width: 120, headerAlign: "center", align: "left", renderer: "datagrid1_Renderer" }
      , { header: "设备编码", field: "equipmentNo", name: "equipmentNo", width: 120, headerAlign: "center", align: "left" }
       //, { header: "集中器编码", field: "dtumac", name: "dtumac", width: 120, headerAlign: "center", align: "left" }
 
@@ -363,9 +363,9 @@ function openWindow__MonitorSiteHistoryData(params) {
 };
 
 function openWindow__MonitorSiteData(monitorSiteCode) {
-    var data = { ticket: $.page.ticket, pageTabs: "info,his" };
+    var data = { ticket: $.page.ticket, pageTabs: "ws,his" };
     data.monitorSiteCode = monitorSiteCode;
-    var pageParams = { url: "web/monitorSite/monitorSiteViewMain.htm", width: 800, height: 600, title: "设施信息" };
+    var pageParams = { url: "web/monitorSite/monitorSiteViewMain.htm", width: 850, height: 600, title: "设施信息" };
     $.page.openPage(data, pageParams, function () {
         onSearch();
     });

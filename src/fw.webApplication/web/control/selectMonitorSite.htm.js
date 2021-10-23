@@ -142,7 +142,7 @@ function openInfo(action, monitorSiteCode) {
     //打开窗口
     mini.open({
         url: url
-        , title: "净化槽信息"
+        , title: "现场设备信息"
         , width: 900
         , height: 640
         , onload: function () {

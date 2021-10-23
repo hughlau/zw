@@ -79,7 +79,7 @@ WHERE 1=1 and isnull(monitorFactor.isDis,0)=0 ", DictionaryTypeCodeSettings.BLLM
         }
 
         /// <summary>
-        /// 清除净化槽/设备/因子的关联
+        /// 清除现场设备/设备/因子的关联
         /// </summary>
         /// <param name="monitorSiteCode"></param>
         /// <param name="factorCodeList"></param>

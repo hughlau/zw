@@ -7,7 +7,7 @@ var operation = '';
 var isLoading = false;
 // 存储上传图片信息
 var ImgArr = [];
-//净化槽编码
+//现场设备编码
 var monitorSiteCode = ''
 //保存传入的
 var imgNames = '';
@@ -173,7 +173,7 @@ $.page.pageLoad = function () {
             mini.alert('运维信息不能为空')
                 return;
         }
-        //净化槽编码存在
+        //现场设备编码存在
         if (monitorSiteCode) {
 
             if ($.page.params.action != 'edit') {
@@ -302,7 +302,7 @@ $.page.pageLoad = function () {
             }
             
         } else {
-            mini.alert('请选择净化槽编号')
+            mini.alert('请选择现场设备编号')
         }
     })
 }
@@ -424,7 +424,7 @@ function onButtonChooseMonitorSite(e) {
     }
 };
 /**
-* 设置框内净化槽编码功能
+* 设置框内现场设备编码功能
 * @param  {[函数]} callbackData [判断条件]
 * @return {[type]}              [description]
 */
@@ -437,7 +437,7 @@ function onMonitorSiteselectCallback(callbackData) {
         $("#btnChooseMonitor .mini-buttonedit-input").val(callbackData.monitorSiteName)
         $("#btnChooseMonitor .mini-buttonedit-input").attr('disabled', 'disabled');
         $("#meterNo").html(callbackData.meterNo);
-        $.page.idM.btnChooseMonitor.validate();  //首次选择后 净化槽编码显示不能为空
+        $.page.idM.btnChooseMonitor.validate();  //首次选择后 现场设备编码显示不能为空
     };
 };
 

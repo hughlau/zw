@@ -25,7 +25,7 @@ var searchFields = "";
 var attrName = "";
 var ChartDivZoomLevel = "";
 var minScale = "";
-var CantonCodeList = ["321282"];//已经有图层的行政区
+var CantonCodeList = ["321282"];//已经有图层的厂区
 function getInitMapParameter(cantonCode) {
     if (!fw.fwObject.FWObjectHelper.hasValue(cantonCode)) {
         return;

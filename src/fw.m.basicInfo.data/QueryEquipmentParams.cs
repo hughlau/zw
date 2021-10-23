@@ -35,7 +35,7 @@ namespace fw.m.basicInfo.data
 
 
         /// <summary>
-        ///行政区编码
+        ///厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode { get; set; }
@@ -48,7 +48,7 @@ namespace fw.m.basicInfo.data
 
 
         /// <summary>
-        ///行政区编码
+        ///厂区编码
         /// </summary>
         [DataMember]
         public List<string> cantonCodeList { get; set; }

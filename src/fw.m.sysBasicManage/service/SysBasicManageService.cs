@@ -204,7 +204,7 @@ namespace fw.m.sysBasicManage.service
 
         #endregion
 
-        #region 行政区
+        #region 厂区
         [FWAttribute(isVerifyRight = 0, isWriteLog = 0, isFunction = 0)]
         public FWResult<List<MCantonTreeData>> queryCantonList(string ticket, string keyWord, List<string> notLevelList)
         {
@@ -213,7 +213,7 @@ namespace fw.m.sysBasicManage.service
 
 
         /// <summary>
-        /// 根据父级行政区 获取列表
+        /// 根据父级厂区 获取列表
         /// </summary>
         /// <param name="ticket"></param>
         /// <param name="parentCantonCode"></param>
@@ -225,7 +225,7 @@ namespace fw.m.sysBasicManage.service
         }
 
         /// <summary>
-        /// 根据层级进行行政区过滤 返回节点数据
+        /// 根据层级进行厂区过滤 返回节点数据
         /// </summary>
         /// <param name="ticket"></param>
         /// <param name="userID"></param>
@@ -240,7 +240,7 @@ namespace fw.m.sysBasicManage.service
         #endregion
 
 
-        #region 用户行政区相关方法 
+        #region 用户厂区相关方法 
         [FWAttribute(isVerifyRight = 0, isWriteLog = 0, isFunction = 0)]
         public FWResult<List<MFWUserMappingDictionary>> queryFWUserMappingCantonCodeList(string ticket,
             string userID)
@@ -256,7 +256,7 @@ namespace fw.m.sysBasicManage.service
 
 
         /// <summary>
-        /// 加载指定行政区及其子行政区方法
+        /// 加载指定厂区及其子厂区方法
         /// </summary>
         /// <param name="ticket"></param>
         /// <param name="cantonCode"></param>
@@ -268,7 +268,7 @@ namespace fw.m.sysBasicManage.service
         }
 
         /// <summary>
-        /// 加载指定行政区及其子行政区方法
+        /// 加载指定厂区及其子厂区方法
         /// </summary>
         /// <param name="ticket"></param>
         /// <param name="cantonCode"></param>
@@ -304,15 +304,15 @@ namespace fw.m.sysBasicManage.service
         }
 
 
-        #region 行政区帮助方法
+        #region 厂区帮助方法
 
         /// <summary>
-        /// 根据传入的行政区列表用户所属行政区
+        /// 根据传入的厂区列表用户所属厂区
         /// </summary>
         /// <param name="cantonCodeList">userInfo.cantonCodeList</param>
         /// <param name="paramsCantonCodeList">传入参数</param>
         /// <param name="userID">用户编码</param>
-        /// <returns>用户所属行政区</returns>
+        /// <returns>用户所属厂区</returns>
         public List<String> specialCantonCodeConvert(List<String> cantonCodeList, List<String> paramsCantonCodeList, String userID)
         {
             return MCantonBll.specialCantonCodeConvert(cantonCodeList, paramsCantonCodeList, userID);
@@ -328,7 +328,7 @@ namespace fw.m.sysBasicManage.service
 
         #endregion
 
-        #region 行政区字典查询方法
+        #region 厂区字典查询方法
         /// <summary>
         /// 获取树的数据集合（包括子集）
         /// </summary>

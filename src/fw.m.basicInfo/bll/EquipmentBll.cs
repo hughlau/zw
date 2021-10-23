@@ -527,7 +527,7 @@ WHERE  1<>1    ", DictionaryTypeCodeSettings.BLLEquipmentType, DictionaryTypeCod
             if (!string.IsNullOrEmpty(equipmentCode))
             {
                 //sbSql.AppendFormat(@" or  (eq.[equipmentCode] ='{0}' and ({1})) ", FWSqlCommandStaticHelper.checkParam(equipmentCode), SysBasicManageBll.CartonToStr("eq.cantonCode", basicUserInfo.cantonCodeList));
-                //行政区过滤 暂时移除
+                //厂区过滤 暂时移除
                 sbSql.AppendFormat(@" or  (eq.[equipmentCode] ='{0}' and ISNULL(eq.isDel,0)=0 ) ", FWSqlCommandStaticHelper.checkParam(equipmentCode));
             }
             sqlCmd.CommandText = sbSql.ToString();

@@ -33,7 +33,7 @@
                         <input id="equipmentStatusCode" name="equipmentStatusCode" class="mini-combobox"
                             selectonfocus="true" value="" valuefield="code" textfield="name" emptytext="设备状态..."
                             style="width: 150px;" />
-                        <input id="keyWord" name="keyWord" class="mini-textbox" selectonfocus="true" emptytext="请输入净化槽、设备编码或镇、村名称"
+                        <input id="keyWord" name="keyWord" class="mini-textbox" selectonfocus="true" emptytext="请输入现场设备、设备编码或厂区名称"
                             style="width: 250px;" onenter="onSearch();" />                         
                         <a class="mini-button" iconcls="icon-search" plain="true" onclick=" onSearch() ">查询</a><a
                             class="mini-button" iconcls="icon-download" id="export" onclick="dataExport();">导出</a>
@@ -61,7 +61,7 @@
                 <div field="equipmentName" width="180" headeralign="center" align="left" allowsort="true">
                     设备名称</div>
                 <div field="cantonName" width="120" headeralign="center" align="center" allowsort="true">
-                    行政区</div>
+                    厂区</div>
                 <div field="equipmentTypeName" width="120" headeralign="center" align="center" >
                     设备型号</div>
                     <div field="moduleTypeName" width="120" headeralign="center" align="center" >
@@ -69,7 +69,7 @@
                 <div field="equipmentStatusName" width="120" headeralign="center" align="center"    renderer="datagrid1_Renderer" >
                     设备状态</div>
                 <div field="monitorSiteName" width="120" headeralign="center" align="left" allowsort="true" allowsort="true" >
-                    所属净化槽编码</div>
+                    所属现场设备编码</div>
                 <div field="createTime" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer" >
                     上线时间</div>
                 <div field="acceptanceTime" width="120" headeralign="center" align="left">

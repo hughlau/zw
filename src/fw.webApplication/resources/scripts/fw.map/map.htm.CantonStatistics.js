@@ -113,7 +113,7 @@
                 };
             };
             /// <summary>
-            ///     行政区域统计取消绑定（关闭）
+            ///     厂区域统计取消绑定（关闭）
             /// </summary>
             Settings.API.CantonStatisticsUnbind = function () {
                 var ControlData = API._divCantonStatisticsJQ.data("ControlData");
@@ -129,7 +129,7 @@
             };
             Settings.API.CantonStatisticsConditionExtensionJQ = ControlData.ControlJQs.ConditionExtensionJQ;
             /// <summary>
-            ///     行政区域统计取消绑定（打开）
+            ///     厂区域统计取消绑定（打开）
             /// </summary>
             Settings.API.CantonStatisticsBind = function (Properties) {
                 var Settings = {
@@ -153,7 +153,7 @@
             };
 
             /// <summary>
-            ///     行政区改变事件
+            ///     厂区改变事件
             /// </summary>
             Settings.API.CantonStatisticsChange = function (Properties) {
                 var Settings = {
@@ -174,7 +174,7 @@
             };
 
             /// <summary>
-            ///     行政区域统计结果内容绑定
+            ///     厂区域统计结果内容绑定
             /// </summary>
             Settings.API.CantonStatisticsAdd = function (Properties) {
                 var Settings = {

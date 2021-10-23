@@ -764,7 +764,7 @@ namespace fw.m.operationMaintenance.service
 
         #endregion
 
-        #region 监测点位行政区级别加载
+        #region 监测点位厂区级别加载
         public FWResult<List<MCantonData>> queryMonitorSiteTree(string ticket, string personCode, string contractCode, string action)
         {
             return OperationMaintenanceBll.queryMonitorSiteTree(userInfo, personCode, contractCode, action);

@@ -1,4 +1,4 @@
-﻿//绑定处理设施行政区
+﻿//绑定处理设施厂区
 function BindCanton(properties) {
     var Settings = {
         titleJQ: null, //标题栏控件图层
@@ -7,7 +7,7 @@ function BindCanton(properties) {
     $.extend(Settings, properties);
     var list = Settings.DataSource;
     //绑定标题
-    $("<span>行政区</span>").appendTo(Settings.titleJQ);
+    $("<span>厂区</span>").appendTo(Settings.titleJQ);
 
     //绑定内容
     Settings.contentJQ.html("");
@@ -198,7 +198,7 @@ function BindCanton(properties) {
     };
 
 
-    //绑定行政区
+    //绑定厂区
     var townJQ = $("<select id='sltTown' style='margin-left:5px;width:230px;height:28px;padding:5px;'></select>").appendTo(Settings.titleJQ);
     for (var i = 0; i < list.length; i++) {
         $("<option name='" + list[i].cantonName + "' value='" + list[i].cantonCode + "'>" + list[i].cantonName + "</option>").appendTo(townJQ);
@@ -208,7 +208,7 @@ function BindCanton(properties) {
             };
         };
     };
-    //绑定行政区change事件
+    //绑定厂区change事件
     var cboValue = "";
     var contentJQ = $("<ul id='cun' class=\"ulCantonStatisticsList\"  style='width:950px;height:auto;'></ul>").appendTo(Settings.contentJQ);
     $("#sltTown").change(function () {
@@ -254,7 +254,7 @@ function BindCanton(properties) {
                 RowOnClick(thisJQ, cboValue, IsWithMap, IsStatusList);
                 IsWithMap = false;
                 IsStatusList = false;
-                //判断页面未完全加载时操作净化槽 add by wangyang 20171018
+                //判断页面未完全加载时操作现场设备 add by wangyang 20171018
                 if($("#divPopUpFrameBoxSearch")[0].style.display=='none'){
                    $('.smallToolsControls').width('322px'); 
                 }                

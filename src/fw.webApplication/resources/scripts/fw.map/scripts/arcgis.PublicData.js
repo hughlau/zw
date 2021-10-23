@@ -96,7 +96,7 @@ var SymbolNames = {
     Polygon: "Polygon",
     Polygon_Highlighte: "Polygon_Highlighte",
     Polygon_SJKFQ: "Polygon_SJKFQ", //省级以上开发区样式
-    Polygon_Canton: "Polygon_Canton"//默认行政区域
+    Polygon_Canton: "Polygon_Canton"//默认厂区域
 };
 
 //渲染方式

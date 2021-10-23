@@ -20,7 +20,7 @@ $.page.pageLoad = function () {
         var data = { ticket: $.page.ticket, cantonLevel: "" + entity.cantonLevel + "", parentCode: entity.cantonCode }
         mini.open({
             url: $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysBasicManage/canton.htm", data)//"?"
-            , title: "行政区信息"
+            , title: "厂区信息"
             , width: 640
             , height: 512
             , onload: function () {
@@ -41,7 +41,7 @@ $.page.pageLoad = function () {
         var data = { ticket: $.page.ticket, parentCode: code, cantonLevel: "0" };
         mini.open({
             url: $.page.webSiteRootUrl + fw.fwUrl.FWUrlHelper.addParams("web/sysBasicManage/canton.htm", data)//"?"
-            , title: "行政区信息"
+            , title: "厂区信息"
             , width: 640
             , height: 512
             , onload: function () {

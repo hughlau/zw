@@ -8,7 +8,7 @@ using fw.m.basicInfo.data.model;
 namespace fw.m.basicInfo.data.data
 {
     /// <summary>
-    /// 行政区 统计
+    /// 厂区 统计
     /// </summary>
     [DataContract]
     public class Data_Canton

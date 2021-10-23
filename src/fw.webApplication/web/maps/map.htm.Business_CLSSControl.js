@@ -135,7 +135,7 @@ var infoCantonPts = function (evt) {
     var divJQ = $("<div class=\"divMapInfoWindowContent\" style='z-index:99;'></div>").width(Width).appendTo("body");
     var divInfoJQ = $("<div class=\"divInfo\"></div>").appendTo(divJQ);
     var BodyHtml = "";
-    BodyHtml += "<table><tr><td>行政区：" + (fw.fwObject.FWObjectHelper.hasValue(SelPointfeature.attributes.cantonName) ? SelPointfeature.attributes.cantonName : "--") + "</td></tr>";
+    BodyHtml += "<table><tr><td>厂区：" + (fw.fwObject.FWObjectHelper.hasValue(SelPointfeature.attributes.cantonName) ? SelPointfeature.attributes.cantonName : "--") + "</td></tr>";
     //BodyHtml += "<td>设备数：" + (fw.fwObject.FWObjectHelper.hasValue(SelPointfeature.attributes.equipmentAmount) ? SelPointfeature.attributes.equipmentAmount : "--") + "台</td></tr>";
     BodyHtml += "<tr><td>运营时间：" + (fw.fwObject.FWObjectHelper.hasValue(SelPointfeature.attributes.operateTime) ? fw.fwObject.FWObjectHelper.toString(fw.fwObject.FWObjectHelper.toDateTime(SelPointfeature.attributes.operateTime), $.pageCustomer.dateDay) : "--") + "</td></tr>";
     BodyHtml += "<tr style='float:right;'><td><div id='divDetailTaskInfo' class=\"divDetailTaskInfo\" style='margin:5px;float:left;'><span style=\"float:left;margin-top:2px;margin-left:7px;\">工程浏览</span></div></td></tr>";
@@ -184,7 +184,7 @@ function CLSS_Show() {
         alert("请打开工程列表，选择具体工程！");
         return;
     };
-    //当前行政区编码
+    //当前厂区编码
     var currentCantonCode = "";
     $("#process").show();
     $.page.ajax($.page.getAjaxSettings({
@@ -205,7 +205,7 @@ function CLSS_Show() {
 
                 //数据源
                 var monitorSiteRealTimeStatisDataList = resultData.data;
-                //加载行政区图层
+                //加载厂区图层
                 var MapSettings = {
                     IsVisible: true,
                     LayerName: "CSCanton",
@@ -313,10 +313,10 @@ function CLSS_Show() {
                                     , statusCode: cboValue
                                     , viewCode: 1
                                     , callBackHanlder: "ZoomToCLSSPoint"
-                                    , title: "污水处理净化槽列表"
+                                    , title: "污水处理现场设备列表"
                                     , url: "web/autoMonitor/monitorSiteByStatusList.htm"
                                 };
-                                PopUpFrameBoxShow_MiniOpen(Settings); //打开窗口净化槽
+                                PopUpFrameBoxShow_MiniOpen(Settings); //打开窗口现场设备
 
 
 
@@ -439,7 +439,7 @@ function CLSS_Show() {
                                             , statusCode: statusCode
                                             , viewCode: 1
                                             , callBackHanlder: "ZoomToCLSSPoint"
-                                            , title: "污水处理净化槽列表"
+                                            , title: "污水处理现场设备列表"
                                             , url: "web/autoMonitor/monitorSiteByStatusList.htm"
                                         };
                                         PopUpFrameBoxShow_MiniOpen(Settings);
@@ -450,7 +450,7 @@ function CLSS_Show() {
                                             , statusCode: ""
                                             , viewCode: 1
                                             , callBackHanlder: "ZoomToCLSSPoint"
-                                            , title: "污水处理净化槽列表"
+                                            , title: "污水处理现场设备列表"
                                             , url: "web/autoMonitor/monitorSiteByStatusList.htm"
                                         };
                                         PopUpFrameBoxShow_MiniOpen(Settings);
@@ -484,7 +484,7 @@ function CLSS_Show() {
                             pieSize = 120;
                         };
                         for (var i = 0; i < DataList.length; i++) {
-                            //songshasha  增加注释，首页饼状图显示必备的前提条件：行政区的经纬度必须介于maplayer中设置的地图范围区间内，FWDictionary_BLLCanton中必须增加各个行政区的经纬度信息
+                            //songshasha  增加注释，首页饼状图显示必备的前提条件：厂区的经纬度必须介于maplayer中设置的地图范围区间内，FWDictionary_BLLCanton中必须增加各个厂区的经纬度信息
                             if (evt.xmin < DataList[i].posX && evt.xmax > DataList[i].posX && evt.ymin < DataList[i].posY && evt.ymax > DataList[i].posY) {
                                 EntityList.push(DataList[i]);
                             };
@@ -515,7 +515,7 @@ function CLSS_Show() {
     //    API.SearchAndConcernUnbind();
     //    API.SearchAndConcernBind({
     //        SearchButtonOnClick: function (e, Keyword) {
-    //            if (Keyword == "请输入净化槽编码") {
+    //            if (Keyword == "请输入现场设备编码") {
     //                Keyword = "";
     //            };
     //            $.page.ajax($.page.getAjaxSettings({
@@ -556,7 +556,7 @@ function CLSS_Show() {
     //                            }
     //            }));
     //        }
-    //      , HintValue: "请输入净化槽编码"
+    //      , HintValue: "请输入现场设备编码"
     //    });
     $("#divSearchAllPoints").show();
     //autocompleteArcgisSearchInit();
@@ -672,8 +672,8 @@ var infoEvent = function (evt) {
     var divJQ = $("<div class=\"divMapInfoWindowContent\" style='z-index:99;'></div>").width(Width).appendTo("body");
     var divInfoJQ = $("<div class=\"divInfo\"></div>").appendTo(divJQ);
     var BodyHtml = "", TableHtml = "";
-    BodyHtml += "<table><tr><td style='width:50%;'>净化槽编码:" + getValueStatus(Entity.monitorSiteName) + "</td><td>设备编码：" + getValueStatus(Entity.equipmentNo) + "</td></tr>";
-    BodyHtml += "<tr><td>户主名：" + getValueStatus(Entity.householdName) + "</td><td>行政区：" + getValueStatus(Entity.cantonName) + "</td></tr>";
+    BodyHtml += "<table><tr><td style='width:50%;'>现场设备编码:" + getValueStatus(Entity.monitorSiteName) + "</td><td>设备编码：" + getValueStatus(Entity.equipmentNo) + "</td></tr>";
+    BodyHtml += "<tr><td>户主名：" + getValueStatus(Entity.householdName) + "</td><td>厂区：" + getValueStatus(Entity.cantonName) + "</td></tr>";
     //BodyHtml += "<tr><td>设备状态：" + GetSiteStatus(Entity.statusCode) + "</td><td><div id='divDetailInfo' class=\"divDetailInfo\" style='margin-top:0px;float:right'></div></td></tr></table>";
     
     if (Entity.moduleTypeCode==1) {
@@ -731,8 +731,8 @@ var ZoomToCLSSPoint = function (Entity) {
         var divJQ = $("<div class=\"divMapInfoWindowContent\" style='z-index:99;'></div>").width(Width).appendTo("body");
         var divInfoJQ = $("<div class=\"divInfo\"></div>").appendTo(divJQ);
         var BodyHtml = "", TableHtml = "";
-        BodyHtml += "<table><tr><td style='width:50%;'>净化槽编码:" + getValueStatus(Entity.monitorSiteName) + "</td><td>设备编码：" + getValueStatus(Entity.equipmentNo) + "</td></tr>";
-        BodyHtml += "<tr><td>户主名：" + getValueStatus(Entity.householdName) + "</td><td>行政区：" + getValueStatus(Entity.cantonName) + "</td></tr>";
+        BodyHtml += "<table><tr><td style='width:50%;'>现场设备编码:" + getValueStatus(Entity.monitorSiteName) + "</td><td>设备编码：" + getValueStatus(Entity.equipmentNo) + "</td></tr>";
+        BodyHtml += "<tr><td>户主名：" + getValueStatus(Entity.householdName) + "</td><td>厂区：" + getValueStatus(Entity.cantonName) + "</td></tr>";
 
         //政府管理者角色登录后，隐藏设备运行状态  songshasha 2016-11-9
         if (fw.fwCookie.FWCookieHelper("login_role") == "govAdminRole") {
@@ -787,7 +787,7 @@ function CLSS_Search() {
     var settings = {
         ArcGISWindow: API.ArcGISAPI.ArcGISWindow,
         ArcGISMap: API.ArcGISAPI.ArcGISMap,
-        Title: "污水处理净化槽列表",
+        Title: "污水处理现场设备列表",
         Width: 960,
         Height: 600,
         Url: "../autoMonitor/monitorSiteByStatusList.htm",
@@ -1152,10 +1152,10 @@ function getValueStatus(value) {
 //设施概况(old)
 //function CLSS_Show() {
 //    if (!fw.fwObject.FWObjectHelper.hasValue(homeCantonCode)) {
-//        alert("请点击信息列表，选择行政区！");
+//        alert("请点击信息列表，选择厂区！");
 //        return;
 //    };
-//    //当前行政区编码
+//    //当前厂区编码
 //    var currentCantonCode = "";
 //    $.page.ajax($.page.getAjaxSettings({
 //        serviceType: "crossDomainCall"
@@ -1174,7 +1174,7 @@ function getValueStatus(value) {
 //                //                    return p;
 //                //                }).ToArray();
 //                var monitorSiteRealTimeStatisDataList = resultData.data;
-//                //加载行政区图层
+//                //加载厂区图层
 //                var MapSettings = {
 //                    IsVisible: true,
 //                    LayerName: "CSCanton",
@@ -1182,7 +1182,7 @@ function getValueStatus(value) {
 //                    MapServiceLayerType: Code__MapServiceLayerType.TiledMapService
 //                                       , onClickEvent: function (evt) { //点击事件
 //                                           var level = ArcGIS_Map.getLevel();
-//                                           var attrName = ""; //行政区名称
+//                                           var attrName = ""; //厂区名称
 //                                           if (level > ZoomLevel && (level < ZoomLevel + 3)) {
 //                                               attrName = "TownName";
 //                                           }

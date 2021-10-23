@@ -53,7 +53,7 @@ namespace fw.m.basicInfo.data.model
         private string _cantonCode;
 
         /// <summary>
-        ///  设备所属行政区
+        ///  设备所属厂区
         /// </summary>
         [DataMember]
         public string cantonCode
@@ -186,7 +186,7 @@ namespace fw.m.basicInfo.data.model
 
 
         /// <summary>
-        ///  行政区名称
+        ///  厂区名称
         /// </summary>
         [DataMember]
         public string cantonName { get; set; }

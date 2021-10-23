@@ -131,12 +131,12 @@ namespace fw.m.basicInfo.service
         #region 查询运维合同设施点位列表
 
         /// <summary>
-        /// 查询行政区信息
+        /// 查询厂区信息
         /// </summary>
         /// <param name="ticket">登录凭证</param>
         /// <param name="unitCode">单位编码</param>
         /// <param name="personCode">人员编码</param>
-        /// <returns>行政区信息</returns>
+        /// <returns>厂区信息</returns>
         [FWAttribute(isVerifyRight = 0, isWriteLog = 0, isFunction = 0)]
         public FWResult<List<MLazyTreeData>> queryCantonListForContractLazyTree(string ticket, string unitCode,
             string personCode, QueryBasicInfoParams queryParams)
@@ -820,7 +820,7 @@ namespace fw.m.basicInfo.service
 
         #endregion
 
-        #region M.净化槽状态
+        #region M.现场设备状态
 
         [FWAttribute(isVerifyRight = 0, isWriteLog = 0, isFunction = 0)]
         public FWResult<FWPageData<MBLLMonitorSite>> queryPageMonitorSiteStatus(string ticket, FWPageParams pageParams,
@@ -890,10 +890,10 @@ namespace fw.m.basicInfo.service
 
         #endregion
 
-        #region M.净化槽查询
+        #region M.现场设备查询
 
         /// <summary>
-        /// 查询净化槽列表（分页）
+        /// 查询现场设备列表（分页）
         /// </summary>
         /// <param name="ticket">登录凭证</param>
         /// <param name="pageParams">分页参数</param>
@@ -907,7 +907,7 @@ namespace fw.m.basicInfo.service
         }
 
         /// <summary>
-        /// 查询净化槽列表（分页）(修改时间倒序)
+        /// 查询现场设备列表（分页）(修改时间倒序)
         /// </summary>
         /// <param name="ticket">登录凭证</param>
         /// <param name="pageParams">分页参数</param>
@@ -929,7 +929,7 @@ namespace fw.m.basicInfo.service
 
 
         /// <summary>
-        /// 查询净化槽列表
+        /// 查询现场设备列表
         /// </summary>
         /// <param name="ticket">登录凭证</param>
         /// <param name="queryParams">查询参数</param>
@@ -954,7 +954,7 @@ namespace fw.m.basicInfo.service
         }
 
         /// <summary>
-        /// 净化槽实体查询
+        /// 现场设备实体查询
         /// </summary>
         /// <param name="ticket"></param>
         /// <param name="monitorSiteCode"></param>
@@ -980,7 +980,7 @@ namespace fw.m.basicInfo.service
         }
 
         /// <summary>
-        /// 净化槽分配列表（分页）
+        /// 现场设备分配列表（分页）
         /// </summary>
         /// <param name="ticket">登录凭证</param>
         /// <param name="pageParams">分页参数</param>
@@ -994,7 +994,7 @@ namespace fw.m.basicInfo.service
         }
 
         /// <summary>
-        /// 净化槽人员负责分配列表（分页）
+        /// 现场设备人员负责分配列表（分页）
         /// </summary>
         /// <param name="ticket">登录凭证</param>
         /// <param name="pageParams">分页参数</param>
@@ -1009,7 +1009,7 @@ namespace fw.m.basicInfo.service
 
         #endregion
 
-        #region 地图净化槽查询-状态
+        #region 地图现场设备查询-状态
 
 
         /// <summary>
@@ -1074,13 +1074,13 @@ namespace fw.m.basicInfo.service
 
         #endregion
 
-        #region 净化槽信息批量级联删除操作
+        #region 现场设备信息批量级联删除操作
 
         /// <summary>
-        /// 净化槽信息批量级联删除操作
+        /// 现场设备信息批量级联删除操作
         /// </summary>
         /// <param name="ticket">登录凭证</param>
-        /// <param name="monitorSiteCodeList">净化槽主键列表</param>
+        /// <param name="monitorSiteCodeList">现场设备主键列表</param>
         /// <returns></returns>
         public FWResult<bool> delMonitorSiteAndEquipmentByCascade(string ticket, List<string> monitorSiteCodeList)
         {

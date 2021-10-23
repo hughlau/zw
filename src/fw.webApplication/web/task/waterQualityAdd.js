@@ -1,4 +1,4 @@
-﻿//净化槽编码
+﻿//现场设备编码
 var monitorSiteCode = ''
 var operationMaintenanceTaskCode = '';
 
@@ -76,7 +76,7 @@ $.page.pageLoad = function () {
                 }
             }));
         } else {
-            mini.alert('请选择净化槽编号')
+            mini.alert('请选择现场设备编号')
         }
     })
 }

@@ -68,7 +68,7 @@ namespace fw.m.sysBasicManage.service
                 sysBasicManageUserInfo.userTypeName = userEntity.mUserTypeName;
             }
 
-            //获取用户分配的行政区列表
+            //获取用户分配的厂区列表
             sysBasicManageUserInfo.cantonCodeList = SysBasicManageBll.queryCantonList(userInfo.userID);
             //if (sysBasicManageUserInfo.userTypeCode == DictionaryTypeCodeSettings.EnumUnitTypeCode)
             //{

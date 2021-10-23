@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>净化槽信息维护</title>
+    <title>现场设备信息维护</title>
     <link href="../scripts/themes/default/basicInfo/basicInfo.css" rel="stylesheet" type="text/css" />
     <link href="../style/global.css" rel="stylesheet" type="text/css" />
     <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
@@ -12,7 +12,7 @@
 <body style="background-color: white;" isloaduserinfo="1">
     <div id="divForm" class="form">
         <fieldset style="width: 90%; border: solid 1px #aaa; margin: 0px auto;">
-            <legend style="margin-left: 32px;">净化槽信息</legend>
+            <legend style="margin-left: 32px;">现场设备信息</legend>
             <div class="fieldset-body" style="padding: 5px 0px 5px 0px;">
                 <table style="width: 90%; margin: 0px auto;" class="tableForm form" id="table1">
                     <tr style="display: none;">
@@ -22,36 +22,36 @@
                     </tr>
                     <tr>
                         <th>
-                            净化槽编号：
+                            现场设备编号：
                         </th>
                         <td>
                             <input style="width: 90%;" name="monitorSiteName" required="true" vtype="rangeLength:1,36"
-                                class="mini-textbox " />
+                                   class="mini-textbox " />
                         </td>
                         <th>
-                            净化槽型号：
+                            现场设备型号：
                         </th>
                         <td>
                             <input id="monitorSiteTypeCode" name="monitorSiteTypeCode" class="mini-combobox"
-                                value="" valuefield="code" textfield="name" emptytext="净化槽型号..." style="width: 90%"
-                                required="true" />
+                                   value="" valuefield="code" textfield="name" emptytext="现场设备型号..." style="width: 90%"
+                                   required="true" />
                         </td>
                     </tr>
                     <tr>
                         <th style="width: 20%;">
-                            行政区：
+                            厂区：
                         </th>
                         <td style="width: 30%;">
                             <input class="mini-treeselect " style="width: 90%;" id="cmbCanton" required="true"
-                                name="cantonCode" textfield="name" valuefield="code" parentfield="pCode"
-                                expandonload="0" showradiobutton="true" showfoldercheckbox="false" onbeforenodeselect="beforenodeselect" />
+                                   name="cantonCode" textfield="name" valuefield="code" parentfield="pCode"
+                                   expandonload="0" showradiobutton="true" showfoldercheckbox="false" onbeforenodeselect="beforenodeselect" />
                         </td>
                         <th style="width: 20%;">
                             投运时间：
                         </th>
                         <td style="width: 30%;">
                             <input class="mini-datepicker " name="operateTime" required="true" nullvalue="null"
-                                format="yyyy-MM-dd" emptytext="投运时间..." showclearbutton="true" style="width: 90%;" />
+                                   format="yyyy-MM-dd" emptytext="投运时间..." showclearbutton="true" style="width: 90%;" />
                         </td>
                     </tr>
                     <tr>
@@ -60,46 +60,46 @@
                         </th>
                         <td>
                             <input changeonmousewheel="false" class="mini-spinner " minvalue="-180" maxvalue="180"
-                                format="n6" name="longitude" style="width: 90%;" required="true" />
+                                   format="n6" name="longitude" style="width: 90%;" required="true" />
                         </td>
                         <th>
                             纬度：
                         </th>
                         <td>
                             <input changeonmousewheel="false" class="mini-spinner " minvalue="-90" maxvalue="90"
-                                format="n6" name="latitude" style="width: 90%;" required="true" />
+                                   format="n6" name="latitude" style="width: 90%;" required="true" />
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="display:none;">
                         <th>
                             接入户数：
                         </th>
                         <td>
                             <input changeonmousewheel="false" class="mini-spinner " minvalue="1" maxvalue="10000"
-                                name="householdsCount" style="width: 90%;" required="true" />
+                                   name="householdsCount" style="width: 90%;" required="true" />
                         </td>
                         <th>
                             户主名：
                         </th>
                         <td>
                             <input style="width: 90%;" name="householdName" vtype="rangeLength:1,50" class="mini-textbox "
-                                required="true" />
+                                   required="true" />
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="display:none;">
                         <th>
                             提升泵：
                         </th>
                         <td>
                             <input id="pumpTypeCode" name="pumpTypeCode" class="mini-combobox" value="" valuefield="code"
-                                textfield="name" emptytext="提升泵..." style="width: 90%;" maxlength="18" required="true" />
+                                   textfield="name" emptytext="提升泵..." style="width: 90%;" maxlength="18" required="true" />
                         </td>
                         <th>
                             电表号：
                         </th>
                         <td>
                             <input style="width: 90%;" name="meterNo" vtype="rangeLength:1,50" class="mini-textbox "
-                                required="true" />
+                                   required="true" />
                         </td>
                     </tr>
                     <tr>
@@ -110,13 +110,13 @@
                             <input style="width: 96%; height: 60px;" class="mini-textarea " name="address" vtype="rangeLength:0,120" />
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="display:none;">
                         <th>
                             报警项目：
                         </th>
                         <td colspan="3">
                             <div id="cblAlarmInfo" class="mini-checkboxlist" repeatitems="5" repeatlayout="table"
-                                textfield="name" valuefield="code" style="width: 96%;" required="true">
+                                 textfield="name" valuefield="code" style="width: 96%;" required="true">
                             </div>
                         </td>
                     </tr>

@@ -445,7 +445,7 @@ namespace fw.m.basicInfo.bll
         public static List<BLLEquipment> getEqumentNosByPlanDetailCode(BLLControlPlanDetail bLLControlPlanDetail)
         {
             string sql = "", strparams = "";
-            //净化槽
+            //现场设备
             if (bLLControlPlanDetail.monitorType==2)
             {
                 string[] monitorSiteCodes = bLLControlPlanDetail.monitorTypeContent.Split(',');

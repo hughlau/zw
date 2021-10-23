@@ -33,7 +33,7 @@ $.page.pageLoad = function () {
             $.page.idM.selectClear.show();
         };
     };
-    //行政区编码
+    //厂区编码
     if (fw.fwObject.FWObjectHelper.hasValue($.page.params.cantonCode)) { 
         cantonCode = $.page.params.cantonCode;
     };

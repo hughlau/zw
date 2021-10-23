@@ -24,7 +24,7 @@ namespace fw.m.operationMaintenance.bll
     public class MonitorSiteAlarmBll
     {
         /// <summary>
-        /// 分页查询净化槽报警
+        /// 分页查询现场设备报警
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="pageParams"></param>

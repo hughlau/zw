@@ -47,7 +47,7 @@ namespace fw.m.operationMaintenance.data.model
        private string _monitorSiteName;
 
        /// <summary>
-       /// 净化槽编码
+       /// 现场设备编码
        /// </summary>
        [DataMember]
        public string monitorSiteName
@@ -59,7 +59,7 @@ namespace fw.m.operationMaintenance.data.model
        private string _cantonName;
 
        /// <summary>
-       /// 行政区全称
+       /// 厂区全称
        /// </summary>
        [DataMember]
        public string cantonName

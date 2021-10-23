@@ -371,7 +371,7 @@ function save() {
     }
     var t = mini.get("monitorSiteCode");
     if (t.getValue() == "") {
-        $.page.showTips({ content: "净化槽编码不能为空!", state: "danger" });
+        $.page.showTips({ content: "现场设备编码不能为空!", state: "danger" });
         return;
     }
 

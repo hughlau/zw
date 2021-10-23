@@ -240,11 +240,11 @@ function onMonitorSiteselectCallback(callbackData) {
         $.page.idM.equipmentNo.setValue(callbackData.equipmentNo);
         $.page.idM.btnChooseMonitor.setText(callbackData.monitorSiteName );
         $.page.idM.btnChooseMonitor.setValue(callbackData.monitorSiteCode);
-        $.page.idM.txtTaskName.setValue("净化槽编号：" + callbackData.monitorSiteName + "设备编号：" + callbackData.equipmentNo + " 运维任务");
+        $.page.idM.txtTaskName.setValue("现场设备编号：" + callbackData.monitorSiteName + "设备编号：" + callbackData.equipmentNo + " 运维任务");
         //
         $.page.idM.btnChoosePeople.setText(callbackData.operationMaintenancePersonName);
         $.page.idM.btnChoosePeople.setValue(callbackData.operationMaintenancePersonCode); 
-        divFormJQ.validate(); //首次选择后 净化槽编码显示不能为空
+        divFormJQ.validate(); //首次选择后 现场设备编码显示不能为空
     };
 };
 

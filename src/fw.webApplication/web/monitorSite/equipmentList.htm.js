@@ -320,7 +320,7 @@ function insert() {
     //默认只能添加一台设备
    
 //    if ($.page.hasValue($.page.idM.datagrid1.data) && $.page.idM.datagrid1.data.length>0) {
-//        $.page.showTips({ content: "净化槽只能关联一台设备！" , state: "danger" });
+//        $.page.showTips({ content: "现场设备只能关联一台设备！" , state: "danger" });
 //    } else {
 //        var pageParams = { url: "web/commonPage/equipmentSelect.htm", width: 800, height: 600, title: "设备选择" };
 //        $.page.openPage(data, pageParams);

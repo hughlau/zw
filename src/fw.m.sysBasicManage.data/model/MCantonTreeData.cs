@@ -54,7 +54,7 @@ namespace fw.m.sysBasicManage.data.model
         private List<MCantonTreeData> _childTreeDataList = new List<MCantonTreeData>();
 
         /// <summary>
-        /// 行政区登级
+        /// 厂区登级
         /// </summary>
         [DataMember]
         public Int32 level

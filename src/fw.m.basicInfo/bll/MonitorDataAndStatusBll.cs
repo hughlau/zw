@@ -31,7 +31,7 @@ namespace fw.m.basicInfo.bll
         #region 基础数据查询
 
         /// <summary>
-        /// 调用存储获取 净化槽状态
+        /// 调用存储获取 现场设备状态
         /// </summary>
         /// <returns></returns>
         private static List<MLazyTreeData> getMonitorStatus_Proc()
@@ -68,7 +68,7 @@ namespace fw.m.basicInfo.bll
             return result;
         }
 
-        //查询已经关联设备的净化槽列表
+        //查询已经关联设备的现场设备列表
         public static List<MBLLMonitorSite> queryMonitorSiteListJizhan(SysBasicManageUserInfo userInfo, QueryBasicInfoParams queryParams)
         {
             List<MBLLMonitorSite> result = new List<MBLLMonitorSite>();
@@ -194,7 +194,7 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
         }
 
 
-        //查询已经关联设备的净化槽列表
+        //查询已经关联设备的现场设备列表
         public static List<MBLLMonitorSite> queryMonitorSiteList(SysBasicManageUserInfo userInfo, QueryBasicInfoParams queryParams)
         {
             List<MBLLMonitorSite> result = new List<MBLLMonitorSite>();
@@ -323,11 +323,11 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
 
         #endregion
 
-        #region 净化槽状态查询
+        #region 现场设备状态查询
 
 
         /// <summary>
-        /// 净化槽状态列表
+        /// 现场设备状态列表
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="cantonCode"></param>
@@ -398,7 +398,7 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
 
 
         /// <summary>
-        /// 净化槽状态列表(包括基站)
+        /// 现场设备状态列表(包括基站)
         /// </summary>
         /// <param name="userInfo"></param>
         /// <param name="cantonCode"></param>
@@ -580,7 +580,7 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
                 List<MBLLMonitorSiteMonitorFactor> factorSettings = FWSqlEntityToFWCommandStaticHelper.queryList<MBLLMonitorSiteMonitorFactor>(MBLLMonitorSiteMonitorFactorDal.queryMonitorSiteFactor(string.Empty, string.Empty));
                 if (factorSettings == null || factorSettings.Count <= 0)
                 {
-                    throw new Exception("系统净化槽因子配置信息获取失败！");
+                    throw new Exception("系统现场设备因子配置信息获取失败！");
                 }
                 //监测因子
                 List<MFWDictionary> dicList = new List<MFWDictionary>();
@@ -593,11 +593,11 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
                 {
                     throw new Exception("系统监测因子数据获取失败！");
                 }
-                //净化槽数据
+                //现场设备数据
                 List<MBLLMonitorSite> siteList = queryMonitorSiteList(userInfo, null);
                 if (siteList == null || siteList.Count <= 0)
                 {
-                    throw new Exception("系统净化槽/设备信息获取失败！");
+                    throw new Exception("系统现场设备/设备信息获取失败！");
                 }
                 #endregion
                 #region 数据解析
@@ -646,11 +646,11 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
                         }
                         #region 与系统数据进行匹配
 
-                        //根据净化槽编号 设备编号 获取主键
+                        //根据现场设备编号 设备编号 获取主键
                         var isHit = siteEquipmentCheck(row[monitorSiteNameIx].ToString(), row[equipmentNoIx].ToString(), entity, siteList);
                         if (!isHit)
                         {
-                            throw new Exception(string.Format("系统找不到对应的净化槽编号[{0}]与设备编号[{1}]信息！", row[monitorSiteNameIx], row[equipmentNoIx]));
+                            throw new Exception(string.Format("系统找不到对应的现场设备编号[{0}]与设备编号[{1}]信息！", row[monitorSiteNameIx], row[equipmentNoIx]));
                         }
 
                         if (!string.IsNullOrEmpty(row[monitorFactorNameIx].ToString()))
@@ -740,7 +740,7 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
         }
 
         /// <summary>
-        /// 设备净化槽编号匹配
+        /// 设备现场设备编号匹配
         /// </summary>
         /// <param name="monitorSiteName"></param>
         /// <param name="equipmentNo"></param>

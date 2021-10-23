@@ -213,7 +213,7 @@
         //                                , "ShowmaxScale": "0"
         //                            }
         //                    , {
-        //                        "LayerTitle": "行政区划"
+        //                        "LayerTitle": "厂区划"
         //                                , "LayerName": "Canton"
         //                                , "ServiceUrl": CantonLayerUrl
         //                                , "InfoWindowSettings":

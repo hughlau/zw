@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace fw.m.sysBasicManage.data
 {
     /// <summary>
-    /// 行政区查询条件
+    /// 厂区查询条件
     /// </summary>
     [DataContract]
     public class QueryCantonParams : QueryBasicManageParams

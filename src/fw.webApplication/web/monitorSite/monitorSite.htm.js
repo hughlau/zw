@@ -168,7 +168,7 @@ function queryMonitorSite() {
 
                     monitorImgList = entity.photoAddress.split("_");
                     // monitorImgList = fw.fwJson.FWJsonHelper.deserializeObject("ddd");
-                    var html = '<tr><th>净化槽图片：</th><td colspan="3">';
+                    var html = '<tr><th>现场设备图片：</th><td colspan="3">';
                     if (fw.fwObject.FWObjectHelper.hasValue(monitorImgList)) {
                         for (var i = 0; i < monitorImgList.length; i++) {
                             var entity = monitorImgList[i];

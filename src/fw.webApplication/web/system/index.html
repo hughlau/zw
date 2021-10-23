@@ -64,8 +64,8 @@
                 <img class="user-img" src="res/images/user.jpg" />个人资料<i class="fa fa-angle-down"></i>
             </a>
             <ul class="dropdown-menu pull-right">
-                <li ><a href="#"><i class="fa fa-eye "></i> 用户信息</a></li>
-                <li><a href="#"><i class="fa fa-user"></i> 退出登录</a></li>
+                <!--<li ><a href="#"><i class="fa fa-eye "></i> 用户信息</a></li>-->
+                <li><a href="#" id="divQuit"><i class="fa fa-user"></i> 退出登录</a></li>
             </ul>
         </li>
     </ul>
@@ -99,6 +99,7 @@
 </html>
 <script>
     var curmenuitem;
+    var divQuitJQ = $("#divQuit");
     //menu
     var menu = new Menu("#mainMenu", {
         itemclick: function (item) {
@@ -204,6 +205,8 @@
         }));
     };
 
-
+    divQuitJQ.bind("click", function () {
+        $.page.goLogin();
+    });
 
 </script>

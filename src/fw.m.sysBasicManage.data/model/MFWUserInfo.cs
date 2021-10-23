@@ -328,7 +328,7 @@ namespace fw.m.sysBasicManage.data.model
 
 
           /// <summary>
-        ///   行政区
+        ///   厂区
         /// </summary>
         [DataMember]
         public String cantonCode

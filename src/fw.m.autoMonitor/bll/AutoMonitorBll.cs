@@ -115,7 +115,7 @@ namespace fw.m.autoMonitor.bll
                                              new SqlParameter("@dStart",string.Empty), 
                                              new SqlParameter("@dEnd",string.Empty),
                                              new SqlParameter("@equipmentNoOrName",queryParams.equipmentKeyword),
-                                             new SqlParameter("@userid",userInfo.userID),   //存储过程rpt_MonitorStatus增加userid参数，根据登录用户查询其管辖的行政区，根据行政区加载数据  songshasha 2016-11-11
+                                             new SqlParameter("@userid",userInfo.userID),   //存储过程rpt_MonitorStatus增加userid参数，根据登录用户查询其管辖的厂区，根据厂区加载数据  songshasha 2016-11-11
                                              new SqlParameter("@projectNo", queryParams.projectNo) 
                                            };
             cmd.Parameters.AddRange(SqlParameterS);
@@ -223,7 +223,7 @@ namespace fw.m.autoMonitor.bll
                                              new SqlParameter("@dEnd",string.Empty),
                                              new SqlParameter("@equipmentNoOrName",queryParams.equipmentKeyword),
                                              new SqlParameter("@projectNo",queryParams.projectNo) ,
-                                             new SqlParameter("@userid",userInfo.userID)   //存储过程rpt_MonitorStatus增加userid参数，根据登录用户查询其管辖的行政区，根据行政区加载数据  songshasha 2016-11-11
+                                             new SqlParameter("@userid",userInfo.userID)   //存储过程rpt_MonitorStatus增加userid参数，根据登录用户查询其管辖的厂区，根据厂区加载数据  songshasha 2016-11-11
                                            };
             cmd.Parameters.AddRange(SqlParameterS);
             DataSet ds = FWSqlCommandStaticHelper.ExecuteDataSet(cmd);

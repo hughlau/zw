@@ -304,7 +304,7 @@ namespace fw.m.sysBasicManage.data.entity
         private DateTime _updateTime;
 
         /// <summary>
-        ///   行政区
+        ///   厂区
         /// </summary>
         [DataMember]
         public String cantonCode

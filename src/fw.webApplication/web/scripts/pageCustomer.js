@@ -519,7 +519,7 @@ fw.m.sysBasicManage = {
         , FWOrganizationCode: {
 
         }
-        //行政区
+        //厂区
         , FWCantonCode: {
 
         }

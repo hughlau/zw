@@ -40,7 +40,7 @@ function queryMonitorSite() {
             else //Roger 2016/6/1 13:00:02 增加管辖区域
             {
                 var erroInfo = resultData.infoList.join("<br>");
-                $.page.showTips({ content: "净化槽信息获取失败!<br>" + erroInfo, state: "danger" });
+                $.page.showTips({ content: "现场设备信息获取失败!<br>" + erroInfo, state: "danger" });
             };
         }
     }));

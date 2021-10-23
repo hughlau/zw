@@ -600,7 +600,7 @@
                                 for (var o = 0; o < newdata.ListEnterpriseStation.length; o++) {
                                     newdata.ListEnterpriseStation[o].QualitativeValue = 0;
                                 };
-                                var CantonEntityCount = 0;      //按行政区统计，污染源个数
+                                var CantonEntityCount = 0;      //按厂区统计，污染源个数
                                 var TypeEntityCout = 0;         //按污染源类别统计，污染源个数
                                 var ListMonitorWSC = [];
                                 var ListMonitorFQ = [];
@@ -689,7 +689,7 @@
                                     CantonEntityCount += newdata.ListCantonCount[a].QualitativeValueFS.QualitativeValueAll + newdata.ListCantonCount[a].QualitativeValueFQ.QualitativeValueAll + newdata.ListCantonCount[a].QualitativeValueWSC.QualitativeValueAll;
                                     newdata.ListCantonCount[a].QualitativeValue = newdata.ListCantonCount[a].QualitativeValueFS.QualitativeValueAll + newdata.ListCantonCount[a].QualitativeValueFQ.QualitativeValueAll + newdata.ListCantonCount[a].QualitativeValueWSC.QualitativeValueAll;
                                 };
-                                //行政区     
+                                //厂区     
                                 if (API.UserInfo.IsBelongManageCantonSame && CantonEntityCount < TypeEntityCout) {
                                     newdata.ListCantonCount.push({ Code: API.UserInfo.UserBelongCantonCode, IsBelongCantonOthers: true, Name: API.UserInfo.UserBelongCantonName + UserBelongCantonNameBehindWord, QualitativeValue: TypeEntityCout - CantonEntityCount });
                                 };
@@ -991,7 +991,7 @@
                                     };
                                 };
                             };
-                            //行政区     
+                            //厂区     
                             if (API.UserInfo.IsBelongManageCantonSame) {
                                 for (var k = 0; k < newdata.ListCanton.length; k++) {
                                     if (newdata.ListCanton[k].Code == ListMonitorWater[i].ParentCantonCode || newdata.ListCanton[k].Code == ListMonitorWater[i].MaxParentCantonCode || newdata.ListCanton[k].Code == ListMonitorWater[i].CantonCode) {
@@ -1069,7 +1069,7 @@
                                     }
                                 }
                             }
-                            //行政区           
+                            //厂区           
                             if (API.UserInfo.IsBelongManageCantonSame) {
                                 for (var k = 0; k < newdata.ListCanton.length; k++) {
                                     if (newdata.ListCanton[k].Code == ListMonitorAir[i].ParentCantonCode || newdata.ListCanton[k].Code == ListMonitorAir[i].MaxParentCantonCode || newdata.ListCanton[k].Code == ListMonitorAir[i].CantonCode) {
@@ -1146,7 +1146,7 @@
                                 };
                             };
 
-                            //行政区
+                            //厂区
                             if (API.UserInfo.IsBelongManageCantonSame) {
                                 for (var k = 0; k < newdata.ListCanton.length; k++) {
                                     if (newdata.ListCanton[k].Code == ListMonitorSoil[i].ParentCantonCode || newdata.ListCanton[k].Code == ListMonitorSoil[i].MaxParentCantonCode || newdata.ListCanton[k].Code == ListMonitorSoil[i].CantonCode) {
@@ -1221,7 +1221,7 @@
                                     };
                                 };
                             };
-                            //行政区
+                            //厂区
                             if (API.UserInfo.IsBelongManageCantonSame) {
                                 for (var k = 0; k < newdata.ListCanton.length; k++) {
                                     if (newdata.ListCanton[k].Code == ListMonitorElectromagnetic[i].ParentCantonCode || newdata.ListCanton[k].Code == ListMonitorElectromagnetic[i].MaxParentCantonCode || newdata.ListCanton[k].Code == ListMonitorElectromagnetic[i].CantonCode) {
@@ -1629,7 +1629,7 @@
                                             };
                                         };
                                     };
-                                    //行政区
+                                    //厂区
 
                                     if (API.UserInfo.IsBelongManageCantonSame) {
                                         for (var j = 0; j < newdata.ListCanton.length; j++) {
@@ -2026,7 +2026,7 @@
                                         };
                                     };
 
-                                    //行政区
+                                    //厂区
                                     if (API.UserInfo.IsBelongManageCantonSame) {
                                         for (var j = 0; j < newdata.ListCanton.length; j++) {
                                             if (newdata.ListCanton[j].Code == "" || newdata.ListCanton[j].Code == newdata.ListMonitor[i].ParentCantonCode || newdata.ListCanton[j].Code == newdata.ListMonitor[i].MaxParentCantonCode || newdata.ListCanton[j].Code == newdata.ListMonitor[i].CantonCode) {
@@ -2585,7 +2585,7 @@
                                                 };
                                             };
                                         };
-                                        //行政区                                                
+                                        //厂区                                                
                                         if (API.UserInfo.IsBelongManageCantonSame) {
                                             for (var j = 0; j < newdata.ListCanton.length; j++) {
                                                 if (newdata.ListCanton[j].Code == newdata.listStateSection[i].ParentCantonCode || newdata.ListCanton[j].Code == newdata.listStateSection[i].MaxParentCantonCode || newdata.ListCanton[j].Code == newdata.listStateSection[i].CantonCode) {
@@ -2634,7 +2634,7 @@
                                                 };
                                             };
                                         };
-                                        //行政区
+                                        //厂区
                                         if (API.UserInfo.IsBelongManageCantonSame) {
                                             for (var j = 0; j < newdata.ListCanton.length; j++) {
                                                 if (newdata.ListCanton[j].Code == newdata.listProvinceSection[i].ParentCantonCode || newdata.ListCanton[j].Code == newdata.listProvinceSection[i].MaxParentCantonCode || newdata.ListCanton[j].Code == newdata.listProvinceSection[i].CantonCode && API.UserInfo.UserBelongCantonCode != newdata.listProvinceSection[i].CantonCode) {
@@ -2683,7 +2683,7 @@
                                                 };
                                             };
                                         };
-                                        //行政区
+                                        //厂区
                                         if (API.UserInfo.IsBelongManageCantonSame) {
                                             for (var j = 0; j < newdata.ListCanton.length; j++) {
                                                 if (newdata.ListCanton[j].Code == newdata.listOthersSection[i].ParentCantonCode || newdata.ListCanton[j].Code == newdata.listOthersSection[i].MaxParentCantonCode || newdata.ListCanton[j].Code == newdata.listOthersSection[i].CantonCode && API.UserInfo.UserBelongCantonCode != newdata.listOthersSection[i].CantonCode) {
@@ -3076,7 +3076,7 @@
                                         };
                                     };
 
-                                    //行政区
+                                    //厂区
                                     if (API.UserInfo.IsBelongManageCantonSame) {
                                         for (var j = 0; j < newdata.ListCanton.length; j++) {
                                             if (newdata.ListCanton[j].Code == "" || newdata.ListCanton[j].Code == newdata.ListMonitor[i].ParentCantonCode || newdata.ListCanton[j].Code == newdata.ListMonitor[i].MaxParentCantonCode || newdata.ListCanton[j].Code == newdata.ListMonitor[i].CantonCode) {
@@ -3420,7 +3420,7 @@
                                         };
                                     };
                                 };
-                                //行政区
+                                //厂区
                                 if (API.UserInfo.IsBelongManageCantonSame) {
                                     for (var j = 0; j < newdata.ListCanton.length; j++) {
                                         if (newdata.ListCanton[j].Code == newdata.ListMonitor[i].ParentCantonCode || newdata.ListCanton[j].Code == newdata.ListMonitor[i].MaxParentCantonCode || newdata.ListCanton[j].Code == newdata.ListMonitor[i].CantonCode) {

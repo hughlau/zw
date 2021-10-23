@@ -22,13 +22,13 @@ namespace fw.m.operationMaintenance.data.model
         public string monitorSiteName { get; set; }
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode { get; set; }
 
         /// <summary>
-        /// 行政区名称
+        /// 厂区名称
         /// </summary>
         [DataMember]
         public string cantonName { get; set; }

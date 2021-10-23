@@ -136,9 +136,7 @@ E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\fw.m.userLogin.data.dll
 E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\fw.m.userLogin.dll
 E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\Newtonsoft.Json.dll
 E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\MQTTnet.Core.dll
-E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\Apache.NMS.dll
 E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\MQTTnet.dll
-E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\Apache.NMS.ActiveMQ.dll
 E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\jpush-api.dll
 E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\Aspose.Words.dll
 E:\orginPro\git_zw\zw\src\fw.m.basicInfo\bin\Debug\Aspose.Cells.dll

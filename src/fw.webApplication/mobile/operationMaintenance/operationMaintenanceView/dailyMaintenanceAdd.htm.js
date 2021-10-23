@@ -19,7 +19,7 @@ var operationMaintenanceTaskName = '';
 var isLoading = false;
 // 存储上传图片信息
 var ImgArr = [];
-//净化槽编码
+//现场设备编码
 var monitorSiteCode =''
 //保存传入的
 var imgNames = '';
@@ -189,7 +189,7 @@ $.page.pageLoad = function () {
                 }));
             })
         };
-        //净化槽编码存在
+        //现场设备编码存在
         if (monitorSiteCode) {
             //有图片时
             if (ImgArr.length) {
@@ -226,7 +226,7 @@ $.page.pageLoad = function () {
                         //                            //operationCleanRecordCode: 'cdda23ff-8d2d-47cc-a7fc-cb65c99a514a'
                         //                           , operationMaintenanceTaskCode: "6995ebe7-9272-44c0-bc44-7aa5e3ee8b39"
                         //                           , maintainers: "李末利，李建国"
-                        //                           , operationContent: "清洗风机过滤网、添加消毒药片、净化槽内部清扫 、调节回流阀、调节曝气阀"
+                        //                           , operationContent: "清洗风机过滤网、添加消毒药片、现场设备内部清扫 、调节回流阀、调节曝气阀"
                         //                           , operationContentID: "3、4、5、7、8"
                         //                           , anaerobicFilter_D: "10"
                         //                           , anaerobicFilter_F: "2"
@@ -238,7 +238,7 @@ $.page.pageLoad = function () {
                         //                           
                         //                        }
 
-                        mEntity: { "GPS": "江苏省苏州市常熟市G15(沈海高速)", "anaerobicFilter_D": "10", "anaerobicFilter_F": "2", "imgName": "1515634013400.jpg", "inclusionRemoval_D": "15", "inclusionRemoval_F": "18", "isDis": "0", "maintainers": "李末利，李建国", "meterNum": "413.3", "monitorSiteCode": "5e662607-90a6-477c-8f20-008f413e2a3b", "operationContent": "添加消毒药片、净化槽内部清扫 、清洗阀门、调节回流阀、调节曝气阀  、修复围栏、清洗井盖  ", "operationContentID": "4、5、6、7、8、9、10", "operationMaintenanceFormData": "{\"isElectricBoxNormal\":1,\"isEnclosureNormal\":1,\"isLeakageProtectorNormal\":0,\"isLeakageProtectorSwitchNormal\":1,\"isLiftDeviceNormal\":1,\"isManholecoverNormal\":1,\"isMonitorNormal\":1,\"isPowerSupplyBoxNormal\":1,\"isPowerSupplyLineNormal\":1,\"isTapDefect\":0,\"isWaterLineNormal\":1,\"isDeviceFlowBackward\":0,\"isCarrierOverflow\":0,\"isAerationNormal\":1}", "operationMaintenanceTaskCode": "6995ebe7-9272-44c0-bc44-7aa5e3ee8b39", "operationMaintenanceTaskName": "", "opinion": "", "others": "", "recorder": "", "rem": "0", "remark": "", "settlingChamber_D": "5", "settlingChamber_F": "0", "status": "1" }
+                        mEntity: { "GPS": "江苏省苏州市常熟市G15(沈海高速)", "anaerobicFilter_D": "10", "anaerobicFilter_F": "2", "imgName": "1515634013400.jpg", "inclusionRemoval_D": "15", "inclusionRemoval_F": "18", "isDis": "0", "maintainers": "李末利，李建国", "meterNum": "413.3", "monitorSiteCode": "5e662607-90a6-477c-8f20-008f413e2a3b", "operationContent": "添加消毒药片、现场设备内部清扫 、清洗阀门、调节回流阀、调节曝气阀  、修复围栏、清洗井盖  ", "operationContentID": "4、5、6、7、8、9、10", "operationMaintenanceFormData": "{\"isElectricBoxNormal\":1,\"isEnclosureNormal\":1,\"isLeakageProtectorNormal\":0,\"isLeakageProtectorSwitchNormal\":1,\"isLiftDeviceNormal\":1,\"isManholecoverNormal\":1,\"isMonitorNormal\":1,\"isPowerSupplyBoxNormal\":1,\"isPowerSupplyLineNormal\":1,\"isTapDefect\":0,\"isWaterLineNormal\":1,\"isDeviceFlowBackward\":0,\"isCarrierOverflow\":0,\"isAerationNormal\":1}", "operationMaintenanceTaskCode": "6995ebe7-9272-44c0-bc44-7aa5e3ee8b39", "operationMaintenanceTaskName": "", "opinion": "", "others": "", "recorder": "", "rem": "0", "remark": "", "settlingChamber_D": "5", "settlingChamber_F": "0", "status": "1" }
 
                     },
                     beforeSend: function () {
@@ -257,7 +257,7 @@ $.page.pageLoad = function () {
                 }));
             }
         } else {
-            mini.alert('请选择净化槽编号')
+            mini.alert('请选择现场设备编号')
         }
     })
 }
@@ -436,7 +436,7 @@ function onButtonChooseMonitorSite(e) {
     }
 };
 /**
- * 设置框内净化槽编码功能
+ * 设置框内现场设备编码功能
  * @param  {[函数]} callbackData [判断条件]
  * @return {[type]}              [description]
  */
@@ -448,7 +448,7 @@ function onMonitorSiteselectCallback(callbackData) {
         // $.page.idM.btnChooseMonitor.setText(callbackData.monitorSiteName );        
         $('.mini-buttonedit-input').val(callbackData.monitorSiteName) 
              $('.mini-buttonedit-input').attr('disabled','disabled') 
-       $.page.idM.btnChooseMonitor.validate();  //首次选择后 净化槽编码显示不能为空
+       $.page.idM.btnChooseMonitor.validate();  //首次选择后 现场设备编码显示不能为空
     };
 };
 

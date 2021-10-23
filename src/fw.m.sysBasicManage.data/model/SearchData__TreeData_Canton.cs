@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace fw.m.sysBasicManage.data.model
 {
     /// <summary>
-    /// 树形数据(行政区)
+    /// 树形数据(厂区)
     /// </summary>
     [DataContract,Serializable]
     public class SearchData__TreeData_Canton
@@ -56,7 +56,7 @@ namespace fw.m.sysBasicManage.data.model
         private List<SearchData__TreeData_Canton> _ChildTreeDataList = new List<SearchData__TreeData_Canton>();
 
         /// <summary>
-        /// 行政区登级
+        /// 厂区登级
         /// </summary>
         [DataMember]
         public Int32 Level

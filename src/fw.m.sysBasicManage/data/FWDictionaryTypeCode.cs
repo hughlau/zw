@@ -33,7 +33,7 @@ namespace fw.m.sysBasicManage.data
         public const string FWOrganization = "FWOrganization";
 
         /// <summary>
-        /// 行政区
+        /// 厂区
         /// </summary>
         public const string FWCanton = "FWCanton";
 

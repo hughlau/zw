@@ -241,7 +241,7 @@ function onDrawEndDate(e) {
 
 
 function openWindow__MonitorSiteData(monitorSiteCode) {
-    var data = { ticket: $.page.ticket, pageTabs: "info,waterhis" };
+    var data = { ticket: $.page.ticket, pageTabs: "info" };
     data.monitorSiteCode = monitorSiteCode;
     var pageParams = { url: "web/monitorSite/monitorSiteViewMain.htm", width: 960, height: 600, title: "设施信息" };
     $.page.openPage(data, pageParams, function () {

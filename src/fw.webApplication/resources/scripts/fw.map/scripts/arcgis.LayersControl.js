@@ -741,7 +741,7 @@ $.fn.extend({
                      Html += "<div class=\"title_tit\">" + Settings.Title + "</div>";
 
                      Html += "<div title='关闭' class=\"title_close\"></div>";
-                     if(Settings.Title=="污水处理净化槽列表"){
+                     if(Settings.Title=="污水处理现场设备列表"){
                         Html += "<div title='最小化' class=\"title_min\"></div>";
                      }                     
                      Html += "</div>";

@@ -147,12 +147,12 @@
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.cantonCode">
             <summary>
-            行政区编码
+            厂区编码
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.cantonName">
             <summary>
-            行政区 名称
+            厂区 名称
             </summary>	
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MBaseEnterprsie.bossIDNumber">
@@ -272,22 +272,22 @@
         </member>
         <member name="T:fw.m.sysBasicManage.data.model.MCanton">
             <summary>
-            行政区
+            厂区
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MCanton.cantonCode">
             <summary>
-            行政区编码
+            厂区编码
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MCanton.cantonName">
             <summary>
-            行政区名称
+            厂区名称
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MCanton.parentCantonCode">
             <summary>
-            父级行政区编码
+            父级厂区编码
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MCantonTreeData.code">
@@ -312,7 +312,7 @@
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MCantonTreeData.level">
             <summary>
-            行政区登级
+            厂区登级
             </summary>
         </member>
         <member name="T:fw.m.sysBasicManage.data.model.MEnterprise">
@@ -632,7 +632,7 @@
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.level">
             <summary>
-            行政区等级
+            厂区等级
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MFWCantonData.childDataList">
@@ -1010,7 +1010,7 @@
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MFWUserInfo.cantonCode">
             <summary>
-              行政区
+              厂区
             </summary>
         </member>
         <member name="T:fw.m.sysBasicManage.data.model.MFWUserMappingDictionary">
@@ -1290,7 +1290,7 @@
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.cantonCode">
             <summary>
-            行政区编码
+            厂区编码
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.MBLLOperationMaintenanceUnitPerson.organizationCode">
@@ -1660,7 +1660,7 @@
         </member>
         <member name="T:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton">
             <summary>
-            树形数据(行政区)
+            树形数据(厂区)
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton.Code">
@@ -1685,7 +1685,7 @@
         </member>
         <member name="P:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton.Level">
             <summary>
-            行政区登级
+            厂区登级
             </summary>
         </member>
         <member name="F:fw.m.sysBasicManage.data.model.SearchData__TreeData_Canton._Longitude">
@@ -1740,12 +1740,12 @@
         </member>
         <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.cantonCode">
             <summary>
-            行政区编码
+            厂区编码
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.cantonCodeList">
             <summary>
-            行政区列表
+            厂区列表
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.QueryBasicManageParams.enterpriseCode">
@@ -1755,7 +1755,7 @@
         </member>
         <member name="T:fw.m.sysBasicManage.data.QueryCantonParams">
             <summary>
-            行政区查询条件
+            厂区查询条件
             </summary>
         </member>
         <member name="P:fw.m.sysBasicManage.data.QueryCantonParams.parentCode">

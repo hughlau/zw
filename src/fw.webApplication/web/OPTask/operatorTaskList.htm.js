@@ -391,7 +391,7 @@ function openMonitorSiteInfo(action, monitorSiteCode) {
     var data = { ticket: $.page.ticket, action: action, pageTabs: "info,ws" };
     data.monitorSiteCode = monitorSiteCode;
     var pageParams = {};
-    pageParams = { url: "web/monitorSite/monitorSiteViewMain.htm", width: 800, height: 600, title: "净化槽信息" };
+    pageParams = { url: "web/monitorSite/monitorSiteViewMain.htm", width: 800, height: 600, title: "现场设备信息" };
     $.pageCustomer.openPage(data, pageParams, function (e) {
     });
 };

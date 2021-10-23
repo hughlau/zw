@@ -8,7 +8,7 @@ using fw.fwDal;
 namespace fw.m.sysBasicManage.data.entity
 {
     /// <summary>
-    /// 行政区信息
+    /// 厂区信息
     /// </summary>
     [DataContract]
     public class T_Sys_MenuExInfo : FWEntityObject

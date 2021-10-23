@@ -67,7 +67,7 @@ function setColumns() {
     var monthRange = isOverYear ? 12 : endMonth;
     var columns_data = [
     { type: "indexcolumn", header: "序号", width: 30, headerAlign: "center" },
-    { header: "行政区名称", field: "name", name: "cantonNameT", width: 100, headerAlign: "center", align: "left" }
+    { header: "厂区名称", field: "name", name: "cantonNameT", width: 100, headerAlign: "center", align: "left" }
     ];
     for (var i = beginMonth; i <= monthRange; i++) {
         var timestr = moment(new Date(beginyear, i - 1, 1)).format("YYYY-MM-DD");

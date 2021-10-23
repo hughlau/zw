@@ -19,7 +19,7 @@ var operationMaintenanceTaskName = '';
 var isLoading = false;
 // 存储上传图片信息
 var ImgArr = [];
-//净化槽编码
+//现场设备编码
 var monitorSiteCode = ''
 //保存传入的
 var imgNames = '';
@@ -44,7 +44,7 @@ $.page.pageInit = function () {
     };
 };
 
-//打开行政区分配功能窗口
+//打开厂区分配功能窗口
 function openSetCanton() {
 
     var data = {
@@ -58,7 +58,7 @@ function openSetCanton() {
     //打开窗口
     mini.open({
         url: url
-        , title: "选择行政区"
+        , title: "选择厂区"
         , width: 768
         , height: 512
         , onload: function () {
@@ -70,7 +70,7 @@ function openSetCanton() {
         }
     });
     //    } else {
-    //        mini.alert("请选择用户所属行政区！"); 
+    //        mini.alert("请选择用户所属厂区！"); 
     //    };
 };
 
@@ -186,7 +186,7 @@ $.page.pageLoad = function () {
 
 function checkPlan() {
     if ($.page.idM.monitorSiteCode.getValue() == "") {
-        mini.alert('请选择净化槽！');
+        mini.alert('请选择现场设备！');
         return false;
     }
 
@@ -202,7 +202,7 @@ function checkPlan() {
 }
 
 /**
-* 设置框内净化槽编码功能
+* 设置框内现场设备编码功能
 * @param  {[函数]} callbackData [判断条件]
 * @return {[type]}              [description]
 */

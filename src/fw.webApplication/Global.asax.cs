@@ -10,7 +10,6 @@ using System.Web.Security;
 using System.Web.SessionState;
 using fw.m.basicInfo.bll;
 using fw.m.Common;
-using fw.m.Common.mq;
 using fw.m.operationMaintenance.bll;
 using fw.webApplication.handler;
 

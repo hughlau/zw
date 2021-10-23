@@ -46,7 +46,7 @@ namespace fw.m.basicInfo.data.entity
         private string _cantonCode;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         public string cantonCode
         {

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>净化槽管理</title>
+    <title>现场设备管理</title>
     <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
     <script src="../scripts/page.js.code.js" type="text/javascript"></script>  
     <script src="monitorSiteList.htm.js" type="text/javascript"></script>
@@ -30,7 +30,7 @@
                         <input name="dEnd" id="mCallTimeTo" class="mini-datepicker" selectonfocus="true"
                             nullvalue="null" format="yyyy-MM-dd" showtime="false" showokbutton="true" showclearbutton="false"
                             emptytext="结束时间..." ondrawdate="onDrawDateEnd" style="width: 110px;" onvaluechanged="onSearch();" />
-                        <input id="keyword" name="keyword" class="mini-textbox" style ="width: 250px;" emptytext="请输入净化槽、设备编码或镇、村名称" onenter="onSearch();" />
+                        <input id="keyword" name="keyword" class="mini-textbox" style ="width: 250px;" emptytext="请输入现场设备、设备编码或厂区名称" onenter="onSearch();" />
                          <input id="householdName" name="householdName" class="mini-textbox" style ="width: 100px;"  emptytext="请输入户主名" onenter="onSearch();" />
                         <a class="mini-button" id="buttonSearch" iconcls="icon-search" plain="true">查询</a>
                         <a class="mini-button" iconcls="icon-download" id="export" onclick="dataExport();">导出</a>
@@ -53,21 +53,21 @@
                     序号
                 </div>
                 <div field="monitorSiteName" width="180" headeralign="center" align="left" renderer="datagrid1_Renderer" allowsort="true">
-                    净化槽编号</div>
+                    现场设备编号</div>
                 <div field="monitorSiteTypeName" width="120" headeralign="center" align="center" allowsort="true">
-                    净化槽型号</div>
+                    现场设备型号</div>
                 <div field="cantonName" width="180" headeralign="center" align="left" allowsort="true" allowsort="true">
-                    行政区</div>
+                    厂区</div>
                 <div field="operateTime" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer" allowsort="true">
                     投运时间</div>
-                <div field="householdsCount" width="100" headeralign="center" align="center" allowsort="true">
+                <!--<div field="householdsCount" width="100" headeralign="center" align="center" allowsort="true">
                     接入户数</div>
                 <div field="householdName" width="120" headeralign="center" align="left" allowsort="true">
-                    户主名</div>
-                <div field="pumpTypeName" width="120" headeralign="center" align="center" allowsort="true">
+                    户主名</div>-->
+                <!--<div field="pumpTypeName" width="120" headeralign="center" align="center" allowsort="true">
                     提升泵</div>
                 <div field="meterNo" width="120" headeralign="center" align="left" allowsort="true">
-                    电表号</div>               
+                    电表号</div>-->               
                 <div field="longitudeGps" width="120" headeralign="center" align="right" allowsort="true">
                     安装经度(百度GPS)</div>
                 <div field="latitudeGps" width="120" headeralign="center" align="right" allowsort="true">
@@ -76,8 +76,8 @@
                     安装经度(WGS1984)</div>
                 <div field="latitude" width="120" headeralign="center" align="right" allowsort="true" >
                     安装纬度(WGS1984)</div>
-                     <div field="photoAddress" width="120" headeralign="center" align="right" allowsort="true">
-                   图片名称</div>
+                     <!--<div field="photoAddress" width="120" headeralign="center" align="right" allowsort="true">
+                   图片名称</div>-->
                    
             </div>
         </div>

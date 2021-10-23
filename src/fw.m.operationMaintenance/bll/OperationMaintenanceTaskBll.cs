@@ -155,7 +155,7 @@ or (faultTime <=  convert(datetime,'{0}') and repairTime >=  convert(datetime,'{
                     sqlbuilder.AppendFormat(@" and monitorSite.cantonCode like '{0}%'", queryParams.cantonCode);
                 }
 
-                //设施故障统计中，按照净化槽编码统计运维任务  add by songshasha 2016-12-26
+                //设施故障统计中，按照现场设备编码统计运维任务  add by songshasha 2016-12-26
                 if (!string.IsNullOrEmpty(queryParams.monitorSiteCode))
                 {
                     sqlbuilder.AppendFormat(@" AND (MaintenanceTask.monitorSiteCode='{0}' or MaintenanceTask.monitorSiteCode is null)", queryParams.monitorSiteCode);
@@ -351,7 +351,7 @@ WHERE ISNULL(MaintenanceTask.isDis,0)=0
                     sqlbuilder.AppendFormat(@" and monitorSite.cantonCode in ( select cantoncode from [fn_getSubCanton_Dic]('{0}') ) ", FWSqlCommandStaticHelper.checkParam(queryParams.cantonCode));
                 }
 
-                //设施故障统计中，按照净化槽编码统计运维任务  add by songshasha 2016-12-26
+                //设施故障统计中，按照现场设备编码统计运维任务  add by songshasha 2016-12-26
                 if (!string.IsNullOrEmpty(queryParams.monitorSiteCode))
                 {
                     sqlbuilder.AppendFormat(@" AND (MaintenanceTask.monitorSiteCode='{0}' or MaintenanceTask.monitorSiteCode is null)", queryParams.monitorSiteCode);
@@ -755,8 +755,8 @@ AND ( MaintenanceTask.operationMaintenancePersonCode IS NULL OR  MaintenanceTask
                     {
                         foreach (var item in maintenanceTask)
                         {
-                            string title = "净化槽" + item.monitorSiteName + "发生" + item.taskTypeName + ",请及时处理";
-                            string mailMessage = "净化槽" + item.monitorSiteName + "发生" + item.taskTypeName + ",位置:" + item.cantonName + ",任务详情：" + item.operationMaintenanceTaskName;
+                            string title = "现场设备" + item.monitorSiteName + "发生" + item.taskTypeName + ",请及时处理";
+                            string mailMessage = "现场设备" + item.monitorSiteName + "发生" + item.taskTypeName + ",位置:" + item.cantonName + ",任务详情：" + item.operationMaintenanceTaskName;
                             GetuiServerApiSDK.PushMessageBll.sendMail(userEmail, title, mailMessage);
                         }
 
@@ -842,7 +842,7 @@ AND ( MaintenanceTask.operationMaintenancePersonCode IS NULL OR  MaintenanceTask
             try
             {
 
-                //status在日常运维单中代表设备的状态，3代表供电故障，当供电故障时，将净化槽状态修改为3,3在设备状态中代表供电故障。。
+                //status在日常运维单中代表设备的状态，3代表供电故障，当供电故障时，将现场设备状态修改为3,3在设备状态中代表供电故障。。
                 //供电故障改为报停设备
                 if (!string.IsNullOrEmpty(mEntity.monitorSiteCode) && mEntity.rem == "3")
                 {
@@ -1964,8 +1964,8 @@ WHERE ISNULL(MaintenanceTask.isDis,0)=0
                 //    {
                 //        foreach (var item in maintenanceTask)
                 //        {
-                //            string title = "净化槽" + item.monitorSiteName + "发生" + item.taskTypeName + ",请及时处理";
-                //            string mailMessage = "净化槽" + item.monitorSiteName + "发生" + item.taskTypeName + ",位置:" + item.cantonName + ",任务详情：" + item.operationMaintenanceTaskName;
+                //            string title = "现场设备" + item.monitorSiteName + "发生" + item.taskTypeName + ",请及时处理";
+                //            string mailMessage = "现场设备" + item.monitorSiteName + "发生" + item.taskTypeName + ",位置:" + item.cantonName + ",任务详情：" + item.operationMaintenanceTaskName;
                 //            GetuiServerApiSDK.PushMessageBll.sendMail(userEmail, title, mailMessage);
                 //        }
 
@@ -2059,8 +2059,8 @@ WHERE ISNULL(MaintenanceTask.isDis,0)=0
                     //    {
                     //        foreach (var item in maintenanceTaskWaterPump)
                     //        {
-                    //            string title = "净化槽" + item.monitorSiteName + "发生" + item.taskTypeName + ",请及时处理";
-                    //            string mailMessage = "净化槽" + item.monitorSiteName + "发生" + item.taskTypeName + ",位置:" + item.cantonName + ",任务详情：" + item.operationMaintenanceTaskName;
+                    //            string title = "现场设备" + item.monitorSiteName + "发生" + item.taskTypeName + ",请及时处理";
+                    //            string mailMessage = "现场设备" + item.monitorSiteName + "发生" + item.taskTypeName + ",位置:" + item.cantonName + ",任务详情：" + item.operationMaintenanceTaskName;
                     //            GetuiServerApiSDK.PushMessageBll.sendMail(userEmail, title, mailMessage);
                     //        }
 
@@ -2506,7 +2506,7 @@ WHERE ISNULL(MaintenanceTask.isDis,0)=0
             return false;
         }
 
-        //所有净化槽
+        //所有现场设备
         public static List<MonitorSiteByLtc> GetMOnitorSiteCode()
         {
             var result = new List<MonitorSiteByLtc>();
@@ -2888,7 +2888,7 @@ WHERE ISNULL(MaintenanceTask.isDis,0)=0
 
                 var dbresult = OperationMaintenanceTaskDal.insertOrUpdateDailyMaintenanceTask(Entity, fwSqlTransaction);
                 result.data = (dbresult.dbResultStatus == FWDBResultStatus.Success);
-                ////status在日常运维单中代表设备的状态，3代表供电故障，当供电故障时，将净化槽状态修改为3,3在设备状态中代表供电故障,5表示设备报停，将净化槽状态修改为13
+                ////status在日常运维单中代表设备的状态，3代表供电故障，当供电故障时，将现场设备状态修改为3,3在设备状态中代表供电故障,5表示设备报停，将现场设备状态修改为13
                 //if (mEntity.rem == "3" && mEntity.status != 5)
                 //{
                 //    sqlCmd.CommandText = "update BLLMonitorSiteRealtimeFactorData set dataState=3,updateTime='" + DateTime.Now + "',updaterID='" + userInfo.userID + "' where monitorSiteCode='" + mEntity.monitorSiteCode + "' and monitorFactorCode='000008' ";
@@ -3810,7 +3810,7 @@ and MPM.operationMaintenancePersonCode='{0}' ", basicUserInfo.operationMaintenan
                 //}
                 #endregion
                 result.data = dbresult.dbResultStatus == FWDBResultStatus.Success;
-                //status为处理状态，1供电故障已修复，2净化槽运行故障已修复，3模块运行故障已修复，4结案
+                //status为处理状态，1供电故障已修复，2现场设备运行故障已修复，3模块运行故障已修复，4结案
                 if (mEntity.status == 1 && mEntity.solveReasult == 1)
                 {
                     sqlCmd.CommandText = "update BLLMonitorSiteRealtimeFactorData set dataState=1,updateTime='" + DateTime.Now + "',updaterID='" + userInfo.userID + "' where monitorSiteCode='" + mEntity.monitorSiteCode + "' and monitorFactorCode='000008' ";

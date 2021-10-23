@@ -25,10 +25,10 @@
                        <input class="mini-treeselect " selectonfocus="true" style="width: 140px;" id="cantonCode"
                             name="cantonCode" textfield="name" valuefield="code" parentfield="pCode" expandonload="0"
                             onvaluechanged="" />
-                        <input id="keyword" name="keyword" class="mini-textbox" emptytext="请输入净化槽、设备编码或镇、村名称" style="width: 250px;" onenter="onSearch();" />
+                        <input id="keyword" name="keyword" class="mini-textbox" emptytext="请输入现场设备、设备编码或厂区名称" style="width: 250px;" onenter="onSearch();" />
                         
                           <input id="statusCode" class="mini-combobox" style="width: 120px;" textfield="text" data = "[{ code: '0', text: '正常' },{ code: '1', text: '报警' },{ code: '9', text: '通讯故障' }]"
-                            name="statusCode" valuefield="code" shownullitem="true" nullitemtext="水泵状态" emptytext="水泵状态"
+                            name="statusCode" valuefield="code" shownullitem="true" nullitemtext="状态" emptytext="状态"
                             onvaluechanged="" />
                             <!--  <input id="windstatusCode" class="mini-combobox" style="width: 120px;" textfield="text" data = "[{ code: '0', text: '正常' },{ code: '1', text: '报警' },{ code: '9', text: '通讯故障' }]"
                             name="windstatusCode" valuefield="code" shownullitem="true" nullitemtext="气泵状态" emptytext="气泵状态"
@@ -53,33 +53,33 @@
                     序号
                 </div>
 
-                <div field="cantonName" width="180" headeralign="center" align="left" allowsort="true" allowsort="true">
-                    行政区
+                <div field="cantonName" width="220" headeralign="center" align="left" allowsort="true" allowsort="true">
+                    厂区
                 </div>
                 <div field="monitorSiteName" width="130" headeralign="center" align="left" renderer="datagrid1_Renderer" allowsort="true">
-                    净化槽编号
+                    现场设备编号
                 </div>
-                <div field="equipmentNo" width="130" headeralign="center" align="left" allowsort="true">
+                <!--<div field="equipmentNo" width="130" headeralign="center" align="left" allowsort="true">
                     设备编号
                 </div>
                 <div field="equipmentTypeName" width="120" headeralign="center" align="center" allowsort="true">
                     提升井类型
-                </div>
+                </div>-->
                 <div field="monitorSiteTypeName" width="120" headeralign="center" align="center" allowsort="true">
-                    净化槽型号
+                    现场设备型号
                 </div>
                 <div field="waterPumpState" width="120" headeralign="center" align="center" allowsort="true" renderer="datagrid1_Renderer">
-                    水泵状态
+                    状态
                 </div>
-                <div field="waterLowState" width="130" headeralign="center" align="center" allowsort="true">
+                <!--<div field="waterLowState" width="130" headeralign="center" align="center" allowsort="true">
                     水位满过低液位浮球
                 </div>
                 <div field="waterHighState" width="130" headeralign="center" align="left" allowsort="true">
                     水位满过高液位浮球
-                </div>
-                <div field="householdName" width="120" headeralign="center" align="center" allowsort="true">
-                    户主名
-                </div>
+                </div>-->
+                <!--<div field="householdName" width="120" headeralign="center" align="center" allowsort="true">
+                    所属人
+                </div>-->
                 <div field="monitorTime" width="150" headeralign="center" align="left" allowsort="true">
                     监测时间
                 </div>

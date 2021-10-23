@@ -54,7 +54,7 @@ namespace fw.m.operationMaintenance.data.model
         private string _monitorSiteCode;
 
         /// <summary>
-        /// 净化槽编码code
+        /// 现场设备编码code
         /// </summary>
          [DataMember]
         public string monitorSiteCode
@@ -67,7 +67,7 @@ namespace fw.m.operationMaintenance.data.model
          private string _monitorSiteName;
 
          /// <summary>
-         /// 净化槽编码
+         /// 现场设备编码
          /// </summary>
          [DataMember]
          public string monitorSiteName

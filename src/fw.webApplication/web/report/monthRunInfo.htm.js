@@ -36,7 +36,7 @@ function setColumns() {
     var monthRange = isOverYear ? 12 : endMonth;
     var columns_data = [
     { type: "indexcolumn", header: "序号", width: 30, headerAlign: "center" },
-    { header: "行政区名称", field: "cantonName", name: "cantonNameT", width: 100, headerAlign: "center", align: "left" }
+    { header: "厂区名称", field: "cantonName", name: "cantonNameT", width: 100, headerAlign: "center", align: "left" }
     ];
     for (var i = beginMonth; i <= monthRange; i++) {
         var col_obj = {

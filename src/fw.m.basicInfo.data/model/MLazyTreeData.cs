@@ -48,28 +48,28 @@ namespace fw.m.basicInfo.data.model
         public string monitorSiteName { get; set; }
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode { get; set; }
         /// <summary>
-        /// 行政区名称
+        /// 厂区名称
         /// </summary>
         [DataMember]
         public string cantonName { get; set; }
         /// <summary>
-        /// 父级行政区编码
+        /// 父级厂区编码
         /// </summary>
         [DataMember]
         public string parentCantonCode { get; set; }
         /// <summary>
-        /// 父级行政区名称
+        /// 父级厂区名称
         /// </summary>
         [DataMember]
         public string parentCantonName { get; set; }
 
         /// <summary>
-        /// 行政区全称
+        /// 厂区全称
         /// </summary>
         [DataMember]
         public string fullCantonName { get; set; }

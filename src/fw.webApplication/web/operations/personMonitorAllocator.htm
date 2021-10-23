@@ -31,7 +31,7 @@
                             expandonload="0" onvaluechanged="" /> 
                                <input id="allocatorStatusCode" name="allocatorStatusCode" class="mini-combobox" style="width: 120px;" textfield="name"
                              valuefield="code" shownullitem="true" nullitemtext="分配状态" emptytext="分配状态" onvaluechanged="" /> 
-                        <input id="keyword" name="keyword" class="mini-textbox" style="width:250px" emptytext="请输入净化槽、设备编码或镇、村名称" onenter="" />
+                        <input id="keyword" name="keyword" class="mini-textbox" style="width:250px" emptytext="请输入现场设备、设备编码或厂区名称" onenter="" />
                         <a class="mini-button" iconcls="icon-search" plain="true" onclick="onSearch()">查询</a>
                         <a id="select" class="mini-button" style="" iconcls="icon-add" onclick="select();">批量分配</a>
                          <a id="moredel" class="mini-button" style="" iconcls="icon-remove" onclick="moredel();">批量删除</a>
@@ -52,13 +52,13 @@
                 </div>
 
                 <div field="monitorSiteName" width="100" headeralign="center" align="left">
-                    净化槽编码
+                    现场设备编码
                 </div>
                 <div field="equipmentNo" width="100" headeralign="center" align="left">
                     设备编码
                 </div>
                 <div field="cantonName" width="100" headeralign="center" align="center">
-                    行政区
+                    厂区
                 </div>
                 <div field="siteStatus" width="120" headeralign="center" align="center" renderer="datagrid1_Renderer">
                     分配状态

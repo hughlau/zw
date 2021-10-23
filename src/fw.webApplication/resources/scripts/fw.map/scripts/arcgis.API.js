@@ -736,7 +736,7 @@ getFullExtent: function () {
     return ArcGIS_MapFullExtent;
 }
     ,
-//缩放到行政区 
+//缩放到厂区 
 zoomToCanton: function (Properties) {
     var Settings = {
         CantonCode: ""

@@ -8,7 +8,7 @@ using fw.fwDal;
 namespace fw.m.sysBasicManage.data.model
 {
     /// <summary>
-    /// 行政区
+    /// 厂区
     /// </summary>
     [DataContract]
     public class MCanton : FWEntityObject
@@ -16,7 +16,7 @@ namespace fw.m.sysBasicManage.data.model
         private string _cantonCode;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode
@@ -28,7 +28,7 @@ namespace fw.m.sysBasicManage.data.model
         private string _cantonName;
 
         /// <summary>
-        /// 行政区名称
+        /// 厂区名称
         /// </summary>
         [DataMember]
         public string cantonName
@@ -40,7 +40,7 @@ namespace fw.m.sysBasicManage.data.model
         private string _parentCantonCode;
 
         /// <summary>
-        /// 父级行政区编码
+        /// 父级厂区编码
         /// </summary>
         [DataMember]
         public string parentCantonCode
@@ -51,7 +51,7 @@ namespace fw.m.sysBasicManage.data.model
         private string _parentCantonName;
 
         ///// <summary>
-        ///// 父级行政区名称
+        ///// 父级厂区名称
         ///// </summary>
         //[DataMember]
         //public string parentCantonName
@@ -63,7 +63,7 @@ namespace fw.m.sysBasicManage.data.model
         //private List<MCanton> _childList;
 
         ///// <summary>
-        ///// 子集行政区列表
+        ///// 子集厂区列表
         ///// </summary>
         //[DataMember]
         //public List<MCanton> childList
@@ -75,7 +75,7 @@ namespace fw.m.sysBasicManage.data.model
         //private int? _cantonLevel;
 
         ///// <summary>
-        ///// 行政区级别
+        ///// 厂区级别
         ///// </summary>
         //[DataMember]
         //public int? cantonLevel
@@ -87,7 +87,7 @@ namespace fw.m.sysBasicManage.data.model
         //private string _cantonLevelName;
 
         ///// <summary>
-        ///// 行政区级别名称
+        ///// 厂区级别名称
         ///// </summary>
         //[DataMember]
         //public string cantonLevelName

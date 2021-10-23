@@ -75,7 +75,7 @@ namespace fw.m.operationMaintenance.data.entity
         private string _monitorSiteCode;
 
         /// <summary>
-        /// 净化槽编码
+        /// 现场设备编码
         /// </summary>
         [DataMember]
         public string monitorSiteCode

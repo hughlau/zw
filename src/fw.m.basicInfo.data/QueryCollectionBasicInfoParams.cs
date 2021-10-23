@@ -39,7 +39,7 @@ namespace fw.m.basicInfo.data
         private string _cantonCode;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode
@@ -51,7 +51,7 @@ namespace fw.m.basicInfo.data
         private string _householdName;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string householdName
@@ -60,7 +60,7 @@ namespace fw.m.basicInfo.data
             set { _householdName = value; }
         }
         /// <summary>
-        /// 行政区列表
+        /// 厂区列表
         /// </summary>
         [DataMember]
         public List<string> cantonCodeList { get; set; }
@@ -136,7 +136,7 @@ namespace fw.m.basicInfo.data
         public string projectNo { get; set; }
 
         /// <summary>
-        /// 净化槽设施  状态编码 
+        /// 现场设备设施  状态编码 
         /// 1	正常
         /// 4	设备漏气
         /// 5	设备堵塞
@@ -167,7 +167,7 @@ namespace fw.m.basicInfo.data
         private string _equipmentType;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string equipmentType
@@ -179,7 +179,7 @@ namespace fw.m.basicInfo.data
         private string _cateCode;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cateCode

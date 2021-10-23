@@ -37,7 +37,7 @@ namespace fw.m.basicInfo.data.entity
         private string _monitorSiteTypeCode;
 
         /// <summary>
-        ///  净化槽型号
+        ///  现场设备型号
         /// </summary>
         [DataMember]
         public string monitorSiteTypeCode
@@ -48,7 +48,7 @@ namespace fw.m.basicInfo.data.entity
 
         private string _monitorSiteTypeCodeStr;
         /// <summary>
-        ///  净化槽型号Str
+        ///  现场设备型号Str
         /// </summary>
         [DataMember]
         public string monitorSiteTypeCodeStr
@@ -60,7 +60,7 @@ namespace fw.m.basicInfo.data.entity
         private string _cantonCode;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode
@@ -304,7 +304,7 @@ namespace fw.m.basicInfo.data.entity
         private string _photoAddress;
 
         /// <summary>
-        /// 净化槽图片地址
+        /// 现场设备图片地址
         /// </summary>
         [DataMember]
         public string photoAddress

@@ -105,9 +105,7 @@ E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\Interop.SpeechLib.dll
 E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\ThoughtWorks.QRCode.dll
 E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\fw.fwSSO.dll
 E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\MQTTnet.Core.dll
-E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\Apache.NMS.dll
 E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\MQTTnet.dll
-E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\Apache.NMS.ActiveMQ.dll
 E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\log4net.dll
 E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\ICSharpCode.SharpZipLib.dll
 E:\orginPro\git_zw\zw\src\sysManageAdapter\bin\Debug\fw.m.sysBasicManage.data.pdb

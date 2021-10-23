@@ -19,7 +19,7 @@ namespace fw.m.sysBasicManage.bll
         /// </summary>
         public const string BLLAlarmReceiveType = "BIZAlarmReceiveType";
         /// <summary>
-        /// 常熟行政区化
+        /// 常熟厂区化
         /// </summary>
         public const string BLLCanton = "BLLCanton";
         /// <summary>
@@ -125,7 +125,7 @@ namespace fw.m.sysBasicManage.bll
          
 
         /// <summary>
-        /// 净化槽型号
+        /// 现场设备型号
         /// </summary>
         public const string BLLSiteType = "BLL_SiteType";
 

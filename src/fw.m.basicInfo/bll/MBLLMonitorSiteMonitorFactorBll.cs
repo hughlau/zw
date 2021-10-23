@@ -17,7 +17,7 @@ namespace fw.m.basicInfo.bll
     {
 
 
-        #region F.净化槽 因子关系
+        #region F.现场设备 因子关系
         public static FWResult<bool> insertUpdateBasMonitorSiteMonitorFactor(T_Bas_MonitorSiteMonitorFactor entity, IFWTransaction transaction)
         {
             FWResult<bool> result = new FWResult<bool>();
@@ -135,7 +135,7 @@ WHERE 1<>1 ", DictionaryTypeCodeSettings.BLLMonitorFactor);
 
 
         #region 点位因子
-        #region  净化槽 因子新增/更新
+        #region  现场设备 因子新增/更新
         public static FWResult<bool> inserOrUpdateMBasSiteFactor(IFWUserInfo userInfo, MBas_MonitorSiteMonitorFactor mEntity)
         {
             FWResult<bool> result = new FWResult<bool>();
@@ -325,7 +325,7 @@ delete  [dbo].[BLLMonitorSiteRealtimeFactorData] WHERE monitorSiteCode = '{0}'  
         }
         #endregion
 
-        #region 净化槽 因子删除操作
+        #region 现场设备 因子删除操作
         public static FWResult<bool> deleteMBasSiteFactorByFactorCodeList(IFWUserInfo userInfo, List<string> monitorFactorCodeList, string monitorSiteCode)
         {
             FWResult<bool> result = new FWResult<bool>();

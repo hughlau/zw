@@ -196,7 +196,7 @@ function personSiteInfo(operationMaintenancePersonCode) {
     });
 };
 
-//打开行政区分配功能窗口
+//打开厂区分配功能窗口
 function openSetCanton(cuserID) {
     if (cuserID == "null") {
         mini.alert("该人员未分配运维账号！");
@@ -215,7 +215,7 @@ function openSetCanton(cuserID) {
     //打开窗口
     mini.open({
         url: url
-        , title: "选择行政区"
+        , title: "选择厂区"
         , width: 768
         , height: 600
         , onload: function () {
@@ -228,7 +228,7 @@ function openSetCanton(cuserID) {
     });
 };
 
-//分配行政区
+//分配厂区
 function openSetCantonCallback(entityList) {
     var mUserIDList = [$.page.params.mUserID];
     if (mUserIDList) {
@@ -272,7 +272,7 @@ function openSetCantonCallback(entityList) {
                 //判断启用停用成功
                 if (resultData.status == fw.fwData.FWResultStatus.Success && resultData.data != null) {
                     //datagrid加载数据
-                    mini.alert("分配行政区成功！");
+                    mini.alert("分配厂区成功！");
                 };
             }
             , complete: function () {

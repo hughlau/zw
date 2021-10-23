@@ -76,7 +76,7 @@ function onSearch(cSettings) {
 //数据导出
 function dataExport() {
     onSearch({ isExport: true, pageSize: fw.fwNumber.intMaxValue, pageIndex: 1 });
-    $.page.exportFile({ idM: $.page.idM.datagrid1, reportName: '净化槽列表' });
+    $.page.exportFile({ idM: $.page.idM.datagrid1, reportName: '现场设备列表' });
 };
 
 function closeWindow(action) {
@@ -199,7 +199,7 @@ function openInfo(action, monitorSiteCode) {
     //打开窗口
     mini.open({
         url: url
-        , title: "净化槽信息"
+        , title: "现场设备信息"
         , width: 900
         , height: 640
         , onload: function () {

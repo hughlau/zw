@@ -43,7 +43,7 @@ namespace fw.m.basicInfo.data.model
 
 
         /// <summary>
-        ///  净化槽型号
+        ///  现场设备型号
         /// </summary>
         [DataMember]
         public string monitorSiteTypeCode
@@ -54,7 +54,7 @@ namespace fw.m.basicInfo.data.model
 
         private string _monitorSiteTypeCodeStr;
         /// <summary>
-        ///  净化槽型号Str
+        ///  现场设备型号Str
         /// </summary>
         [DataMember]
         public string monitorSiteTypeCodeStr
@@ -67,7 +67,7 @@ namespace fw.m.basicInfo.data.model
         private string _cantonCode;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode
@@ -315,7 +315,7 @@ namespace fw.m.basicInfo.data.model
         private string _photoAddress;
 
         /// <summary>
-        /// 净化槽图片地址
+        /// 现场设备图片地址
         /// </summary>
         [DataMember]
         public string photoAddress
@@ -358,25 +358,25 @@ namespace fw.m.basicInfo.data.model
         public string pumpTypeName { get; set; }
 
         /// <summary>
-        /// 净化槽型号名称
+        /// 现场设备型号名称
         /// </summary>
         [DataMember]
         public string monitorSiteTypeName { get; set; }
 
         /// <summary>
-        /// 行政区名称
+        /// 厂区名称
         /// </summary>
         [DataMember]
         public string cantonName { get; set; }
 
         /// <summary>
-        /// 行政区名称
+        /// 厂区名称
         /// </summary>
         [DataMember]
         public string fullCantonName { get; set; }
 
         /// <summary>
-        /// 父级行政区编码
+        /// 父级厂区编码
         /// </summary>
         [DataMember]
         public string parentCantonCode { get; set; }
@@ -384,7 +384,7 @@ namespace fw.m.basicInfo.data.model
         private string _parentCantonName;
 
         /// <summary>
-        /// 父级行政区名称
+        /// 父级厂区名称
         /// </summary>
         [DataMember]
         public string parentCantonName { get; set; }
@@ -422,7 +422,7 @@ namespace fw.m.basicInfo.data.model
 
         #endregion
 
-        #region 设备净化槽 1V1
+        #region 设备现场设备 1V1
 
         /// <summary>
         /// 设备编码

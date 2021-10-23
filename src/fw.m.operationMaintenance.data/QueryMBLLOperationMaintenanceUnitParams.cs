@@ -19,7 +19,7 @@ namespace fw.m.operationMaintenance.data
         public string keyword { get; set; }
 
         /// <summary>
-        /// 行政区
+        /// 厂区
         /// </summary>
         [DataMember]
         public string cantonCode { get; set; }

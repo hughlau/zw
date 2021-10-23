@@ -39,7 +39,7 @@ namespace fw.m.basicInfo.data.entity
 
         private string _monitorSiteCode;
         /// <summary>
-        /// 净化槽主键
+        /// 现场设备主键
         /// </summary>
         [DataMember]
         public string monitorSiteCode

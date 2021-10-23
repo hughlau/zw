@@ -89,7 +89,7 @@ function queryMonitorSite() {
 
                     monitorImgList = entity.photoAddress.split("_");
                     // monitorImgList = fw.fwJson.FWJsonHelper.deserializeObject("ddd");
-                    var html = '<tr><td align="right">净化槽图片</td><td class="tdRight" colspan="3">';
+                    var html = '<tr><td align="right">现场设备图片</td><td class="tdRight" colspan="3">';
                     if (fw.fwObject.FWObjectHelper.hasValue(monitorImgList)) {
                         for (var i = 0; i < monitorImgList.length; i++) {
                             var entity = monitorImgList[i];
@@ -109,7 +109,7 @@ function queryMonitorSite() {
             else //Roger 2016/6/1 13:00:02 增加管辖区域
             {
                 var erroInfo = resultData.infoList.join("<br>");
-                $.page.showTips({ content: "净化槽信息获取失败!<br>" + erroInfo, state: "danger" });
+                $.page.showTips({ content: "现场设备信息获取失败!<br>" + erroInfo, state: "danger" });
             };
         }
     }));

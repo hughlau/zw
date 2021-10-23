@@ -188,7 +188,7 @@ UPDATE  [dbo].[BLLOperationMaintenancePerson]
                 if (result.status != FWResultStatus.Success)
                 {
                     throw new Exception(result.infoList.Aggregate((pre, next) => pre + ";" + next));
-                    //throw new Exception("该净化槽编码已存在!");//输出信息一致
+                    //throw new Exception("该现场设备编码已存在!");//输出信息一致
                 }
 
                 FWSqlCommand fwSqlCommand = new FWSqlCommand();
@@ -616,7 +616,7 @@ where isnull(t1.[isDis],0)=0 ");
         /// <returns></returns>
         public static FWResult<List<MBLLOperationMaintenancePersonLocation>> getMBLLOperationMaintenancePersonLocationList(IFWUserInfo userInfo, string keyWord, int? topNum)
         {
-            //如果管理员  全部展示  先不行政区过滤 
+            //如果管理员  全部展示  先不厂区过滤 
             SysBasicManageUserInfo userSysInfo = SysBasicManageBll.getUserInfo(userInfo);
             FWResult<List<MBLLOperationMaintenancePersonLocation>> result = new FWResult<List<MBLLOperationMaintenancePersonLocation>>();
 

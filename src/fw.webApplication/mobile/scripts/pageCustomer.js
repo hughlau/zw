@@ -123,7 +123,7 @@
             var html = "";
             html += '<div id="divCantonSelectPage" data-role="page">';
             html += '    <div class="divHeader" data-role="header" data-position="fixed" data-theme="a" class="statusBar">';
-            html += '        <h1>行政区选择</h1>';
+            html += '        <h1>厂区选择</h1>';
             //html += '        <a class="aBackCallback" data-icon="back" data-iconpos="notext"></a>';
             html += '        <a class="aClearCallback ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-inline">清空</a>';
             html += '        <a class="aSelectCallback ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">确定</a>';
@@ -298,7 +298,7 @@ fw.m.sysBasicManage = {
         , FWOrganizationCode: {
 
         }
-        //行政区
+        //厂区
         , FWCantonCode: {
 
         }

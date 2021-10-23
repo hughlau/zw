@@ -60,7 +60,7 @@ function ShowStatus(SpeakDataSource) {
                 }
 
                 //$(" <span class=\"classLink\" style=\"color:red;\">定位</span>").appendTo(LiJQ);
-                $(" <span class=\"classLink\" style=\"color:red;\" ></span>").html(" 故障原因："+ Entity.alarmTypeName+"--净化槽编码["+Entity.monitorSiteName+"]").appendTo(LiJQ).bind("click", function () {
+                $(" <span class=\"classLink\" style=\"color:red;\" ></span>").html(" 故障原因："+ Entity.alarmTypeName+"--现场设备编码["+Entity.monitorSiteName+"]").appendTo(LiJQ).bind("click", function () {
                     var data = { ticket: $.page.ticket, monitorSiteAlarmCode: Entity.monitorSiteAlarmCode, action: "view" };
                     var pageParams = { url: "web/monitorAlarm/monitorSiteAlarm.htm", width: 800, height: 448, title: "报警信息" };
                     $.page.openPage(data, pageParams);

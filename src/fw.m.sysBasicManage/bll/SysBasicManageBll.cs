@@ -130,7 +130,7 @@ namespace fw.m.sysBasicManage.bll
                 pageUserInfo.userTypeName = userEntity.mUserTypeName;
             }
 
-            //获取用户分配的行政区列表
+            //获取用户分配的厂区列表
             sysBasicManageUserInfo.cantonCodeList = SysBasicManageBll.queryCantonList(userInfo.userID);
             //if (pageUserInfo.userTypeCode == DictionaryTypeCodeSettings.EnumUnitTypeCode)
             //{
@@ -273,7 +273,7 @@ namespace fw.m.sysBasicManage.bll
 
             //_userInfo.roleCodeList = userInfo;
 
-            //获取用户分配的行政区列表
+            //获取用户分配的厂区列表
             _userInfo.cantonCodeList = queryCantonList(userInfo.userID);
             //用户类型【10 管理员；omPerson  运维人员】
             MFWUserInfo userEntity = queryByMUserID(userInfo.userID);
@@ -366,7 +366,7 @@ AND person.userID=@userID";
         }
         #endregion
 
-        #region 获取用户行政区列表
+        #region 获取用户厂区列表
         public static List<string> queryCantonList(string userID)
         {
 
@@ -578,16 +578,16 @@ and tb1.[menuTypeCode]=@menuTypeCode ");
         }
         #endregion
 
-        #region 获取行政区树形菜单
-        // 获取子集行政区
+        #region 获取厂区树形菜单
+        // 获取子集厂区
         /// </summary>
         /// <param name="userInfo">用户信息</param>
         /// <param name="xxCode">XXCode编码</param>
-        /// <returns>子集行政区</returns>
+        /// <returns>子集厂区</returns>
         public static FWResult<List<MCantonTreeData>> querySubCantonList(IFWUserInfo userInfo, String CantonCode, string keyWord, List<string> notLevelList)
         {
             FWResult<List<MCantonTreeData>> result = new FWResult<List<MCantonTreeData>>() { };
-            /* 判读行政区级别 */
+            /* 判读厂区级别 */
             if (String.IsNullOrEmpty(CantonCode))
             {
                 CantonCode = "321282";
@@ -628,10 +628,10 @@ and tb1.[menuTypeCode]=@menuTypeCode ");
         }
 
         /// <summary>
-        /// 获取子级行政区列表
+        /// 获取子级厂区列表
         /// </summary>
-        /// <param name="CantonCodeList">用户所属行政区</param>
-        /// <returns>行政区列表</returns>
+        /// <param name="CantonCodeList">用户所属厂区</param>
+        /// <returns>厂区列表</returns>
         public static List<String> search__ChildCantonCodeList(List<String> CantonCodeList)
         {
             List<String> StringList = null;

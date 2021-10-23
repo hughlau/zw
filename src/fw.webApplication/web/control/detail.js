@@ -2,7 +2,7 @@
 
 
 
-//打开行政区分配功能窗口
+//打开厂区分配功能窗口
 function openSetCanton() {
 
     var data = {
@@ -16,7 +16,7 @@ function openSetCanton() {
     //打开窗口
     mini.open({
         url: url
-        , title: "选择行政区"
+        , title: "选择厂区"
         , width: 768
         , height: 512
         , onload: function () {
@@ -28,7 +28,7 @@ function openSetCanton() {
         }
     });
     //    } else {
-    //        mini.alert("请选择用户所属行政区！"); 
+    //        mini.alert("请选择用户所属厂区！"); 
     //    };
 };
 
@@ -235,10 +235,10 @@ function checkPlan() {
         mini.alert('控制范围不能为空');
         return false;
     } else if ($.page.idM.monitorType.getValue() == "1" && $("#cantonSelectedList").html()=="") {
-        mini.alert('行政区范围不能为空');
+        mini.alert('厂区范围不能为空');
         return false;
     } else if ($.page.idM.monitorType.getValue() == "2" && $("#monitorSelectedList").html() == "") {
-        mini.alert('净化槽范围不能为空');
+        mini.alert('现场设备范围不能为空');
         return false;
     }
     if ($.page.idM.equipmentType.getValue() == "") {
@@ -264,7 +264,7 @@ function checkPlan() {
 }
 
 /**
-* 设置框内净化槽编码功能
+* 设置框内现场设备编码功能
 * @param  {[函数]} callbackData [判断条件]
 * @return {[type]}              [description]
 */

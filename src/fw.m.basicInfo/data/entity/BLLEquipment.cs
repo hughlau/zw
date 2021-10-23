@@ -49,7 +49,7 @@ namespace fw.m.basicInfo.data.entity
         private string _cantonCode;
 
         /// <summary>
-        ///  设备所属行政区
+        ///  设备所属厂区
         /// </summary>
         [DataMember]
         public string cantonCode

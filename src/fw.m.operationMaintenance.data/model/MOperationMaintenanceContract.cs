@@ -172,7 +172,7 @@ namespace fw.m.operationMaintenance.data.model
         private string _cantonCode;
 
         /// <summary>
-        /// 行政区编码
+        /// 厂区编码
         /// </summary>
         [DataMember]
         public string cantonCode
@@ -182,7 +182,7 @@ namespace fw.m.operationMaintenance.data.model
         }
 
         /// <summary>
-        /// 行政区名称
+        /// 厂区名称
         /// </summary>
         [DataMember]
         public string cantonName { get; set; }

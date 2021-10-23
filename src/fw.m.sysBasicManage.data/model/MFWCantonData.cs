@@ -33,7 +33,7 @@ namespace fw.m.sysBasicManage.data.model
         public String name { get; set; }
 
         /// <summary>
-        /// 行政区等级
+        /// 厂区等级
         /// </summary>
         [DataMember]
         public Int32? level { get; set; }

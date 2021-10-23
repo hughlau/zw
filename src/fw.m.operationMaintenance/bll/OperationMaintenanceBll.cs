@@ -432,10 +432,10 @@ namespace fw.m.operationMaintenance.bll
         }
         #endregion
 
-        #region 监测点位行政区级别加载
+        #region 监测点位厂区级别加载
 
         /// <summary>
-        /// 传入顶级行政区codelist  
+        /// 传入顶级厂区codelist  
         /// </summary>
         /// <param name="cantonCodeList"></param>
         /// <returns></returns>
@@ -443,7 +443,7 @@ namespace fw.m.operationMaintenance.bll
         {
             List<MCantonData> result = new List<MCantonData>();
             StringBuilder sb = new StringBuilder();
-            #region  获取数据行政区数据
+            #region  获取数据厂区数据
 
             sb.AppendFormat(@"   
 SELECT  
@@ -476,7 +476,7 @@ WHERE  t1.[dictionaryTypeCode] = '{0}'  AND  ISNULL(T1.[isDis],0)=0  ", Dictiona
         }
         #endregion
 
-        #region 获取树形行政区列表
+        #region 获取树形厂区列表
         public static FWResult<List<MCantonData>> queryMonitorSiteTree(IFWUserInfo userInfo, string personCode, string contractCode, string action)
         {
             FWResult<List<MCantonData>> result = new FWResult<List<MCantonData>>();

@@ -19,7 +19,7 @@ var operationMaintenanceTaskName = '';
 var isLoading = false;
 // 存储上传图片信息
 var ImgArr = [];
-//净化槽编码
+//现场设备编码
 var monitorSiteCode =''
 //保存传入的
 var imgNames = '';

@@ -46,7 +46,7 @@ document.write('<script src="' + bootPATH + 'jquery-migrate-1.2.1.min.js" type="
 
 //layer 1.9.3
 document.write('<script src="' + bootPATH + 'layer/layer.js" type="text/javascript" ></sc' + 'ript>');
-document.write('<script src="' + bootPATH + 'miniui/miniui.js" type="text/javascript" ></sc' + 'ript>');
+document.write('<script src="' + bootPATH + 'miniui-3.4/miniui.js" type="text/javascript" ></sc' + 'ript>');
 document.write('<script src="' + bootPATH + 'fw/fw.js" type="text/javascript" ></sc' + 'ript>');
 document.write('<script src="' + bootPATH + 'linqjs/jquery.linq.min.js" type="text/javascript" ></sc' + 'ript>');
 document.write('<script src="' + bootPATH + 'moment/moment.js" type="text/javascript" ></sc' + 'ript>'); 

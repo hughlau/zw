@@ -38,7 +38,7 @@
                         <input id="cmbFaultType" class="mini-combobox" style="width: 120px;" name="faultType"
                             textfield="name" valuefield="code" shownullitem="true" nullitemtext="故障类型" emptytext="请选择报警类型..."
                             onvaluechanged="onSearch();" />
-                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入净化槽、设备编码或镇、村名称"
+                        <input id="keyword" name="keyword" class="mini-textbox" selectonfocus="true" emptytext="请输入现场设备、设备编码或厂区名称"
                             style="width: 200px;" onenter="onSearch();" />
                         <a class="mini-button" iconcls="icon-search" id="btnSearch">查询</a>
                         <a class="mini-button" iconcls="icon-download" id="export" onclick="dataExport();">导出</a>
@@ -57,9 +57,9 @@
                 <div type="checkcolumn" width="60px">
                 </div>
                 <div field="cantonName" width="120px" headeralign="center" allowsort="true">
-                    行政区</div>
+                    厂区</div>
                 <div field="monitorSiteName" width="180px" headeralign="center" renderer="dataGrid_Renderer">
-                    净化槽编码</div>
+                    现场设备编码</div>
                 <div field="equipmentNo" width="180px" headeralign="center">
                     设备编码</div>
                 <div field="monitorSiteAlarmName" width="180px" headeralign="center" renderer="dataGrid_Renderer">

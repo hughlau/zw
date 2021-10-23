@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace fw.m.operationMaintenance.data.model
 {
     /// <summary>
-    /// 行政区 统计
+    /// 厂区 统计
     /// </summary>
     [DataContract]
     public class MCantonData
